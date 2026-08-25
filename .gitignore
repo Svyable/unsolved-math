@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.coverage
+htmlcov/
+
+# Immutable raw snapshots and temporary output are local-only.
+.oplab/
+*.tmp
+
+# Generated derived files are committed only by an intentional sync.
+data/current/*.tmp
+data/queues/*.tmp
+
+.env
+.DS_Store

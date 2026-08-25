@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "open-problem-agent-sandbox"
+version = "0.1.0"
+description = "Evidence-first synchronization and ranking for open mathematics problems"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Svyable" }]
+dependencies = [
+  "huggingface-hub>=0.34,<2",
+  "ijson>=3.4,<4",
+  "pydantic>=2.11,<3",
+  "typer>=0.16,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.17,<2",
+  "pytest>=8.4,<9",
+  "ruff>=0.12,<1",
+]
+
+[project.scripts]
+oplab = "oplab.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/oplab"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["oplab"]
+
+[[tool.mypy.overrides]]
+module = ["ijson"]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+branch = true
+source = ["oplab"]

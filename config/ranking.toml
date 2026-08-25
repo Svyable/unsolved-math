@@ -1,0 +1,61 @@
+version = 1
+
+[eligibility]
+statuses = ["open", "partially_solved"]
+max_difficulty = 3
+excluded_statement_statuses = ["reconstructed_unverified", "unrecoverable"]
+
+[weights]
+tractability = 0.30
+statement_quality = 0.20
+provenance = 0.15
+literature_freshness = 0.10
+research_traction = 0.15
+computational_affordance = 0.10
+
+[difficulty]
+L1 = 1.00
+L2 = 0.90
+L3 = 0.55
+L4 = 0.15
+L5 = 0.00
+unknown = 0.20
+
+[statement_quality]
+exact = 1.00
+corrected_verified = 0.95
+unknown = 0.50
+reconstructed_unverified = 0.10
+unrecoverable = 0.00
+
+[research_traction]
+PARTIAL-PROGRESS = 1.00
+OPEN-TRIAGE = 0.55
+SOLVED-IN-LITERATURE = 0.00
+SOLVED-BY-YOU = 0.00
+unknown = 0.35
+
+[freshness]
+fresh_days = 365
+aging_days = 730
+fresh = 1.00
+aging = 0.65
+stale = 0.30
+missing = 0.15
+
+[keywords]
+computational = [
+  "algorithm",
+  "bound",
+  "coloring",
+  "combinatorial",
+  "counterexample",
+  "enumerate",
+  "finite",
+  "graph",
+  "integer",
+  "matrix",
+  "packing",
+  "sequence",
+  "tiling",
+]
