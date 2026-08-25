@@ -1,6 +1,13 @@
 name: Sync UnsolvedMath
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/sync.yml
+      - pyproject.toml
+      - uv.lock
   schedule:
     - cron: "17 6 * * *"
   workflow_dispatch:

@@ -39,7 +39,7 @@ class HuggingFaceSource:
             )
         try:
             info = HfApi().dataset_info(repo_id=self.dataset_id, revision=self.revision)
-        except (OSError, ValueError) as exc:
+        except (ImportError, OSError, ValueError) as exc:
             raise OplabError(
                 f"failed to resolve Hugging Face revision {self.revision}: {exc}"
             ) from exc
@@ -52,7 +52,7 @@ class HuggingFaceSource:
                 revision=info.sha,
                 repo_type="dataset",
             )
-        except (OSError, ValueError) as exc:
+        except (ImportError, OSError, ValueError) as exc:
             raise OplabError(f"failed to download {SOURCE_FILENAME} at {info.sha}: {exc}") from exc
         return SourceArtifact(
             path=Path(downloaded),

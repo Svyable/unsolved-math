@@ -12,6 +12,7 @@ license = { text = "MIT" }
 authors = [{ name = "Svyable" }]
 dependencies = [
   "huggingface-hub>=0.34,<2",
+  "httpx[socks]>=0.28,<1",
   "ijson>=3.4,<4",
   "pydantic>=2.11,<3",
   "typer>=0.16,<1",
