@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "cycle_id": "20260825T230000Z-example-001",
+  "problem_id": "EXAMPLE-001",
+  "upstream_snapshot_revision": "immutable-upstream-sha",
+  "parent_cycle_id": null,
+  "started_at": "2026-08-25T23:00:00Z",
+  "completed_at": "2026-08-25T23:45:00Z",
+  "selection_basis": "Example only; not a live problem selection.",
+  "theory": {
+    "target": "A bounded synthetic subclaim.",
+    "definitions": ["Define the finite object under test."],
+    "assumptions": ["The object size is at most 8."],
+    "approaches_considered": ["Direct enumeration", "Invariant argument"],
+    "falsification_targets": ["Search every object of size at most 8."],
+    "claims": [
+      {
+        "claim_id": "claim-1",
+        "statement": "The bounded synthetic subclaim holds for the enumerated domain.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "theory-1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Enumeration distinguishes the two candidate invariants.",
+        "claim_ids": ["claim-1"],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "check-1",
+        "claim_ids": ["claim-1"],
+        "method": "Independent exhaustive implementation and boundary audit",
+        "independent_context": true,
+        "result": "The independent implementation agrees on the bounded domain only.",
+        "reproduction_command": "python experiments/verify.py",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": ["Finite verification does not establish the universal claim."]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "verification-1",
+        "kind": "PROOF_GAP_IDENTIFIED",
+        "summary": "The universal step remains unsupported beyond the enumerated bound.",
+        "claim_ids": ["claim-1"],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": ["No induction or compactness step is known."]
+  },
+  "material_progress": true,
+  "conclusion": "CONTINUE",
+  "next_step": "Find an invariant that survives the first unenumerated case."
+}

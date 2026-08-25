@@ -29,6 +29,8 @@ tracked updates through a pull request for human review.
     sourced records that need human literature review.
 - Runs a daily GitHub Action that opens or refreshes a sync pull request only
   when the immutable upstream revision changes.
+- Defines a bounded, two-lane research-cycle contract: every accepted cycle
+  must advance both theory exploration and independent progress verification.
 
 The initial upstream inspection on 2026-08-25 found dataset version 1.6.0 with
 15,458 records. That number is documentation only; the software never assumes
@@ -84,6 +86,29 @@ Weights and keyword signals are in [`config/ranking.toml`](config/ranking.toml).
 They are hypotheses about research fit, not mathematical judgments. See
 [`docs/ranking.md`](docs/ranking.md) before changing them.
 
+## Breakthrough loop contract
+
+The hourly loop is designed to compound verified insight, not manufacture
+activity. A cycle is material only when both lanes contain hashed evidence:
+
+1. **Theory exploration** — a new falsifiable hypothesis, assumption reduction,
+   equivalent formulation, reproducible experiment, or other concrete advance.
+2. **Independent verification** — a counterexample search, primary-source
+   check, proof-gap audit, reproduction, or formal check performed without
+   accepting the theory lane's conclusion.
+
+Cycles use cooldown and anti-thrashing gates, remain explicitly unresolved,
+and are proposed through a single review PR. See
+[`docs/hourly-loop.md`](docs/hourly-loop.md) and
+[`config/research-loop.toml`](config/research-loop.toml).
+
+```bash
+uv run oplab loop next
+uv run oplab loop validate-cycle cases/<problem-id>/cycles/<cycle-id>
+uv run oplab loop build-manifest cases/<problem-id>/cycles/<cycle-id>
+uv run oplab loop record-cycle cases/<problem-id>/cycles/<cycle-id>
+```
+
 ## Scheduled synchronization
 
 `.github/workflows/sync.yml` runs daily and can also be started manually. It:
@@ -108,7 +133,8 @@ uv run pytest
 
 Architecture, operating procedures, and research-integrity boundaries are in
 [`docs/`](docs/). The next planned slice is a human-owned review ledger with
-primary-source evidence and named reviewer sign-off.
+primary-source evidence and named reviewer sign-off; the loop cannot substitute
+for that review.
 
 ## Licensing and attribution
 

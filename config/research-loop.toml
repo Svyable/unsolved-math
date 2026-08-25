@@ -1,0 +1,21 @@
+version = 1
+
+[selection]
+queue = "research"
+top_k = 25
+cooldown_hours = 24
+max_consecutive_cycles_per_problem = 2
+
+[budgets]
+wall_clock_minutes = 45
+model_tokens = 40000
+subprocesses = 8
+disk_megabytes = 512
+network_access = "allowlisted-primary-sources-only"
+
+[requirements]
+theory_progress_units = 1
+verification_progress_units = 1
+independent_verification_checks = 1
+counterexample_search_first = true
+human_review_before_merge = true

@@ -2,16 +2,24 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date
+from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Annotated, NoReturn
 
 import typer
 
-from oplab.artifacts import read_model_jsonl
+from oplab.artifacts import atomic_write_bytes, read_model_jsonl
 from oplab.config import load_ranking_config
 from oplab.constants import UNVERIFIED_WARNING
+from oplab.cycle_store import build_cycle_manifest, validate_cycle_directory
 from oplab.errors import OplabError
+from oplab.loop import (
+    LoopHistoryEntry,
+    append_cycle_history,
+    load_ranked_queue,
+    select_next_candidate,
+)
+from oplab.loop_config import load_research_loop_config
 from oplab.models import NormalizedProblem, SourceManifest
 from oplab.ranking import build_queues
 from oplab.sources import HuggingFaceSource, LocalJsonSource
@@ -26,8 +34,10 @@ app = typer.Typer(
 )
 problems_app = typer.Typer(help="Search the compact imported problem index.")
 problem_app = typer.Typer(help="Inspect one imported problem record.")
+loop_app = typer.Typer(help="Run and verify bounded two-lane research cycles.")
 app.add_typer(problems_app, name="problems")
 app.add_typer(problem_app, name="problem")
+app.add_typer(loop_app, name="loop")
 
 
 def _fail(message: str) -> NoReturn:
@@ -187,6 +197,90 @@ def problem_show(
     typer.echo(match.model_dump_json(indent=2))
 
 
+@loop_app.command("next")
+def loop_next(
+    as_of: Annotated[
+        str | None, typer.Option(help="ISO timestamp for deterministic cooldown selection.")
+    ] = None,
+    repo_root: Annotated[Path, typer.Option(help="Repository root.")] = Path("."),
+) -> None:
+    """Select the next ranked candidate outside cooldown and anti-thrashing gates."""
+
+    resolved_root = repo_root.resolve()
+    try:
+        config, _ = load_research_loop_config(resolved_root / "config" / "research-loop.toml")
+        queue = load_ranked_queue(resolved_root / "data" / "queues" / "research.json")
+        history = read_model_jsonl(
+            resolved_root / "data" / "research-loop" / "history.jsonl",
+            LoopHistoryEntry,
+        )
+    except OplabError as exc:
+        _fail(str(exc))
+    if as_of is None:
+        effective_time = datetime.now(UTC)
+    else:
+        try:
+            effective_time = datetime.fromisoformat(as_of.replace("Z", "+00:00"))
+        except ValueError as exc:
+            raise typer.BadParameter("as-of must be an ISO timestamp") from exc
+        if effective_time.tzinfo is None:
+            effective_time = effective_time.replace(tzinfo=UTC)
+    decision = select_next_candidate(queue, history, config, as_of=effective_time)
+    typer.echo(decision.model_dump_json(indent=2))
+
+
+@loop_app.command("validate-cycle")
+def loop_validate_cycle(
+    cycle_dir: Annotated[Path, typer.Argument(help="Directory containing cycle.json.")],
+) -> None:
+    """Validate the two-lane contract and SHA-256 references for one cycle."""
+
+    report = validate_cycle_directory(cycle_dir.resolve())
+    typer.echo(report.model_dump_json(indent=2))
+    if not report.valid:
+        raise typer.Exit(code=1)
+
+
+@loop_app.command("build-manifest")
+def loop_build_manifest(
+    cycle_dir: Annotated[Path, typer.Argument(help="Directory containing cycle.json.")],
+) -> None:
+    """Build a deterministic manifest after cycle validation succeeds."""
+
+    resolved = cycle_dir.resolve()
+    report = validate_cycle_directory(resolved)
+    if not report.valid:
+        typer.echo(report.model_dump_json(indent=2))
+        raise typer.Exit(code=1)
+    try:
+        content = build_cycle_manifest(resolved)
+    except OplabError as exc:
+        _fail(str(exc))
+    atomic_write_bytes(resolved / "manifest.json", content)
+    typer.echo(str(resolved / "manifest.json"))
+
+
+@loop_app.command("record-cycle")
+def loop_record_cycle(
+    cycle_dir: Annotated[Path, typer.Argument(help="Validated cycle directory.")],
+    repo_root: Annotated[Path, typer.Option(help="Repository root.")] = Path("."),
+) -> None:
+    """Append a validated material-progress cycle to the anti-thrashing history."""
+
+    resolved = cycle_dir.resolve()
+    report = validate_cycle_directory(resolved)
+    if not report.valid:
+        typer.echo(report.model_dump_json(indent=2))
+        raise typer.Exit(code=1)
+    try:
+        entry = append_cycle_history(
+            repo_root.resolve() / "data" / "research-loop" / "history.jsonl", resolved
+        )
+    except OplabError as exc:
+        _fail(str(exc))
+    typer.echo(entry.model_dump_json(indent=2))
+
+
 @app.command("validate")
 def validate_command(
     repo_root: Annotated[Path, typer.Option(help="Repository root.")] = Path("."),
@@ -213,9 +307,14 @@ def doctor_command(
         "python": sys.version.split()[0],
         "python_3_12_or_newer": sys.version_info >= (3, 12),
         "ranking_config": (resolved_root / "config" / "ranking.toml").is_file(),
+        "research_loop_config": (resolved_root / "config" / "research-loop.toml").is_file(),
         "current_manifest": (resolved_root / "data" / "current" / "manifest.json").is_file(),
         "local_snapshot_directory": str(resolved_root / ".oplab" / "snapshots"),
     }
     typer.echo(json.dumps(checks, indent=2))
-    if not checks["python_3_12_or_newer"] or not checks["ranking_config"]:
+    if (
+        not checks["python_3_12_or_newer"]
+        or not checks["ranking_config"]
+        or not checks["research_loop_config"]
+    ):
         raise typer.Exit(code=1)

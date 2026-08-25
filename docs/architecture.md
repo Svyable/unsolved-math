@@ -26,6 +26,11 @@ flowchart TD
 - `sync.py` creates deterministic tracked artifacts and status diffs.
 - `ranking.py` applies the versioned configuration in `config/ranking.toml` and
   emits score components and reasons.
+- `research.py` defines the two-lane cycle schema and its unresolved-only
+  conclusion vocabulary.
+- `loop.py` selects candidates with cooldown and anti-thrashing gates.
+- `cycle_store.py` verifies every evidence artifact before a cycle can enter
+  history.
 - `validation.py` verifies hashes, counts, claim labels, and queue membership.
 
 ## Tracked versus local data
@@ -47,6 +52,10 @@ There are three separate concepts:
 
 Only the first two exist in this milestone. Neither is a verified mathematical
 status.
+
+Research cycles add a fourth, deliberately separate concept: **bounded claim
+state**. A cycle may falsify or support a subclaim and may formally verify a
+sublemma, but cannot represent the parent problem as solved.
 
 ## Failure behavior
 

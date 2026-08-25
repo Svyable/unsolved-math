@@ -39,3 +39,20 @@ flagged for review and preserved only in the local raw snapshot.
 The repository does not write back to UnsolvedMath, Hugging Face, papers,
 forums, or social networks. A human must explicitly decide what to share and
 must review the exact packet being shared.
+
+## Hourly research boundary
+
+Frequency is not evidence. The hourly loop may create or refresh a review PR,
+but it may not merge, mark an upstream problem solved, or publish externally.
+Each accepted cycle must contain:
+
+- one evidence-linked theory progress unit;
+- one evidence-linked independent-verification progress unit;
+- at least one verification check with fresh context;
+- a conclusion from the restricted unresolved/sublemma vocabulary;
+- SHA-256 references for every artifact used to justify progress.
+
+If no progress exists, the loop must say so. A verified counterexample, a proof
+gap that retires an approach, or a reproducible blocker can be material negative
+progress. Rewording, longer prose, unsupported confidence, and repeated failed
+attempts without new evidence are not progress.
