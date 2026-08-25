@@ -62,7 +62,7 @@ def build_cycle_manifest(cycle_dir: Path) -> bytes:
             raise IntegrityError(
                 f"symlinks are forbidden in cycle packets: {path.relative_to(cycle_dir)}"
             )
-        if not path.is_file() or path.name == "manifest.json":
+        if not path.is_file() or path == cycle_dir / "manifest.json":
             continue
         relative = path.relative_to(cycle_dir).as_posix()
         files[relative] = sha256_file(path)

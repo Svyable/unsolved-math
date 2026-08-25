@@ -112,6 +112,10 @@ def _cycle(cycle_dir: Path, *, target: str = "Test one bounded synthetic claim."
 def test_cycle_requires_hashed_progress_in_both_lanes(tmp_path: Path) -> None:
     (tmp_path / "theory.md").write_text("bounded theory delta\n", encoding="utf-8")
     (tmp_path / "verification.md").write_text("independent verification delta\n", encoding="utf-8")
+    (tmp_path / "experiments").mkdir()
+    (tmp_path / "experiments" / "manifest.json").write_text(
+        "nested experiment metadata\n", encoding="utf-8"
+    )
     cycle = _cycle(tmp_path)
     (tmp_path / "cycle.json").write_bytes(canonical_json_bytes(cycle.model_dump(mode="json")))
 
@@ -125,6 +129,7 @@ def test_cycle_requires_hashed_progress_in_both_lanes(tmp_path: Path) -> None:
     assert cycle.material_progress is True
     assert b'"material_progress":true' in manifest
     assert b'"schema_version":2' in manifest
+    assert b'"experiments/manifest.json"' in manifest
 
 
 def test_cycle_rejects_autonomous_parent_problem_solve_claim(tmp_path: Path) -> None:
