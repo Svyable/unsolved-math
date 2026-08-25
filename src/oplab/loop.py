@@ -3,8 +3,9 @@ from __future__ import annotations
 import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 
 from oplab.artifacts import atomic_write_bytes, model_jsonl_bytes, read_model_jsonl
 from oplab.cycle_store import load_cycle
@@ -20,8 +21,15 @@ class LoopHistoryEntry(BaseModel):
     cycle_id: str
     problem_id: str
     completed_at: datetime
-    material_progress: bool
+    material_progress: Literal[True]
     conclusion: ResearchConclusion
+
+    @field_validator("completed_at")
+    @classmethod
+    def completion_time_is_aware(cls, value: datetime) -> datetime:
+        if value.tzinfo is None:
+            raise ValueError("completed_at must include a timezone")
+        return value
 
 
 class SelectionDecision(BaseModel):

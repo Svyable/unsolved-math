@@ -103,11 +103,18 @@ and are proposed through a single review PR. See
 [`config/research-loop.toml`](config/research-loop.toml).
 
 ```bash
+uv run oplab loop preflight
 uv run oplab loop next
 uv run oplab loop validate-cycle cases/<problem-id>/cycles/<cycle-id>
 uv run oplab loop build-manifest cases/<problem-id>/cycles/<cycle-id>
+uv run oplab loop verify-manifest cases/<problem-id>/cycles/<cycle-id>
 uv run oplab loop record-cycle cases/<problem-id>/cycles/<cycle-id>
 ```
+
+Before the first tracked dataset sync exists, `config/first-run.json` supplies a
+short-lived, source-pinned fallback candidate so the first cycle can calibrate
+the evidence pipeline. It is explicitly provisional and not a substitute for
+the deterministic ranking queue.
 
 ## Scheduled synchronization
 

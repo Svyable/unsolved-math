@@ -13,5 +13,10 @@ Before changing research artifacts, read `docs/research-integrity.md` and
 - Use primary sources for literature claims and label unavailable evidence.
 - Store research only under `cases/<problem-id>/cycles/<cycle-id>/`.
 - Validate cycle hashes and the two-lane contract before proposing a PR.
+- Run `oplab loop preflight` before research; never improvise a ranking when the
+  ranked queue is absent.
+- Keep theory and verification evidence in distinct files and record why the
+  verification context is independent.
+- Build and verify the packet manifest before recording a cycle.
 - Use `automation/hourly-research-loop` for recurring work and preserve human
   review on `main`.

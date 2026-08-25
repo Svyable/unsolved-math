@@ -11,8 +11,13 @@ import typer
 from oplab.artifacts import atomic_write_bytes, read_model_jsonl
 from oplab.config import load_ranking_config
 from oplab.constants import UNVERIFIED_WARNING
-from oplab.cycle_store import build_cycle_manifest, validate_cycle_directory
+from oplab.cycle_store import (
+    build_cycle_manifest,
+    validate_cycle_directory,
+    verify_cycle_manifest,
+)
 from oplab.errors import OplabError
+from oplab.launch import assess_loop_readiness
 from oplab.loop import (
     LoopHistoryEntry,
     append_cycle_history,
@@ -229,6 +234,33 @@ def loop_next(
     typer.echo(decision.model_dump_json(indent=2))
 
 
+@loop_app.command("preflight")
+def loop_preflight(
+    as_of: Annotated[
+        str | None, typer.Option(help="ISO timestamp for deterministic readiness checks.")
+    ] = None,
+    repo_root: Annotated[Path, typer.Option(help="Repository root.")] = Path("."),
+) -> None:
+    """Confirm that one honest ranked or pinned-provisional cycle can start."""
+
+    if as_of is None:
+        effective_time = datetime.now(UTC)
+    else:
+        try:
+            effective_time = datetime.fromisoformat(as_of.replace("Z", "+00:00"))
+        except ValueError as exc:
+            raise typer.BadParameter("as-of must be an ISO timestamp") from exc
+        if effective_time.tzinfo is None:
+            effective_time = effective_time.replace(tzinfo=UTC)
+    try:
+        report = assess_loop_readiness(repo_root.resolve(), as_of=effective_time)
+    except OplabError as exc:
+        _fail(str(exc))
+    typer.echo(report.model_dump_json(indent=2))
+    if not report.ready:
+        raise typer.Exit(code=1)
+
+
 @loop_app.command("validate-cycle")
 def loop_validate_cycle(
     cycle_dir: Annotated[Path, typer.Argument(help="Directory containing cycle.json.")],
@@ -260,6 +292,18 @@ def loop_build_manifest(
     typer.echo(str(resolved / "manifest.json"))
 
 
+@loop_app.command("verify-manifest")
+def loop_verify_manifest(
+    cycle_dir: Annotated[Path, typer.Argument(help="Directory containing manifest.json.")],
+) -> None:
+    """Verify the cycle contract and canonical hashes for every packet file."""
+
+    report = verify_cycle_manifest(cycle_dir.resolve())
+    typer.echo(report.model_dump_json(indent=2))
+    if not report.valid:
+        raise typer.Exit(code=1)
+
+
 @loop_app.command("record-cycle")
 def loop_record_cycle(
     cycle_dir: Annotated[Path, typer.Argument(help="Validated cycle directory.")],
@@ -268,7 +312,7 @@ def loop_record_cycle(
     """Append a validated material-progress cycle to the anti-thrashing history."""
 
     resolved = cycle_dir.resolve()
-    report = validate_cycle_directory(resolved)
+    report = verify_cycle_manifest(resolved)
     if not report.valid:
         typer.echo(report.model_dump_json(indent=2))
         raise typer.Exit(code=1)
@@ -308,6 +352,7 @@ def doctor_command(
         "python_3_12_or_newer": sys.version_info >= (3, 12),
         "ranking_config": (resolved_root / "config" / "ranking.toml").is_file(),
         "research_loop_config": (resolved_root / "config" / "research-loop.toml").is_file(),
+        "first_run_launch_card": (resolved_root / "config" / "first-run.json").is_file(),
         "current_manifest": (resolved_root / "data" / "current" / "manifest.json").is_file(),
         "local_snapshot_directory": str(resolved_root / ".oplab" / "snapshots"),
     }
@@ -316,5 +361,6 @@ def doctor_command(
         not checks["python_3_12_or_newer"]
         or not checks["ranking_config"]
         or not checks["research_loop_config"]
+        or not checks["first_run_launch_card"]
     ):
         raise typer.Exit(code=1)

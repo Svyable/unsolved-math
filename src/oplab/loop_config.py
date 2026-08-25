@@ -32,16 +32,26 @@ class BudgetConfig(BaseModel):
 class RequirementConfig(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
+    cycle_schema_version: Literal[2]
     theory_progress_units: int = Field(ge=1)
     verification_progress_units: int = Field(ge=1)
     independent_verification_checks: int = Field(ge=1)
     counterexample_search_first: bool
+    distinct_evidence_paths: bool
+    verified_packet_manifest: bool
     human_review_before_merge: bool
 
     @model_validator(mode="after")
     def review_gate_cannot_be_disabled(self) -> RequirementConfig:
-        if not self.human_review_before_merge:
-            raise ValueError("human_review_before_merge is a non-negotiable safety boundary")
+        required = {
+            "counterexample_search_first": self.counterexample_search_first,
+            "distinct_evidence_paths": self.distinct_evidence_paths,
+            "verified_packet_manifest": self.verified_packet_manifest,
+            "human_review_before_merge": self.human_review_before_merge,
+        }
+        disabled = sorted(name for name, enabled in required.items() if not enabled)
+        if disabled:
+            raise ValueError(f"non-negotiable research boundaries disabled: {disabled}")
         return self
 
 

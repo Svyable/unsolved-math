@@ -14,8 +14,11 @@ disk_megabytes = 512
 network_access = "allowlisted-primary-sources-only"
 
 [requirements]
+cycle_schema_version = 2
 theory_progress_units = 1
 verification_progress_units = 1
 independent_verification_checks = 1
 counterexample_search_first = true
+distinct_evidence_paths = true
+verified_packet_manifest = true
 human_review_before_merge = true

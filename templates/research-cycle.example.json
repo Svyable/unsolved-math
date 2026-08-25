@@ -1,8 +1,25 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "cycle_id": "20260825T230000Z-example-001",
   "problem_id": "EXAMPLE-001",
-  "upstream_snapshot_revision": "immutable-upstream-sha",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "EXAMPLE-001",
+    "title": "Synthetic example",
+    "statement": "A bounded synthetic conjecture.",
+    "statement_sha256": "82c0e9acd3be69d836effd808a71c47d7ed35e618a7bb9d258136737f7702043",
+    "upstream_dataset": "local/synthetic-fixture",
+    "upstream_revision": "immutable-upstream-revision",
+    "upstream_file_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "frozen_at": "2026-08-25T22:59:00Z",
+    "source_urls": [
+      "https://example.test/synthetic-statement",
+      "https://example.test/synthetic-method"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Example only; not a live problem selection.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
   "parent_cycle_id": null,
   "started_at": "2026-08-25T23:00:00Z",
   "completed_at": "2026-08-25T23:45:00Z",
@@ -18,6 +35,8 @@
         "claim_id": "claim-1",
         "statement": "The bounded synthetic subclaim holds for the enumerated domain.",
         "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "One enumerated object violates the subclaim.",
         "dependencies": []
       }
     ],
@@ -42,8 +61,10 @@
       {
         "check_id": "check-1",
         "claim_ids": ["claim-1"],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
         "method": "Independent exhaustive implementation and boundary audit",
         "independent_context": true,
+        "independence_basis": "Separate implementation using only the frozen target and raw inputs.",
         "result": "The independent implementation agrees on the bounded domain only.",
         "reproduction_command": "python experiments/verify.py",
         "evidence": [

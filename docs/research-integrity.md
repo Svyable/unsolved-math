@@ -49,8 +49,11 @@ Each accepted cycle must contain:
 - one evidence-linked theory progress unit;
 - one evidence-linked independent-verification progress unit;
 - at least one verification check with fresh context;
+- distinct theory and verification evidence paths plus an explicit
+  independence basis;
 - a conclusion from the restricted unresolved/sublemma vocabulary;
-- SHA-256 references for every artifact used to justify progress.
+- an exact frozen statement and upstream file provenance;
+- a canonical manifest with SHA-256 hashes for every packet file.
 
 If no progress exists, the loop must say so. A verified counterexample, a proof
 gap that retires an approach, or a reproducible blocker can be material negative

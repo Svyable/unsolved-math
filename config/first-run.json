@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-25T23:45:00Z",
+  "expires_at": "2026-08-27T23:45:00Z",
+  "purpose": "Short-lived, pinned fallback for the first cycle only when the deterministic research queue is unavailable. This ordering is not a research ranking.",
+  "candidates": [
+    {
+      "problem_id": "COMB-001",
+      "title": "The Hadwiger-Nelson Problem",
+      "statement": "What is the minimum number of colors needed to color the points of the plane such that no two points at distance 1 have the same color?",
+      "statement_sha256": "cddbd1718b01fea3368e9769521f36f9ea6485a6b4e8bee15aec042dbfd266c3",
+      "imported_status": "open",
+      "difficulty_level": 3,
+      "category": "Combinatorics",
+      "selection_basis": "PROVISIONAL_BOOTSTRAP_NOT_RANKED",
+      "upstream_dataset": "ulamai/UnsolvedMath",
+      "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+      "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+      "observed_at": "2026-08-25T23:30:00Z",
+      "source_urls": [
+        "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+        "https://arxiv.org/abs/1804.02385",
+        "https://arxiv.org/abs/1805.12181",
+        "https://github.com/marijnheule/CNP-SAT/tree/bb414955a6ef5f49f7df2b245b1e778aa67c068a"
+      ],
+      "bounded_target": "Reproduce one published 4-uncolorability certificate for a pinned finite unit-distance graph, then isolate one explicit forced-coloring implication that can seed a reduction search.",
+      "theory_starting_points": [
+        "Translate 4-colorability into a symmetry-broken SAT model and map proof clauses back to forced-coloring implications.",
+        "Treat a checked unsatisfiable core as a hypergraph and look for a human-auditable forcing chain or removable vertex orbit."
+      ],
+      "falsification_targets": [
+        "Search for any edge whose pinned coordinates are not at unit distance under exact arithmetic.",
+        "Build an independent coloring encoding and search for a valid 4-coloring of the claimed certificate graph.",
+        "Check whether symmetry-breaking clauses accidentally remove legitimate colorings."
+      ],
+      "baseline_verification": "Verify the pinned graph, CNF mapping, and published proof/checker path before treating any reduced core or forcing implication as evidence.",
+      "novelty_boundary": "Reproducing the published lower-bound certificate is baseline verification, not novel progress on the parent problem. Any newly reduced core or forcing lemma remains unverified until independently checked and human reviewed.",
+      "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+    }
+  ]
+}
