@@ -139,10 +139,15 @@ def _provisional_candidate_outside_cooldown(
     max_consecutive: int,
 ) -> LaunchCandidate | None:
     recent_cutoff = as_of - timedelta(hours=cooldown_hours)
+    visible_history = [entry for entry in history if entry.completed_at <= as_of]
     recent_problem_ids = {
-        entry.problem_id for entry in history if entry.completed_at > recent_cutoff
+        entry.problem_id
+        for entry in visible_history
+        if entry.completed_at > recent_cutoff
     }
-    ordered_history = sorted(history, key=lambda entry: entry.completed_at, reverse=True)
+    ordered_history = sorted(
+        visible_history, key=lambda entry: entry.completed_at, reverse=True
+    )
     consecutive_id = ordered_history[0].problem_id if ordered_history else None
     consecutive_count = 0
     for entry in ordered_history:
