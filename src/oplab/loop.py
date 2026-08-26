@@ -61,15 +61,18 @@ def select_next_candidate(
     now = as_of or datetime.now(UTC)
     candidates = queue[: config.selection.top_k]
     recent_cutoff = now - timedelta(hours=config.selection.cooldown_hours)
+    visible_history = [entry for entry in history if entry.completed_at <= now]
     last_by_problem: dict[str, datetime] = {}
-    for entry in history:
+    for entry in visible_history:
         previous = last_by_problem.get(entry.problem_id)
         if previous is None or entry.completed_at > previous:
             last_by_problem[entry.problem_id] = entry.completed_at
 
     consecutive_problem: str | None = None
     consecutive_count = 0
-    for entry in sorted(history, key=lambda value: value.completed_at, reverse=True):
+    for entry in sorted(
+        visible_history, key=lambda value: value.completed_at, reverse=True
+    ):
         if consecutive_problem is None:
             consecutive_problem = entry.problem_id
             consecutive_count = 1

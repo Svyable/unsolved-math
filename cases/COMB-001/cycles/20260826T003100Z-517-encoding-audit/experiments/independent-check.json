@@ -1,0 +1,119 @@
+{
+  "boundary_and_counterexample_search": {
+    "extra_tautology_mutation": {
+      "detected": true,
+      "missing": 0,
+      "unexpected": 1
+    },
+    "missing_clause_mutation": {
+      "detected": true,
+      "missing": 1,
+      "unexpected": 0
+    },
+    "triangle_edge_removal_mutations": [
+      {
+        "missing_clauses": 0,
+        "removed_edge": [
+          1,
+          2
+        ],
+        "triangle_precondition": false,
+        "unexpected_clauses": 4
+      },
+      {
+        "missing_clauses": 0,
+        "removed_edge": [
+          1,
+          6
+        ],
+        "triangle_precondition": false,
+        "unexpected_clauses": 4
+      },
+      {
+        "missing_clauses": 0,
+        "removed_edge": [
+          2,
+          6
+        ],
+        "triangle_precondition": false,
+        "unexpected_clauses": 4
+      }
+    ]
+  },
+  "cnf": {
+    "clauses": 13935,
+    "duplicate_clauses": 0,
+    "tautological_clauses": 0,
+    "variables": 2068
+  },
+  "exact_clause_accounting": {
+    "at_least_one_or_unit_lock": 517,
+    "at_most_one": 3102,
+    "edge_same_color_exclusion": 10316,
+    "expected_total": 13935,
+    "missing": 0,
+    "unexpected": 0
+  },
+  "graph": {
+    "duplicate_edges": 0,
+    "edges": 2579,
+    "self_loops": 0,
+    "vertex_range": [
+      1,
+      517
+    ],
+    "vertices": 517
+  },
+  "inputs": {
+    "cnf": {
+      "bytes": 182753,
+      "path": "517-4-sbp.cnf",
+      "sha256": "c9757e78853383462ca20b4702fc6b1cc46d88c5de71d305726396856f4765b8"
+    },
+    "edge": {
+      "bytes": 24567,
+      "path": "517.edge",
+      "sha256": "dc5085db9682aa246c3fc56efed9767e2a294a43e621a3e67a690d0489bdadc9"
+    }
+  },
+  "method": "independent Python standard-library parser and exact clause-set equality",
+  "remaining_obligations": [
+    "No coordinate file was checked, so the graph's unit-distance embedding remains unverified.",
+    "No SAT/DRAT proof was checked, so CNF unsatisfiability remains unverified.",
+    "The finite certificate audit does not determine the plane's chromatic number."
+  ],
+  "result": "PASS: the pinned CNF exactly matches the symmetry-fixed exact-one 4-coloring encoding of the pinned graph.",
+  "schema_version": 1,
+  "symmetry_breaking": {
+    "equisatisfiability_argument": "Every proper coloring gives the triangle three distinct colors; a global color permutation maps them to 1, 2, and 3 without changing propriety.",
+    "locks": [
+      {
+        "color": 1,
+        "vertex": 1
+      },
+      {
+        "color": 2,
+        "vertex": 2
+      },
+      {
+        "color": 3,
+        "vertex": 6
+      }
+    ],
+    "triangle_edges": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        6
+      ]
+    ],
+    "triangle_present": true
+  }
+}

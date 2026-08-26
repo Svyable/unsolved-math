@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "accessed_at": "2026-08-26T00:35:00Z",
+  "capture_policy": "Metadata and hashes only; source bytes were not copied into the cycle packet.",
+  "artifacts": [
+    {
+      "name": "517.edge",
+      "repository": "marijnheule/CNP-SAT",
+      "revision": "bb414955a6ef5f49f7df2b245b1e778aa67c068a",
+      "path": "edge/517.edge",
+      "url": "https://github.com/marijnheule/CNP-SAT/blob/bb414955a6ef5f49f7df2b245b1e778aa67c068a/edge/517.edge",
+      "git_blob_sha1": "05f8e6476a47ddffa14d9edf2edefa23f3c10ada",
+      "sha256": "dc5085db9682aa246c3fc56efed9767e2a294a43e621a3e67a690d0489bdadc9",
+      "bytes": 24567
+    },
+    {
+      "name": "517-4-sbp.cnf",
+      "repository": "marijnheule/CNP-SAT",
+      "revision": "bb414955a6ef5f49f7df2b245b1e778aa67c068a",
+      "path": "cnf/517-4-sbp.cnf",
+      "url": "https://github.com/marijnheule/CNP-SAT/blob/bb414955a6ef5f49f7df2b245b1e778aa67c068a/cnf/517-4-sbp.cnf",
+      "git_blob_sha1": "4c8d7bdebdc630e803d2eaeb0a9ee195bf514afa",
+      "sha256": "c9757e78853383462ca20b4702fc6b1cc46d88c5de71d305726396856f4765b8",
+      "bytes": 182753
+    }
+  ],
+  "primary_sources": [
+    {
+      "identifier": "arXiv:1804.02385",
+      "url": "https://arxiv.org/abs/1804.02385",
+      "claim_checked": "The abstract reports finite plane unit-distance graphs that are not four-colorable and a smallest then-known example with 1,581 vertices.",
+      "result": "PRIMARY_SOURCE_SUPPORTED"
+    },
+    {
+      "identifier": "arXiv:1805.12181",
+      "url": "https://arxiv.org/abs/1805.12181",
+      "claim_checked": "The abstract reports SAT-based reduction to 553-vertex unit-distance graphs and mechanical validation of non-four-colorability.",
+      "result": "PRIMARY_SOURCE_SUPPORTED"
+    }
+  ],
+  "conflict_notes": [
+    "The 2018 Heule abstract names 553-vertex graphs, while the pinned repository contains a 517-vertex artifact. This packet does not infer that the abstract documents the exact 517-vertex bytes."
+  ]
+}
