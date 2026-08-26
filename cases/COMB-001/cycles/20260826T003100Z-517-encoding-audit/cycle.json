@@ -1,0 +1,189 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260826T003100Z-517-encoding-audit",
+  "problem_id": "COMB-001",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "COMB-001",
+    "title": "The Hadwiger-Nelson Problem",
+    "statement": "What is the minimum number of colors needed to color the points of the plane such that no two points at distance 1 have the same color?",
+    "statement_sha256": "cddbd1718b01fea3368e9769521f36f9ea6485a6b4e8bee15aec042dbfd266c3",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-26T00:31:00Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://arxiv.org/abs/1804.02385",
+      "https://arxiv.org/abs/1805.12181",
+      "https://github.com/marijnheule/CNP-SAT/tree/bb414955a6ef5f49f7df2b245b1e778aa67c068a"
+    ],
+    "imported_status": "open (unverified external metadata)",
+    "selection_basis": "PROVISIONAL_BOOTSTRAP_NOT_RANKED: the ranked queue and tracked dataset manifest were absent; repository preflight validated this unexpired pinned launch card, and no local pinned dataset snapshot was available for deterministic synchronization restoration.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-26T00:31:00Z",
+  "completed_at": "2026-08-26T00:40:57Z",
+  "selection_basis": "PROVISIONAL_BOOTSTRAP_NOT_RANKED: selected only from the unexpired first-run card after preflight; this selection is not a research ranking.",
+  "theory": {
+    "target": "For the pinned 517-vertex graph and symmetry-broken CNF, determine exact clause-level equivalence to a four-coloring encoding and justify only the three explicit color locks.",
+    "definitions": [
+      "For vertex v and color c in {1,2,3,4}, x(v,c)=4(v-1)+c denotes that v receives c.",
+      "Exact-one coloring uses one at-least-one clause and six pairwise at-most-one clauses per unlocked vertex; a locked vertex uses its positive unit clause instead of the at-least-one clause.",
+      "Proper coloring adds one same-color exclusion clause for every graph edge and every color.",
+      "Equisatisfiable up to color symmetry means a global permutation of color names maps models between the ordinary and locked encodings."
+    ],
+    "assumptions": [
+      "The fetched files match their recorded SHA-256 digests.",
+      "DIMACS variables follow x(v,c)=4(v-1)+c.",
+      "Color names have no semantics beyond equality and inequality.",
+      "No unit-distance embedding or CNF unsatisfiability claim is assumed."
+    ],
+    "approaches_considered": [
+      "Generate the canonical clause set from the graph and demand exact set equality with the pinned CNF; executed in this cycle.",
+      "Check the published SAT proof, minimize a verified unsatisfiable core, and translate core clauses into a human-auditable forcing chain; deferred until proof and checker artifacts are pinned."
+    ],
+    "falsification_targets": [
+      "A malformed graph row, loop, duplicate, out-of-range endpoint, or count mismatch.",
+      "Any missing, unexpected, duplicate, tautological, or out-of-range CNF clause.",
+      "Absence of any one of triangle edges {1,2}, {1,6}, or {2,6}.",
+      "Any additional semantics that is not invariant under a global color permutation."
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "The pinned edge file parses as a simple graph on 517 vertices with 2,579 distinct edges.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A strict parse finds an input-hash mismatch, malformed row, loop, duplicate edge, out-of-range endpoint, or count mismatch.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C2",
+        "statement": "The 13,935 pinned CNF clauses are exactly the symmetry-fixed exact-one four-coloring encoding of the pinned graph, with zero missing or unexpected clauses.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Exact clause-set comparison finds any missing or unexpected clause, or strict parsing finds an invalid clause.",
+        "dependencies": [
+          "C1"
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The unit locks assigning colors 1, 2, and 3 to vertices 1, 2, and 6 preserve satisfiability under global color permutation because those vertices induce a triangle.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any triangle edge is absent or the formula contains non-permutation-invariant color semantics.",
+        "dependencies": [
+          "C1"
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "statement": "The two cited arXiv abstracts support historical finite non-four-colorability and SAT-reduction claims but do not fingerprint the exact 517-vertex files audited here.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "A cited primary version explicitly identifies and fingerprints the exact 517-vertex edge and CNF byte streams.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "EQUIVALENT_REFORMULATION",
+        "summary": "The opaque pinned CNF is reduced to an exact, clause-accounted graph-coloring formulation, and its only three color locks are justified by a K3 color-permutation lemma.",
+        "claim_ids": [
+          "C2",
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "df1371ba2c6f8ace26e382c42549c70819538a7bccdf443bcf1f0316573b6223",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Begin with adversarial clause and triangle-edge mutations, then run a fresh Python strict parser and exact expected-clause generator against the two hash-pinned inputs.",
+        "independent_context": true,
+        "independence_basis": "The verification implementation was written in dependency-free Python from the raw edge/CNF formats after a separate JavaScript clause-accounting derivation; it did not consume the theory conclusion or reuse its code.",
+        "result": "PASS for structural scope: 517 vertices, 2,579 edges, 2,068 variables, 13,935 expected clauses, zero missing and zero unexpected; all three lock vertices form a triangle and every adversarial mutation was detected.",
+        "reproduction_command": "python experiments/verify_coloring_encoding.py --edge /path/to/517.edge --cnf /path/to/517-4-sbp.cnf --output experiments/independent-check.json",
+        "evidence": [
+          {
+            "path": "experiments/independent-check.json",
+            "sha256": "88a5d52a3219e4adeca22fa4278fe13a6dfbe0a224b0518ab53db0c6e6fc23d4",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "No coordinate/unit-distance audit was performed.",
+          "No SAT or DRAT unsatisfiability check was performed."
+        ]
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "C4"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Read the current arXiv abstract records for 1804.02385 and 1805.12181 and compare their explicit graph-size claims with the pinned repository artifacts.",
+        "independent_context": true,
+        "independence_basis": "The citation check used primary arXiv records and pinned repository metadata directly, with claim-to-source mapping and an explicit conflict note.",
+        "result": "The abstracts support the 1,581- and 553-vertex historical claims, while the exact 517-byte lineage remains a separate repository-provenance obligation.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/provenance.json",
+            "sha256": "5756f813b2a34fd0a8a534ee0186f052fab5dbe594364878ea14d5cd67ac32aa",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "The arXiv abstracts alone do not identify the exact 517-vertex byte streams."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROG1",
+        "kind": "PROOF_GAP_IDENTIFIED",
+        "summary": "Independent checking isolated the exact remaining certificate obligations: verify a coordinate/unit-distance embedding, verify CNF unsatisfiability with a pinned proof checker, and audit the paper-to-artifact lineage.",
+        "claim_ids": [
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "33726fa4e5ef619dced4ab99f479180613bbfdc43d2585b6269d52331b831070",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "The graph's unit-distance embedding has not been checked from exact coordinates.",
+      "The pinned CNF's unsatisfiability has not been checked with a SAT/DRAT proof.",
+      "The exact primary-source lineage of the 517-vertex artifacts needs further audit.",
+      "This finite structural audit does not determine the parent problem."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "CONTINUE",
+  "next_step": "Pin the coordinate and proof artifacts for the same 517-vertex certificate; independently verify exact unit distances and run a pinned DRAT checker before extracting a non-symmetry forcing implication."
+}
