@@ -42,3 +42,27 @@ def test_selection_respects_cooldown(project_root: Path) -> None:
 
     assert decision.selected is not None
     assert decision.selected.problem_id == "NEXT-002"
+
+
+def test_selection_ignores_history_after_as_of(project_root: Path) -> None:
+    config, _ = load_research_loop_config(project_root / "config" / "research-loop.toml")
+    as_of = datetime(2026, 8, 25, 23, 30, tzinfo=UTC)
+    future_history = [
+        LoopHistoryEntry(
+            cycle_id="future-cycle",
+            problem_id="TOP-001",
+            completed_at=datetime(2026, 8, 26, 0, 30, tzinfo=UTC),
+            material_progress=True,
+            conclusion=ResearchConclusion.CONTINUE,
+        )
+    ]
+
+    decision = select_next_candidate(
+        [_ranked("TOP-001", 95), _ranked("NEXT-002", 90)],
+        future_history,
+        config,
+        as_of=as_of,
+    )
+
+    assert decision.selected is not None
+    assert decision.selected.problem_id == "TOP-001"
