@@ -1,0 +1,30 @@
+{
+  "runs": [
+    {
+      "command": [
+        "/workspace/scratch/1faac0a7d2ae/research9/.venv/bin/python3",
+        "-I",
+        "theory.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.028,
+      "stdout_sha256": "81b156d14ee81e48c0f33c92157e01952974d1abe9921cc09c9d77eb9699e543",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspace/scratch/1faac0a7d2ae/research9/.venv/bin/python3",
+        "-I",
+        "verify.py",
+        "theory-output.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.746,
+      "stdout_sha256": "e873d8064216a791a8e63cc4e9ba491e6a211b14419b8538fa7d2aa720131c1d",
+      "stderr": ""
+    }
+  ],
+  "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+  "core_matches": true,
+  "isolation": "Fresh -I interpreters and empty environments; CPU, wall, memory and file limits. No network code; no OS network namespace. Same-assistant authorship, not independent human/model review."
+}

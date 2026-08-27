@@ -1,0 +1,23 @@
+{
+  "inspection_date": "2026-08-27",
+  "sources": [
+    {
+      "url": "https://aimath.org/WWN/braidgroups/braidgroups.pdf",
+      "sha256": "88f54825edb119532be13ece404988f8ed82dfef4716d24397e110743c19c1e9",
+      "locator": "Printed pages 4-5, final bullet of Problem 1.2, before Problem 1.3",
+      "finding": "The opening Problem 1.1 text is a cross-reference inside a continued bullet, not the item's number."
+    },
+    {
+      "url": "https://arxiv.org/pdf/1212.2876v1",
+      "retrieved_url": "https://arxiv.org/pdf/1212.2876",
+      "version_from_pdf_header": "1212.2876v1, 2012-12-12",
+      "authors": ["Michael Cuntz", "Christian Stump"],
+      "sha256": "b768d3f6177d37d14deab15c7777f7d75eddfcf8897081f4b6f103c476051e3b",
+      "locator": "Introduction page 2; Property 4 page 4; Table 2 page 5; section 3.1 page 7; Figure 1 page 8",
+      "finding": "Supplies the dihedral H target and abstract poset; warns that real-cone root comparison lacks desired properties."
+    }
+  ],
+  "methods": ["Primary PDF web inspection", "Separate byte downloads, SHA-256 and local text inspection"],
+  "capture_policy": "Metadata and short derived paraphrases only; full copyrighted PDFs not committed.",
+  "boundary": "Known-result calibration. No complete proof, H4, novelty or current-status review. Imported metadata remains unverified."
+}

@@ -1,0 +1,285 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T152756Z-dihedral-cone-obstruction",
+  "problem_id": "AIM-PROBABILITY-0144",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-PROBABILITY-0144",
+    "title": "A split source fragment and the dihedral noncrystallographic H-triangle",
+    "statement": "Problem 1.1). But there is currently no idea how to generalize these objects to the noncrystallographic types. To what extent can the nonnesting partitions and root order be generalized to noncrystallographic types? Presumably, there are objects which can not be general-ized in their current form, such as Lie algebras and affine hyperplane arrangements. Generalize where possible, and explain where there are essential barriers to this gen-eralization. Cathy Kriloff and Arun Ram have dealt with some of these issues in studying the representation theory of noncrystallographic types [33]. Fr´ ed´ eric Chapoton's conjecture gives a way to define the H-triangle for all finite Coxeter groups [18]. What object is it counting in the noncrystallographic types?",
+    "statement_sha256": "9261911c57e66020e63bf491515aa249f182790f152c91f70a153ec4a4630bc1",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T15:27:56.363360Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimath.org/WWN/braidgroups/braidgroups.pdf",
+      "https://arxiv.org/pdf/1212.2876v1"
+    ],
+    "imported_status": "open",
+    "selection_basis": "RANKED_QUEUE: rank 9, score 77.25; ranks 1-8 in cooldown; highest eligible of top 25; no fallback.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T15:27:56.363360Z",
+  "completed_at": "2026-08-27T15:33:28.069684Z",
+  "selection_basis": "RANKED_QUEUE: rank 9, score 77.25; ranks 1-8 in cooldown; highest eligible of top 25; no fallback.",
+  "theory": {
+    "target": "Test whether the real-cone order on the equal-length I2(5) positive roots has the desired H-triangle and Panyushev orbit profile; certify minimal abstract extensions, not a geometric root-order repair or H4 result.",
+    "definitions": [
+      "phi is the positive root of X^2-X-1; coordinates use the fixed simple-root basis and positive definite Gram matrix.",
+      "Cone order compares both real coordinates; an antichain has no distinct comparable pair.",
+      "H(s,t) marks the number of simple roots by s and total antichain size by t.",
+      "Panyushev sends an antichain to minimal elements outside its generated down-set.",
+      "An abstract extension preserves every old strict relation and exactly the two marked minima."
+    ],
+    "assumptions": [
+      "Exact equal-length I2(5) input; no floating-point tolerance.",
+      "Fixed labels; abstract m>=3 models; finite census m=3..6 and profile tests m=3..10.",
+      "Desired H is a sourced target, not assumed to describe the cone.",
+      "Abstract added relations are not asserted to be geometric root comparisons."
+    ],
+    "approaches_considered": [
+      "Exact phi-ring reflection closure, cone comparisons and direct antichains.",
+      "V-then-chain construction and permutations of its nonsimple labels.",
+      "Independent full directed-pair census filtered by order axioms and ideal maxima."
+    ],
+    "falsification_targets": [
+      "A cone antichain or orbit inconsistent with the desired profile.",
+      "A missing successful abstract extension or a transitivity/minimality violation.",
+      "A failure of field signs, reflection closure, marked-root convention or source placement."
+    ],
+    "claims": [
+      {
+        "claim_id": "CONE",
+        "statement": "The real-cone order on the specified equal-length I2(5) roots does not have the desired H-triangle: its H is 1+2st+3t+s^2*t^2+t^2, with eight antichains and Panyushev orbit lengths [2,2,4], rather than seven and [2,5]. The extra nonsimple pair consists of (phi,1) and (1,phi).",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong exact root realization, coordinate sign, extra antichain, H coefficient or orbit cycle would defeat this obstruction certificate. The falsified proposal is that cone order meets the target.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "REFINEMENT",
+        "statement": "Exactly two labelled strict-order extensions of the cone retain the two simple minima and meet the target H: add 2<3 or add 3<2. Each adds one relation, is minimal, has seven antichains and orbit lengths [2,5]. These are abstract refinements, not true geometric comparisons.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing successful extension, an invalid poset axiom, a smaller successful addition, or a mismatch in the complete antichain/orbit profile.",
+        "dependencies": [
+          "CONE"
+        ]
+      },
+      {
+        "claim_id": "RIGIDITY",
+        "statement": "For every m>=3, a poset with exactly two marked minima and H=1+2st+(m-2)t+s^2*t^2 is a V-then-chain; there are (m-2)! labelled orders and Panyushev orbit lengths [2,m]. This ordinary derived argument remains unverified by a kernel or independent author; finite checks cover only the specified ranges.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A further incomparable pair consistent with that H, a non-chain remainder, a marked-minima counterexample or a failure of the displayed general orbit.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "The frozen passage continues Problem 1.2 across AIM printed pages 4-5. Cuntz-Stump v1 gives the dihedral target H and abstract poset while warning against real-cone comparison. Only this source context and convention are audited, not a current-status or full-paper theorem claim.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Primary-source location, H-variable convention, or the specified warning differs from the cited locators.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact I2(5) roots exhibit the extra nonsimple antichain and [2,2,4] orbit profile, retiring the cone-order shortcut.",
+        "claim_ids": [
+          "CONE"
+        ],
+        "evidence": [
+          {
+            "path": "theory-output.json",
+            "sha256": "81b156d14ee81e48c0f33c92157e01952974d1abe9921cc09c9d77eb9699e543",
+            "media_type": "application/json"
+          },
+          {
+            "path": "theory.md",
+            "sha256": "0f62b7c6abc48af79e22465108f5eb013602defe43829d776ef5f6b7586c6660",
+            "media_type": "text/markdown"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Two one-relation abstract refinements are certified and distinguished from geometric comparison; their full seven-antichain and [2,5] profiles are stored.",
+        "claim_ids": [
+          "REFINEMENT"
+        ],
+        "evidence": [
+          {
+            "path": "theory-output.json",
+            "sha256": "81b156d14ee81e48c0f33c92157e01952974d1abe9921cc09c9d77eb9699e543",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T3",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "The extraction boundary and published abstract dihedral target are pinned without importing a status or novelty claim.",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "0f62b7c6abc48af79e22465108f5eb013602defe43829d776ef5f6b7586c6660",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "CONE",
+          "REFINEMENT",
+          "RIGIDITY"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Counterexample and ten boundaries first; radical arithmetic and rotation closure; ideal-maxima enumeration; exhaustive pair-state census; complete profiles and seven corrupted-core checks.",
+        "independent_context": true,
+        "independence_basis": "The verifier baseline ran before theory code existed, reading only frozen input. Radical signs by squared comparison versus phi bisection; rotation closure versus reflection BFS; ideal maxima versus direct subsets; full pair-state census versus chain permutations. Fresh -I/empty-environment processes, distinct evidence. Same assistant and shared definitions, not independent human/model proof review.",
+        "result": "PASS within scope: ten roots, cone has eight antichains and [2,2,4]; exactly two one-relation refinements have seven and [2,5]. Census tests 188404 assignments, retains 4472 posets and finds 33 target orders. Eight family profiles match. Seven corrupted proposals rejected.",
+        "reproduction_command": "python -I reproduce.py",
+        "evidence": [
+          {
+            "path": "verification-output.json",
+            "sha256": "e873d8064216a791a8e63cc4e9ba491e6a211b14419b8538fa7d2aa720131c1d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification-baseline.json",
+            "sha256": "4eec4d524df64e4a1ed4eb0dbec1554575cf1d5ae04ae0398b398d433758f3aa",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "5f0692501995641640f2b31326c0de2d3cf3365493aafbc116492245a3870936",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "execution.json",
+            "sha256": "3575b3eeb7c0c8a94c094ba3450371856df01d70d768cde7101d41951c1d5551",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "Only the specified equal-length I2(5) cone and abstract rank-two models are audited; no H4, all-realization, full Chapoton-transform or representation-theoretic claim.",
+          "Both implementations and ordinary proof notes have same-assistant authorship. Different arithmetic/enumeration and fresh processes do not supply independent human/model review or kernel acceptance.",
+          "The all-m rigidity and orbit argument remains UNVERIFIED pending stronger review; bounded enumeration alone does not prove it. No novelty claim."
+        ]
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "RIGIDITY",
+          "REFINEMENT"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Check from definitions that the target H allows only the marked incomparable pair, forces a chain above the minima, and splits Panyushev into a two-cycle and an m-cycle; distinguish abstract refinement from coordinate comparison.",
+        "independent_context": true,
+        "independence_basis": "Separate definition-based verification notes rather than accepting the imported summary. Same-assistant ordinary proof audit only; universal reasoning is not formally checked.",
+        "result": "No gap found under the stated marked-minima hypotheses; the universal RIGIDITY claim remains UNVERIFIED pending independent or kernel review.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "5f0692501995641640f2b31326c0de2d3cf3365493aafbc116492245a3870936",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "Both implementations and ordinary proof notes have same-assistant authorship. Different arithmetic/enumeration and fresh processes do not supply independent human/model review or kernel acceptance.",
+          "The all-m rigidity and orbit argument remains UNVERIFIED pending stronger review; bounded enumeration alone does not prove it. No novelty claim."
+        ]
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Read AIM printed pages 4-5 and Cuntz-Stump v1 introduction, Property 4, Table 2 and section 3.1; separately download and hash PDFs and inspect local text.",
+        "independent_context": true,
+        "independence_basis": "Primary source evidence and frozen record, not theory conclusions or imported summaries; same-assistant review with distinct source evidence.",
+        "result": "PASS for the specified source locations, H convention and abstract-model warning only. Full proofs and current status were not reviewed.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "d20932558b7199a28b49e0d51429b62c6e005572b74ff6622aaa466a512c7d1d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "5f0692501995641640f2b31326c0de2d3cf3365493aafbc116492245a3870936",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "The frozen source fragment requires human scope review; no canonical statement or imported status was changed."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent arithmetic and enumeration reproduce the cone obstruction and minimal refinements; exhaustive census finds the same 33 labelled target orders and rejects seven altered certificates.",
+        "claim_ids": [
+          "CONE",
+          "REFINEMENT"
+        ],
+        "evidence": [
+          {
+            "path": "verification-output.json",
+            "sha256": "e873d8064216a791a8e63cc4e9ba491e6a211b14419b8538fa7d2aa720131c1d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "5f0692501995641640f2b31326c0de2d3cf3365493aafbc116492245a3870936",
+            "media_type": "text/markdown"
+          }
+        ]
+      },
+      {
+        "unit_id": "VP2",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "Primary PDF fingerprints and locators support the convention and source-boundary finding without promotion of imported metadata.",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "d20932558b7199a28b49e0d51429b62c6e005572b74ff6622aaa466a512c7d1d",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "The frozen source fragment requires human scope review; no canonical statement or imported status was changed.",
+      "Only the specified equal-length I2(5) cone and abstract rank-two models are audited; no H4, all-realization, full Chapoton-transform or representation-theoretic claim.",
+      "Both implementations and ordinary proof notes have same-assistant authorship. Different arithmetic/enumeration and fresh processes do not supply independent human/model review or kernel acceptance.",
+      "The all-m rigidity and orbit argument remains UNVERIFIED pending stronger review; bounded enumeration alone does not prove it. No novelty claim."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the cone obstruction and minimal abstract-refinement certificates; seek independent proof and human scope review before broader root-system work, then rotate to the next eligible candidate."
+}
