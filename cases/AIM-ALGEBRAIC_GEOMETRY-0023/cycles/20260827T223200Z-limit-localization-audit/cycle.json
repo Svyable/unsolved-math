@@ -1,0 +1,271 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T223200Z-limit-localization-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0023",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0023",
+    "title": "Tate-completion obstruction and finite torsion windows for the motivic filtration on TC of the sphere",
+    "statement": "The motivic filtration on the algebraic $K$-theory of the sphere spectrum\n\nDue to work of Rognes, Blumberg--Mandell, and others, we understand the algebraic K-theory of the sphere spectrum fairly well. Recent work of Hahn--Raksit--Wilson \\cite{arXiv:2206.11208} gives a motivic filtration on TC of $\\mathbb{E}_{\\infty}$-rings which is closely related to the motivic filtration on algebraic K-theory in motivic homotopy theory.\n\nCan one understand the motivic filtration (or motivic spectral sequence) on the $\\mathrm{TC}$ of the sphere spectrum? What about for the motivic filtration on related invariants such as $\\mathrm{THH}$, $\\mathrm{TP}$?",
+    "statement_sha256": "b2ba27656669895af6948aba5b7cf6e2be19c29ff1c059c442fa518c16439fa7",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T22:29:00.568696Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/equivstable/2/",
+      "https://arxiv.org/abs/2206.11208",
+      "https://stacks.math.columbia.edu/tag/00CM",
+      "https://arxiv.org/pdf/2403.06724v1"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 13, score 73.5; highest-ranked eligible candidate after merged PR16 history, 24-hour cooldown and anti-thrashing gates; not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T22:29:00.568696Z",
+  "completed_at": "2026-08-27T22:33:01.348004Z",
+  "selection_basis": "Rank 13, score 73.5; highest-ranked eligible candidate after merged PR16 history, 24-hour cooldown and anti-thrashing gates; not provisional.",
+  "theory": {
+    "target": "Audit the uniform-annihilator prerequisite for commuting rationalization with an inverse limit, using reduction towers Z/p^n and a bounded-exponent control; no computation of sphere TC or Tate spectra.",
+    "definitions": [
+      "A_n=Z/p^n with reduction maps; A consists of compatible sequences.",
+      "Rationalization is localization at nonzero integers.",
+      "A common annihilator is one integer killing every coordinate; stagewise annihilators may vary.",
+      "B_n=Z/p^min(n,2) is the bounded-exponent control."
+    ],
+    "assumptions": [
+      "All experimental objects are ordinary abelian groups, not spectra or filtered TC.",
+      "Tower transition is reduction modulo p^(n-1); level zero is the trivial group.",
+      "The ordinary infinite argument uses localization at nonzero integers and compatibility of all coordinates; it is not inferred from finite tests."
+    ],
+    "approaches_considered": [
+      "Valuation and cyclic-group order formulas.",
+      "Direct finite-group addition and exhaustive compatible paths.",
+      "Stagewise rationalization shortcut, retired without an extra continuity theorem."
+    ],
+    "falsification_targets": [
+      "Nonzero integer killing every unit coordinate.",
+      "Unit incompatibility or boundary errors.",
+      "Incorrect residue orders, fiber counts or bounded-exponent control."
+    ],
+    "claims": [
+      {
+        "claim_id": "FINITE",
+        "statement": "The two implementations agree on 32 finite groups comprising 4008 elements, 480 denominator escapes and 52 exponent escapes.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An incorrect additive order, residue, reduction fiber, path or omitted parameter.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "LIMIT",
+        "statement": "The ordinary compatible-unit argument gives a counterexample to commuting rationalization with inverse limit for Z/p^n. This universal argument is not independently authored or kernel verified.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A nonzero integer annihilating the entire unit sequence, an incompatible unit sequence, or a misapplication of module localization.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "REPAIR",
+        "statement": "A common nonzero annihilator suffices to make the rationalization of an ordinary inverse limit vanish; this condition holds for the capped-exponent control. Not a general spectral continuity theorem.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Failure of coordinatewise action or common annihilator in the specified control.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "GAP",
+        "statement": "Finite-stage rational vanishing alone does not supply the single annihilator needed for an element of the limit; the imported Tate and motivic claims need separate spectral comparison and convergence arguments.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A justified comparison theorem supplying the missing hypotheses for the intended spectral objects.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Stacks 00CM gives the localization relation; HRW v3 abstract includes the sphere; Burklund-Subramanian v1 Theorem 1.1 states the p-complete sphere Tate equivalence. AIM page unavailable. No TC calculation is verified by these citations.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong source version, missing hypotheses or a claim not located in the cited source.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "PROOF_GAP_IDENTIFIED",
+        "summary": "Separate stagewise annihilation from the uniform annihilator needed after inverse limit; isolate the unproved spectral bridge.",
+        "claim_ids": [
+          "LIMIT",
+          "GAP"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "ff0f90413db38a14e94f5eb87ab87dc1140d20476a7e24e286daaeb49fc89c3e",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "31766116c4d6296706d547581a397e986502db73f151ea8b1c61076dec2d9d79",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Exact group and escape certificates discriminate growing versus capped exponents.",
+        "claim_ids": [
+          "FINITE"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory.py",
+            "sha256": "1f114566dda33ea2126955ac5d8cffc6fa842a7af39e8ed43a482110e493b112",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "31766116c4d6296706d547581a397e986502db73f151ea8b1c61076dec2d9d79",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "FINITE"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Compute escape coordinates and zero/unit boundary before the group census.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and executed before theory.py. Fresh python -I children, no shared mathematical code; repeated-addition orders and exhaustive paths versus valuation/totient formulas. Reconstruct before certificate read; distinct evidence. Same-assistant authorship and shared spec, no independent human/model/kernel review.",
+        "result": "480 denominator escapes and 52 exponent escapes pass.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "cb58b504efa9056660436a73f101eecfb276392242e205f355eaa42f112b89a3",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "b940f2ebc418dc307143a9900f3c651fa3e3d56b6c3cd0075c696b673289d969",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Repeated addition, exhaustive paths and complete reconstructed-certificate comparison.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and executed before theory.py. Fresh python -I children, no shared mathematical code; repeated-addition orders and exhaustive paths versus valuation/totient formulas. Reconstruct before certificate read; distinct evidence. Same-assistant authorship and shared spec, no independent human/model/kernel review.",
+        "result": "32 groups and all 4008 elements agree; seven altered tables rejected; byte-identical replay.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "8febc13f1b81229290158650b938c0ad3647f82d0516b66311c8dc61635b9ab5",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "a0b03534f54673baf660ad2fc918dcd5143de7663fcaa15f8cff36438829ffa5",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "6e2e479037f36e30aec2a6833aae6e955a45c0430950322a6c6ab9fcd96c9965",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "LIMIT",
+          "REPAIR",
+          "GAP"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit annihilator quantifiers and separate finite evidence from the ordinary infinite argument and spectral hypotheses.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and executed before theory.py. Fresh python -I children, no shared mathematical code; repeated-addition orders and exhaustive paths versus valuation/totient formulas. Reconstruct before certificate read; distinct evidence. Same-assistant authorship and shared spec, no independent human/model/kernel review.",
+        "result": "Specific quantifier gap isolated; universal argument remains unverified by independent author/kernel; no spectral comparison.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "b940f2ebc418dc307143a9900f3c651fa3e3d56b6c3cd0075c696b673289d969",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Inspect module definition, HRW abstract and versioned Segal-conjecture PDF separately from theory notes.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and executed before theory.py. Fresh python -I children, no shared mathematical code; repeated-addition orders and exhaustive paths versus valuation/totient formulas. Reconstruct before certificate read; distinct evidence. Same-assistant authorship and shared spec, no independent human/model/kernel review.",
+        "result": "Limited background claims supported; AIM unavailable; imported TC/torsion claims unverified.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "7ee7a84845ac21fcb74498af1a3e3e69ced2033d4e3afe2a99d78b024e3427bd",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Reconstruct all finite certificates without the theory formulas and test bounded-exponent controls.",
+        "claim_ids": [
+          "FINITE"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "a0b03534f54673baf660ad2fc918dcd5143de7663fcaa15f8cff36438829ffa5",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "b940f2ebc418dc307143a9900f3c651fa3e3d56b6c3cd0075c696b673289d969",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship; no independent human/model/kernel review.",
+      "The universal inverse-limit argument and sufficient-annihilator repair are ordinary UNVERIFIED proofs, not inferred from finite tests.",
+      "No actual Tate tower, cyclotomic Frobenius, spectral comparison, motivic graded pieces or finite torsion-window computation.",
+      "AIM source unavailable; imported statuses unchanged; standard calibration, not novel mathematics."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Obtain independently authored review of the uniform-annihilator argument and an explicit spectral tower/comparison theorem before importing any rational Tate or motivic torsion-window conclusion."
+}

@@ -1,0 +1,106 @@
+"""Direct finite groups; no imports from theory or previous experiments."""
+import argparse
+import copy
+import json
+from collections import Counter
+from pathlib import Path
+
+
+def order(a, modulus):
+    value = 0
+    for k in range(1, modulus + 1):
+        value = (value + a) % modulus
+        if value == 0:
+            return k
+    raise AssertionError('finite group failed to close')
+
+
+def reconstruct(spec):
+    # Counterexample-first: a compatible unit survives each tested denominator.
+    witnesses = []
+    for p in spec['primes']:
+        for d in range(1, spec['max_denominator'] + 1):
+            n, modulus = 1, p
+            while d % modulus == 0:
+                n += 1
+                modulus *= p
+            assert d % modulus != 0
+            assert n == 1 or d % (modulus // p) == 0
+            witnesses.append([p, d, n, d % modulus])
+    assert order(0, 2) == 1 and order(1, 2) == 2
+    assert order(1, 4) == 4  # exponent 2 from the first stage does not persist
+    rows = []
+    total = 0
+    for p in spec['primes']:
+        for cap in [0, 2]:
+            for n in range(1, spec['max_level'] + 1):
+                exponent = min(n, cap) if cap else n
+                previous = min(n - 1, cap) if cap else n - 1
+                modulus, lower = p ** exponent, p ** previous
+                counts = Counter(order(a, modulus) for a in range(modulus))
+                fibers = Counter(a % lower for a in range(modulus))
+                assert set(fibers) == set(range(lower))
+                assert len(set(fibers.values())) == 1
+                # Verify all finite paths from top coordinates, not a sampled path.
+                for a in range(modulus):
+                    path = [a % (p ** (min(j, cap) if cap else j))
+                            for j in range(1, n + 1)]
+                    for j in range(1, len(path)):
+                        q = p ** (min(j, cap) if cap else j)
+                        assert path[j] % q == path[j - 1]
+                rows.append(dict(p=p, cap=cap, n=n, cardinality=modulus,
+                                 exponent=order(1, modulus),
+                                 order_counts={str(k): v for k, v in sorted(counts.items())},
+                                 fiber_size=next(iter(fibers.values())),
+                                 unit_path=[1] * n))
+                total += modulus
+    escapes = []
+    for p in spec['primes']:
+        multiplier = 1
+        for k in range(spec['max_power'] + 1):
+            if k:
+                multiplier *= p
+            escapes.append([p, k, k + 1, multiplier, multiplier % (multiplier * p)])
+    return dict(rows=rows, denominator_witnesses=witnesses, exponent_escapes=escapes,
+                finite_elements_checked=total)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('input')
+    parser.add_argument('output')
+    parser.add_argument('--certificate')
+    args = parser.parse_args()
+    core = reconstruct(json.loads(Path(args.input).read_text()))
+    controls = []
+    # Recompute before loading the certificate; seven targeted equality attacks.
+    for i in range(7):
+        bad = copy.deepcopy(core)
+        if i == 0:
+            bad['denominator_witnesses'][0][3] = 0
+        elif i == 1:
+            bad['denominator_witnesses'][1][2] = 1
+        elif i == 2:
+            bad['rows'][1]['exponent'] = 2
+        elif i == 3:
+            bad['rows'][0]['order_counts']['1'] = 0
+        elif i == 4:
+            bad['rows'][0]['fiber_size'] += 1
+        elif i == 5:
+            bad['rows'].pop()
+        else:
+            bad['exponent_escapes'][1][-1] = 0
+        assert bad != core
+        controls.append(dict(mutation=i, rejected=True))
+    if args.certificate:
+        assert json.loads(Path(args.certificate).read_text())['core'] == core
+    out = dict(core=core, mutation_controls=controls,
+               certificate_checked=bool(args.certificate),
+               independence='Fresh process, repeated-addition group orders and exhaustive residue paths; same assistant authorship, no independent human/model/kernel review.')
+    Path(args.output).write_text(json.dumps(out, sort_keys=True, indent=2) + '\n')
+    print(json.dumps(dict(rows=len(core['rows']), elements=core['finite_elements_checked'],
+                          witnesses=len(core['denominator_witnesses']), controls=len(controls))))
+
+
+if __name__ == '__main__':
+    main()
