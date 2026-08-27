@@ -1,0 +1,18 @@
+{
+  "retrieved_at": "2026-08-27T11:33:01Z",
+  "url": "https://aimath.org/WWN/measrigid/measrigid.pdf",
+  "title": "Open problems from Emerging Applications of Measure Rigidity",
+  "document_date": "2004-11-01",
+  "workshop_date": "2004-06",
+  "scribe": "A. Gorodnik",
+  "sha256": "c79ce1b387a16119b4e0caf32c56dd68e3f34fbc82fb6be80a1aa08826d4deae",
+  "locator": "Printed pages 11-12, section 5.1; Question 25 follows the frozen fragment.",
+  "observations": [
+    "The matrix approximation inequality raises the max-norm error to m.",
+    "The source separates ambient Lebesgue nullity from the question of matrix-manifold conditions.",
+    "The extracted passage includes the previous discussion and stops before the numbered manifold question."
+  ],
+  "methods": ["Direct web PDF text inspection", "Separate byte download, SHA-256, and local pdftotext page check"],
+  "capture_policy": "Metadata and derived short paraphrases only; copyrighted full PDF not redistributed.",
+  "scope_limit": "No current-status verification, novelty search, or full bibliography audit. Imported metadata remains UNVERIFIED_EXTERNAL_METADATA."
+}

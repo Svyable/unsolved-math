@@ -1,0 +1,297 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T113347Z-borel-cantelli-tail",
+  "problem_id": "AIM-OTHER-0106",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-OTHER-0106",
+    "title": "A quantitative Borel-Cantelli estimate for VWA matrices",
+    "statement": "Conjecture 24 for compact Γ \\G and the measure νT as above with summation taken over regular flats F such that systol( F ) < T. Another equidistribution result was obtained in a recent work of Y. Benoist and H. Oh, where the averages along Hecke orbits of maximal compact flats were considered. 5. Diophantine analysis\n\n5.1. A vector y = ( y1,..., y n) ∈ Rn is called v-approximable (for v > 0) if there are infinitely many q = ( q1,..., q n) ∈ Zn and p ∈ Z such that\n\n|y1q1 + · · · + ynqn − p| < ‖q‖−v.\n\nHere ‖ · ‖ denotes the max-norm on Rn. If a vector y ∈ Rn is ( n + ε)-approximable for some ε > 0, it is called very well approximable (VWA). An easy argument (using Borel-Cantelli lemma) implies that the set of VWA vectors has Lebesgue measure zero in Rn. Therefore, it is natural to expect that a generic point on a \"nondegenerate\" submanifold of Rn is not VWA. This is the Sprindˇ zuk conjecture proved in [109] (see also [17]). Similarly, an m × n real matrix A is called VWA if for some ε > 0 there are infinitely many q ∈ Zn and p ∈ Zm such that\n\n‖Aq − p‖m < ‖q‖−n−ε.\n\nIt is easy to see that the set of VWA matrices has measure zero in Rm×n, and one hopes that an analog of the Sprindˇ zuk conjecture holds in this set-up as well. The definition of nondegenerate submanifold of Rn in [109], which is well-suited for the case of vectors, is a manifold with smooth coordinate charts\n\nf: U (⊂ Rk) → Rn such that the spaces spanned by the partial derivatives f at OPEN PROBLEMS 12\n\npoints of U have dimension n. It is not quite clear what is the right definition of \"nondegenerate\" submanifold for the case of matrices.",
+    "statement_sha256": "edf1ce3ecc9b08b1d18235bf9377e0cf3c57e89ba0647d6469fbe4c64f3e2ba4",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T11:33:47.280202Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimath.org/WWN/measrigid/measrigid.pdf"
+    ],
+    "imported_status": "open",
+    "selection_basis": "RANKED_QUEUE: rank 8, score 77.25; ranks 1-7 in cooldown; highest eligible of top 25; no fallback.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T11:33:47.280202Z",
+  "completed_at": "2026-08-27T11:39:26.302342Z",
+  "selection_basis": "RANKED_QUEUE: rank 8, score 77.25; ranks 1-7 in cooldown; highest eligible of top 25; no fallback.",
+  "theory": {
+    "target": "Quantitative ambient Borel-Cantelli tail audit: exact scalar finite unions plus certified infinite remainder, powered-norm normalization and event-dependence counterexample; no manifold extremality claim.",
+    "definitions": [
+      "m,n>=1 are integers; epsilon>0; q is a nonzero integer n-vector with Q=max absolute coordinate; A has unit-cube Lebesgue distribution.",
+      "E_q(delta) means some p in Z^m satisfies max(abs(Aq-p))<delta; source normalization sets delta=Q^(-(n+epsilon)/m).",
+      "Scalar specialization m=n=epsilon=1; U(R,K) is the exact union measure for positive denominators R..K, with 2<=R<=K.",
+      "Finite interval endpoint changes have measure zero, but the executable membership convention is strictly less than."
+    ],
+    "assumptions": [
+      "Lebesgue product measure on full unit cubes, not on arbitrary submanifolds.",
+      "Exact rational arithmetic for the finite specialization.",
+      "The decreasing-integrand comparison is needed for the infinite 2/K remainder.",
+      "No independence across distinct denominator events and no primitivity restriction."
+    ],
+    "approaches_considered": [
+      "Conditional row uniformity, sign-reduced shell counting, and the first Borel-Cantelli bound.",
+      "Exact numerator-interval merging plus an analytic infinite remainder.",
+      "Independence-product shortcut; retired by q=2,3 counterexample."
+    ],
+    "falsification_targets": [
+      "Missed overlapping intervals or invalid tail truncation.",
+      "Powered-norm, zero-q, epsilon-zero, and strict-boundary errors.",
+      "An event joint measure that differs from a claimed independent product.",
+      "Illicit transfer of ambient nullity to submanifold measure."
+    ],
+    "claims": [
+      {
+        "claim_id": "TAIL",
+        "statement": "For x in [0,1], E_q={exists integer p: abs(q*x-p)<q^-2}. For R=4,K=32, the 297-interval finite-union certificate plus the analytic 2/K remainder yields the infinite-tail upper bound 332017667082073176842118008393497985947931/752789659364709316726334427027022464000000 < 9/20; the first-moment prefix plus the same remainder exceeds 9/20. Finite computations are exact; the infinite remainder relies on the ordinary integral proof, not kernel acceptance.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An omitted or spurious positive-length event region, wrong rational measure, failed threshold comparison, or invalid infinite-remainder inequality.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "DEPENDENCE",
+        "statement": "The constructed shortcut treating scalar denominator events E_2 and E_3 as independent is refuted: their joint measure is 2/27, while the product of marginals is 1/9.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "An exact direct-membership partition or interval intersection that invalidates either measure would defeat this counterexample.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "AMBIENT",
+        "statement": "Ordinary derived argument: for positive m,n, epsilon>0 and integer R>=2, the powered-norm approximation tail on the unit matrix cube is at most min(1,2^m*n*3^(n-1)/(epsilon*(R-1)^epsilon)). General ambient nullity follows by a countable exponent union, not by denominator independence. This unbounded analytic claim is not kernel-accepted or established by the scalar finite audit.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Failure of conditional uniformity, row product measure, sign pairing, shell bound, integral convergence, or exponent quantifiers; a manifold extension is explicitly excluded.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "The primary source uses the m-th power of the max-norm error; the frozen fragment spans prior commentary and section 5.1 setup, ending before the separate Question 25 about matrix-manifold conditions. This is a source-location finding, not a current-status finding.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "The primary PDF equation or printed-page 11-12 placement contradicts the stated normalization or extraction boundary.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "An exact 297-interval certificate plus an explicit remainder settles the 9/20 threshold that the specified first-moment bound cannot settle; 34 of 42 frozen cases strictly improve that baseline.",
+        "claim_ids": [
+          "TAIL"
+        ],
+        "evidence": [
+          {
+            "path": "theory-output.json",
+            "sha256": "9d50c3ca3d02467f72ad188d3115c3f02fee07dcc7ecc4630d13e40ca6cfa361",
+            "media_type": "application/json"
+          },
+          {
+            "path": "theory.md",
+            "sha256": "ac3b82ab035c6465e1849c72696f0cc87f1fa994f191c3fcfead2ec706e304ac",
+            "media_type": "text/markdown"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "The q=2,3 exact joint measure 2/27 differs from product 1/9, retiring an unjustified independence shortcut.",
+        "claim_ids": [
+          "DEPENDENCE"
+        ],
+        "evidence": [
+          {
+            "path": "theory-output.json",
+            "sha256": "9d50c3ca3d02467f72ad188d3115c3f02fee07dcc7ecc4630d13e40ca6cfa361",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T3",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "The source normalization and separate manifold question are located without repairing the frozen fragment or changing its imported status.",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "ac3b82ab035c6465e1849c72696f0cc87f1fa994f191c3fcfead2ec706e304ac",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "TAIL",
+          "DEPENDENCE"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Counterexample and ten boundaries first; exact rational discontinuity partition with direct modular membership, followed by certificate coverage and seven actual mutation checks.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline was run before the theory program existed and consumes only frozen input. Theory uses sorted interval merging; verifier uses cell partitions and direct modular tests. Fresh -I processes, empty environments, no theory imports. Later certificate checks recompute all results from raw input. Shared author, Fraction runtime, and geometry; not independent human/model review.",
+        "result": "PASS within frozen domain: 192 event cases, 42 tail cases, zero mismatches, 297 featured intervals checked, seven corrupted certificates rejected, threshold 9/20 discriminated.",
+        "reproduction_command": "python -I reproduce.py",
+        "evidence": [
+          {
+            "path": "verification-output.json",
+            "sha256": "f90d74ebbf0292c554a3d7825447a7def661128d138c6f2ba61dba5f21a95c11",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification-baseline.json",
+            "sha256": "fa22eae5c37cf9c5e879cd1a5766908a4edf51195d2cae64027c139a74efa0f3",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "9f8bc039615dd9b43e053f9839619bb7dfad59426868c57b2f67e20d6a172c8c",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "execution.json",
+            "sha256": "bf25dbcae57dea455f950ffbedf910fa6aeebf5bfd58e9d69fffd496a2c6f01c",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "The exact computation is scalar with epsilon=1. General ambient reasoning and the infinite-remainder proof are ordinary derivations, not kernel-accepted or independently human/model reviewed.",
+          "No lower-dimensional matrix-manifold extremality result or exact/optimal infinite-tail measure is established; no novelty claim.",
+          "Both implementations have same-assistant authorship and share Python Fraction, event definitions, and endpoint geometry. Fresh processes and different algorithms do not establish independent authorship."
+        ]
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "TAIL",
+          "AMBIENT"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Re-derive scalar radius and decreasing-integrand comparison from the definition; check conditional uniformity, sign/shell counts, exponent countability and a common-kernel manifold obstruction.",
+        "independent_context": true,
+        "independence_basis": "Direct definition-based audit with separate notes, no imported summary accepted as evidence. Same-assistant ordinary proof review only; finite checker is independently implemented but does not check universal analysis.",
+        "result": "No gap found in the stated ambient hypotheses or scalar integral remainder; the manifold extension is invalid without additional hypotheses. Universal AMBIENT claim stays UNVERIFIED pending stronger review.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "9f8bc039615dd9b43e053f9839619bb7dfad59426868c57b2f67e20d6a172c8c",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "The exact computation is scalar with epsilon=1. General ambient reasoning and the infinite-remainder proof are ordinary derivations, not kernel-accepted or independently human/model reviewed.",
+          "No lower-dimensional matrix-manifold extremality result or exact/optimal infinite-tail measure is established; no novelty claim.",
+          "Both implementations have same-assistant authorship and share Python Fraction, event definitions, and endpoint geometry. Fresh processes and different algorithms do not establish independent authorship."
+        ]
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Primary PDF inspection, separate byte download and SHA-256, and local text extraction of printed pages 11-12.",
+        "independent_context": true,
+        "independence_basis": "Primary evidence and frozen raw record, not a theory conclusion; separate source metadata and verification notes. Same assistant, no independent human referee.",
+        "result": "PASS for equation normalization and source location only; current mathematical status remains unverified.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "5f21570c3d4669801599fff96f51e2a179fab9a4fcf3d2295fe89b183e45435c",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "9f8bc039615dd9b43e053f9839619bb7dfad59426868c57b2f67e20d6a172c8c",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "The canonical text is a source fragment requiring human scope review; no statement or imported status has been changed."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Separate cell-partition and modular-membership verification reproduces every finite measure, rejects seven corrupted certificates, and verifies the threshold and dependence counterexample.",
+        "claim_ids": [
+          "TAIL",
+          "DEPENDENCE"
+        ],
+        "evidence": [
+          {
+            "path": "verification-output.json",
+            "sha256": "f90d74ebbf0292c554a3d7825447a7def661128d138c6f2ba61dba5f21a95c11",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "9f8bc039615dd9b43e053f9839619bb7dfad59426868c57b2f67e20d6a172c8c",
+            "media_type": "text/markdown"
+          }
+        ]
+      },
+      {
+        "unit_id": "VP2",
+        "kind": "PROOF_GAP_IDENTIFIED",
+        "summary": "The analytic bridge is isolated from finite checks; full-unit-cube uniformity does not transfer to a submanifold with a common integer kernel. The general claim remains explicitly unverified.",
+        "claim_ids": [
+          "AMBIENT"
+        ],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "9f8bc039615dd9b43e053f9839619bb7dfad59426868c57b2f67e20d6a172c8c",
+            "media_type": "text/markdown"
+          }
+        ]
+      },
+      {
+        "unit_id": "VP3",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "Direct source audit fingerprints the powered convention and following manifold question without a status promotion.",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "5f21570c3d4669801599fff96f51e2a179fab9a4fcf3d2295fe89b183e45435c",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "The canonical text is a source fragment requiring human scope review; no statement or imported status has been changed.",
+      "The exact computation is scalar with epsilon=1. General ambient reasoning and the infinite-remainder proof are ordinary derivations, not kernel-accepted or independently human/model reviewed.",
+      "No lower-dimensional matrix-manifold extremality result or exact/optimal infinite-tail measure is established; no novelty claim.",
+      "Both implementations have same-assistant authorship and share Python Fraction, event definitions, and endpoint geometry. Fresh processes and different algorithms do not establish independent authorship."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the exact tail and dependence certificates; obtain independent review of the integral remainder and human scope review before manifold work, then rotate to the next eligible ranked candidate."
+}
