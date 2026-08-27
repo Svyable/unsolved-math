@@ -1,0 +1,43 @@
+{
+  "audited_at": "2026-08-27T08:39:00Z",
+  "capture_policy": "Primary URLs, locators and derived notes only; no full PDF redistribution. Exact source fragment is retained through the CC BY 4.0 pinned dataset.",
+  "sources": [
+    {
+      "source_id": "S1",
+      "url": "https://aimath.org/pastworkshops/geodesicsproblems.pdf",
+      "title": "Open problems and questions about geodesics",
+      "authors": [
+        "Keith Burns",
+        "Vladimir S. Matveev"
+      ],
+      "access_status": "primary PDF text retrieved",
+      "locators": [
+        "Printed page 12 (PDF page index 11), end of Section 5.5, heading 5.6, and following Question 5.6.1"
+      ],
+      "claim_mapping": [
+        "C4: the canonical record is a transition fragment, not the following numbered question"
+      ],
+      "derived_notes": "The selected sentence closes the discussion of Section 5.5 by referring back to Question 5.4.1. The next fragment is a section heading. The question about simple closed geodesics follows separately. The imported bounded-degree concentration lemma is not attributed to this survey.",
+      "limits": "Historical source scope only; no current status claim or proof of the neighboring geodesic question."
+    },
+    {
+      "source_id": "S2",
+      "url": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+      "title": "Algebraic Topology",
+      "author": "Allen Hatcher",
+      "access_status": "author-hosted primary text retrieved",
+      "locators": [
+        "Proposition 1.32, printed page 61 (PDF page index 69)",
+        "Theorem 1.38, printed page 67 (PDF page index 75)",
+        "Representing Covering Spaces by Permutations, printed pages 68–69"
+      ],
+      "claim_mapping": [
+        "C1: connected cover degree equals subgroup index; based and unbased classifications differ"
+      ],
+      "derived_notes": "The classification applies to path-connected, locally path-connected and semilocally simply-connected spaces. Based connected covers correspond to subgroups; forgetting the basepoint gives conjugacy classes. Degree equals index. These hypotheses hold for connected smooth manifolds.",
+      "limits": "Used as a cited topological dependency, not re-proved or kernel checked. The recurrence and finite enumeration are locally derived, not attributed as new Hatcher results."
+    }
+  ],
+  "independence": "Primary sources inspected separately from imported research summaries. Same assistant performed both source audits; no independent human or model review.",
+  "status_policy": "Original statement, open label and ranking unchanged. Human scope review remains required."
+}

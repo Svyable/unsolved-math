@@ -1,0 +1,17 @@
+{
+  "replayed_at": "2026-08-27T08:40:33.349993+00:00",
+  "python_version": "3.12.13",
+  "byte_identical_outputs": true,
+  "cross_implementation_formal_rows_matched": 50,
+  "cross_implementation_enumerated_rows_matched": 23,
+  "network_in_experiments": false,
+  "randomness": "none",
+  "external_paid_model_calls": 0,
+  "commands": [
+    "python -I theory_count.py",
+    "python -I verify.py"
+  ],
+  "timeout_seconds_per_executable": 90,
+  "independence": "Fresh isolated processes; verifier reads only input.json and uses permutation enumeration and a formal logarithm, not theory recurrence or outputs. Same assistant authored both; no independent human/model referee.",
+  "uv_lock_sha256": "2a000ab9f53936eb4b73c46f2754363f167aa13e5cd36878d6ae3df7cd5844da"
+}

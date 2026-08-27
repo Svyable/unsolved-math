@@ -1,0 +1,19 @@
+{
+  "snapshot_schema_version": 1,
+  "problem_id": "AIM-GEOMETRY-0233",
+  "title": "A transition fragment and bounded-degree simple lifts",
+  "statement": "Question 5.4.1 above asks whether there are other examples. 5.6. Infinitely many simple closed geodesics.",
+  "statement_sha256": "888c006328ae6c50f9b71452e102298b10c7dde2df116884f3280456dc5a9aa0",
+  "upstream_dataset": "ulamai/UnsolvedMath",
+  "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+  "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+  "frozen_at": "2026-08-27T08:34:05.503956Z",
+  "source_urls": [
+    "https://aimath.org/pastworkshops/geodesicsproblems.pdf",
+    "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+    "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+  ],
+  "imported_status": "open",
+  "selection_basis": "Rank 5, score 77.25, highest eligible in the validated queue on open PR #8 at fcf697943553e13d624d294d1eb13bff15baae80. Main lacks a queue; synchronization is restored on the review branch and its manifest passed. Ranks 1 through 4 are on cooldown. No provisional substitution or ranking change.",
+  "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+}

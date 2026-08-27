@@ -1,0 +1,423 @@
+{
+  "example": {
+    "N": 533417,
+    "individual_based_counts": [
+      1,
+      3,
+      13,
+      71,
+      461,
+      3447
+    ],
+    "max_degree": 6,
+    "old_denominator": 533417,
+    "old_guaranteed_lifts": 1,
+    "rank": 2,
+    "refined_denominator": 3996,
+    "refined_guaranteed_lifts": 134
+  },
+  "method": "partition by the orbit containing the distinguished sheet",
+  "rows": [
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "old_cumulative_bound": 1,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 1
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 2,
+      "old_cumulative_bound": 2,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 3,
+      "old_cumulative_bound": 3,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 4,
+      "old_cumulative_bound": 4,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 5,
+      "old_cumulative_bound": 5,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 6,
+      "old_cumulative_bound": 6,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 7,
+      "old_cumulative_bound": 7,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 8,
+      "old_cumulative_bound": 8,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 9,
+      "old_cumulative_bound": 9,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 10,
+      "old_cumulative_bound": 10,
+      "rank": 0,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 0
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "old_cumulative_bound": 1,
+      "rank": 1,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 2,
+      "old_cumulative_bound": 3,
+      "rank": 1,
+      "refined_cumulative_bound": 2,
+      "transitive_tuples": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 3,
+      "old_cumulative_bound": 9,
+      "rank": 1,
+      "refined_cumulative_bound": 3,
+      "transitive_tuples": 2
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 4,
+      "old_cumulative_bound": 33,
+      "rank": 1,
+      "refined_cumulative_bound": 4,
+      "transitive_tuples": 6
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 5,
+      "old_cumulative_bound": 153,
+      "rank": 1,
+      "refined_cumulative_bound": 5,
+      "transitive_tuples": 24
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 6,
+      "old_cumulative_bound": 873,
+      "rank": 1,
+      "refined_cumulative_bound": 6,
+      "transitive_tuples": 120
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 7,
+      "old_cumulative_bound": 5913,
+      "rank": 1,
+      "refined_cumulative_bound": 7,
+      "transitive_tuples": 720
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 8,
+      "old_cumulative_bound": 46233,
+      "rank": 1,
+      "refined_cumulative_bound": 8,
+      "transitive_tuples": 5040
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 9,
+      "old_cumulative_bound": 409113,
+      "rank": 1,
+      "refined_cumulative_bound": 9,
+      "transitive_tuples": 40320
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 10,
+      "old_cumulative_bound": 4037913,
+      "rank": 1,
+      "refined_cumulative_bound": 10,
+      "transitive_tuples": 362880
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "old_cumulative_bound": 1,
+      "rank": 2,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 1
+    },
+    {
+      "based_subgroups": 3,
+      "degree": 2,
+      "old_cumulative_bound": 5,
+      "rank": 2,
+      "refined_cumulative_bound": 4,
+      "transitive_tuples": 3
+    },
+    {
+      "based_subgroups": 13,
+      "degree": 3,
+      "old_cumulative_bound": 41,
+      "rank": 2,
+      "refined_cumulative_bound": 17,
+      "transitive_tuples": 26
+    },
+    {
+      "based_subgroups": 71,
+      "degree": 4,
+      "old_cumulative_bound": 617,
+      "rank": 2,
+      "refined_cumulative_bound": 88,
+      "transitive_tuples": 426
+    },
+    {
+      "based_subgroups": 461,
+      "degree": 5,
+      "old_cumulative_bound": 15017,
+      "rank": 2,
+      "refined_cumulative_bound": 549,
+      "transitive_tuples": 11064
+    },
+    {
+      "based_subgroups": 3447,
+      "degree": 6,
+      "old_cumulative_bound": 533417,
+      "rank": 2,
+      "refined_cumulative_bound": 3996,
+      "transitive_tuples": 413640
+    },
+    {
+      "based_subgroups": 29093,
+      "degree": 7,
+      "old_cumulative_bound": 25935017,
+      "rank": 2,
+      "refined_cumulative_bound": 33089,
+      "transitive_tuples": 20946960
+    },
+    {
+      "based_subgroups": 273343,
+      "degree": 8,
+      "old_cumulative_bound": 1651637417,
+      "rank": 2,
+      "refined_cumulative_bound": 306432,
+      "transitive_tuples": 1377648720
+    },
+    {
+      "based_subgroups": 2829325,
+      "degree": 9,
+      "old_cumulative_bound": 133333531817,
+      "rank": 2,
+      "refined_cumulative_bound": 3135757,
+      "transitive_tuples": 114078384000
+    },
+    {
+      "based_subgroups": 31998903,
+      "degree": 10,
+      "old_cumulative_bound": 13301522971817,
+      "rank": 2,
+      "refined_cumulative_bound": 35134660,
+      "transitive_tuples": 11611761920640
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "old_cumulative_bound": 1,
+      "rank": 3,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 1
+    },
+    {
+      "based_subgroups": 7,
+      "degree": 2,
+      "old_cumulative_bound": 9,
+      "rank": 3,
+      "refined_cumulative_bound": 8,
+      "transitive_tuples": 7
+    },
+    {
+      "based_subgroups": 97,
+      "degree": 3,
+      "old_cumulative_bound": 225,
+      "rank": 3,
+      "refined_cumulative_bound": 105,
+      "transitive_tuples": 194
+    },
+    {
+      "based_subgroups": 2143,
+      "degree": 4,
+      "old_cumulative_bound": 14049,
+      "rank": 3,
+      "refined_cumulative_bound": 2248,
+      "transitive_tuples": 12858
+    },
+    {
+      "based_subgroups": 68641,
+      "degree": 5,
+      "old_cumulative_bound": 1742049,
+      "rank": 3,
+      "refined_cumulative_bound": 70889,
+      "transitive_tuples": 1647384
+    },
+    {
+      "based_subgroups": 3011263,
+      "degree": 6,
+      "old_cumulative_bound": 374990049,
+      "rank": 3,
+      "refined_cumulative_bound": 3082152,
+      "transitive_tuples": 361351560
+    },
+    {
+      "based_subgroups": 173773153,
+      "degree": 7,
+      "old_cumulative_bound": 128399054049,
+      "rank": 3,
+      "refined_cumulative_bound": 176855305,
+      "transitive_tuples": 125116670160
+    },
+    {
+      "based_subgroups": 12785668351,
+      "degree": 8,
+      "old_cumulative_bound": 65676719822049,
+      "rank": 3,
+      "refined_cumulative_bound": 12962523656,
+      "transitive_tuples": 64439768489040
+    },
+    {
+      "based_subgroups": 1169623688353,
+      "degree": 9,
+      "old_cumulative_bound": 47850402559694049,
+      "rank": 3,
+      "refined_cumulative_bound": 1182586212009,
+      "transitive_tuples": 47159227114392960
+    },
+    {
+      "based_subgroups": 130305512589247,
+      "degree": 10,
+      "old_cumulative_bound": 47832576242431694049,
+      "rank": 3,
+      "refined_cumulative_bound": 131488098801256,
+      "transitive_tuples": 47285264408385951360
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "old_cumulative_bound": 1,
+      "rank": 4,
+      "refined_cumulative_bound": 1,
+      "transitive_tuples": 1
+    },
+    {
+      "based_subgroups": 15,
+      "degree": 2,
+      "old_cumulative_bound": 17,
+      "rank": 4,
+      "refined_cumulative_bound": 16,
+      "transitive_tuples": 15
+    },
+    {
+      "based_subgroups": 625,
+      "degree": 3,
+      "old_cumulative_bound": 1313,
+      "rank": 4,
+      "refined_cumulative_bound": 641,
+      "transitive_tuples": 1250
+    },
+    {
+      "based_subgroups": 54335,
+      "degree": 4,
+      "old_cumulative_bound": 333089,
+      "rank": 4,
+      "refined_cumulative_bound": 54976,
+      "transitive_tuples": 326010
+    },
+    {
+      "based_subgroups": 8563601,
+      "degree": 5,
+      "old_cumulative_bound": 207693089,
+      "rank": 4,
+      "refined_cumulative_bound": 8618577,
+      "transitive_tuples": 205526424
+    },
+    {
+      "based_subgroups": 2228419359,
+      "degree": 6,
+      "old_cumulative_bound": 268946253089,
+      "rank": 4,
+      "refined_cumulative_bound": 2237037936,
+      "transitive_tuples": 267410323080
+    },
+    {
+      "based_subgroups": 893451975473,
+      "degree": 7,
+      "old_cumulative_bound": 645510228813089,
+      "rank": 4,
+      "refined_cumulative_bound": 895689013409,
+      "transitive_tuples": 643285422340560
+    },
+    {
+      "based_subgroups": 523337983164799,
+      "degree": 8,
+      "old_cumulative_bound": 2643553803594573089,
+      "rank": 4,
+      "refined_cumulative_bound": 524233672178208,
+      "transitive_tuples": 2637623435150586960
+    },
+    {
+      "based_subgroups": 429463651385469649,
+      "degree": 9,
+      "old_cumulative_bound": 17342764866576345933089,
+      "rank": 4,
+      "refined_cumulative_bound": 429987885057647857,
+      "transitive_tuples": 17315974423862136247680
+    },
+    {
+      "based_subgroups": 477364501208149290975,
+      "degree": 10,
+      "old_cumulative_bound": 173418555892594089945933089,
+      "rank": 4,
+      "refined_cumulative_bound": 477794489093206938832,
+      "transitive_tuples": 173226030198413214709008000
+    }
+  ],
+  "scope": "Cover-count upper bound and conditional pigeonhole conclusion; no geodesic family constructed."
+}

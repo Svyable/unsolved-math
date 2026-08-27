@@ -1,0 +1,519 @@
+{
+  "adversarial_controls": {
+    "bad_root_rejected": true,
+    "disconnected_action_rejected": true,
+    "nonbijective_generator_rejected": true,
+    "nontransitive_root_encoding_rejected": true,
+    "zero_degree_rejected": true
+  },
+  "counterexample_first": true,
+  "example_guaranteed_lifts": 134,
+  "example_refined_denominator": 3996,
+  "formal_log_rows": [
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 2,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 3,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 4,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 5,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 6,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 7,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 8,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 9,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 0,
+      "degree": 10,
+      "rank": 0
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 2,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 3,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 4,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 5,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 6,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 7,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 8,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 9,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 10,
+      "rank": 1
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 3,
+      "degree": 2,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 13,
+      "degree": 3,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 71,
+      "degree": 4,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 461,
+      "degree": 5,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 3447,
+      "degree": 6,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 29093,
+      "degree": 7,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 273343,
+      "degree": 8,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 2829325,
+      "degree": 9,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 31998903,
+      "degree": 10,
+      "rank": 2
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 7,
+      "degree": 2,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 97,
+      "degree": 3,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 2143,
+      "degree": 4,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 68641,
+      "degree": 5,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 3011263,
+      "degree": 6,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 173773153,
+      "degree": 7,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 12785668351,
+      "degree": 8,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 1169623688353,
+      "degree": 9,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 130305512589247,
+      "degree": 10,
+      "rank": 3
+    },
+    {
+      "based_subgroups": 1,
+      "degree": 1,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 15,
+      "degree": 2,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 625,
+      "degree": 3,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 54335,
+      "degree": 4,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 8563601,
+      "degree": 5,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 2228419359,
+      "degree": 6,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 893451975473,
+      "degree": 7,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 523337983164799,
+      "degree": 8,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 429463651385469649,
+      "degree": 9,
+      "rank": 4
+    },
+    {
+      "based_subgroups": 477364501208149290975,
+      "degree": 10,
+      "rank": 4
+    }
+  ],
+  "method": "explicit permutation actions, rooted BFS canonicalization, formal series logarithm",
+  "pigeonhole_boundary_checks": 1010,
+  "relations_matter_control": {
+    "abelian_group_based_subgroups": 4,
+    "degree": 3,
+    "free_group_based_subgroups": 13,
+    "rank": 2
+  },
+  "rows": [
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 1,
+      "rank": 0,
+      "rooted_inventory_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "transitive_tuples": 1,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 0,
+      "degree": 2,
+      "rank": 0,
+      "rooted_inventory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transitive_tuples": 0,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 0
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 0,
+      "degree": 3,
+      "rank": 0,
+      "rooted_inventory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transitive_tuples": 0,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 0
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 0,
+      "degree": 4,
+      "rank": 0,
+      "rooted_inventory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transitive_tuples": 0,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 0
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 0,
+      "degree": 5,
+      "rank": 0,
+      "rooted_inventory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transitive_tuples": 0,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 0
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 0,
+      "degree": 6,
+      "rank": 0,
+      "rooted_inventory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transitive_tuples": 0,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 0
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 1,
+      "rank": 1,
+      "rooted_inventory_sha256": "3aa8ac761c5a23906d30fb86ca2db09c9b391142a956cdb4263570adb94bfbe6",
+      "transitive_tuples": 1,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 2,
+      "rank": 1,
+      "rooted_inventory_sha256": "6e2c36dc24021e88ec690c00296944afae777a9269b758431c1c97c224860a42",
+      "transitive_tuples": 1,
+      "tuples_tested": 2,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 3,
+      "rank": 1,
+      "rooted_inventory_sha256": "82a0ad00c7e21216d8eb43e4dfc32f5eee0edfa17b1b8c047da431dd36b90468",
+      "transitive_tuples": 2,
+      "tuples_tested": 6,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 4,
+      "rank": 1,
+      "rooted_inventory_sha256": "b9321b739b898c66d42707dd8e115f88cb246034482082c31531c956299c9466",
+      "transitive_tuples": 6,
+      "tuples_tested": 24,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 5,
+      "rank": 1,
+      "rooted_inventory_sha256": "9b43908499315d33bc5604d3c201b2368f88d3c4fd31cf8c972e2eed6f55e483",
+      "transitive_tuples": 24,
+      "tuples_tested": 120,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 6,
+      "rank": 1,
+      "rooted_inventory_sha256": "d3c76a72db798a9229ce42b4543e5927397beff21a4670677211403733cf82cb",
+      "transitive_tuples": 120,
+      "tuples_tested": 720,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 7,
+      "rank": 1,
+      "rooted_inventory_sha256": "f72394f7116c92ae6487f5ac34129f1bfada8dae664c790e66b3c1effb16d148",
+      "transitive_tuples": 720,
+      "tuples_tested": 5040,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "commuting_based_subgroups": 1,
+      "degree": 1,
+      "rank": 2,
+      "rooted_inventory_sha256": "4c8e5ad1b2e19db31d2b6b6f0b4a36babc75dbf92a0e9629c3cefd2b479f8e5c",
+      "transitive_tuples": 1,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 3,
+      "commuting_based_subgroups": 3,
+      "degree": 2,
+      "rank": 2,
+      "rooted_inventory_sha256": "e73a7ef6f13b9126616c2628b860d1b0358bb4159c836b7757aae7789fcb7780",
+      "transitive_tuples": 3,
+      "tuples_tested": 4,
+      "unbased_cover_classes": 3
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 13,
+      "commuting_based_subgroups": 4,
+      "degree": 3,
+      "rank": 2,
+      "rooted_inventory_sha256": "054c25ef3cf747533bd53b115c4b795fb38a0f0508cec97ca635c3ee76a43b22",
+      "transitive_tuples": 26,
+      "tuples_tested": 36,
+      "unbased_cover_classes": 7
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 71,
+      "commuting_based_subgroups": 7,
+      "degree": 4,
+      "rank": 2,
+      "rooted_inventory_sha256": "7d30860e1cda07310f6e73706397cd29a0c48c520c9724f05c9a827a8dce9d10",
+      "transitive_tuples": 426,
+      "tuples_tested": 576,
+      "unbased_cover_classes": 26
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 461,
+      "commuting_based_subgroups": 6,
+      "degree": 5,
+      "rank": 2,
+      "rooted_inventory_sha256": "9189c16f0aa275c507c48b384bdd1d06da556614bca295cc2bfba4b2f1211c0b",
+      "transitive_tuples": 11064,
+      "tuples_tested": 14400,
+      "unbased_cover_classes": 97
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 3447,
+      "commuting_based_subgroups": 12,
+      "degree": 6,
+      "rank": 2,
+      "rooted_inventory_sha256": "7f7ab8e1e3f19475a743476c289a719d76ced80af9ce1b0523cbde39066dc373",
+      "transitive_tuples": 413640,
+      "tuples_tested": 518400,
+      "unbased_cover_classes": 624
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 1,
+      "degree": 1,
+      "rank": 3,
+      "rooted_inventory_sha256": "b3c2e035c3c4d9997759bceafe5da8ceb3436049d88953f7304323c161adfa79",
+      "transitive_tuples": 1,
+      "tuples_tested": 1,
+      "unbased_cover_classes": 1
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 7,
+      "degree": 2,
+      "rank": 3,
+      "rooted_inventory_sha256": "9f41261baf5631be2bdb514a0a72e52b50bf778aceb78184e0c50d9140a8a348",
+      "transitive_tuples": 7,
+      "tuples_tested": 8,
+      "unbased_cover_classes": 7
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 97,
+      "degree": 3,
+      "rank": 3,
+      "rooted_inventory_sha256": "304305d8e8836e21ef05947f732a21642d3b83b0dc10360968c8893bd93ca450",
+      "transitive_tuples": 194,
+      "tuples_tested": 216,
+      "unbased_cover_classes": 41
+    },
+    {
+      "all_rooted_class_sizes_equal_factorial_d_minus_1": true,
+      "based_subgroups": 2143,
+      "degree": 4,
+      "rank": 3,
+      "rooted_inventory_sha256": "ade13e46bf0abb4142a903995813e7b750f6cc48cf859d1f670fc19cdde5719a",
+      "transitive_tuples": 12858,
+      "tuples_tested": 13824,
+      "unbased_cover_classes": 604
+    }
+  ],
+  "scope": "Finite group-action enumeration and algebra; no simple geodesics simulated or constructed.",
+  "total_tuples_tested": 553385,
+  "wrong_full_factorial_quotient": {
+    "actual_unbased_classes": 3,
+    "degree": 2,
+    "labelled_transitive_actions": 3,
+    "rank": 2,
+    "wrong_division_by_d_factorial": "3/2"
+  }
+}
