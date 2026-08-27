@@ -1,0 +1,74 @@
+{
+  "method": "cycle decomposition, exact period divisibility, and phase construction",
+  "systems": 47312,
+  "positive_surjective_systems": 7180,
+  "representative_equivariant_maps_constructed": 7188,
+  "table_sha256": "3f7c6df2560d9da94ce91cb9eed88bdc7f620ef043fa41aa381ca83cbf5dc565",
+  "order_shortcut_false_positives": 10919,
+  "counterexample": {
+    "permutation": [
+      1,
+      0,
+      2
+    ],
+    "N": 2,
+    "cycle_lengths": [
+      2,
+      1
+    ],
+    "source_order": 2,
+    "equivariant_maps": 0,
+    "contradiction": "f(2)=f(2)+1 mod 2"
+  },
+  "weighting": [
+    {
+      "k": 1,
+      "states": 3,
+      "orbits": 2,
+      "state_fraction": "2/3",
+      "orbit_fraction": "1/2",
+      "regular_factor_maps": 0
+    },
+    {
+      "k": 2,
+      "states": 10,
+      "orbits": 3,
+      "state_fraction": "4/5",
+      "orbit_fraction": "1/3",
+      "regular_factor_maps": 0
+    },
+    {
+      "k": 3,
+      "states": 21,
+      "orbits": 4,
+      "state_fraction": "6/7",
+      "orbit_fraction": "1/4",
+      "regular_factor_maps": 0
+    },
+    {
+      "k": 5,
+      "states": 55,
+      "orbits": 6,
+      "state_fraction": "10/11",
+      "orbit_fraction": "1/6",
+      "regular_factor_maps": 0
+    },
+    {
+      "k": 10,
+      "states": 210,
+      "orbits": 11,
+      "state_fraction": "20/21",
+      "orbit_fraction": "1/11",
+      "regular_factor_maps": 0
+    },
+    {
+      "k": 20,
+      "states": 820,
+      "orbits": 21,
+      "state_fraction": "40/41",
+      "orbit_fraction": "1/21",
+      "regular_factor_maps": 0
+    }
+  ],
+  "claim_boundary": "Elementary finite-permutation audit, not a new ASM/PL/birational result or kernel-accepted theorem."
+}

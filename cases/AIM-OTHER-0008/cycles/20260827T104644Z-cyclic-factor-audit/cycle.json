@@ -1,0 +1,257 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T104644Z-cyclic-factor-audit",
+  "problem_id": "AIM-OTHER-0008",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-OTHER-0008",
+    "title": "Source-boundary repair and a quantitative resonance profile",
+    "statement": "Problem 2.4 may be an analysis of domino shuffling, since the set of Aztec diamonds is naturally divided into \"equivalence classes\" of size 2n by the shuffling algorithm.\n\n2.4 Resonance\n\nSome researchers have recently been studying combinatorial actions that are not strictly speaking of finite order, or at least not uniformly finite as some size parameter n varies, but still exhibit some forms of periodicity. An important example is Wieland's gyration operation on Alternating Sign Matrices (ASMs). When n is small, the 2nth power of the gyration operation on n-by-n ASMs is the identity map, so that all orbits have size dividing 2n, but as n gets larger this ceases to be the case. Instead one finds orbits whose sizes are \"mostly\" multiple of 2n, or submultiples k(2 n)/m where m is a small divisor of 2n. This is a fairly squishy notion, for what do \"mostly\" and \"small\" mean? Without having answers to these questions, we have charged forward and dubbed this \"resonance\"; part of the challenge here is making a good definition of the phenomenon being studied.",
+    "statement_sha256": "d879267321e7d2bcc32e529b2a25e47653e46462bf0f54e8c4d2266c31d70b01",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T10:46:44.778511Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimath.org/pastworkshops/dac_preworkshop.pdf"
+    ],
+    "imported_status": "open",
+    "selection_basis": "RANKED_QUEUE: rank 7, score 77.25; ranks 1-6 are in cooldown. Highest eligible candidate among the configured top 25; no launch fallback.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T10:46:44.778511Z",
+  "completed_at": "2026-08-27T10:54:16.253032Z",
+  "selection_basis": "RANKED_QUEUE: rank 7, score 77.25; ranks 1-6 are in cooldown. Highest eligible candidate among the configured top 25; no launch fallback.",
+  "theory": {
+    "target": "Audit regular cyclic factor existence/counting and distinguish state- from orbit-weighted divisibility; not ASM/PL/birational dynamics.",
+    "definitions": [
+      "X is finite; T:X->X is a bijection; N is a positive integer; C_N=Z/N with rotation +1.",
+      "An equivariant map obeys f(Tx)=f(x)+1 modulo N for every x; a factor is additionally onto.",
+      "c is the number of T-orbits and l_i their lengths. State and orbit divisibility fractions are defined only for nonempty X.",
+      "Uniform state mass weights an orbit by its length; uniform orbit mass gives each orbit one vote."
+    ],
+    "assumptions": [
+      "Exact finite permutations and integer arithmetic.",
+      "Target and source are labelled; maps are not quotiented by automorphisms.",
+      "N>=1; nonempty X is required for equivariance to imply surjectivity.",
+      "No connection from the constructed examples to actual ASM dynamics is assumed."
+    ],
+    "approaches_considered": [
+      "Cycle decomposition, closing congruences, and independent phase choices.",
+      "Modular difference-constraint propagation plus direct exhaustive label assignments.",
+      "Global permutation order or high state mass as sufficient criteria; retired by explicit counterexamples."
+    ],
+    "falsification_targets": [
+      "A valid labeling contradicting zero-map prediction.",
+      "Empty-domain, composite-period, or noninjective-map boundary failures.",
+      "A mismatch in state versus orbit weighting or the two limiting fractions.",
+      "A primary-source boundary inconsistent with the imported lead."
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "For a finite permutation with c cycles and positive N, equivariant maps to the labelled regular N-cycle number N^c if every cycle length is divisible by N, and zero otherwise. On a nonempty source every such map is onto; the empty source has one empty map and no factor. The finite audit covers n=0..7, N=1..8.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed closing congruence, phase-count nonuniqueness, surjectivity failure on a nonempty consistent orbit, or a direct-label enumeration mismatch.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C2",
+        "statement": "The constructed shortcut that N dividing the source permutation order suffices for a regular N-cycle factor is false: T=(0 1)(2), N=2 has order two but no equivariant map.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A valid map among the eight binary labelings, or an incorrect source-order calculation, would defeat this obstruction certificate.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C3",
+        "statement": "One cycle of length 2k^2 and k fixed points, k>=1, has N=2 compatible-state fraction 2k/(2k+1) and compatible-orbit fraction 1/(k+1), but no regular factor. These fractions tend to one and zero respectively; at k=20 they are 40/41 and 1/21.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A family member has different orbit/vertex counts, a valid regular factor, or a failed stated limit. Six explicit k values are checked, with the general statement relying on the displayed construction.",
+        "dependencies": [
+          "C1"
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "statement": "The frozen record splices closing commentary after Problem 2.4 with the introduction to the resonance section; Problem 2.5 is a separate source item. This is a source-boundary audit, not a current-status or ASM theorem verification.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "The primary PDF placement disagrees with the cited printed-page 5-6 locators or makes the frozen passage a standalone numbered question.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "An exhausted three-state order obstruction and explicit weighting family retire two shortcuts; the k=20 example separates 40/41 of states from 1/21 of orbits.",
+        "claim_ids": [
+          "C2",
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "12cc1ac331528fbca38d55e18821934f9da7d2d2024d7594b83ec3d5c9d454c7",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "b24e75f319829200e7a78497e4df14beae9c363b57a7d104603eea69bea1ce98",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Exact map counts and a representative phase construction are audited on 47,312 systems, with the empty equivariant-map/factor distinction retained.",
+        "claim_ids": [
+          "C1"
+        ],
+        "evidence": [
+          {
+            "path": "theory-output.json",
+            "sha256": "b24e75f319829200e7a78497e4df14beae9c363b57a7d104603eea69bea1ce98",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T3",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "Primary-source context identifies the imported passage as commentary rather than a standalone numbered problem.",
+        "claim_ids": [
+          "C4"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "12cc1ac331528fbca38d55e18821934f9da7d2d2024d7594b83ec3d5c9d454c7",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Counterexample and nine boundaries first; BFS modular constraints for all 47,312 systems, direct enumeration of 165,170 label assignments on 616 systems, repeated-composition order checks, six weighting examples and seven adversarial controls.",
+        "independent_context": true,
+        "independence_basis": "Verifier consumes frozen input and raw permutation constraints, not theory artifacts. Its core BFS constraint solver and complete-label baseline were run before the theory cycle-decomposition implementation; global-order counter added later. Fresh isolated processes, empty environment, distinct code paths/evidence. Same assistant and shared input/enumeration/runtime, not independent model/human review.",
+        "result": "PASS within the frozen domain: matching table SHA-256 and counts, zero mismatches; 7,180 positive surjective systems, 10,919 order-shortcut false positives; all seven adversarial controls rejected.",
+        "reproduction_command": "python -I verify.py",
+        "evidence": [
+          {
+            "path": "verification-output.json",
+            "sha256": "a03df46e8aef7517bc3de996d099b2f9dcb397a686f5a9209741877467150e86",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "cde7225242e8be97e1ed037cb06f7b8e2bfb61d4caf0fee7bf785de5cdfaf2a2",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "execution.json",
+            "sha256": "a44fef4958ebd2226f9cef7cec15833208b5ab6750c823084938c52bb68e67b5",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "No natural ASM/rowmotion/PL/birational factor or orbit profile was computed; the examples are explicit finite permutations only.",
+          "Both implementations and proof notes have same-assistant authorship. Fresh processes and different algorithms do not supply independent human/model proof review or kernel acceptance.",
+          "The universal counting and limit arguments are ordinary derived proofs, not established by finite enumeration alone; no novelty claim."
+        ]
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "C4"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Inspect primary PDF text directly, then independently fetch and hash PDF bytes and parse pages 5-6 locally; compare locations with the frozen record.",
+        "independent_context": true,
+        "independence_basis": "Uses the primary PDF and raw frozen source record, not a theory conclusion or imported summary as authority. Separate source evidence; same-assistant review, not a named human referee.",
+        "result": "PASS for source location only; standalone problem status and actual resonance theorems remain unverified.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "584be8b55da934b67f36c6a0bd4fd055d16c0be57bd35f92188f6a0e6ab8165a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "cde7225242e8be97e1ed037cb06f7b8e2bfb61d4caf0fee7bf785de5cdfaf2a2",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "The canonical text is a source fragment requiring human scope review; no imported status or canonical statement was changed."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROG1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "A distinct constraint implementation and exhaustive-label oracle reproduce exact counts, reject the order shortcut, distinguish weighting, and preserve empty/noninjective boundaries.",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "verification-output.json",
+            "sha256": "a03df46e8aef7517bc3de996d099b2f9dcb397a686f5a9209741877467150e86",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "cde7225242e8be97e1ed037cb06f7b8e2bfb61d4caf0fee7bf785de5cdfaf2a2",
+            "media_type": "text/markdown"
+          }
+        ]
+      },
+      {
+        "unit_id": "VPROG2",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "Direct primary-source inspection and a separately fetched PDF fingerprint confirm the extraction-boundary objection without changing imported status.",
+        "claim_ids": [
+          "C4"
+        ],
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "584be8b55da934b67f36c6a0bd4fd055d16c0be57bd35f92188f6a0e6ab8165a",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "The canonical text is a source fragment requiring human scope review; no imported status or canonical statement was changed.",
+      "No natural ASM/rowmotion/PL/birational factor or orbit profile was computed; the examples are explicit finite permutations only.",
+      "Both implementations and proof notes have same-assistant authorship. Fresh processes and different algorithms do not supply independent human/model proof review or kernel acceptance.",
+      "The universal counting and limit arguments are ordinary derived proofs, not established by finite enumeration alone; no novelty claim."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain exact cyclic-factor and weighting regression checks; human-review the source fragment before applying the profile to actual combinatorial dynamics, and rotate to the next eligible ranked candidate."
+}

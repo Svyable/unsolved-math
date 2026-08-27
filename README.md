@@ -22,7 +22,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-27T09:39:41.674490Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-27T10:54:16.253032Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -39,7 +39,8 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 4 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T07:40:11.966317Z | `Retain this exact Fourier/sign/objective certificate as a regression baseline; human-review the source heading before h…` |
 | 5 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T08:40:33.349993Z | `Retain the cover-count and stabilizer tests; human-review the source fragment and identify an actual uniform simple-lif…` |
 | 6 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 1 | `FALSIFIED_SUBCLAIM` | 2026-08-27T09:39:41.674490Z | `Retain the exact intersection/union regression certificates; human-review the intended local construction and global de…` |
-| 7 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
+| 7 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T10:54:16.253032Z | `Retain exact cyclic-factor and weighting regression checks; human-review the source fragment before applying the profil…` |
+| 8 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
 
 ### Next up
 
@@ -47,11 +48,11 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 3 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-triangle` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 4 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual resolutions` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 5 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-triangle` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 3 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual resolutions` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 4 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 5 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 
 The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
 <!-- OPLAB:RESEARCH-STACK:END -->
