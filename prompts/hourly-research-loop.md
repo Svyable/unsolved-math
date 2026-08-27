@@ -33,11 +33,15 @@ the research budget.
    where permitted, and `manifest.json`. Build and then verify the canonical
    manifest over every packet file. Record the cycle only after
    `oplab loop verify-manifest` passes.
-7. Create or refresh only the branch `automation/hourly-research-loop` and its
+7. Record the verified cycle with `oplab loop record-cycle`; this must refresh
+   the marker-delimited README work stack and deterministic next-up list. Include
+   that README delta in the same review branch. Never hand-write rankings or
+   create a README-only change when the cycle has no material progress.
+8. Create or refresh only the branch `automation/hourly-research-loop` and its
    human-review pull request. Never commit directly to `main`, merge, modify an
    upstream status, publish externally, call paid external models, or claim the
    parent problem is solved.
-8. Report the exact theory delta, verification delta, remaining blocking
+9. Report the exact theory delta, verification delta, remaining blocking
    objections, commands/checks run, artifact hashes, and PR link. If no honest
    two-lane progress was possible, report that plainly and explain the minimum
    blocker; do not create a cosmetic cycle.

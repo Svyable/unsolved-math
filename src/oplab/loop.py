@@ -40,6 +40,17 @@ class SelectionDecision(BaseModel):
     considered: int = Field(ge=0)
 
 
+class RankedCandidateGate(BaseModel):
+    """One queue entry with its deterministic next-cycle gate result."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    queue_rank: int = Field(ge=1)
+    candidate: RankedProblem
+    eligible: bool
+    reason: str
+
+
 def load_ranked_queue(path: Path) -> list[RankedProblem]:
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -58,6 +69,30 @@ def select_next_candidate(
     *,
     as_of: datetime | None = None,
 ) -> SelectionDecision:
+    gates = evaluate_ranked_candidates(queue, history, config, as_of=as_of)
+    for gate in gates:
+        if gate.eligible:
+            return SelectionDecision(
+                selected=gate.candidate,
+                reason="highest-ranked candidate outside cooldown and anti-thrashing gates",
+                considered=len(gates),
+            )
+    return SelectionDecision(
+        selected=None,
+        reason="no ranked candidate passed cooldown and anti-thrashing gates",
+        considered=len(gates),
+    )
+
+
+def evaluate_ranked_candidates(
+    queue: list[RankedProblem],
+    history: list[LoopHistoryEntry],
+    config: ResearchLoopConfig,
+    *,
+    as_of: datetime | None = None,
+) -> list[RankedCandidateGate]:
+    """Annotate the configured queue window without changing its rank order."""
+
     now = as_of or datetime.now(UTC)
     candidates = queue[: config.selection.top_k]
     recent_cutoff = now - timedelta(hours=config.selection.cooldown_hours)
@@ -70,9 +105,7 @@ def select_next_candidate(
 
     consecutive_problem: str | None = None
     consecutive_count = 0
-    for entry in sorted(
-        visible_history, key=lambda value: value.completed_at, reverse=True
-    ):
+    for entry in sorted(visible_history, key=lambda value: value.completed_at, reverse=True):
         if consecutive_problem is None:
             consecutive_problem = entry.problem_id
             consecutive_count = 1
@@ -81,25 +114,42 @@ def select_next_candidate(
         else:
             break
 
-    for candidate in candidates:
+    gates: list[RankedCandidateGate] = []
+    for queue_rank, candidate in enumerate(candidates, start=1):
         last = last_by_problem.get(candidate.problem_id)
         if last is not None and last > recent_cutoff:
+            eligible_at = last + timedelta(hours=config.selection.cooldown_hours)
+            gates.append(
+                RankedCandidateGate(
+                    queue_rank=queue_rank,
+                    candidate=candidate,
+                    eligible=False,
+                    reason=f"cooldown until {eligible_at.isoformat()}",
+                )
+            )
             continue
         if (
             candidate.problem_id == consecutive_problem
             and consecutive_count >= config.selection.max_consecutive_cycles_per_problem
         ):
+            gates.append(
+                RankedCandidateGate(
+                    queue_rank=queue_rank,
+                    candidate=candidate,
+                    eligible=False,
+                    reason="consecutive-cycle limit; rotate to another problem",
+                )
+            )
             continue
-        return SelectionDecision(
-            selected=candidate,
-            reason="highest-ranked candidate outside cooldown and anti-thrashing gates",
-            considered=len(candidates),
+        gates.append(
+            RankedCandidateGate(
+                queue_rank=queue_rank,
+                candidate=candidate,
+                eligible=True,
+                reason="eligible outside cooldown and anti-thrashing gates",
+            )
         )
-    return SelectionDecision(
-        selected=None,
-        reason="no ranked candidate passed cooldown and anti-thrashing gates",
-        considered=len(candidates),
-    )
+    return gates
 
 
 def append_cycle_history(history_path: Path, cycle_dir: Path) -> LoopHistoryEntry:

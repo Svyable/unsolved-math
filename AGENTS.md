@@ -18,5 +18,8 @@ Before changing research artifacts, read `docs/research-integrity.md` and
 - Keep theory and verification evidence in distinct files and record why the
   verification context is independent.
 - Build and verify the packet manifest before recording a cycle.
+- Let `oplab loop record-cycle` refresh the generated README work stack; never
+  hand-edit content between its marker comments or describe a provisional list
+  as ranked.
 - Use `automation/hourly-research-loop` for recurring work and preserve human
   review on `main`.
