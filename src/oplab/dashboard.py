@@ -61,7 +61,10 @@ def _active_stack(
         )
         rows.append((queue_position, -latest.completed_at.timestamp(), row))
     rows.sort(key=lambda item: (item[0], item[1], item[2]))
-    return [row.format(stack=index) for index, (_, _, row) in enumerate(rows, start=1)]
+    return [
+        row.replace("{stack}", str(index))
+        for index, (_, _, row) in enumerate(rows, start=1)
+    ]
 
 
 def render_readme_dashboard(

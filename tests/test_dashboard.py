@@ -64,3 +64,73 @@ def test_dashboard_preserves_queue_rank_after_gates(tmp_path: Path, project_root
     assert "| 1 | 1 | `TOP-001 — TOP-001` | 1 | `CONTINUE`" in rendered
     assert "| 1 | 2 | `NEXT-002 — Next` | 90.00" in rendered
     assert "| 1 | 1 | `TOP-001 — Top candidate` | 95.00" not in rendered
+
+
+def test_dashboard_preserves_braces_in_active_title(
+    bootstrap_root: Path,
+    monkeypatch,
+) -> None:
+    cycle = type(
+        "Cycle",
+        (),
+        {
+            "frozen_problem": type("Problem", (), {"title": "Literal {x}"})(),
+            "next_step": "Check one bounded case",
+        },
+    )()
+
+    monkeypatch.setattr("oplab.dashboard.load_cycle", lambda _: cycle)
+
+    rendered = render_readme_dashboard(
+        bootstrap_root,
+        as_of=datetime(2026, 8, 27, 2, 0, tzinfo=UTC),
+    )
+
+    assert "Literal {x}" in rendered
+
+
+def test_dashboard_preserves_braces_in_next_step(
+    bootstrap_root: Path,
+    monkeypatch,
+) -> None:
+    cycle = type(
+        "Cycle",
+        (),
+        {
+            "frozen_problem": type("Problem", (), {"title": "Normal title"})(),
+            "next_step": "Check {x} and {y}",
+        },
+    )()
+
+    monkeypatch.setattr("oplab.dashboard.load_cycle", lambda _: cycle)
+
+    rendered = render_readme_dashboard(
+        bootstrap_root,
+        as_of=datetime(2026, 8, 27, 2, 0, tzinfo=UTC),
+    )
+
+    assert "Check {x} and {y}" in rendered
+
+
+def test_dashboard_preserves_unmatched_braces(
+    bootstrap_root: Path,
+    monkeypatch,
+) -> None:
+    cycle = type(
+        "Cycle",
+        (),
+        {
+            "frozen_problem": type("Problem", (), {"title": "Literal {x"})(),
+            "next_step": "Continue with {bounded case",
+        },
+    )()
+
+    monkeypatch.setattr("oplab.dashboard.load_cycle", lambda _: cycle)
+
+    rendered = render_readme_dashboard(
+        bootstrap_root,
+        as_of=datetime(2026, 8, 27, 2, 0, tzinfo=UTC),
+    )
+
+    assert "Literal {x" in rendered
+    assert "Continue with {bounded case" in rendered
