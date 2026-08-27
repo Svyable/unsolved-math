@@ -1,0 +1,59 @@
+{
+  "selected_at": "2026-08-27T15:27:56.363360+00:00",
+  "preflight": {
+    "ready": true,
+    "selection_mode": "ranked_queue",
+    "selected_problem_id": "AIM-PROBABILITY-0144",
+    "checks": [
+      "durable instructions and safety boundaries are present",
+      "ranked queue has an eligible candidate outside loop gates"
+    ],
+    "warnings": [],
+    "blockers": []
+  },
+  "queue_rank": 9,
+  "candidate": {
+    "problem_id": "AIM-PROBABILITY-0144",
+    "title": "A split source fragment and the dihedral noncrystallographic H-triangle",
+    "imported_status": "open",
+    "difficulty_level": 2,
+    "category": "probability",
+    "score": 77.25,
+    "components": {
+      "computational_affordance": 1.0,
+      "literature_freshness": 0.15,
+      "provenance": 0.7,
+      "research_traction": 0.55,
+      "statement_quality": 1.0,
+      "tractability": 0.9
+    },
+    "reasons": [
+      "difficulty L2",
+      "statement status exact",
+      "one provenance field is present",
+      "literature check date is missing",
+      "research classification OPEN-TRIAGE",
+      "computational keywords: finite, graph"
+    ],
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "main_commit": "bf751c5098dd4cda461ca29ea6d756daddbd2e39",
+  "previous_review_branch_commit": "44754548f0ad361860c259a1f7aceace77df4af2",
+  "open_automation_pr": null,
+  "unrelated_open_pr": 14,
+  "open_issues_checked": [
+    9,
+    10
+  ],
+  "raw_record_sha256": "e8c9c6101e7c625e2916bf6e62239eafd7819bae7c1d1bfa7d50bbd06904da94",
+  "upstream_record_id": 20002702,
+  "queue_sha256": "1d91b004797095b515272587c1121d362ad64081ba5d373200320ffbbe06e0bf",
+  "history_before_sha256": "1912e673ed5895e2f7874ae77fea1e26dd92cf30c1c6e358adaf3ce6a78bc468",
+  "dataset_manifest_sha256": "8d19f167df382e076ed018c2702e25e7bea511cb6294f47f465c4fc880fae14a",
+  "source_file_sha256_verified": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+  "imported_summary_claim": "The canonical record is not an independent Problem 1.1 but the page-broken second half of the final bullet of AIM Problem 1.2; its number was misread from a parenthetical cross-reference. For the underlying mathematical question, this attempt gives a proved uniform answer in every dihedral type I2(m): the unique V-then-chain abstract root poset has antichain polynomial H(s,t)=1+2st+(m-2)t+s^2t^2, and its inverse Chapoton transform is exactly the independently counted cluster-polygon face polynomial F(x,y)=1+mx+2y+(m-1)x^2+2xy+y^2. The identity covers all noncrystallographic m and is independent of parity or root-length ratio. Literature verification records the positive H3 construction and the Cuntz-Stump and Chen-Kriloff H4 obstructions.\n\nCandidate contribution (coefficient identity; novelty confidence low): For every integer m at least 3, the inverse Chapoton transformation sends the explicitly counted V-then-chain antichain enumerator 1+2st+(m-2)t+s^2t^2 to the independently counted sign-refined I2(m) cluster-polygon face enumerator 1+mx+2y+(m-1)x^2+2xy+y^2, uniformly across crystallographic and noncrystallographic types after the H-variable convention is swapped.",
+  "imported_summary_trust": "UNVERIFIED_EXTERNAL_METADATA",
+  "scope": "Test whether the real-cone order on the equal-length I2(5) positive roots has the desired H-triangle and Panyushev orbit profile; certify minimal abstract extensions, not a geometric root-order repair or H4 result.",
+  "prior_cycle_dependencies": [],
+  "attribution": "ulamai/UnsolvedMath, CC BY 4.0; exact statement retained."
+}

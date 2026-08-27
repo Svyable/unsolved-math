@@ -8,3 +8,4 @@
 {"completed_at":"2026-08-27T09:39:41.674490Z","conclusion":"FALSIFIED_SUBCLAIM","cycle_id":"20260827T093200Z-strip-intersection-audit","material_progress":true,"problem_id":"AIM-GEOMETRY-0237"}
 {"completed_at":"2026-08-27T10:54:16.253032Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T104644Z-cyclic-factor-audit","material_progress":true,"problem_id":"AIM-OTHER-0008"}
 {"completed_at":"2026-08-27T11:39:26.302342Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T113347Z-borel-cantelli-tail","material_progress":true,"problem_id":"AIM-OTHER-0106"}
+{"completed_at":"2026-08-27T15:33:28.069684Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T152756Z-dihedral-cone-obstruction","material_progress":true,"problem_id":"AIM-PROBABILITY-0144"}

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/workspace/scratch/1faac0a7d2ae/research9/.venv/bin/python3",
+    "-I",
+    "verify.py"
+  ],
+  "exit_code": 0,
+  "seconds": 0.724,
+  "stdout_sha256": "4eec4d524df64e4a1ed4eb0dbec1554575cf1d5ae04ae0398b398d433758f3aa",
+  "stderr": ""
+}
