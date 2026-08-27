@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "repository_contribution_index",
+  "project": "Svyable/unsolved-math",
+  "summary": "Evidence-first open mathematics research and reproducible verification; human and operator-authorized agent contributions welcome.",
+  "repository_url": "https://github.com/Svyable/unsolved-math",
+  "clone_url": "https://github.com/Svyable/unsolved-math.git",
+  "default_branch": "main",
+  "entrypoints": {
+    "instructions": "AGENTS.md",
+    "contributing": "CONTRIBUTING.md",
+    "agent_guide": "docs/agent-contributions.md",
+    "integrity": "docs/research-integrity.md",
+    "research_contract": "docs/hourly-loop.md",
+    "navigation": "llms.txt"
+  },
+  "work_sources": {
+    "research_queue": "data/queues/research.json",
+    "dataset_manifest": "data/current/manifest.json",
+    "history": "data/research-loop/history.jsonl",
+    "packets": "cases/",
+    "readme": "README.md",
+    "missing_queue_policy": "Inspect open sync/research PRs and run preflight; do not invent a ranking or assume an unmerged snapshot is reviewed."
+  },
+  "interfaces": {
+    "issue_chooser": "https://github.com/Svyable/unsolved-math/issues/new/choose",
+    "issues_api": "https://api.github.com/repos/Svyable/unsolved-math/issues",
+    "pulls_api": "https://api.github.com/repos/Svyable/unsolved-math/pulls",
+    "starter_tasks": "https://github.com/Svyable/unsolved-math/contribute",
+    "help_wanted": "https://github.com/Svyable/unsolved-math/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22help%20wanted%22",
+    "pending_research": "https://github.com/Svyable/unsolved-math/pulls?q=is%3Apr%20is%3Aopen%20head%3Aautomation%2Fhourly-research-loop"
+  },
+  "issue_templates": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/research-task.yml",
+      "purpose": "Bounded research or tooling proposal",
+      "required_fields": ["scope", "evidence", "plan", "verification", "attribution"]
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/evidence-review.yml",
+      "purpose": "Independent reproduction, counterexample, or evidence objection",
+      "required_fields": ["target", "findings", "reproduction", "independence", "attribution"]
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug-report.yml",
+      "purpose": "Reproducible software or documentation bug",
+      "required_fields": ["version", "observed", "reproduction", "attribution"]
+    }
+  ],
+  "contribution_policy": {
+    "agent_contributions_welcome": true,
+    "operator_authorization_required": true,
+    "writes_require_own_github_identity": true,
+    "search_before_create": true,
+    "one_bounded_task_per_submission": true,
+    "human_review_required": true,
+    "auto_merge_allowed": false,
+    "upstream_status_writeback_allowed": false,
+    "autonomous_parent_solve_claims_allowed": false,
+    "agent_assistance_disclosure_required": true,
+    "research_packets_require_two_lanes": true,
+    "fork_pull_requests": true,
+    "reserved_branch": "automation/hourly-research-loop",
+    "hosted_agent_execution_service": false
+  },
+  "local_checks": [
+    "uv sync --locked --all-extras",
+    "uv run ruff check .",
+    "uv run mypy src",
+    "uv run pytest"
+  ],
+  "research_checks": [
+    "uv run oplab loop preflight",
+    "uv run oplab loop validate-cycle <cycle-directory>",
+    "uv run oplab loop build-manifest <cycle-directory>",
+    "uv run oplab loop verify-manifest <cycle-directory>"
+  ],
+  "licensing": {
+    "repository_code": "MIT",
+    "upstream_metadata": "CC BY 4.0 with attribution and pinned provenance",
+    "linked_material": "Retains its own rights; capture only permitted evidence"
+  },
+  "notice": "Project-specific navigation, not a standard agent protocol, permission grant, current task assignment, or guarantee of indexing. GitHub issue forms activate only after merge to the default branch."
+}

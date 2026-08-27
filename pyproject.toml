@@ -22,6 +22,7 @@ dependencies = [
 dev = [
   "mypy>=1.17,<3",
   "pytest>=8.4,<10",
+  "pyyaml>=6,<7",
   "ruff>=0.12,<1",
 ]
 
