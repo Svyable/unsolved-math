@@ -1,0 +1,64 @@
+{
+  "audited_at": "2026-08-27T07:38:41Z",
+  "capture_policy": "Only URLs, bibliographic locators and derived audit notes retained; no full copyrighted paper redistribution. Source heading is retained from CC BY 4.0 dataset.",
+  "sources": [
+    {
+      "source_id": "S1",
+      "url": "https://arxiv.org/pdf/math/0110009v3",
+      "title": "New upper bounds on sphere packings I",
+      "authors": [
+        "Henry Cohn",
+        "Noam Elkies"
+      ],
+      "version": "arXiv math/0110009v3, 2003-09-03",
+      "journal": "Annals of Mathematics 157 (2003), 689–714",
+      "accessed_url": "https://arxiv.org/pdf/math/0110009",
+      "access_status": "primary PDF text retrieved; header identifies v3",
+      "locators": [
+        "Section 2, printed p.693: Fourier convention and admissibility",
+        "Theorems 3.1–3.2, printed pp.694–695",
+        "Section 7, printed p.704: Laguerre eigenbasis uses argument 2*pi*|x|^2"
+      ],
+      "claim_mapping": [
+        "C1: conditional packing bound after satisfying the hypotheses; center density is not covered volume",
+        "C1: equal-origin candidate permits direct use of Theorem 3.2"
+      ],
+      "derived_notes": "The stored candidate has equal positive origins and all required signs. Convert the theorem's center-density bound to volume density using the ball volume. Its historical discussion of unresolved dimensions is not treated as current status.",
+      "limits": "Full theorem proof not independently reverified or kernel checked. Monomial-transform coefficient identity is locally derived and independently checked, not quoted as the paper's eigenbasis."
+    },
+    {
+      "source_id": "S2",
+      "url": "https://aimpl.org/discreteaf/1/",
+      "original_dataset_url": "http://aimpl.org/discreteaf/1/",
+      "title": "Discrete geometry and automorphic forms, item 1.18 (dataset locator)",
+      "access_status": "HTTPS timed out; HTTP fetch also failed",
+      "claim_mapping": [
+        "C4: no fresh primary-source confirmation of the source heading"
+      ],
+      "derived_notes": "Only the pinned dataset supplies the exact six-word heading. No longer statement is reconstructed. The imported mesh/derivative/tail claim remains unverified.",
+      "limits": "AIM scope and context require human review or a later successful retrieval."
+    },
+    {
+      "source_id": "S3",
+      "url": "https://arxiv.org/abs/1603.06518v3",
+      "title": "The sphere packing problem in dimension 24",
+      "authors": [
+        "Henry Cohn",
+        "Abhinav Kumar",
+        "Stephen D. Miller",
+        "Danylo Radchenko",
+        "Maryna Viazovska"
+      ],
+      "version": "v3, 2017-08-28; initially submitted 2016-03-21",
+      "journal": "Annals of Mathematics 185 (2017), 1017–1033",
+      "accessed_url": "https://arxiv.org/abs/1603.06518",
+      "access_status": "primary authors' abstract retrieved",
+      "claim_mapping": [
+        "C4: prior result boundary; no novelty or new optimal packing claim"
+      ],
+      "derived_notes": "The authors establish Leech lattice optimality in dimension 24 and describe an optimal auxiliary function. Our much weaker polynomial certificate is a calibration artifact only.",
+      "limits": "Only the abstract was inspected for this prior-result boundary; full proof and ancillary certificate were not replayed."
+    }
+  ],
+  "independence": "Primary-source text checked separately from imported summaries. Same assistant conducted both lane/source audits; no independent human/model reviewer."
+}

@@ -1,0 +1,224 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T073500Z-gaussian-certificate",
+  "problem_id": "AIM-GEOMETRY-0085",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-GEOMETRY-0085",
+    "title": "Finite exact certification of numerical Cohn--Elkies bounds",
+    "statement": "Numerical LP bounds in high dimensions.",
+    "statement_sha256": "e453c11c78f8c738aab8f61e932b693ed00e838e81ec89a0d50c5520e15a5a77",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T07:34:13.098594Z",
+    "source_urls": [
+      "https://aimpl.org/discreteaf/1/",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://arxiv.org/abs/math/0110009v3"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 4, score 77.25, highest eligible in the validated queue on open PR #8 at 8c75ca4006a1d1e2a7a46ef3e7997d04145f6f7c. Main lacks a queue; synchronization is restored on the review branch and its manifest passed. Ranks 1 through 3 are on cooldown. No provisional substitution or ranking change.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T07:34:13.098594Z",
+  "completed_at": "2026-08-27T07:40:11.966317Z",
+  "selection_basis": "Rank 4, score 77.25, highest eligible in the validated queue on open PR #8 at 8c75ca4006a1d1e2a7a46ef3e7997d04145f6f7c. Main lacks a queue; synchronization is restored on the review branch and its manifest passed. Ranks 1 through 3 are on cooldown. No provisional substitution or ranking change.",
+  "theory": {
+    "target": "Certify one rational degree-three polynomial-Gaussian Cohn-Elkies candidate in dimension 24 and compare its exact bound with a degree-one calibration.",
+    "definitions": [
+      "u=pi*|x|^2, n=24, m=12; Fourier convention uses exp(2*pi*i*<x,y>).",
+      "f=P(u)*exp(-u), hat(f)=Q(u)*exp(-u); signs are quantified over all real u in their half-lines.",
+      "Candidate family Q=(u-b)^2*(u+c); exact finite grid specified in input.json.",
+      "Density is covered volume fraction; it differs from center density by unit-ball volume."
+    ],
+    "assumptions": [
+      "Cited Cohn-Elkies packing theorem and standard Gaussian Fourier identity; no kernel acceptance.",
+      "Polynomial-Gaussians are Schwartz; transforms may be differentiated under the integral.",
+      "Global signs come from factor/Taylor identities, not finite samples.",
+      "Canonical source is a heading; no reconstruction, novelty or autonomous parent-problem claim."
+    ],
+    "approaches_considered": [
+      "Mesh, derivative margin and infinite-tail certification after square-factor removal; considered but not implemented.",
+      "Exact positive factorization for Q and nonpositive shifted coefficients for P, paired with rational Fourier coefficients."
+    ],
+    "falsification_targets": [
+      "Wrong Fourier convention, transform coefficients or center-density scaling.",
+      "Negative between-grid values, double-root instability, undersized tail threshold and zero denominator."
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "In dimension 24, P(u)=225+13u+13u^2-u^3 and Q(u)=(u-15)^2*(u+1) are Fourier-paired polynomial-Gaussians with positive equal origins and correct global signs at T=15; the cited Cohn-Elkies theorem gives density at most 21357421875/1322849927168.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "The transform identity, any global sign, positivity, admissibility or density normalization fails, or the cited theorem is inapplicable.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C2",
+        "statement": "Among the 70,200 configured grid triples passing the specified sufficient certificate test, b=15,c=1,T=15 minimizes the exact bound; 13,135 pass. This bound is strictly smaller than the degree-one baseline, without any broader optimality claim.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An accepted grid triple has a smaller bound, counts or digests disagree, or the exact baseline comparison fails.",
+        "dependencies": [
+          "C1"
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "Positive values on the quarter-grid suffice to certify nonnegativity between grid points. This shortcut is false for the stored cubic negative-dip control.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A polynomial is positive at every tested quarter-grid point but negative at a point between them.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C4",
+        "statement": "The 2017 primary authors abstract establishes a prior Leech-lattice optimality result in dimension 24; the present weak calibration is not a new optimal packing claim. The AIM heading itself was not freshly verified.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "The cited abstract does not support that historical prior-result boundary or the packet incorrectly claims fresh AIM verification.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T-exact-gaussian-certificate",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Produced a finite exact certificate with P(15+v)=-30-272v-32v^2-v^3 and Q=(u-15)^2*(u+1), independently reproducible density objective, and a strict improvement over the degree-one baseline.",
+        "claim_ids": [
+          "C1",
+          "C2"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "bb5f0d0d070bab7a0e7380100e205f5f3e6f626af8c75dab6faaa6dbf82add04",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory_search.py",
+            "sha256": "938693150d8da10704b039e6dcf117f4f7fa278da0edc8e5e757d918bbdd5df6",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "5b31a99d39aaf1aaa7618b05dde520468957eaaa981367cfb70c2a4a42fd8e1c",
+            "media_type": "application/json"
+          },
+          {
+            "path": "certificate.json",
+            "sha256": "8394c21a996101146c9dc6a86bb34f7559edc51442163038a7fc3555931638c6",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-differential-checker",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Start with seven certificate mutations and a between-grid counterexample; derive Fourier coefficients via the radial Laplacian, tail coefficients via exact derivatives, then replay the finite grid and check the objective.",
+        "independent_context": true,
+        "independence_basis": "Fresh python -I process reads input.json and untrusted certificate.json only. It imports no theory code or output. Radial differentiation and factor multiplication replace the theory Laguerre/binomial transform. Same assistant authored both; no independent human/model review.",
+        "result": "All mutations rejected; 121 positive samples miss a -1/1000 dip. The full 70,200-triple replay agrees on 13,135 accepted triples, ordered digest and winning bound. All 36 transform-involution basis checks pass.",
+        "reproduction_command": "python -I verify.py",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "921faeec3e161173eba9db53e1a1103afa34c7bc171830cc911acc18c7841d39",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "b7a65c889033e2a64e3bc918db0f1038bf89c0acb6dba0a9957dffd2ee5ee6ea",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "e8a527589f2064908480352adc5052a07981eb4da2b744fdd65b661bb5c32ef3",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "The cited packing theorem and analytic Fourier identities are not kernel checked or independently human/model reviewed.",
+          "Finite-grid optimality does not imply optimality among arbitrary auxiliary functions."
+        ]
+      },
+      {
+        "check_id": "V-source-and-normalization",
+        "claim_ids": [
+          "C1",
+          "C4"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Read original Cohn-Elkies Theorems 3.1 and 3.2 and the 2017 primary authors abstract; audit equal origins, radius scaling, volume factor and prior-result boundary.",
+        "independent_context": true,
+        "independence_basis": "Primary PDF and primary abstract retrieved separately from imported dataset summaries; distinct verification notes. Same-assistant review, not a fresh-model referee.",
+        "result": "The equal-origin theorem fits the displayed candidate after the global sign audit; converting center density gives the exact rational objective. Prior optimality result is explicit; AIM source itself was unavailable.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "127c5c123664d1e36b6010b15ff5f05e54e16a838731fc3ed2223d9a40271942",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "921faeec3e161173eba9db53e1a1103afa34c7bc171830cc911acc18c7841d39",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "AIM source heading and imported general certificate lemma remain unverified; human scope review required."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V-independent-certificate",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "An independent algebraic implementation regenerates the certificate and entire finite search, rejects seven bad certificates, and stores an exact counterexample to sampling-only positivity.",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "921faeec3e161173eba9db53e1a1103afa34c7bc171830cc911acc18c7841d39",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "b7a65c889033e2a64e3bc918db0f1038bf89c0acb6dba0a9957dffd2ee5ee6ea",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "e8a527589f2064908480352adc5052a07981eb4da2b744fdd65b661bb5c32ef3",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Canonical source is a broad heading and the AIM page could not be retrieved; human scope review remains necessary.",
+      "Only a weak dimension-24 calibration and finite-grid search are certified; no state-of-the-art or general imported-lemma claim.",
+      "Published packing theorem and analytic steps are cited/derived but not kernel accepted or independently human/model reviewed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain this exact Fourier/sign/objective certificate as a regression baseline; human-review the source heading before higher-degree or broader-dimensional work, and rotate to the next eligible ranked candidate."
+}

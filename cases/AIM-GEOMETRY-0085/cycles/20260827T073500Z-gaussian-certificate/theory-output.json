@@ -1,0 +1,35 @@
+{
+  "certificate": {
+    "P_coefficients_ascending": [
+      "225",
+      "13",
+      "13",
+      "-1"
+    ],
+    "P_shifted_at_T": [
+      "-30",
+      "-272",
+      "-32",
+      "-1"
+    ],
+    "Q_coefficients_ascending": [
+      "225",
+      "195",
+      "-29",
+      "1"
+    ],
+    "T": "15",
+    "b": 15,
+    "c": 1,
+    "density_upper_bound": "21357421875/1322849927168",
+    "dimension": 24
+  },
+  "certified_grid_sha256": "0a1cda8613ff24e00de56ac25c883f18a4d4103e62111821988b9f025555ea22",
+  "certified_triples": 13135,
+  "degree_one_baseline": "302875106592253/8036313307545600",
+  "grid_triples_tested": 70200,
+  "method": "exact Laguerre coefficient transform plus shifted-monomial tail certificate",
+  "ratio_to_baseline": "129746337890625/302875106592253",
+  "scope": "Best certified triple on specified finite grid only; not optimality or novelty.",
+  "strict_improvement": true
+}
