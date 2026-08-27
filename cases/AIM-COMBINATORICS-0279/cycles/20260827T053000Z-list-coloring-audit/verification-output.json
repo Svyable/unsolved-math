@@ -1,0 +1,101 @@
+{
+  "K2_4_edge_deletion_repair_count": 8,
+  "K2_4_list_assignments_tested": 64,
+  "K2_4_satisfying_assignments": 0,
+  "adversarial_probes": {
+    "C4_rejected": true,
+    "C5_allowed": true,
+    "K2_4_bipartite_2_degenerate_not_2_choosable": true,
+    "K33_needs_even_hole_free_assumption": true,
+    "K4_needs_triangle_free_assumption": true,
+    "all_eight_single_edge_removals_repair_bad_lists": true,
+    "chorded_C4_not_misclassified_as_hole": true,
+    "empty_graph_chromatic_zero": true,
+    "nonempty_edgeless_chromatic_one": true
+  },
+  "all_graphs": 33868,
+  "classification_sha256": "2ddc43d4eabcab5a6e8990b61fc5bde0c69c381e8e4e251a38da62de583d80e0",
+  "counts": [
+    {
+      "all_graphs": 1,
+      "chi_counts_0_1_2_3": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "eligible": 1,
+      "n": 0
+    },
+    {
+      "all_graphs": 1,
+      "chi_counts_0_1_2_3": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "eligible": 1,
+      "n": 1
+    },
+    {
+      "all_graphs": 2,
+      "chi_counts_0_1_2_3": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "eligible": 2,
+      "n": 2
+    },
+    {
+      "all_graphs": 8,
+      "chi_counts_0_1_2_3": [
+        0,
+        1,
+        6,
+        0
+      ],
+      "eligible": 7,
+      "n": 3
+    },
+    {
+      "all_graphs": 64,
+      "chi_counts_0_1_2_3": [
+        0,
+        1,
+        37,
+        0
+      ],
+      "eligible": 38,
+      "n": 4
+    },
+    {
+      "all_graphs": 1024,
+      "chi_counts_0_1_2_3": [
+        0,
+        1,
+        290,
+        12
+      ],
+      "eligible": 303,
+      "n": 5
+    },
+    {
+      "all_graphs": 32768,
+      "chi_counts_0_1_2_3": [
+        0,
+        1,
+        2931,
+        432
+      ],
+      "eligible": 3364,
+      "n": 6
+    }
+  ],
+  "eligible_graphs": 3716,
+  "independence": "Fresh python -I process reads input.json only; no theory imports or outputs.",
+  "input_sha256": "578a80325a36fffb9d93415829acbb42adcc86883a95847bceadf89ee7487449",
+  "limits": "Finite exhaustive computation; arbitrary list upper bounds require the stated greedy argument."
+}

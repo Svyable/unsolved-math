@@ -1,0 +1,19 @@
+{
+  "snapshot_schema_version": 1,
+  "problem_id": "AIM-COMBINATORICS-0279",
+  "title": "An extraction fragment and an exact triangle-free list-coloring corollary",
+  "statement": "Conjecture 2. Let G be an even-hole-free graph.",
+  "statement_sha256": "13daf72a11aaf808aa3a5275c5a060d1d50d8cf442ca4d5a63415cb8acdf08e1",
+  "upstream_dataset": "ulamai/UnsolvedMath",
+  "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+  "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+  "frozen_at": "2026-08-27T05:30:14.150882Z",
+  "source_urls": [
+    "https://aimath.org/WWN/perfectgraph/perfectgraph.pdf",
+    "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+    "https://arxiv.org/abs/1909.10967"
+  ],
+  "imported_status": "open",
+  "selection_basis": "Rank 2, score 77.25, highest eligible candidate in the validated queue restored in open review PR #8 at f93ca7db397ae9cc6e872918535e155398b2627d. Main has no queue yet; reused and validated the restored review-branch snapshot rather than inventing a replacement. Rank 1 is on cooldown. Imported exact/open labels remain unverified.",
+  "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+}

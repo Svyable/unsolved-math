@@ -1,0 +1,15 @@
+{
+  "replayed_at": "2026-08-27T05:37:05.354164+00:00",
+  "python_version": "3.12.13",
+  "byte_identical_outputs_and_certificates": true,
+  "network_in_experiments": false,
+  "randomness": "none",
+  "external_paid_model_calls": 0,
+  "independence": "Different deterministic algorithms and isolated processes; same assistant authorship, no independent model/human reviewer.",
+  "uv_lock_sha256": "2a000ab9f53936eb4b73c46f2754363f167aa13e5cd36878d6ae3df7cd5844da",
+  "commands": [
+    "python -I theory_check.py --certificates TEMP_PATH",
+    "python -I verify.py",
+    "python -I check_certificates.py"
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T053000Z-list-coloring-audit",
+  "problem_id": "AIM-COMBINATORICS-0279",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-COMBINATORICS-0279",
+    "title": "An extraction fragment and an exact triangle-free list-coloring corollary",
+    "statement": "Conjecture 2. Let G be an even-hole-free graph.",
+    "statement_sha256": "13daf72a11aaf808aa3a5275c5a060d1d50d8cf442ca4d5a63415cb8acdf08e1",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T05:30:14.150882Z",
+    "source_urls": [
+      "https://aimath.org/WWN/perfectgraph/perfectgraph.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://arxiv.org/abs/1909.10967"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 2, score 77.25, highest eligible candidate in the validated queue restored in open review PR #8 at f93ca7db397ae9cc6e872918535e155398b2627d. Main has no queue yet; reused and validated the restored review-branch snapshot rather than inventing a replacement. Rank 1 is on cooldown. Imported exact/open labels remain unverified.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T05:30:14.150882Z",
+  "completed_at": "2026-08-27T05:37:05.354164Z",
+  "selection_basis": "Rank 2, score 77.25, highest eligible candidate in the validated queue restored in open review PR #8 at f93ca7db397ae9cc6e872918535e155398b2627d. Main has no queue yet; reused and validated the restored review-branch snapshot rather than inventing a replacement. Rank 1 is on cooldown. Imported exact/open labels remain unverified.",
+  "theory": {
+    "target": "Audit the hypothesis and dependency boundary of the exact triangle-free even-hole-free list-coloring corollary; preserve the canonical fragment unchanged.",
+    "definitions": [
+      "Finite simple undirected graphs; holes are induced cycles of length at least four.",
+      "d-degeneracy quantifies over every nonempty induced subgraph.",
+      "k-choosability quantifies over every list assignment of size at least k over arbitrary finite palettes.",
+      "Both chromatic invariants equal zero on the null graph by convention."
+    ],
+    "assumptions": [
+      "Both triangle-freeness and even-hole-freeness are required.",
+      "The unbounded deduction assumes the external structural theorem; finite enumeration is limited to n<=6.",
+      "The imported fragment and open/exact metadata remain unverified and unchanged."
+    ],
+    "approaches_considered": [
+      "Use hereditary bisimplicial structure, low-degree removal, and reverse-greedy list coloring.",
+      "Enumerate finite graphs and independently check cycles, all induced degrees, and exact colorings."
+    ],
+    "falsification_targets": [
+      "Find a class member of degeneracy above two or a coloring mismatch.",
+      "Falsify the bipartite/2-degenerate shortcut with an exact bad list assignment.",
+      "Check primary statement placement and corrected theorem dependency."
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "Among all 33,868 labelled simple graphs on 0..6 vertices, 3,716 are triangle-free and even-hole-free; each has degeneracy at most two, and ordinary chromatic numbers follow the null/edgeless/forest/cyclic classification.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any omitted or misclassified graph, invalid order, degree-bound violation, or exhaustive-coloring mismatch.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C2",
+        "statement": "Every bipartite 2-degenerate graph is 2-choosable. The specified K2,4 two-list assignment falsifies this stronger implication.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A proper coloring of the six specified lists would refute the obstruction certificate.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The frozen imported text is a splice in the explanation after Conjectures 2, 3 and 4 in AIM section G.4, not a complete standalone conjecture.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Primary PDF placement contradicts the splice mapping or supplies a conclusion within the frozen text.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C4",
+        "statement": "Chudnovsky and Seymour state the bisimplicial-vertex theorem and document a clique-transfer error in the older proof, supplying a replacement argument.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "The cited author-hosted paper lacks the stated theorem or correction; this is not independent verification of its full proof.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C5",
+        "statement": "Conditional on the cited structural theorem, finite triangle-free even-hole-free graphs have equal ordinary and list chromatic numbers, with values 0,1,2,3 for null, non-null edgeless, forest-with-edge, and cyclic graphs respectively.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A counterexample within the stated class, a failure of the external theorem, or a gap in the hereditary-degree/reverse-greedy/odd-cycle argument.",
+        "dependencies": [
+          "C4"
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T-finite-certificates",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Store 3,716 low-degree removal certificates and a complete n<=6 classification; map the arbitrary-list upper bound to reverse-greedy coloring. No universal proof from finite testing.",
+        "claim_ids": [
+          "C1",
+          "C5"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "31cbe3e43c8e8de04a590d5697ccccb009d3052d82b024dd7851d11d21281d13",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory_check.py",
+            "sha256": "28cd1635b256e06824d8250b5bc944dbf8222c02e20f1bf105d52fbb0f7be0dd",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "54f2e1b12e042602f076d599b05dc0cae002ec55fcefceb7df360f34541813d3",
+            "media_type": "application/json"
+          },
+          {
+            "path": "peeling-certificates.jsonl",
+            "sha256": "84c1db6345b1dfaf75deb70d0f30fd7753774d01f3ca54488da5a6ecfba993c9",
+            "media_type": "application/x-ndjson"
+          }
+        ]
+      },
+      {
+        "unit_id": "T-assumption-obstruction",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact K2,4 bad two-list certificate retires the bipartite/2-degenerate shortcut; no novelty claim.",
+        "claim_ids": [
+          "C2"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "31cbe3e43c8e8de04a590d5697ccccb009d3052d82b024dd7851d11d21281d13",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory_check.py",
+            "sha256": "28cd1635b256e06824d8250b5bc944dbf8222c02e20f1bf105d52fbb0f7be0dd",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "54f2e1b12e042602f076d599b05dc0cae002ec55fcefceb7df360f34541813d3",
+            "media_type": "application/json"
+          },
+          {
+            "path": "peeling-certificates.jsonl",
+            "sha256": "84c1db6345b1dfaf75deb70d0f30fd7753774d01f3ca54488da5a6ecfba993c9",
+            "media_type": "application/x-ndjson"
+          }
+        ]
+      },
+      {
+        "unit_id": "T-dependency-map",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "Identify the incomplete source fragment and the replacement dependency after a documented earlier proof error.",
+        "claim_ids": [
+          "C3",
+          "C4"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "31cbe3e43c8e8de04a590d5697ccccb009d3052d82b024dd7851d11d21281d13",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-fresh-enumeration",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C5"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Counterexample and boundary probes first; cycle edge/chord masks, every induced-subgraph minimum degree, and exhaustive ordinary coloring. Then independently validate stored removal orders.",
+        "independent_context": true,
+        "independence_basis": "Fresh python -I process reads only input.json; no theory output/code. Distinct recognition and degree algorithms. Certificate audit runs afterward and explicitly reads certificates. Same assistant authored both; not independent model/human review.",
+        "result": "Both algorithms agree on all 33,868 graphs, 3,716 eligible, zero classification discrepancies; 64 bad-list assignments rejected, eight edge deletions repaired, all stored orders validated.",
+        "reproduction_command": "python -I verify.py && python -I check_certificates.py",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "ebf42a8031412d31fd9e7259c521e14c48442253ae010d03ccdaba88a95311a2",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "28a5b7da3410cc6f6fc9209acb207badb1ec9bfef630c5ee180ac08135285b62",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "69d389583297e7634a57ae759fd41651fc3db3fc0f8e8356a9d55fde53c1a34c",
+            "media_type": "application/json"
+          },
+          {
+            "path": "check_certificates.py",
+            "sha256": "4b27888b4e10f0ae8046ca029571325e78a96baceb591a0af9a7543ef572e417",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "certificate-check-output.json",
+            "sha256": "33d1876ed98fb40c43996769f210c7631039cacf2c42e26ff93b1123bf4c9e8b",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "No exhaustive arbitrary-palette list enumeration; upper bounds use the explicit greedy argument.",
+          "No kernel acceptance or independent human/model proof review."
+        ]
+      },
+      {
+        "check_id": "V-primary-dependencies",
+        "claim_ids": [
+          "C3",
+          "C4"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Inspect AIM section G.4 and theorem 1.1 plus the correction paragraph in the author-hosted replacement paper; compare arXiv version metadata.",
+        "independent_context": true,
+        "independence_basis": "Primary texts retrieved independently of dataset summaries, in evidence files separate from theory; same-assistant source audit, not a fresh-model referee.",
+        "result": "Fragment placement verified; replacement theorem and older clique-transfer proof error documented. The author PDF revision is June 26, 2024, distinct from arXiv v2 May 15, 2020.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "f0adb68163df74225243b22a7319e6b9691933717153b389d7029f451ed4f31a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "ebf42a8031412d31fd9e7259c521e14c48442253ae010d03ccdaba88a95311a2",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "The long structural proof was not independently reverified; canonical fragment needs human scope review."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V-independent-certificate",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Different algorithms reproduce the finite classification and obstruction, validate every removal order, and detect adversarial ordering errors.",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C5"
+        ],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "ebf42a8031412d31fd9e7259c521e14c48442253ae010d03ccdaba88a95311a2",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "28a5b7da3410cc6f6fc9209acb207badb1ec9bfef630c5ee180ac08135285b62",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "69d389583297e7634a57ae759fd41651fc3db3fc0f8e8356a9d55fde53c1a34c",
+            "media_type": "application/json"
+          },
+          {
+            "path": "check_certificates.py",
+            "sha256": "4b27888b4e10f0ae8046ca029571325e78a96baceb591a0af9a7543ef572e417",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "certificate-check-output.json",
+            "sha256": "33d1876ed98fb40c43996769f210c7631039cacf2c42e26ff93b1123bf4c9e8b",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "V-proof-dependency",
+        "kind": "PROOF_GAP_IDENTIFIED",
+        "summary": "Do not use the older clique-transfer step as a verified premise; retain the replacement theorem as an explicit external dependency and the fragment as a scope objection.",
+        "claim_ids": [
+          "C3",
+          "C4"
+        ],
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "f0adb68163df74225243b22a7319e6b9691933717153b389d7029f451ed4f31a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "ebf42a8031412d31fd9e7259c521e14c48442253ae010d03ccdaba88a95311a2",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Incomplete canonical statement requires human scope review; no reconstruction or status rewrite.",
+      "Unbounded corollary relies on a primary-source theorem and unformalized local deduction.",
+      "Known calibration and finite verification, not novel mathematics or a parent-problem result.",
+      "Same-assistant authorship; no independent model/human referee or kernel acceptance."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Human-review the extraction fragment and corrected theorem dependency; rotate to the next eligible ranked candidate."
+}
