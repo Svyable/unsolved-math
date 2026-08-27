@@ -1,0 +1,272 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T183200Z-inseparable-diagonal-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0019",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0019",
+    "title": "Diagonal resolutions versus homotopy-colimit depth",
+    "statement": "There are two known ways to bound Rouquier dimension of a category\n\\begin{enumerate}\n\\item bound length of a resolution of a diagonal\n\\item the minimal depth of a presentation of $\\mathcal{C}$ as hocolim (cats with Rouquier dimension $Q$). Meaning if $F:I^{\\leq}\\to Cat$ diagram with $Rdim F(i)=0$, then $Rdim(hocolim F i)\\leq depth(I)$\n\\end{enumerate}\n\nCan (1) be used to bound (2) or vice-versa?",
+    "statement_sha256": "dba3bf05e85c3d659d514333ea3efc0ad1992ba5da1308beb1ca899bc90570db",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T18:31:24.143520Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/syzygyms/7/",
+      "https://stacks.math.columbia.edu/tag/09HD",
+      "https://arxiv.org/html/2110.10663v3"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 11, score 73.5; highest-ranked eligible candidate in pinned 200-item queue after including pending PR16 history and applying cooldown/anti-thrashing gates. Not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T18:31:24.143520Z",
+  "completed_at": "2026-08-27T18:36:23.102964Z",
+  "selection_basis": "Rank 11, score 73.5; highest-ranked eligible candidate in pinned 200-item queue after including pending PR16 history and applying cooldown/anti-thrashing gates. Not provisional.",
+  "theory": {
+    "target": "Audit exactness and positive Ext in the purely inseparable diagonal obstruction, using nilpotent versus separable controls; no general homotopy-colimit comparison theorem.",
+    "definitions": [
+      "R=Fp[e]/e^m; v(f) is least nonzero coefficient index and v(0)=m.",
+      "Alternating multiplication by f,g is a complex when fg=0; positive homology is kernel modulo adjacent image.",
+      "Augmentation is z->0; Ext is computed by applying Hom to an exact free resolution.",
+      "Unrestricted singleton arrow-depth is zero; diagonal pieces are exterior products of perfect modules."
+    ],
+    "assumptions": [
+      "For the universal obstruction k=Fp(t), t transcendental, L=k[u]/(u^p-t), and tensors are over k.",
+      "Finite arithmetic is over Fp and can scalar-extend to L; no inseparable finite-field extension is claimed.",
+      "Finite enumeration does not prove the arbitrary-degree Ext or general categorical comparison."
+    ],
+    "approaches_considered": [
+      "Principal-ideal valuation classification and exact index census.",
+      "Direct quotient arithmetic and modular matrix ranks for independent verification.",
+      "Periodic maps or their ranks alone as a proposed obstruction certificate, rejected without exactness and Hom checks."
+    ],
+    "falsification_targets": [
+      "Zero product but nonzero homology.",
+      "Separable control with same ranks and vanishing positive Ext.",
+      "Missing field, tensor-base or perfect-piece hypothesis in the universal proof."
+    ],
+    "claims": [
+      {
+        "claim_id": "CHAIN",
+        "statement": "The proposed implication fg=0 implies exactness is false: in F2[e]/e^3 the pair f=g=e^2 has zero composition and homology dimension one.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Wrong quotient multiplication, kernel or image for the explicit pair.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CENSUS",
+        "statement": "For all 67,780 pairs in the frozen range, exactly 1,640 form complexes and 1,157 are exact. Full complex/exact index sets and homology histograms agree between implementations.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing tuple, wrong index or any independent matrix/valuation disagreement.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CONTROL",
+        "statement": "Eight nilpotent/separable augmented-algebra controls have ranks (p-1,1) but different positive Ext: nilpotent profile all ones, separable profile (1,0,...,0), through degree 12. Splitting idempotents and Frobenius coefficients are checked.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An incorrect quotient product, cochain rank, idempotent identity, or Frobenius coefficient within the frozen range.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "OBSTRUCTION",
+        "statement": "For k=Fp(t), L=k[u]/(u^p-t), the ordinary proof reconstructs the imported depth-zero/non-perfect diagonal obstruction via nonzero Ext in all degrees. This universal argument remains UNVERIFIED by an independent author or kernel.",
+        "status": "UNVERIFIED",
+        "origin": "IMPORTED_UNVERIFIED",
+        "falsification_condition": "Failure of irreducibility, tensor presentation, exactness, arbitrary-degree Ext, or the allowed perfect exterior-product diagonal definition.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Stacks 09HD supports the field construction; Bai-Cote v3 Lemmas 2.13 and 2.15 support separate Rouquier bounds, not the imported positive diagonal gluing formula. AIM page unavailable.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong primary locator/hypothesis or unsupported substitution of diagonal dimension for Rouquier dimension.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Explicit zero-composition/nonexact pair retires an invalid exactness shortcut.",
+        "claim_ids": [
+          "CHAIN"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "3960c4a4f972081d2a3f6319b745c09dd994bb8f7b00fedd8588736f7cc09a3b",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "1f808136dd75da7e39263fe324a02ef3b0fc474bde4f7dd46b911d85a1d30545",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Complete census and paired augmented controls distinguish exactness from a genuine Ext obstruction.",
+        "claim_ids": [
+          "CENSUS",
+          "CONTROL"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "1f808136dd75da7e39263fe324a02ef3b0fc474bde4f7dd46b911d85a1d30545",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/theory.py",
+            "sha256": "47dc45f44fe8038a2ced435fd4744a75813a3f4cce9265d095505afd9d17a0fc",
+            "media_type": "text/x-python"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-COUNTER",
+        "claim_ids": [
+          "CHAIN"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Compute explicit quotient products and matrix ranks before enumeration.",
+        "independent_context": true,
+        "independence_basis": "New verifier and baseline executed before current theory.py existed; counterexamples first, then quotient products and actual modular row reduction; recomputes entire core before reading certificate. Separate python -I process, empty environment and resource limits. Same-assistant authorship with prior unsealed conclusions already known; not blind, independent-model/human or kernel review. No code imports between implementations.",
+        "result": "Bad pair has ranks (1,1) and homology dimension one; zero, unit and dual-number boundaries pass.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "2bc81c94e5020dbca731155f5491a6d211c7436ceafcce9c8e138e85a0436aa2",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "3948c5a09cdfb03de8541e5e03884afcf971cb7db96238654de2e2838e29f99a",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-ENUM",
+        "claim_ids": [
+          "CENSUS",
+          "CONTROL"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Enumerate products directly, rank actual matrices, compute Hom differential ranks and idempotents, then compare complete core.",
+        "independent_context": true,
+        "independence_basis": "New verifier and baseline executed before current theory.py existed; counterexamples first, then quotient products and actual modular row reduction; recomputes entire core before reading certificate. Separate python -I process, empty environment and resource limits. Same-assistant authorship with prior unsealed conclusions already known; not blind, independent-model/human or kernel review. No code imports between implementations.",
+        "result": "Zero mismatches across 67,780 pairs and 104 Ext entries; seven altered cores rejected; replay byte-identical.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "c3b877b83f57bb07dd0969f25fca4f24754d87dfc88d57a6e0f513eb5d576196",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verify.py",
+            "sha256": "984d0864b51dd28d16d2d01c80852f67126fb16f5db1e9d1110db7c2a398ba8e",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "0f4d71f01274a1d76b19bdab3210f0063f54b3853f61606a8eb393f94c967857",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-PROOF",
+        "claim_ids": [
+          "OBSTRUCTION",
+          "CHAIN"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit field imperfection, tensor base, kernel ideals, induced Hom maps and perfect exterior-product boundary.",
+        "independent_context": true,
+        "independence_basis": "New verifier and baseline executed before current theory.py existed; counterexamples first, then quotient products and actual modular row reduction; recomputes entire core before reading certificate. Separate python -I process, empty environment and resource limits. Same-assistant authorship with prior unsealed conclusions already known; not blind, independent-model/human or kernel review. No code imports between implementations.",
+        "result": "Ordinary argument has explicit dependencies; independent authorship/kernel and full source-scope review remain missing. Universal claim kept UNVERIFIED.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "3948c5a09cdfb03de8541e5e03884afcf971cb7db96238654de2e2838e29f99a",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-SOURCE",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Compare downloaded PDF locators with HTML and distinguish Rouquier from diagonal dimension.",
+        "independent_context": true,
+        "independence_basis": "Downloaded pinned PDF and inspected text separately after HTML locators; separate evidence file, same assistant and same work, not independent authorship.",
+        "result": "Restricted citations agree; imported stronger positive comparison not verified and AIM unavailable.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "243925c66179955429b8cad9dfad6e992512cbc8b19ddd731a41c7e7b8ed1d6d",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Fresh-process matrix checker reproduces exact index sets and discriminating controls, rejecting seven corruptions.",
+        "claim_ids": [
+          "CHAIN",
+          "CENSUS",
+          "CONTROL"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "c3b877b83f57bb07dd0969f25fca4f24754d87dfc88d57a6e0f513eb5d576196",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "3948c5a09cdfb03de8541e5e03884afcf971cb7db96238654de2e2838e29f99a",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Both implementations and proof notes have same-assistant authorship; prior unsealed conclusions were known. Different algorithms and fresh processes are not independent human/model or kernel review.",
+      "The arbitrary-degree obstruction remains an ordinary UNVERIFIED proof; finite checks stop at degree 12.",
+      "AIM source unavailable; intended field/smoothness hypotheses and the positive perfect-admissible diagonal gluing formula require human review.",
+      "No new solution, general categorical comparison, upstream status change or novelty claim."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Seek independently authored verification of the arbitrary-degree Ext argument and a precise hypothesis ledger before auditing the positive diagonal gluing bound."
+}

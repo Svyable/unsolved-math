@@ -1,0 +1,271 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T193500Z-orthogonality-direction",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0022",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0022",
+    "title": "Immaculate line bundles as unit-orthogonal toric branes",
+    "statement": "[Wang, Borisov-Wang]: Found a condition on underlying fan for a toric stack to admit infinitely many acyclic line bundles (meaning $\\mathcal{L}$ with $H^*(\\mathcal{L})=0$ for all $*$, e.g. $\\mathcal{O}(-1)$ on $\\mathbb{P}^n$) (e.g. in $2D$ if fan has collinear rays).\n\n\\begin{enumerate}\n\\item Understand symplectic mirror of these criteria.\n\\item Understand consequences of generalizations of these critera (e.g. if there exists a toric subvariety whose fans is contained in a linear subspace) or if generalized.\n\\end{enumerate}",
+    "statement_sha256": "b51076d3bc3486be7617eae385292b37bfa5a3fba51ecd92341c32a51723540e",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T19:33:55.891141Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/syzygyms/9/",
+      "https://stacks.math.columbia.edu/tag/01XS",
+      "https://arxiv.org/html/2312.02885v2"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 12, score 73.5; highest-ranked eligible record after pending PR16 history, cooldown and anti-thrashing gates. Pinned research queue, not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T19:33:55.891141Z",
+  "completed_at": "2026-08-27T19:39:49.495104Z",
+  "selection_basis": "Rank 12, score 73.5; highest-ranked eligible record after pending PR16 history, cooldown and anti-thrashing gates. Pinned research queue, not provisional.",
+  "theory": {
+    "target": "Audit direction of unit orthogonality and the immaculate locus on fixed products of projective spaces by exact Cech cochain certificates; no general CCC or wrapped-Floer theorem.",
+    "definitions": [
+      "Immaculate means H^q(X,L)=0 for every q including zero.",
+      "For invertible L, RHom(O,L)=RΓ(L) and RHom(L,O)=RΓ(L dual).",
+      "Cech degree q has nonempty subsets S of size q+1 containing the negative exponent support N; differential is signed inclusion.",
+      "Degrees range from -6 through 6 on P2xP2, P1xP2 and (P1)^3."
+    ],
+    "assumptions": [
+      "Standard affine cover computes coherent cohomology; product cover is the tensor total complex over a field.",
+      "RHom(O,L)=RΓ(L); RHom(L,O)=RΓ(L dual) for invertible L.",
+      "Any mirror-orthogonality conclusion is conditional on a specified fully faithful equivalence and its variance."
+    ],
+    "approaches_considered": [
+      "Closed projective-space cohomology windows and binomial product dimensions.",
+      "Exact Cech incidence matrices, tensor total complexes and integer contractions.",
+      "Direction-free orthogonality shortcut and overgeneralized collinear-ray necessity, rejected in the fixed example."
+    ],
+    "falsification_targets": [
+      "Opposite Hom directions with different vanishing.",
+      "Boundary errors at degree -n, -n-1 and zero.",
+      "Wrong tensor signs, contracting homotopies or ray collinearity."
+    ],
+    "claims": [
+      {
+        "claim_id": "DIRECTION",
+        "statement": "The proposed equivalence of RHom(O,L) and RHom(L,O) vanishing is false. On P2xP2, L=O(-1,0) gives zero in the first direction and dimension three in degree zero in the second.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "An incorrect dualization, Cech differential or monomial count for the witness.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CENSUS",
+        "statement": "All 2,535 degree tuples and both Hom directions agree between implementations; 940 tuples have asymmetric vanishing. The P2xP2 fan has no collinear pair among its six rays.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing degree tuple, wrong Betti entry or rank-deficient ray pair.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CONTRACTION",
+        "statement": "All 28 single-factor and 160 product-support cochain complexes have the recorded Betti profiles. All 22 mixed-support homotopies satisfy dh+hd=I over the integers.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any incorrect incidence sign, rank or integer homotopy identity.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "LOCUS",
+        "statement": "The ordinary product-cohomology argument gives immaculacy precisely when some degree lies in its factor window [-ni,-1]; mirror transfer additionally requires a specified fully faithful functor and correct variance. Universal proof remains unverified by an independent author or kernel.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Failure of the affine-cover model, tensor cohomology, contraction or functor-variance identification.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Stacks 01XS gives projective-space cohomology. Borisov-Duncan v2 Theorem 1.1 gives a forbidden-cone criterion under its stated characteristic-zero hypotheses, not a mirror theorem; AIM page unavailable.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong version, locator, hypotheses or conflation of the criterion with a mirror-equivalence claim.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact line bundle retires direction-free unit orthogonality.",
+        "claim_ids": [
+          "DIRECTION"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "67afb33510f7ca16aa40abe9a8cdaf8f0b374992adcf7eea50e41d83427c8241",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "80fe50bd2682e1330069992224f11c1dd4fccb926ae7fcf264d1918f138870f8",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Full finite table records cohomology windows and all asymmetric Hom cases.",
+        "claim_ids": [
+          "CENSUS"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory.py",
+            "sha256": "9cc47b6ee0723d5563e98ff42729e0648a36721d3642a8975d47a56b2b5f6229",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "80fe50bd2682e1330069992224f11c1dd4fccb926ae7fcf264d1918f138870f8",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-COUNTER",
+        "claim_ids": [
+          "DIRECTION"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Compute the witness and degree -2,-3,0 boundaries before the product census.",
+        "independent_context": true,
+        "independence_basis": "Verifier and baseline authored/executed before theory.py; counterexample and boundaries first, entire core reconstructed before certificate read. Exact rational Cech matrices, integer homotopies and recursive monomials versus closed windows/binomial formulas. Separate python -I processes and distinct evidence files, no code imports. Same-assistant authorship and shared specification; no independent human/model or kernel review.",
+        "result": "Forward Hom vanishes; reverse H0 is three. All boundaries pass.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "58813d59baa41c146f77b7987458185bda97bc7fe760f95beecafe337b9bbdec",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "0075897bc58f822d9386804ff9690eca6c6b3d01c9a68f1da2d0ad0725651d97",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-CENSUS",
+        "claim_ids": [
+          "CENSUS",
+          "CONTRACTION"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Reconstruct signed matrices, ranks, homotopies and monomial counts, then compare the complete certificate core.",
+        "independent_context": true,
+        "independence_basis": "Verifier and baseline authored/executed before theory.py; counterexample and boundaries first, entire core reconstructed before certificate read. Exact rational Cech matrices, integer homotopies and recursive monomials versus closed windows/binomial formulas. Separate python -I processes and distinct evidence files, no code imports. Same-assistant authorship and shared specification; no independent human/model or kernel review.",
+        "result": "All 2,535 tuples, 28 supports and 160 product patterns agree; 22 integer identities pass and seven corruptions are rejected.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "e880ffdeed3119e30a7d0fea450e119464ab302cf5e68b1c7b304285fe890bc1",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verify.py",
+            "sha256": "1fa19071b082dd32782e17458f1fa835c0c49ba586c96dac1850b05890a633c5",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "9405d7c4f10b8935dd49bf03e7b9ffebf34631bf3dfc845e45f2025a5c9ade62",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-PROOF",
+        "claim_ids": [
+          "LOCUS",
+          "DIRECTION"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Check affine-cover, tensor and functor-variance dependencies.",
+        "independent_context": true,
+        "independence_basis": "Verifier and baseline authored/executed before theory.py; counterexample and boundaries first, entire core reconstructed before certificate read. Exact rational Cech matrices, integer homotopies and recursive monomials versus closed windows/binomial formulas. Separate python -I processes and distinct evidence files, no code imports. Same-assistant authorship and shared specification; no independent human/model or kernel review.",
+        "result": "Ordinary argument recorded with explicit scope; independent author/kernel and mirror equivalence remain missing.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "0075897bc58f822d9386804ff9690eca6c6b3d01c9a68f1da2d0ad0725651d97",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-SOURCE",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Compare versioned PDF theorem with HTML and inspect projective cohomology source.",
+        "independent_context": true,
+        "independence_basis": "Separate downloaded PDF text checked against HTML theorem; distinct source note, same assistant and work, not independent authorship.",
+        "result": "Restricted claims agree; live AIM and mirror theorem remain unverified.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "4e820bb1977a5bef400ccd0cd76878baa00c9bcc793455da9ddb6d21d277efad",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Exact matrix verifier distinguishes Hom direction and certifies all fixed support types.",
+        "claim_ids": [
+          "DIRECTION",
+          "CENSUS",
+          "CONTRACTION"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "e880ffdeed3119e30a7d0fea450e119464ab302cf5e68b1c7b304285fe890bc1",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "0075897bc58f822d9386804ff9690eca6c6b3d01c9a68f1da2d0ad0725651d97",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship; no independent human/model or kernel review.",
+      "The universal immaculate locus and functor bridge remain ordinary UNVERIFIED arguments.",
+      "AIM page unavailable; no general CCC, stopped-cotangent or wrapped-Floer theorem is established.",
+      "Known-result calibration only; no parent status change or novelty claim."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Seek independent review of the cohomology-to-mirror variance bridge and precise functor hypotheses before constructing a wrapped-Floer example."
+}

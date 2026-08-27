@@ -9,3 +9,6 @@
 {"completed_at":"2026-08-27T10:54:16.253032Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T104644Z-cyclic-factor-audit","material_progress":true,"problem_id":"AIM-OTHER-0008"}
 {"completed_at":"2026-08-27T11:39:26.302342Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T113347Z-borel-cantelli-tail","material_progress":true,"problem_id":"AIM-OTHER-0106"}
 {"completed_at":"2026-08-27T15:33:28.069684Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T152756Z-dihedral-cone-obstruction","material_progress":true,"problem_id":"AIM-PROBABILITY-0144"}
+{"completed_at":"2026-08-27T16:40:21.239955Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T163331Z-koszul-ghost-chart","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0013"}
+{"completed_at":"2026-08-27T18:36:23.102964Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T183200Z-inseparable-diagonal-audit","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0019"}
+{"completed_at":"2026-08-27T19:39:49.495104Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T193500Z-orthogonality-direction","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0022"}
