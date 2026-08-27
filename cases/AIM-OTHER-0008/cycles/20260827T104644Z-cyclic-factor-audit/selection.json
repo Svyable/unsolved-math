@@ -1,0 +1,55 @@
+{
+  "selected_at": "2026-08-27T10:46:44.778511+00:00",
+  "preflight": {
+    "ready": true,
+    "selection_mode": "ranked_queue",
+    "selected_problem_id": "AIM-OTHER-0008",
+    "checks": [
+      "durable instructions and safety boundaries are present",
+      "ranked queue has an eligible candidate outside loop gates"
+    ],
+    "warnings": [],
+    "blockers": []
+  },
+  "queue_rank": 7,
+  "candidate": {
+    "problem_id": "AIM-OTHER-0008",
+    "title": "Source-boundary repair and a quantitative resonance profile",
+    "imported_status": "open",
+    "difficulty_level": 2,
+    "category": "miscellaneous",
+    "score": 77.25,
+    "components": {
+      "computational_affordance": 1.0,
+      "literature_freshness": 0.15,
+      "provenance": 0.7,
+      "research_traction": 0.55,
+      "statement_quality": 1.0,
+      "tractability": 0.9
+    },
+    "reasons": [
+      "difficulty L2",
+      "statement status exact",
+      "one provenance field is present",
+      "literature check date is missing",
+      "research classification OPEN-TRIAGE",
+      "computational keywords: algorithm, bound, combinatorial, finite"
+    ],
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "main_commit": "63398d4b9d4e588f40b2794936c5944823631b57",
+  "previous_review_branch_commit": "dcee3c14836b63a27a355aa4f27e63f534e92080",
+  "open_automation_pr": null,
+  "separate_contributor_pr": 11,
+  "raw_record_sha256": "3ad6bd047cc0d2dfacdc5e3ee9152d56597cc412a370ba63e19adcc401e62e2e",
+  "upstream_record_id": 20003201,
+  "queue_sha256": "1d91b004797095b515272587c1121d362ad64081ba5d373200320ffbbe06e0bf",
+  "history_before_sha256": "45fc7786800a17c2fdf2909485c3a95c6ffdcddeadf1be041ff442ef9ae7e893",
+  "dataset_manifest_sha256": "8d19f167df382e076ed018c2702e25e7bea511cb6294f47f465c4fc880fae14a",
+  "source_file_sha256_verified": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+  "imported_summary_claim": "The canonical record is a splice of the closing prose after Problem 2.4 and the introduction to Section 2.4, not a standalone problem; the actual resonance prompt is Problem 2.5 in the next record. For a finite equivariant cyclic factor phi with nominal frequency N, every source-orbit length has the exact form ell = kN/m, where m is the target-point stabilizer order and k is the source/image period ratio. The resulting state- and orbit-weighted profiles make 'mostly' and 'small divisor' testable, give the exact nonmultiple fraction as the mass of pairs with m not dividing k, and yield a proof that a regular N-cycle factor exists exactly when every source orbit length is divisible by N.\n\nCandidate contribution (quantitative_refinement; novelty confidence low): The paired state-weighted and orbit-weighted defect-multiplier profiles, together with the exact exception identity and regular cyclic-factor criterion, form a testable audit layer that resolves the AIM context's ambiguous terms 'mostly' and 'small divisor' while distinguishing state sampling from orbit sampling.",
+  "imported_summary_trust": "UNVERIFIED_EXTERNAL_METADATA",
+  "scope": "Audit regular cyclic factor existence/counting and distinguish state- from orbit-weighted divisibility; not ASM/PL/birational dynamics.",
+  "prior_cycle_dependencies": [],
+  "attribution": "ulamai/UnsolvedMath, CC BY 4.0; exact canonical statement retained."
+}

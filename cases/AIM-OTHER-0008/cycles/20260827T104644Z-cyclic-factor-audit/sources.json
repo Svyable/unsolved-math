@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "accessed_at": "2026-08-27T10:51:36Z",
+  "primary_source": {
+    "title": "Problems for 2015 AIM workshop on Dynamical Algebraic Combinatorics",
+    "authors": ["Jim Propp", "Tom Roby", "Jessica Striker", "Nathan Williams"],
+    "document_date": "2015-05-29",
+    "imported_url": "http://aimath.org/pastworkshops/dac_preworkshop.pdf",
+    "verified_https_url": "https://aimath.org/pastworkshops/dac_preworkshop.pdf",
+    "pdf_sha256": "822361ce0a584be3ab8e25f73402754fdf2a4d522c0dc5b5781da5dc5a585ec4",
+    "pdf_bytes": 492645,
+    "printed_pages": [5, 6],
+    "claim_ids": ["C4"],
+    "mapping": "The extraction crosses commentary and a section heading; Problem 2.5 is separate. Page 6 motivates cyclic factors.",
+    "verification_methods": [
+      "Direct primary PDF text in web reader, checked before theory notes",
+      "Separately downloaded PDF bytes, SHA-256, and local pdftotext of printed pages 5-6"
+    ],
+    "result": "PRIMARY_SOURCE_SUPPORTED_WITH_SCOPE_LIMIT",
+    "scope_limit": "No current-status, novelty, or ASM/PL theorem verification. The elementary counting proof is derived in the packet, not attributed to the source."
+  },
+  "capture_policy": "Only metadata, locators and short derived notes are committed. The copyrighted PDF and its full extracted text are not bundled.",
+  "dataset_attribution": "ulamai/UnsolvedMath; CC BY 4.0. Canonical statement and source-file provenance are in snapshot.json and selection.json.",
+  "same_assistant_authorship": true
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "target": "For a finite permutation T and positive N, count maps f:X->Z/N with f(T(x))=f(x)+1; distinguish equivariant maps from surjective factors when X is empty.",
+  "permutations_max_n": 7,
+  "moduli": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "brute_force_max_n": 5,
+  "brute_force_moduli": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "weighting_parameters": [
+    1,
+    2,
+    3,
+    5,
+    10,
+    20
+  ],
+  "randomness": "none",
+  "network_in_experiments": false,
+  "independence_contract": "Verifier consumes this input and raw permutation constraints before reading theory results; no import of theory code or notes. Same-assistant authorship is not independent model/human proof review."
+}
