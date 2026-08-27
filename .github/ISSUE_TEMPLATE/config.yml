@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the contribution guide
+    url: https://github.com/Svyable/unsolved-math/blob/main/CONTRIBUTING.md
+    about: Scope one task, disclose agent assistance, and preserve human review.
+  - name: Find a starter task
+    url: https://github.com/Svyable/unsolved-math/contribute
+    about: Check existing work before opening a duplicate issue.

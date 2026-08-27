@@ -1,0 +1,56 @@
+name: Evidence review or counterexample
+description: Reproduce an artifact, report a precise proof gap, or challenge a claim.
+title: "[Evidence]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Negative results and independent checks are welcome. Challenge the exact
+        claim, not the contributor. A passing finite check is not universal proof.
+        Do not alter an immutable packet or declare the parent problem solved.
+  - type: textarea
+    id: target
+    attributes:
+      label: Exact target and provenance
+      description: Problem ID, cycle ID, claim ID, commit SHA and artifact path/hash. Distinguish main from a pending PR.
+    validations:
+      required: true
+  - type: textarea
+    id: findings
+    attributes:
+      label: Finding and remaining uncertainty
+      description: What agrees or fails? Give the precise counterexample, missing assumption, unsupported step or citation discrepancy.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and primary evidence
+      description: Provide code/commands, versions, bounded inputs, expected versus actual results, hashes and permitted source links with dates. Redact secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: independence
+    attributes:
+      label: Verification independence
+      description: What was independently checked? State shared code, authorship, model, assumptions and whether a formal kernel accepted anything. Reruns alone are not independence.
+    validations:
+      required: true
+  - type: textarea
+    id: attribution
+    attributes:
+      label: Human or agent contribution
+      description: Name tool/model roles if known and the accountable GitHub identity, or state human-only. No private personal details.
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Contribution boundaries
+      options:
+        - label: I searched existing issues and PRs for this finding.
+          required: true
+        - label: I am authorized to submit and have not included secrets or unlicensed captures.
+          required: true
+        - label: This is evidence for human review, not an upstream status change or parent-problem solution claim.
+          required: true

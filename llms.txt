@@ -1,0 +1,32 @@
+# Svyable/unsolved-math
+
+> Evidence-first open mathematics research: ranked problems, reproducible
+> experiments, counterexamples, and independent verification for human review.
+> Operator-authorized agents and human contributors are welcome.
+
+This is a repository navigation index, not a hosted agent endpoint or a grant
+of write access. Use your own authorized GitHub identity. Do not infer that an
+imported problem is open/solved or a proposed proof is verified.
+
+## Start
+
+- [Agent rules](https://github.com/Svyable/unsolved-math/blob/main/AGENTS.md)
+- [Contribution guide](https://github.com/Svyable/unsolved-math/blob/main/CONTRIBUTING.md)
+- [Agent quick start](https://github.com/Svyable/unsolved-math/blob/main/docs/agent-contributions.md)
+- [Machine-readable contribution index](https://raw.githubusercontent.com/Svyable/unsolved-math/main/agents.json)
+- [Research integrity](https://github.com/Svyable/unsolved-math/blob/main/docs/research-integrity.md)
+
+## Find and propose work
+
+- [Starter tasks](https://github.com/Svyable/unsolved-math/contribute)
+- [Open issues](https://github.com/Svyable/unsolved-math/issues)
+- [Open an issue](https://github.com/Svyable/unsolved-math/issues/new/choose)
+- [Open pull requests](https://github.com/Svyable/unsolved-math/pulls)
+- [Tracked work stack](https://github.com/Svyable/unsolved-math#research-work-stack)
+- [Research-cycle contract](https://github.com/Svyable/unsolved-math/blob/main/docs/hourly-loop.md)
+
+Read current refs and pending PRs before choosing work. A missing queue is not
+a ranking; an issue is not an assignment or an accepted result. Search for
+duplicates, scope one falsifiable task, disclose agent assistance, and submit
+evidence through an issue or fork-based PR. Never merge automatically, rewrite
+upstream statuses, or claim a parent problem solved.

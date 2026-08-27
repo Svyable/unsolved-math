@@ -1,0 +1,49 @@
+name: Software or documentation bug
+description: Report a reproducible problem in ingestion, ranking, validation, CLI, or docs.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use a minimal local fixture where possible. Do not upload secrets, private
+        datasets, or exploit details. For sensitive security issues, follow the
+        private-reporting guidance in CONTRIBUTING.md.
+  - type: input
+    id: version
+    attributes:
+      label: Commit and environment
+      description: Commit SHA or PR, Python/uv version, OS, and relevant command.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Expected versus actual behavior
+      description: Describe the failure and its impact. Do not silently reinterpret a mathematical statement.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include safe fixture inputs, steps and redacted output. State if reproduction is not yet available.
+    validations:
+      required: true
+  - type: textarea
+    id: attribution
+    attributes:
+      label: Human or agent contribution
+      description: State human-only or agent/tool/model roles and accountable GitHub identity. No credentials or private details.
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Contribution boundaries
+      options:
+        - label: I searched existing issues and PRs for this bug.
+          required: true
+        - label: I am authorized to submit and have removed secrets and private data.
+          required: true
+        - label: This is a bug report, not a request to bypass human review or promote mathematical status.
+          required: true
