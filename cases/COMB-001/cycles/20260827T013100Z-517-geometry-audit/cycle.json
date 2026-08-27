@@ -1,0 +1,193 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T013100Z-517-geometry-audit",
+  "problem_id": "COMB-001",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "COMB-001",
+    "title": "The Hadwiger-Nelson Problem",
+    "statement": "What is the minimum number of colors needed to color the points of the plane such that no two points at distance 1 have the same color?",
+    "statement_sha256": "cddbd1718b01fea3368e9769521f36f9ea6485a6b4e8bee15aec042dbfd266c3",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T01:31:00Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://arxiv.org/abs/1804.02385",
+      "https://arxiv.org/abs/1805.12181",
+      "https://github.com/marijnheule/CNP-SAT/tree/bb414955a6ef5f49f7df2b245b1e778aa67c068a",
+      "https://github.com/marijnheule/CNP-SAT/blob/bb414955a6ef5f49f7df2b245b1e778aa67c068a/vtx/517.vtx"
+    ],
+    "imported_status": "open (unverified external metadata)",
+    "selection_basis": "PROVISIONAL_BOOTSTRAP_NOT_RANKED: preflight validated the unexpired pinned launch card after the 24-hour cooldown; ranked synchronization remained blocked by duplicated upstream problem_number values, so no improvised ranking was used.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260826T003100Z-517-encoding-audit",
+  "started_at": "2026-08-27T01:31:00Z",
+  "completed_at": "2026-08-27T01:49:00Z",
+  "selection_basis": "PROVISIONAL_BOOTSTRAP_NOT_RANKED: selected only from the validated, unexpired launch card after cooldown; this selection is not a research ranking.",
+  "theory": {
+    "target": "For the pinned 517 exact coordinate pairs and edge set, test injectivity and the biconditional that an unordered vertex pair is an edge exactly when its squared Euclidean distance is one.",
+    "definitions": [
+      "K is Q(sqrt(3),sqrt(5),sqrt(11)) on basis 1,sqrt(3),sqrt(5),sqrt(11),sqrt(15),sqrt(33),sqrt(55),sqrt(165).",
+      "p_v is the exact coordinate pair on row v of the pinned 517.vtx file.",
+      "E is the simple undirected edge set parsed from the pinned 517.edge file.",
+      "A complete unit-distance realization is injective and satisfies {u,v} in E iff the exact squared distance between p_u and p_v is one for every 1 <= u < v <= 517."
+    ],
+    "assumptions": [
+      "The fetched vertex and edge files match their recorded SHA-256 digests.",
+      "Sqrt[n] has its ordinary positive-real meaning in the coordinate expressions.",
+      "Coordinate row indices correspond to graph vertex numbers.",
+      "No CNF unsatisfiability or parent-problem conclusion is assumed."
+    ],
+    "approaches_considered": [
+      "Parse a restricted expression grammar and exhaust all unordered pairs using exact multiquadratic field arithmetic; executed in this cycle.",
+      "Generate upstream Singular polynomial reductions for listed edges; audited but not executed because Singular is unavailable and the generator omits nonedge and collision checks.",
+      "Use high-precision numerical screening; rejected as the evidentiary endpoint because a tolerance cannot certify exact equality."
+    ],
+    "falsification_targets": [
+      "Any unsupported coordinate expression or coordinate outside the claimed field basis.",
+      "Any two vertex rows that reduce to the same exact coordinate pair.",
+      "Any listed edge whose exact squared distance is not one.",
+      "Any unlisted vertex pair whose exact squared distance is one."
+    ],
+    "claims": [
+      {
+        "claim_id": "G1",
+        "statement": "All 517 pinned coordinate expressions parse in K.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A safe parse finds unsupported syntax, a negative or out-of-field radical, a zero denominator, or a field-closure failure.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "G2",
+        "statement": "The 517 pinned coordinate pairs are pairwise distinct.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Two different coordinate rows reduce to the same ordered pair in K squared.",
+        "dependencies": [
+          "G1"
+        ]
+      },
+      {
+        "claim_id": "G3",
+        "statement": "Exactly 2,579 of the 133,386 unordered coordinate pairs have squared distance one, and this pair set equals the pinned 2,579-edge set.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any listed edge is nonunit, any omitted pair is unit, or exhaustive pair and edge sets differ.",
+        "dependencies": [
+          "G1",
+          "G2"
+        ]
+      },
+      {
+        "claim_id": "G4",
+        "statement": "The pinned CNP-SAT tree contains an upstream edge-distance checker generator and a 517 DRAT artifact, but artifact existence does not validate the proof.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "The pinned tree lacks either path or has different Git blob identities than recorded.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "The prior cycle's unchecked geometry obligation is reduced to an exact exhaustive finite certificate: the pinned coordinates injectively realize precisely the pinned graph as their complete unit-distance graph.",
+        "claim_ids": [
+          "G1",
+          "G2",
+          "G3"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "a4e41eb7396737bf5184e41573955e6d4e6dfb9aa8cddf8f9c8a6447a165df92",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "G1",
+          "G2",
+          "G3"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Start with coordinate-perturbation, injected-nonunit-edge, and duplicate-coordinate probes; then use a new safe parser and exact eight-dimensional rational field implementation to exhaust all 133,386 unordered vertex pairs.",
+        "independent_context": true,
+        "independence_basis": "The verifier starts from the raw vertex and edge bytes, does not consume the theory conclusion, does not invoke the upstream Singular generator, and shares no code with the prior CNF checker.",
+        "result": "PASS for exact geometry: 517 distinct coordinates; 2,579 exact unit pairs equal the 2,579 graph edges; zero omitted unit pairs and zero listed nonunit edges; all adversarial probes detected.",
+        "reproduction_command": "python experiments/verify_unit_embedding.py --vertices /path/to/517.vtx --edges /path/to/517.edge --output experiments/independent-geometry-check.json",
+        "evidence": [
+          {
+            "path": "experiments/independent-geometry-check.json",
+            "sha256": "7aa3ccf676823b777c5bb64a9063b9753a15181eca1503626475ecc52521d997",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "No DRAT checker was run against the pinned CNF and proof.",
+          "This exact finite geometry check does not establish four-uncolorability."
+        ]
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "G4"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Inspect the pinned Git tree and blob identities for the coordinate, edge, checker-generator, and DRAT files, and scope the arXiv abstract claim separately from the later 517 artifacts.",
+        "independent_context": true,
+        "independence_basis": "The source audit uses immutable Git tree metadata and the current primary arXiv abstract record directly, with explicit claim mapping and conflict notes distinct from computation evidence.",
+        "result": "The pinned repository supplies exact 517 coordinate and edge artifacts, an upstream listed-edge checker generator, and a 2,383,731-byte DRAT artifact; the 2018 abstract identifies 553-vertex graphs rather than these exact 517 bytes.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/geometry-provenance.json",
+            "sha256": "a0b0d16be606ebaed1e05ba7c797eda5268e7744247af37f27ec65a26aa51398",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "Repository presence is not proof-checker acceptance.",
+          "Exact paper-to-517 artifact lineage remains incomplete."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROG2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent exact all-pairs checking discharged the pinned geometry objection and adversarial probes demonstrated sensitivity to coordinate, edge, and injectivity failures.",
+        "claim_ids": [
+          "G1",
+          "G2",
+          "G3"
+        ],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "a85fe401a5834faf2beec0224ea441b09d01882a0faaa4742cc0cda9c23351b8",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "The pinned DRAT proof has not been accepted by an independently pinned checker.",
+      "The exact primary-source publication lineage of the 517 artifacts remains incomplete.",
+      "The finite certificate does not determine the parent problem's exact value."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "CONTINUE",
+  "next_step": "Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a checked non-symmetry forcing implication or unsatisfiable core."
+}
