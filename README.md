@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-27T22:33:01.348004Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-27T23:37:46.983414Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -69,7 +69,8 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 11 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T18:36:23.102964Z | `Seek independently authored verification of the arbitrary-degree Ext argument and a precise hypothesis ledger before au…` |
 | 12 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T19:39:49.495104Z | `Seek independent review of the cohomology-to-mirror variance bridge and precise functor hypotheses before constructing…` |
 | 13 | 13 | `AIM-ALGEBRAIC_GEOMETRY-0023 — Tate-completion obstruction and finite torsion windows for…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T22:33:01.348004Z | `Obtain independently authored review of the uniform-annihilator argument and an explicit spectral tower/comparison theo…` |
-| 14 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
+| 14 | 14 | `AIM-ALGEBRAIC_GEOMETRY-0035 — Odd-primary Wood filtrations and a chromatic lower bound` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T23:37:46.983414Z | `Obtain independently authored review of the residual regularity criterion and an actual Morava K-action with a justifie…` |
+| 15 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
 
 ### Next up
 
@@ -77,11 +78,11 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 14 | `AIM-ALGEBRAIC_GEOMETRY-0035 — Odd-primary Wood filtrations and a chromatic lower bound` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 15 | `AIM-ALGEBRAIC_GEOMETRY-0045 — Seed-preserving explicit bounds for unirational hypersurfaces` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 3 | 16 | `AIM-ALGEBRAIC_GEOMETRY-0051 — An explicit Frobenius bound for triple products of elliptic curves` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 4 | 17 | `AIM-ALGEBRAIC_GEOMETRY-0095 — Inseparability-robust irrationality bounds over small fields` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 5 | 18 | `AIM-ALGEBRAIC_GEOMETRY-0167 — Finite-index Wirthmuller duality and the compact profinite Adams boun…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 15 | `AIM-ALGEBRAIC_GEOMETRY-0045 — Seed-preserving explicit bounds for unirational hypersurfaces` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 16 | `AIM-ALGEBRAIC_GEOMETRY-0051 — An explicit Frobenius bound for triple products of elliptic curves` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 3 | 17 | `AIM-ALGEBRAIC_GEOMETRY-0095 — Inseparability-robust irrationality bounds over small fields` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 4 | 18 | `AIM-ALGEBRAIC_GEOMETRY-0167 — Finite-index Wirthmuller duality and the compact profinite Adams boun…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 5 | 19 | `AIM-ALGEBRAIC_GEOMETRY-0207 — Extended-Kruppa constraints, realized conic ambiguity, and invariant…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 
 The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
 <!-- OPLAB:RESEARCH-STACK:END -->
