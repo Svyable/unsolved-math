@@ -16,6 +16,7 @@ from oplab.cycle_store import (
     validate_cycle_directory,
     verify_cycle_manifest,
 )
+from oplab.dashboard import update_readme_dashboard
 from oplab.errors import OplabError
 from oplab.launch import assess_loop_readiness
 from oplab.loop import (
@@ -316,13 +317,46 @@ def loop_record_cycle(
     if not report.valid:
         typer.echo(report.model_dump_json(indent=2))
         raise typer.Exit(code=1)
+    resolved_root = repo_root.resolve()
     try:
         entry = append_cycle_history(
-            repo_root.resolve() / "data" / "research-loop" / "history.jsonl", resolved
+            resolved_root / "data" / "research-loop" / "history.jsonl", resolved
         )
+        readme_updated = update_readme_dashboard(resolved_root, as_of=entry.completed_at)
     except OplabError as exc:
         _fail(str(exc))
     typer.echo(entry.model_dump_json(indent=2))
+    typer.echo(json.dumps({"readme_dashboard_updated": readme_updated}))
+
+
+@loop_app.command("update-readme")
+def loop_update_readme(
+    as_of: Annotated[
+        str | None, typer.Option(help="ISO timestamp for deterministic queue gates.")
+    ] = None,
+    next_limit: Annotated[
+        int, typer.Option(min=1, max=25, help="Eligible next-up entries to show.")
+    ] = 5,
+    repo_root: Annotated[Path, typer.Option(help="Repository root.")] = Path("."),
+) -> None:
+    """Refresh the generated README work stack from tracked queue and cycle evidence."""
+
+    if as_of is None:
+        effective_time = datetime.now(UTC)
+    else:
+        try:
+            effective_time = datetime.fromisoformat(as_of.replace("Z", "+00:00"))
+        except ValueError as exc:
+            raise typer.BadParameter("as-of must be an ISO timestamp") from exc
+        if effective_time.tzinfo is None:
+            effective_time = effective_time.replace(tzinfo=UTC)
+    try:
+        changed = update_readme_dashboard(
+            repo_root.resolve(), as_of=effective_time, next_limit=next_limit
+        )
+    except OplabError as exc:
+        _fail(str(exc))
+    typer.echo(json.dumps({"readme_dashboard_updated": changed}))
 
 
 @app.command("validate")

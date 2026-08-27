@@ -32,6 +32,27 @@ gate succeeds only when the durable instructions are present and either a
 ranked candidate is eligible or the pinned, short-lived launch fallback is
 valid. The fallback expires instead of silently becoming stale.
 
+## README work stack
+
+The README contains a generated, marker-delimited dashboard with two views:
+
+- **Current research stack** — problems with accepted cycles, ordered by the
+  deterministic research queue when available and then by most recent progress;
+  the table exposes the queue rank and marks active off-queue work as unranked;
+- **Next up** — the highest-ranked candidates that currently clear cooldown and
+  anti-thrashing gates, preserving their original queue ranks.
+
+`oplab loop record-cycle` refreshes this dashboard after it records verified
+history. A successful dataset sync also refreshes it, so queue changes and the
+research branch remain reviewable together. `oplab loop update-readme --as-of
+<timestamp>` is available for deterministic maintenance and tests. A missing
+ranked queue is rendered as a provisional, explicitly unranked launch card with
+the exact blocker; the loop never invents a backlog.
+
+Blocked hours do not create README-only commits. The recurring loop continues
+to retry synchronization and selection on future runs, but continuity never
+overrides evidence requirements, cooldowns, rotation, or human review.
+
 ## Theory lane
 
 Freeze a bounded target smaller than the parent problem. Record definitions,
@@ -102,4 +123,6 @@ statement.
 Stop the current line and request human direction when the statement is
 ambiguous, source rights are unclear, required primary evidence is unavailable,
 or the same blocking objection persists for two cycles without a changed
-method. Pause the overall loop if it cannot make honest progress in both lanes.
+method. Retire or requeue that line and rotate to the next eligible candidate;
+do not disable the recurring loop merely because one target is blocked. Pause
+the overall loop only for a systemic safety or research-integrity failure.

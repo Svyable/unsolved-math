@@ -10,8 +10,12 @@ Review a sync pull request in this order:
 1. Confirm the upstream repository and immutable commit in `manifest.json`.
 2. Inspect `sync-summary.md` for record counts and status changes.
 3. Treat every status change as an external claim requiring follow-up.
-4. Review large ranking movements for schema or scoring regressions.
-5. Run CI, then merge only if the derived artifacts are internally consistent.
+4. Review collision-suffixed problem IDs and large ranking movements for schema
+   or scoring regressions. A suffix such as `ALG-002--1234` identifies a
+   distinct upstream record that reused `ALG-002`; it is not a subproblem.
+5. Confirm the generated README work stack matches the research queue and loop
+   gates.
+6. Run CI, then merge only if the derived artifacts are internally consistent.
 
 ## Manual offline sync
 

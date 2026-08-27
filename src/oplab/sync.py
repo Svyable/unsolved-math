@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from collections.abc import Iterator, Mapping
 from pathlib import Path
 from typing import Any
@@ -11,6 +12,7 @@ from pydantic import ValidationError
 from oplab.artifacts import atomic_write_bytes, jsonl_bytes, model_jsonl_bytes, read_model_jsonl
 from oplab.config import RankingConfig, load_ranking_config
 from oplab.constants import SCHEMA_VERSION, UNVERIFIED_WARNING
+from oplab.dashboard import update_readme_dashboard
 from oplab.errors import IntegrityError, RecordValidationError
 from oplab.hashing import canonical_json_bytes, sha256_bytes, sha256_file
 from oplab.models import (
@@ -44,6 +46,69 @@ def _load_manifest(path: Path) -> SourceManifest | None:
         return SourceManifest.model_validate_json(path.read_text(encoding="utf-8"))
     except (OSError, ValidationError, ValueError) as exc:
         raise IntegrityError(f"invalid current manifest {path}: {exc}") from exc
+
+
+def _upstream_id_key(problem: NormalizedProblem) -> tuple[int, int | str]:
+    upstream_id = problem.upstream_id
+    if upstream_id is not None and upstream_id.isdigit():
+        return (0, int(upstream_id))
+    return (1, upstream_id or "")
+
+
+def _collision_suffix(upstream_id: str) -> str:
+    suffix = re.sub(r"[^A-Za-z0-9._:-]+", "-", upstream_id).strip("-")
+    if not suffix:
+        raise RecordValidationError("duplicate problem_number cannot use an empty upstream ID")
+    return suffix
+
+
+def _resolve_problem_ids(
+    problems: list[NormalizedProblem], previous: dict[str, NormalizedProblem]
+) -> list[NormalizedProblem]:
+    """Preserve existing IDs and disambiguate reused upstream problem numbers."""
+
+    previous_by_upstream: dict[str, str] = {}
+    for problem_id, problem in previous.items():
+        if problem.upstream_id is None:
+            continue
+        if problem.upstream_id in previous_by_upstream:
+            raise IntegrityError(f"current index repeats upstream ID {problem.upstream_id}")
+        previous_by_upstream[problem.upstream_id] = problem_id
+
+    seen_upstream: set[str] = set()
+    used_ids: set[str] = set()
+    resolved: list[NormalizedProblem] = []
+    pending: dict[str, list[NormalizedProblem]] = {}
+    for problem in problems:
+        upstream_id = problem.upstream_id
+        if upstream_id is not None:
+            if upstream_id in seen_upstream:
+                raise RecordValidationError(f"duplicate upstream record ID: {upstream_id}")
+            seen_upstream.add(upstream_id)
+        preserved = previous_by_upstream.get(upstream_id) if upstream_id is not None else None
+        if preserved is None:
+            pending.setdefault(problem.problem_id, []).append(problem)
+            continue
+        if preserved in used_ids:
+            raise IntegrityError(f"current index maps multiple records to {preserved}")
+        used_ids.add(preserved)
+        resolved.append(problem.model_copy(update={"problem_id": preserved}))
+
+    for base_id in sorted(pending):
+        for problem in sorted(pending[base_id], key=_upstream_id_key):
+            if base_id not in used_ids:
+                problem_id = base_id
+            else:
+                if problem.upstream_id is None:
+                    raise RecordValidationError(
+                        f"duplicate problem_number {base_id} lacks a unique upstream ID"
+                    )
+                problem_id = f"{base_id}--{_collision_suffix(problem.upstream_id)}"
+            if problem_id in used_ids:
+                raise RecordValidationError(f"cannot disambiguate canonical ID: {problem_id}")
+            used_ids.add(problem_id)
+            resolved.append(problem.model_copy(update={"problem_id": problem_id}))
+    return resolved
 
 
 def _queue_json_bytes(
@@ -175,8 +240,11 @@ class SyncService:
                 message="upstream revision and ranking configuration are unchanged",
             )
 
+        previous = {
+            problem.problem_id: problem
+            for problem in read_model_jsonl(current_dir / "problems.jsonl", NormalizedProblem)
+        }
         problems: list[NormalizedProblem] = []
-        seen: set[str] = set()
         for position, raw in enumerate(_iter_records(snapshot), start=1):
             try:
                 problem = normalize_problem(raw, config)
@@ -184,16 +252,10 @@ class SyncService:
                 raise RecordValidationError(
                     f"normalization failed at record {position}: {exc}"
                 ) from exc
-            if problem.problem_id in seen:
-                raise RecordValidationError(f"duplicate canonical problem ID: {problem.problem_id}")
-            seen.add(problem.problem_id)
             problems.append(problem)
+        problems = _resolve_problem_ids(problems, previous)
         problems.sort(key=lambda item: item.problem_id)
 
-        previous = {
-            problem.problem_id: problem
-            for problem in read_model_jsonl(current_dir / "problems.jsonl", NormalizedProblem)
-        }
         current = {problem.problem_id: problem for problem in problems}
         added_count = len(current.keys() - previous.keys())
         removed_count = len(previous.keys() - current.keys())
@@ -250,6 +312,8 @@ class SyncService:
             artifacts=artifact_hashes,
         )
         atomic_write_bytes(manifest_path, canonical_json_bytes(manifest.model_dump(mode="json")))
+        if (self.repo_root / "README.md").is_file():
+            update_readme_dashboard(self.repo_root, as_of=artifact.retrieved_at)
         return SyncOutcome(
             changed=True,
             resolved_revision=artifact.resolved_revision,

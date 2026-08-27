@@ -23,7 +23,10 @@ flowchart TD
 - `snapshots.py` stores raw data under a content-addressed, immutable path.
 - `normalization.py` converts schema-tolerant upstream JSON to a small typed
   record and marks every imported claim `UNVERIFIED_EXTERNAL_METADATA`.
-- `sync.py` creates deterministic tracked artifacts and status diffs.
+- `sync.py` creates deterministic tracked artifacts and status diffs. Because
+  upstream `problem_number` values are not globally unique, it preserves IDs by
+  unique upstream record ID and adds a stable `--<upstream-id>` suffix only for
+  collisions. A duplicate upstream record ID remains a hard failure.
 - `ranking.py` applies the versioned configuration in `config/ranking.toml` and
   emits score components and reasons.
 - `research.py` defines the two-lane cycle schema and its unresolved-only
@@ -62,6 +65,8 @@ sublemma, but cannot represent the parent problem as solved.
 - A mutable revision is resolved before data download.
 - Existing snapshot bytes are never replaced.
 - Invalid records fail the sync rather than silently disappearing.
+- Reordered upstream records retain their prior canonical IDs; ambiguous
+  identity fails instead of conflating distinct mathematical records.
 - Generated tracked files are written through temporary files and atomically
   replaced.
 - A failed scheduled run leaves the default branch unchanged.
