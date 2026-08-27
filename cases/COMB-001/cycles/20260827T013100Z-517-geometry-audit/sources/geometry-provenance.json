@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "accessed_at": "2026-08-27T01:38:00Z",
+  "capture_policy": "Metadata and hashes only; upstream source bytes were not copied into the packet.",
+  "repository": {
+    "name": "marijnheule/CNP-SAT",
+    "revision": "bb414955a6ef5f49f7df2b245b1e778aa67c068a",
+    "revision_timestamp": "2021-09-27T19:08:09-04:00",
+    "url": "https://github.com/marijnheule/CNP-SAT/tree/bb414955a6ef5f49f7df2b245b1e778aa67c068a"
+  },
+  "artifacts": [
+    {
+      "path": "vtx/517.vtx",
+      "url": "https://github.com/marijnheule/CNP-SAT/blob/bb414955a6ef5f49f7df2b245b1e778aa67c068a/vtx/517.vtx",
+      "git_blob_sha1": "fb3bcdc40f10ce1e0e70ac4b9e2e7037ae6c56ee",
+      "sha256": "402aa7b8a1145843366cff178dcfac44b97f8a748e318ae753520cbeb6a784d5",
+      "bytes": 26167,
+      "claim_mapping": "Supplies 517 exact algebraic coordinate pairs."
+    },
+    {
+      "path": "edge/517.edge",
+      "url": "https://github.com/marijnheule/CNP-SAT/blob/bb414955a6ef5f49f7df2b245b1e778aa67c068a/edge/517.edge",
+      "git_blob_sha1": "05f8e6476a47ddffa14d9edf2edefa23f3c10ada",
+      "sha256": "dc5085db9682aa246c3fc56efed9767e2a294a43e621a3e67a690d0489bdadc9",
+      "bytes": 24567,
+      "claim_mapping": "Supplies the 2,579-edge graph checked against the coordinate pairs."
+    },
+    {
+      "path": "check/check_dist_one.py",
+      "url": "https://github.com/marijnheule/CNP-SAT/blob/bb414955a6ef5f49f7df2b245b1e778aa67c068a/check/check_dist_one.py",
+      "git_blob_sha1": "3fba784e72a72fc525bca9ccc9e7939e210f6da4",
+      "claim_mapping": "Upstream checker generator reduces each listed edge's squared-distance-minus-one polynomial modulo radical relations using Singular."
+    },
+    {
+      "path": "proof/517-4-sbp.drat",
+      "url": "https://github.com/marijnheule/CNP-SAT/blob/bb414955a6ef5f49f7df2b245b1e778aa67c068a/proof/517-4-sbp.drat",
+      "git_blob_sha1": "50ebfd2af9b6e3e440b21061034b23f851f00926",
+      "sha256": "d4df20867ea18cc1b41642a2f87495d9941e48e0882239cd76b39c20a1a5558b",
+      "bytes": 2383731,
+      "claim_mapping": "An upstream DRAT artifact exists, but this cycle did not validate it."
+    }
+  ],
+  "primary_source": {
+    "identifier": "arXiv:1805.12181",
+    "url": "https://arxiv.org/abs/1805.12181",
+    "claim_checked": "The abstract reports 553-vertex unit-distance graphs and mechanical validation; it does not identify the exact 517-vertex byte streams audited here.",
+    "result": "PRIMARY_SOURCE_SUPPORTED_WITH_SCOPE_LIMIT"
+  },
+  "conflict_notes": [
+    "The pinned repository has a later 517-vertex artifact, while the cited 2018 abstract names 553 vertices. No paper-to-517 identity is inferred from the abstract.",
+    "The upstream Python checker generates listed-edge obligations only; the independent checker in this packet additionally exhausts all vertex pairs and checks coordinate uniqueness."
+  ]
+}
