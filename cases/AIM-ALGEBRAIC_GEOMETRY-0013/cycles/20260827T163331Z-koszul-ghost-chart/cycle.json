@@ -1,0 +1,279 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T163331Z-koszul-ghost-chart",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0013",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0013",
+    "title": "Bounded moduli charts and ghost directions for virtual resolutions",
+    "statement": "Observation: The current definition of virtual resolution is so broad and it is not meaningful to parameterize, then.\n\nIs there a well-behaved moduli theory of virtual resolutions equipped with extra structure? e.g. condition under which there exists a finite set? or space/ stacks/...?\n(c.f. [Boij-Sölderberg] theory constructs a meaningful cone of Betti tables of all free complexes. Look at subcone of virtual resolutions of a given $M$)",
+    "statement_sha256": "8352c4831e868565c9450f804c11029639f40d6919f48e9f910ecb9c9513d64b",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T16:33:31.372244Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/syzygyms/4/",
+      "https://arxiv.org/html/1703.07631v2"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 10, score 73.5; highest-ranked candidate outside 24-hour cooldown and anti-thrashing gates in the pinned 200-item research queue. Not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T16:33:31.372244Z",
+  "completed_at": "2026-08-27T16:40:21.239955Z",
+  "selection_basis": "Rank 10, score 73.5; highest-ranked candidate outside 24-hour cooldown and anti-thrashing gates in the pinned 200-item research queue. Not provisional.",
+  "theory": {
+    "target": "Audit the fixed-Betti Koszul ghost chart on P1: geometric common-zero exclusion versus finite-field rational-point testing; quantify shifted ghost homology without a general moduli claim.",
+    "definitions": [
+      "S=k[x,y], deg x=deg y=1, B=(x,y)",
+      "F0=S, F1=S(-a), F2=S(-a-d)^2, F3=S(-a-2d); d1=0,d2=[f,g],d3=[-g,f]; augmentation F0 -> S is identity.",
+      "S(-b)_n=S_(n-b); negative pieces are zero. Graded-minimal means every differential entry lies in B. Geometric points include field extensions."
+    ],
+    "assumptions": [
+      "All sheaf exactness statements mean geometric points, not only k-rational points.",
+      "Enumeration is bounded and does not prove arbitrary-field assertions.",
+      "No general quotient stack, finite moduli, or novelty claim."
+    ],
+    "approaches_considered": [
+      "Exact degree-three multiplication determinant for the quadratic chart.",
+      "Local Koszul exactness and monomial quotient homology for the power family.",
+      "Rational-point enumeration as a proposed screening shortcut, retired as a sufficient criterion."
+    ],
+    "falsification_targets": [
+      "A rational-test false positive over an extension field.",
+      "A determinant/gcd disagreement including infinity or zero forms.",
+      "Incorrect graded kernel/image dimensions, signs or shifts."
+    ],
+    "claims": [
+      {
+        "claim_id": "POINT-TEST",
+        "statement": "Proposed shortcut: absence of common k-rational projective zeros suffices for virtual exactness in the fixed Koszul family. F2 with f=g=x²+xy+y² falsifies it: three rational evaluations are 1, while the F4 point [t:1] is a common zero.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong evaluation, non-field F4 model, or local d2 surjectivity at the exhibited common zero would defeat the witness.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CENSUS",
+        "statement": "Among all 16,418 ordered quadratic pairs over F2,F3,F5, respectively 24,432,12000 pass the geometric criterion; 3,24,240 non-admissible pairs pass rational-only testing. Full index sets are stored.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any missing tuple or mismatch in a stored accepted/false-positive index, including zero forms and infinity.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CHART",
+        "statement": "For every field k and a>=0, the degree-two based Koszul subfamily is virtual precisely on the nonzero Sylvester-determinant open subset of A6. This ordinary derivation is not independently authored or kernel verified.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A common-zero/determinant equivalence failure, a local exactness exception, or an incorrect parameterization. No general moduli quotient is asserted.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "GHOST-CHECK",
+        "statement": "For 64 triples p in [2,3], a=0..7, d=1..4 with f=x^d,g=y^d, all 736 checked graded pieces agree with H1=S/(x^d,y^d)(-a) and H2=H3=0; all relevant compositions vanish.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong rank, degree shift, nonzero d2*d3, or incorrect quotient monomial count within the frozen range.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "GHOST-FAMILY",
+        "statement": "For any field, a>=0,d>=1, the power family has H0=S, H1=S/(x^d,y^d)(-a), H2=H3=0, and is graded-minimal and virtual. Fixed d with varying a gives infinitely many graded Betti types at fixed length, ranks and F0. This ordinary argument remains unverified by an independent author or kernel.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A syzygy or annihilator failure; or a change of equivalence notion that discards graded Betti types. The general moduli problem is outside scope.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Berkesch-Erman-Smith v2 Definition 1.1 defines virtual resolutions by sheafification. The pinned PDF and HTML agree on this definition. The live AIM section could not be read, and the imported moduli claims were not verified.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Different primary definition or version/locator, or an unsupported inference from the failed AIM retrieval.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact F2/F4 witness retires rational-only testing as a certificate of virtual exactness.",
+        "claim_ids": [
+          "POINT-TEST"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "18cb3b985720359adf1fe9de81a03118f10cd3a64e0d7d6ed9090d67e4735ff4",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "6dc2203050c47ce2ac3e7b8e80458589d34c267b5f8e9555fa114edfea964d1a",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Complete quadratic chart census and power-ghost homology certificate distinguish exact algebra from finite-point testing.",
+        "claim_ids": [
+          "CENSUS",
+          "GHOST-CHECK"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "6dc2203050c47ce2ac3e7b8e80458589d34c267b5f8e9555fa114edfea964d1a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/theory.py",
+            "sha256": "5aec78a2f9d307e07c9ea64eb8e564765c4dec9bf26fad5916beaafa5c71c551",
+            "media_type": "text/x-python"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-COUNTER",
+        "claim_ids": [
+          "POINT-TEST"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Check every F2 projective point and explicitly multiply in F4 before census.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and retained baseline executed before theory.py existed; starts from frozen input, counterexample and boundaries, uses Euclidean gcd/infinity and actual graded matrix ranks rather than determinant/monomial enumeration; only reads certificate after recomputation. Separate python -I process, empty environment and resource limits. Same-assistant authorship and shared Python arithmetic/specification; not independent human/model or kernel review.",
+        "result": "Rational values [1,1,1]; extension value 0; common geometric zero blocks d2 surjectivity.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "04eabeb096149443c4ad0c849297eb6d0674fd7979b77640cacf1b088fce7cfc",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "7e96ec9c5afb4c2211dceafdce4da74f9522da1fa474cb69ff3235468e64909f",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-CENSUS",
+        "claim_ids": [
+          "CENSUS",
+          "GHOST-CHECK"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Recompute full admissible index sets by polynomial gcd plus infinity; compute actual graded matrices, compositions and ranks. Compare only after recomputation.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and retained baseline executed before theory.py existed; starts from frozen input, counterexample and boundaries, uses Euclidean gcd/infinity and actual graded matrix ranks rather than determinant/monomial enumeration; only reads certificate after recomputation. Separate python -I process, empty environment and resource limits. Same-assistant authorship and shared Python arithmetic/specification; not independent human/model or kernel review.",
+        "result": "Zero mismatches across 16,418 pairs and 736 degree pieces; seven changed certificate cores rejected; deterministic outputs reproduced.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "cda8d480b3770b22663e22d0cca0b59a846ce87dc04d171de6cf20d423d2a84b",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verify.py",
+            "sha256": "f7efb8bb096369d7e588734b0c3996322911d7b08e506a99ccaf3d267b5f3b04",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "cfe4c206593551c2b94b2d60e4eb78f7bca1287bde2931bcdf7e7097454b4fef",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-PROOF",
+        "claim_ids": [
+          "CHART",
+          "GHOST-FAMILY",
+          "POINT-TEST"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit local exactness, common-factor syzygies, quotient monomials and the B-power annihilator; distinguish universal reasoning from bounded computation.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and retained baseline executed before theory.py existed; starts from frozen input, counterexample and boundaries, uses Euclidean gcd/infinity and actual graded matrix ranks rather than determinant/monomial enumeration; only reads certificate after recomputation. Separate python -I process, empty environment and resource limits. Same-assistant authorship and shared Python arithmetic/specification; not independent human/model or kernel review.",
+        "result": "No local proof gap found in the displayed argument; independent author/kernel proof verification remains missing and both universal claims remain UNVERIFIED.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "7e96ec9c5afb4c2211dceafdce4da74f9522da1fa474cb69ff3235468e64909f",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V-SOURCE",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Inspect pinned PDF Definition 1.1 and compare locator/version with HTML; do not infer live AIM agreement or a general moduli theorem.",
+        "independent_context": true,
+        "independence_basis": "Separately read the downloaded pinned PDF text after the HTML definition; distinct evidence note, same assistant and same primary work. No independent authorship or community-status review.",
+        "result": "Definition matches; AIM unavailable; only definition-level attribution accepted.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "903ab7152341b246c8b0b6ffa761edf4ce76aa65133959c791e220d92ca6ab54",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Fresh-input verifier reconstructs exact chart membership and homology, confirms the extension-field failure, and rejects seven corrupted cores.",
+        "claim_ids": [
+          "POINT-TEST",
+          "CENSUS",
+          "GHOST-CHECK"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "cda8d480b3770b22663e22d0cca0b59a846ce87dc04d171de6cf20d423d2a84b",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "7e96ec9c5afb4c2211dceafdce4da74f9522da1fa474cb69ff3235468e64909f",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Only one fixed-Betti Koszul subfamily on P1 is audited; no general quotient stack, relative family over nonreduced bases, or new mathematical result is established.",
+      "The live AIM section is unavailable; exact statement and imported partially_solved status are preserved from the hash-validated dataset, not independently reclassified.",
+      "Both implementations and proof notes have same-assistant authorship. Fresh processes and different algorithms do not provide independent human/model review or kernel acceptance.",
+      "Arbitrary-field chart and infinite ghost-family arguments remain UNVERIFIED; bounded enumeration alone does not establish universal assertions."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Seek an independently authored arbitrary-field audit of the Koszul chart; choose a degree window and equivalence relation before extending the moduli claim."
+}

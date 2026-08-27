@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-27T15:33:28.069684Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-27T16:40:21.239955Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -65,7 +65,8 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 7 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T10:54:16.253032Z | `Retain exact cyclic-factor and weighting regression checks; human-review the source fragment before applying the profil…` |
 | 8 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T11:39:26.302342Z | `Retain the exact tail and dependence certificates; obtain independent review of the integral remainder and human scope…` |
 | 9 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-tri…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T15:33:28.069684Z | `Retain the cone obstruction and minimal abstract-refinement certificates; seek independent proof and human scope review…` |
-| 10 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
+| 10 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual reso…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T16:40:21.239955Z | `Seek an independently authored arbitrary-field audit of the Koszul chart; choose a degree window and equivalence relati…` |
+| 11 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
 
 ### Next up
 
@@ -73,11 +74,11 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual resolutions` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 3 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 4 | 13 | `AIM-ALGEBRAIC_GEOMETRY-0023 — Tate-completion obstruction and finite torsion windows for the motivi…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 5 | 14 | `AIM-ALGEBRAIC_GEOMETRY-0035 — Odd-primary Wood filtrations and a chromatic lower bound` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 3 | 13 | `AIM-ALGEBRAIC_GEOMETRY-0023 — Tate-completion obstruction and finite torsion windows for the motivi…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 4 | 14 | `AIM-ALGEBRAIC_GEOMETRY-0035 — Odd-primary Wood filtrations and a chromatic lower bound` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 5 | 15 | `AIM-ALGEBRAIC_GEOMETRY-0045 — Seed-preserving explicit bounds for unirational hypersurfaces` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 
 The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
 <!-- OPLAB:RESEARCH-STACK:END -->
