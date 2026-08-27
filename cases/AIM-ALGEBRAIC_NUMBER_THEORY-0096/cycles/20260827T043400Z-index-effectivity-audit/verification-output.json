@@ -1,0 +1,38 @@
+{
+  "F2_rational_points": [],
+  "adversarial_probes": {
+    "index_one_implies_rational_point_rejected": true,
+    "linear_component_creates_rational_point": true,
+    "quadratic_splits_after_degree_two_extension": true,
+    "reducible_polynomial_mutation_detected": true,
+    "replace_degree_three_by_four_changes_index": true,
+    "wrong_signed_witness_rejected": true
+  },
+  "execution_context": "Python -I isolated fresh process; reads input.json only",
+  "frobenius_orbit_lengths": [
+    [
+      2
+    ],
+    [
+      3
+    ]
+  ],
+  "index": 1,
+  "input_sha256": "f04a3431c66445ff9e1aa45a842024c1c53755918c58fa963fb661b7670db495",
+  "limits": "Finite tests and executable certificate; no Lean kernel or independent human review.",
+  "mismatches": [],
+  "orbit_transcript_sha256": "e4209f79294243b3982b898be395622142a3e9883f00e82fd301169d959da404",
+  "profile_extension_checks": 21828,
+  "root_sets_in_F64_integer_encoding": [
+    [
+      58,
+      59
+    ],
+    [
+      14,
+      23,
+      25
+    ]
+  ],
+  "signed_witness_degree": 1
+}

@@ -1,0 +1,50 @@
+{
+  "P": [
+    "225",
+    "13",
+    "13",
+    "-1"
+  ],
+  "Q": [
+    "225",
+    "195",
+    "-29",
+    "1"
+  ],
+  "adversarial_controls": {
+    "mutated_Q": true,
+    "mutated_tail": true,
+    "mutated_transform": true,
+    "too_small_tail_start": true,
+    "understated_objective": true,
+    "wrong_dimension": true,
+    "zero_fourier_origin": true
+  },
+  "between_grid_counterexample": {
+    "minimum_sample": "249/1000",
+    "polynomial_coefficients": [
+      "1830117/8000",
+      "12705/64",
+      "-117/4",
+      "1"
+    ],
+    "positive_samples": 121,
+    "root": "121/8",
+    "value_at_root": "-1/1000"
+  },
+  "certificate_valid": true,
+  "certified_grid_sha256": "0a1cda8613ff24e00de56ac25c883f18a4d4103e62111821988b9f025555ea22",
+  "certified_triples": 13135,
+  "counterexample_first": true,
+  "fourier_involution_basis_checks": 36,
+  "grid_triples_tested": 70200,
+  "method": "radial Laplacian recurrence plus Taylor derivative tail coefficients",
+  "scope": "Exact algebraic certificates plus cited analytic theorem; no formal kernel.",
+  "tail_taylor_coefficients": [
+    "-30",
+    "-272",
+    "-32",
+    "-1"
+  ],
+  "winning_bound": "21357421875/1322849927168"
+}

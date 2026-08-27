@@ -1,0 +1,15 @@
+{
+  "completed_at": "2026-08-27T04:38:21.302690+00:00",
+  "python_version": "3.12.13",
+  "execution_mode": "fresh isolated Python processes with standard library only",
+  "rerun_outputs_byte_identical": true,
+  "commands": [
+    "python -I theory_check.py",
+    "python -I verify.py"
+  ],
+  "network_during_experiments": false,
+  "randomness": "none",
+  "model_calls": "No external model or paid model calls; same assistant authored both lanes.",
+  "limitations": "Independent implementation and execution, not independent model or human review.",
+  "uv_lock_sha256": "2a000ab9f53936eb4b73c46f2754363f167aa13e5cd36878d6ae3df7cd5844da"
+}

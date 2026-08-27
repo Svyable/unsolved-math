@@ -1,0 +1,721 @@
+{
+  "adversarial_checks": {
+    "lost_correlation_box_is_conservative": true,
+    "negative_amplitude_rejected": true,
+    "out_of_bound_input_rejected": true,
+    "reversed_time_rejected": true,
+    "signed_margin_false_safe_detected": true,
+    "time_reversal_switch_error_detected": true,
+    "zero_amplitude_and_zero_horizon_checked": true
+  },
+  "asymmetric_correct_support": "1/120",
+  "asymmetric_wrong_switch_value": "1/200",
+  "base_box_margin": "19/600",
+  "base_reachable_support": "11/5400",
+  "base_signed_margin": "1/600",
+  "base_terminal_state": [
+    "13/2700",
+    "1/200",
+    "1/300"
+  ],
+  "base_violation": "1/27000",
+  "case_count": 30,
+  "cases": [
+    {
+      "T": "0",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "0",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "0",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "1/2",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "0",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "2/3",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "0",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "1",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "0",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "2",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "0",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "0",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "1/1000",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_state": [
+        "13/729000",
+        "1/18000",
+        "1/9000"
+      ],
+      "epsilon": "1/1000",
+      "maximum_over_eight_controls": "11/1458000"
+    },
+    {
+      "T": "1/2",
+      "attaining_state": [
+        "13/216000",
+        "1/8000",
+        "1/6000"
+      ],
+      "epsilon": "1/1000",
+      "maximum_over_eight_controls": "11/432000"
+    },
+    {
+      "T": "2/3",
+      "attaining_state": [
+        "13/91125",
+        "1/4500",
+        "1/4500"
+      ],
+      "epsilon": "1/1000",
+      "maximum_over_eight_controls": "11/182250"
+    },
+    {
+      "T": "1",
+      "attaining_state": [
+        "13/27000",
+        "1/2000",
+        "1/3000"
+      ],
+      "epsilon": "1/1000",
+      "maximum_over_eight_controls": "11/54000"
+    },
+    {
+      "T": "2",
+      "attaining_state": [
+        "13/3375",
+        "1/500",
+        "1/1500"
+      ],
+      "epsilon": "1/1000",
+      "maximum_over_eight_controls": "11/6750"
+    },
+    {
+      "T": "0",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "1/100",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_state": [
+        "13/72900",
+        "1/1800",
+        "1/900"
+      ],
+      "epsilon": "1/100",
+      "maximum_over_eight_controls": "11/145800"
+    },
+    {
+      "T": "1/2",
+      "attaining_state": [
+        "13/21600",
+        "1/800",
+        "1/600"
+      ],
+      "epsilon": "1/100",
+      "maximum_over_eight_controls": "11/43200"
+    },
+    {
+      "T": "2/3",
+      "attaining_state": [
+        "26/18225",
+        "1/450",
+        "1/450"
+      ],
+      "epsilon": "1/100",
+      "maximum_over_eight_controls": "11/18225"
+    },
+    {
+      "T": "1",
+      "attaining_state": [
+        "13/2700",
+        "1/200",
+        "1/300"
+      ],
+      "epsilon": "1/100",
+      "maximum_over_eight_controls": "11/5400"
+    },
+    {
+      "T": "2",
+      "attaining_state": [
+        "26/675",
+        "1/50",
+        "1/150"
+      ],
+      "epsilon": "1/100",
+      "maximum_over_eight_controls": "11/675"
+    },
+    {
+      "T": "0",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "1/10",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_state": [
+        "13/7290",
+        "1/180",
+        "1/90"
+      ],
+      "epsilon": "1/10",
+      "maximum_over_eight_controls": "11/14580"
+    },
+    {
+      "T": "1/2",
+      "attaining_state": [
+        "13/2160",
+        "1/80",
+        "1/60"
+      ],
+      "epsilon": "1/10",
+      "maximum_over_eight_controls": "11/4320"
+    },
+    {
+      "T": "2/3",
+      "attaining_state": [
+        "52/3645",
+        "1/45",
+        "1/45"
+      ],
+      "epsilon": "1/10",
+      "maximum_over_eight_controls": "22/3645"
+    },
+    {
+      "T": "1",
+      "attaining_state": [
+        "13/270",
+        "1/20",
+        "1/30"
+      ],
+      "epsilon": "1/10",
+      "maximum_over_eight_controls": "11/540"
+    },
+    {
+      "T": "2",
+      "attaining_state": [
+        "52/135",
+        "1/5",
+        "1/15"
+      ],
+      "epsilon": "1/10",
+      "maximum_over_eight_controls": "22/135"
+    },
+    {
+      "T": "0",
+      "attaining_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "epsilon": "1",
+      "maximum_over_eight_controls": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_state": [
+        "13/729",
+        "1/18",
+        "1/9"
+      ],
+      "epsilon": "1",
+      "maximum_over_eight_controls": "11/1458"
+    },
+    {
+      "T": "1/2",
+      "attaining_state": [
+        "13/216",
+        "1/8",
+        "1/6"
+      ],
+      "epsilon": "1",
+      "maximum_over_eight_controls": "11/432"
+    },
+    {
+      "T": "2/3",
+      "attaining_state": [
+        "104/729",
+        "2/9",
+        "2/9"
+      ],
+      "epsilon": "1",
+      "maximum_over_eight_controls": "44/729"
+    },
+    {
+      "T": "1",
+      "attaining_state": [
+        "13/27",
+        "1/2",
+        "1/3"
+      ],
+      "epsilon": "1",
+      "maximum_over_eight_controls": "11/54"
+    },
+    {
+      "T": "2",
+      "attaining_state": [
+        "104/27",
+        "2",
+        "2/3"
+      ],
+      "epsilon": "1",
+      "maximum_over_eight_controls": "44/27"
+    }
+  ],
+  "exact_coefficient_certificates": [
+    {
+      "T": "0",
+      "coefficients": [
+        "0",
+        "0",
+        "3"
+      ],
+      "epsilon": "0",
+      "roots": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "T": "1/3",
+      "coefficients": [
+        "2/27",
+        "-1",
+        "3"
+      ],
+      "epsilon": "0",
+      "roots": [
+        "1/9",
+        "2/9"
+      ]
+    },
+    {
+      "T": "1/2",
+      "coefficients": [
+        "1/6",
+        "-3/2",
+        "3"
+      ],
+      "epsilon": "0",
+      "roots": [
+        "1/6",
+        "1/3"
+      ]
+    },
+    {
+      "T": "2/3",
+      "coefficients": [
+        "8/27",
+        "-2",
+        "3"
+      ],
+      "epsilon": "0",
+      "roots": [
+        "2/9",
+        "4/9"
+      ]
+    },
+    {
+      "T": "1",
+      "coefficients": [
+        "2/3",
+        "-3",
+        "3"
+      ],
+      "epsilon": "0",
+      "roots": [
+        "1/3",
+        "2/3"
+      ]
+    },
+    {
+      "T": "2",
+      "coefficients": [
+        "8/3",
+        "-6",
+        "3"
+      ],
+      "epsilon": "0",
+      "roots": [
+        "2/3",
+        "4/3"
+      ]
+    },
+    {
+      "T": "0",
+      "coefficients": [
+        "0",
+        "0",
+        "3"
+      ],
+      "epsilon": "1/1000",
+      "roots": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "T": "1/3",
+      "coefficients": [
+        "2/27",
+        "-1",
+        "3"
+      ],
+      "epsilon": "1/1000",
+      "roots": [
+        "1/9",
+        "2/9"
+      ]
+    },
+    {
+      "T": "1/2",
+      "coefficients": [
+        "1/6",
+        "-3/2",
+        "3"
+      ],
+      "epsilon": "1/1000",
+      "roots": [
+        "1/6",
+        "1/3"
+      ]
+    },
+    {
+      "T": "2/3",
+      "coefficients": [
+        "8/27",
+        "-2",
+        "3"
+      ],
+      "epsilon": "1/1000",
+      "roots": [
+        "2/9",
+        "4/9"
+      ]
+    },
+    {
+      "T": "1",
+      "coefficients": [
+        "2/3",
+        "-3",
+        "3"
+      ],
+      "epsilon": "1/1000",
+      "roots": [
+        "1/3",
+        "2/3"
+      ]
+    },
+    {
+      "T": "2",
+      "coefficients": [
+        "8/3",
+        "-6",
+        "3"
+      ],
+      "epsilon": "1/1000",
+      "roots": [
+        "2/3",
+        "4/3"
+      ]
+    },
+    {
+      "T": "0",
+      "coefficients": [
+        "0",
+        "0",
+        "3"
+      ],
+      "epsilon": "1/100",
+      "roots": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "T": "1/3",
+      "coefficients": [
+        "2/27",
+        "-1",
+        "3"
+      ],
+      "epsilon": "1/100",
+      "roots": [
+        "1/9",
+        "2/9"
+      ]
+    },
+    {
+      "T": "1/2",
+      "coefficients": [
+        "1/6",
+        "-3/2",
+        "3"
+      ],
+      "epsilon": "1/100",
+      "roots": [
+        "1/6",
+        "1/3"
+      ]
+    },
+    {
+      "T": "2/3",
+      "coefficients": [
+        "8/27",
+        "-2",
+        "3"
+      ],
+      "epsilon": "1/100",
+      "roots": [
+        "2/9",
+        "4/9"
+      ]
+    },
+    {
+      "T": "1",
+      "coefficients": [
+        "2/3",
+        "-3",
+        "3"
+      ],
+      "epsilon": "1/100",
+      "roots": [
+        "1/3",
+        "2/3"
+      ]
+    },
+    {
+      "T": "2",
+      "coefficients": [
+        "8/3",
+        "-6",
+        "3"
+      ],
+      "epsilon": "1/100",
+      "roots": [
+        "2/3",
+        "4/3"
+      ]
+    },
+    {
+      "T": "0",
+      "coefficients": [
+        "0",
+        "0",
+        "3"
+      ],
+      "epsilon": "1/10",
+      "roots": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "T": "1/3",
+      "coefficients": [
+        "2/27",
+        "-1",
+        "3"
+      ],
+      "epsilon": "1/10",
+      "roots": [
+        "1/9",
+        "2/9"
+      ]
+    },
+    {
+      "T": "1/2",
+      "coefficients": [
+        "1/6",
+        "-3/2",
+        "3"
+      ],
+      "epsilon": "1/10",
+      "roots": [
+        "1/6",
+        "1/3"
+      ]
+    },
+    {
+      "T": "2/3",
+      "coefficients": [
+        "8/27",
+        "-2",
+        "3"
+      ],
+      "epsilon": "1/10",
+      "roots": [
+        "2/9",
+        "4/9"
+      ]
+    },
+    {
+      "T": "1",
+      "coefficients": [
+        "2/3",
+        "-3",
+        "3"
+      ],
+      "epsilon": "1/10",
+      "roots": [
+        "1/3",
+        "2/3"
+      ]
+    },
+    {
+      "T": "2",
+      "coefficients": [
+        "8/3",
+        "-6",
+        "3"
+      ],
+      "epsilon": "1/10",
+      "roots": [
+        "2/3",
+        "4/3"
+      ]
+    },
+    {
+      "T": "0",
+      "coefficients": [
+        "0",
+        "0",
+        "3"
+      ],
+      "epsilon": "1",
+      "roots": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "T": "1/3",
+      "coefficients": [
+        "2/27",
+        "-1",
+        "3"
+      ],
+      "epsilon": "1",
+      "roots": [
+        "1/9",
+        "2/9"
+      ]
+    },
+    {
+      "T": "1/2",
+      "coefficients": [
+        "1/6",
+        "-3/2",
+        "3"
+      ],
+      "epsilon": "1",
+      "roots": [
+        "1/6",
+        "1/3"
+      ]
+    },
+    {
+      "T": "2/3",
+      "coefficients": [
+        "8/27",
+        "-2",
+        "3"
+      ],
+      "epsilon": "1",
+      "roots": [
+        "2/9",
+        "4/9"
+      ]
+    },
+    {
+      "T": "1",
+      "coefficients": [
+        "2/3",
+        "-3",
+        "3"
+      ],
+      "epsilon": "1",
+      "roots": [
+        "1/3",
+        "2/3"
+      ]
+    },
+    {
+      "T": "2",
+      "coefficients": [
+        "8/3",
+        "-6",
+        "3"
+      ],
+      "epsilon": "1",
+      "roots": [
+        "2/3",
+        "4/3"
+      ]
+    }
+  ],
+  "exact_trajectories_checked": 240,
+  "independence": "Fresh python -I process; direct triangular ODE integration, no theory outputs/code.",
+  "input_sha256": "a00001f146aef1773ce2ac02b6850e915a8e227e8ec54c8ccaeace817d32d0a4",
+  "limits": "240 exact trajectories do not alone cover all measurable inputs; global support needs the separately stated kernel sign bound."
+}

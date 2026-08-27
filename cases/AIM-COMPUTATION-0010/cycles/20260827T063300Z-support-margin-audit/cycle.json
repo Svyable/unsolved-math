@@ -1,0 +1,237 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T063300Z-support-margin-audit",
+  "problem_id": "AIM-COMPUTATION-0010",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-COMPUTATION-0010",
+    "title": "Certified weak-coupling tubes for structured reachability",
+    "statement": "A.7 Mitchell, Ian\n\nThe solution to the Hamilton-Jacobi(-Bellman)(-Isaacs) partial differential equation (HJ PDE) provides the optimal value function (eg cost to go) for bounded input optimal control or zero-sum differential game problems respectively. These equations arise in many disparate fields, and my personal interest lies in how they can be used to approximate the reachable sets of continuous dynamic systems in order to verify and/or synthesize provably safe control policies. For these purposes, it may be possible to relax the goal of a convergent approximation of the solution of the PDE. Instead, we seek guaranteed under or over approximations of the solutions; for example, an underapproximation of the solution might overapproximate the unsafe reachable set, which might thereby generate false negative verifications but no false positives. With or without such relaxations, is it possible to take advantage of structure in the system dynamics to reduce the typically exponential growth in computational cost with system dimension? For example, is it possible to take advantage of weak or linear coupling between certain components to reduce the degrees of freedom needed by an approximation, perhaps through partial parameterization? Or another approach: Can sampling methods be applied to produce quantifiable probabilistic verifications? In addition to these questions related to the application area of verification, I am inter-ested in the class of algorithms designed to approximate solutions of HJ PDEs - often broadly called \"level set methods.\" This interest includes both the time-dependent and stationary (or static) versions of the equation, as well as issues related to the use of such numerical approximations in the control of robotic systems.",
+    "statement_sha256": "f1fcc8af2b056d92b6c169bb742268ff7ddab60d4ff5d78a09b9f027dd071304",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T06:33:01.432318Z",
+    "source_urls": [
+      "https://aimath.org/WWN/optimalcontrol/optimalcontrol.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 3, score 77.25, highest eligible in the validated queue on open PR #8 at ba966a2c39c08318b586f544c700b24ccb59a89e. Main still lacks the queue; synchronization is restored on the review branch and its manifest passed. Ranks 1 and 2 are on cooldown. No provisional substitution or ranking change.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T06:33:01.432318Z",
+  "completed_at": "2026-08-27T06:38:32.217608Z",
+  "selection_basis": "Rank 3, score 77.25, highest eligible in the validated queue on open PR #8 at ba966a2c39c08318b586f544c700b24ccb59a89e. Main still lacks the queue; synchronization is restored on the review branch and its manifest passed. Ranks 1 and 2 are on cooldown. No provisional substitution or ranking change.",
+  "theory": {
+    "target": "Test whether a signed coordinate-radius dot product can be a sound terminal safety margin; distinguish a realizable counterexample, correct box support, and exact correlated support.",
+    "definitions": [
+      "Terminal reachability of x1'=2*x2, x2'=3*x3, x3'=w from zero initial state.",
+      "All measurable scalar inputs obey |w|<=epsilon almost everywhere, with epsilon>=0 and T>=0.",
+      "Support is the supremum of a.x over the terminal reachable set; coordinate radii define a symmetric outer box.",
+      "Safety means every admissible terminal state satisfies a.x<=b; no pathwise/deployment implication is assumed."
+    ],
+    "assumptions": [
+      "Fixed linear matrix A and input vector B in input.json; small residual amplitude does not mean coupling coefficients are small.",
+      "Exact arithmetic and explicitly chosen directions; no nonlinear, HJ-solver, or nonzero-initial-set guarantee.",
+      "Imported status and research claims remain unverified external metadata."
+    ],
+    "approaches_considered": [
+      "Coordinate error radii followed by absolute-value dual-box support.",
+      "Correlation-aware scalar convolution kernel, rational root partition, and attaining bang-bang input."
+    ],
+    "falsification_targets": [
+      "Find a reachable false-safe trajectory under the signed margin.",
+      "Challenge box containment, kernel coefficients, time reversal, and zero/invalid parameter boundaries."
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "A signed radius margin a.rho<=b suffices to certify a.x(T)<=b for all admissible inputs whenever |x_i(T)|<=rho_i. This shortcut fails in the specified three-state model.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A realizable admissible trajectory with a.x(T)>b while a.rho<=b.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C2",
+        "statement": "For the specified model, rho=epsilon*(T^3,3*T^2/2,T) bounds all terminal coordinates; the correct box support is sum |a_i|rho_i, not a.rho.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An admissible terminal coordinate exceeds its radius, or a box point exceeds the absolute-value support formula.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C3",
+        "statement": "For the specified model and a(T)=(1,-T,2*T^2/3), terminal support is 11*epsilon*T^3/54, attained by +,-,+ input on equal thirds. The global bound uses the explicit kernel-sign argument, not finite trajectory counts.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An admissible input exceeds the claimed support, the displayed input fails to attain it, or the factorization/variation-of-constants argument is invalid.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C4",
+        "statement": "AIM item A.7 is Ian Mitchell's research agenda on one-sided approximations and structured dynamics; it does not propose the faulty margin tested here.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "The primary PDF contradicts the attribution, scope, or absence of this constructed margin rule.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T-reachable-counterexample",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "A valid +,-,+ input reaches (13/2700,1/200,1/300) and violates b=1/500 by 1/27000 although the signed margin is 1/600.",
+        "claim_ids": [
+          "C1"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "88d97fd85bcc73dde9211b20a157571d872974d195105cc01a52d1f32a3e6e95",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory_check.py",
+            "sha256": "15dd693e34fe6554b198dd5457c4f3f115a76ee941638c2bcef33530f3561c28",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "0b192b6ea096a3b636ac8afef2596e048b35a4a3290400c9b241760c5875c689",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T-support-discrimination",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Exact certificates separate signed, box, and correlated support margins on 30 scaling/boundary cases; the correlated bound certifies b=1/400 where the box is inconclusive.",
+        "claim_ids": [
+          "C2",
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "88d97fd85bcc73dde9211b20a157571d872974d195105cc01a52d1f32a3e6e95",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory_check.py",
+            "sha256": "15dd693e34fe6554b198dd5457c4f3f115a76ee941638c2bcef33530f3561c28",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "0b192b6ea096a3b636ac8afef2596e048b35a4a3290400c9b241760c5875c689",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-direct-dynamics",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Begin with the reachable counterexample and invalid/zero boundaries; integrate triangular ODE segments directly, then check 240 sign-pattern trajectories and exact matrix-derived kernel coefficients.",
+        "independent_context": true,
+        "independence_basis": "Fresh python -I process reads input.json only, with no theory code or output. Direct state integration and matrix-vector products differ from convolution integration. Same assistant authored both; no independent model/human review.",
+        "result": "All 30 case values and attaining states match after separate execution. All 240 trajectories satisfy the coordinate box; the false-safe gap is exactly 1/27000. An asymmetric probe detects the forward/lag switch-time error.",
+        "reproduction_command": "python -I verify.py",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "25aa6286c8af46c7bb4c55cc38451415b18b71b1ab5ed1bd75fe811955c47327",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "86daa600fa424476874b424ed775d0772f1b7ca227329107efabb479311d3745",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "e914989e948cfa8ac8e088a5b496d80db4beeb8439ceff9f2a10200c0c06ba9c",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "Global measurable-input support needs the analytic kernel-sign inequality; trajectory enumeration alone is insufficient.",
+          "No formal kernel or independent human/model proof review."
+        ]
+      },
+      {
+        "check_id": "V-primary-scope",
+        "claim_ids": [
+          "C4"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Inspect primary AIM A.7 and its neighbors in the August 19, 2005 document; distinguish source agenda from derived regression claim.",
+        "independent_context": true,
+        "independence_basis": "Primary PDF text accessed independently of imported research summaries; separate audit evidence. Same-assistant citation review, not a fresh-model referee.",
+        "result": "A.7 attribution and one-sided/structured approximation scope confirmed. The constructed example and faulty rule are not attributed to the source.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "cd6a5a4d026f3d5dd99fbd99d1fce2ecbcb9325da755594e52330d2fe49957ff",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "25aa6286c8af46c7bb4c55cc38451415b18b71b1ab5ed1bd75fe811955c47327",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V-realizability-and-bounds",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "A distinct exact dynamics implementation reproduces the realizable obstruction and support values, verifies coefficient certificates, and rejects amplitude/time-reversal errors.",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "25aa6286c8af46c7bb4c55cc38451415b18b71b1ab5ed1bd75fe811955c47327",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "86daa600fa424476874b424ed775d0772f1b7ca227329107efabb479311d3745",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "e914989e948cfa8ac8e088a5b496d80db4beeb8439ceff9f2a10200c0c06ba9c",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Only the fixed terminal linear model is covered; no general nonlinear/HJ comparison or controller guarantee.",
+      "The analytic all-input bound is not kernel accepted or independently human/model reviewed.",
+      "No novelty claim; the entire multi-question source agenda remains outside this bounded certificate."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "FALSIFIED_SUBCLAIM",
+  "next_step": "Retain the reachable counterexample as a regression test; audit a second sparse model with nonzero initial uncertainty before generalizing support certificates."
+}

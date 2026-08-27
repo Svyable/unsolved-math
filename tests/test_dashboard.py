@@ -22,9 +22,11 @@ def _ranked(problem_id: str, title: str, score: float) -> RankedProblem:
 
 
 def test_dashboard_shows_provisional_stack_without_calling_it_ranked(
-    project_root: Path,
+    bootstrap_root: Path,
 ) -> None:
-    rendered = render_readme_dashboard(project_root, as_of=datetime(2026, 8, 27, 1, 49, tzinfo=UTC))
+    rendered = render_readme_dashboard(
+        bootstrap_root, as_of=datetime(2026, 8, 27, 1, 49, tzinfo=UTC)
+    )
 
     assert "Current research stack" in rendered
     assert "COMB-001 — The Hadwiger-Nelson Problem" in rendered

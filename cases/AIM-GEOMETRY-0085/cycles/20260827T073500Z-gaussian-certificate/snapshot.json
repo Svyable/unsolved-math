@@ -1,0 +1,19 @@
+{
+  "snapshot_schema_version": 1,
+  "problem_id": "AIM-GEOMETRY-0085",
+  "title": "Finite exact certification of numerical Cohn--Elkies bounds",
+  "statement": "Numerical LP bounds in high dimensions.",
+  "statement_sha256": "e453c11c78f8c738aab8f61e932b693ed00e838e81ec89a0d50c5520e15a5a77",
+  "upstream_dataset": "ulamai/UnsolvedMath",
+  "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+  "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+  "frozen_at": "2026-08-27T07:34:13.098594Z",
+  "source_urls": [
+    "https://aimpl.org/discreteaf/1/",
+    "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+    "https://arxiv.org/abs/math/0110009v3"
+  ],
+  "imported_status": "open",
+  "selection_basis": "Rank 4, score 77.25, highest eligible in the validated queue on open PR #8 at 8c75ca4006a1d1e2a7a46ef3e7997d04145f6f7c. Main lacks a queue; synchronization is restored on the review branch and its manifest passed. Ranks 1 through 3 are on cooldown. No provisional substitution or ranking change.",
+  "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+}

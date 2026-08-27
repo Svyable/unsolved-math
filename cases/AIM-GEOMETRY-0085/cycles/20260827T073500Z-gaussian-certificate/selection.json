@@ -1,0 +1,52 @@
+{
+  "selected_at": "2026-08-27T07:34:13.098594+00:00",
+  "preflight": {
+    "ready": true,
+    "selection_mode": "ranked_queue",
+    "selected_problem_id": "AIM-GEOMETRY-0085",
+    "checks": [
+      "durable instructions and safety boundaries are present",
+      "ranked queue has an eligible candidate outside loop gates"
+    ],
+    "warnings": [],
+    "blockers": []
+  },
+  "upstream_record_id": 20001747,
+  "queue_rank": 4,
+  "candidate": {
+    "category": "geometry",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA",
+    "components": {
+      "computational_affordance": 1.0,
+      "literature_freshness": 0.15,
+      "provenance": 0.7,
+      "research_traction": 0.55,
+      "statement_quality": 1.0,
+      "tractability": 0.9
+    },
+    "difficulty_level": 2,
+    "imported_status": "open",
+    "problem_id": "AIM-GEOMETRY-0085",
+    "reasons": [
+      "difficulty L2",
+      "statement status exact",
+      "one provenance field is present",
+      "literature check date is missing",
+      "research classification OPEN-TRIAGE",
+      "computational keywords: bound, finite"
+    ],
+    "score": 77.25,
+    "title": "Finite exact certification of numerical Cohn--Elkies bounds"
+  },
+  "main_commit": "56dcf64b3a39fd9ff1c698d00ce07bb10ab34bd6",
+  "review_branch_commit": "8c75ca4006a1d1e2a7a46ef3e7997d04145f6f7c",
+  "queue_sha256": "1d91b004797095b515272587c1121d362ad64081ba5d373200320ffbbe06e0bf",
+  "history_before_sha256": "21f7c1bb606714b8036bbf45e2f9f9b99c3caafdb6637548c782c04c2cfadb7b",
+  "dataset_manifest_sha256": "8d19f167df382e076ed018c2702e25e7bea511cb6294f47f465c4fc880fae14a",
+  "original_source_url": "http://aimpl.org/discreteaf/1/",
+  "source_url_normalization": "HTTPS counterpart retained in schema; original HTTP URL recorded here. Neither AIM endpoint could be retrieved in this run.",
+  "attribution": "ulamai/UnsolvedMath, CC BY 4.0; original heading preserved verbatim.",
+  "scope": "A certificate for a specified degree-three Gaussian candidate in dimension 24, not a reconstruction or solution of the source heading.",
+  "imported_summary_claim": "The source is a research heading rather than a well-formed question. For a finite rational Laguerre--Gaussian Cohn--Elkies candidate, the report proves an a posteriori global sign certificate: after exact square-factor removal, rational mesh values with lower margin mu, covering radius eta, and derivative bound M certify the compact interval when mu >= M eta, while an explicit leading-coefficient inequality certifies the infinite tail. Applying this to Q on [0,infinity) and -P on [T,infinity), with an outward-rounded objective, rigorously converts a numerical candidate into a sphere-packing density bound. A separate proposition proves that the highest active Laguerre index must be odd and its coefficient positive.\n\nCandidate contribution (certification lemma; novelty confidence low): Candidate novelty: the exact square-factor plus mesh--derivative--tail packet is a finite, independently checkable certificate for the global half-line signs and objective of a rational polynomial--Gaussian Cohn--Elkies candidate.",
+  "imported_summary_trust": "UNVERIFIED_EXTERNAL_METADATA"
+}

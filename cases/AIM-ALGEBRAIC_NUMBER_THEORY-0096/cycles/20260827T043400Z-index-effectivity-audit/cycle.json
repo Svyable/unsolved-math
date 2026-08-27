@@ -1,0 +1,237 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T043400Z-index-effectivity-audit",
+  "problem_id": "AIM-ALGEBRAIC_NUMBER_THEORY-0096",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_NUMBER_THEORY-0096",
+    "title": "Rational points, index transport, and the C_1^0 boundary",
+    "statement": "Problem 11, as phrased, had been settled by J. Ax in Bull. Am. Math. Soc. 71 (1965) p. 717. Ax produced a smooth hypersurface in 9-dimensional projective space, of degree 5, over a field k of cohomological dimension 1, with no rational point (that such hypersurfaces are rationally connected was proven much later). Ax'example has index 1, i.e. the g.c.d. of the degree of the finite field extensions over which the hypersurface acquires a rational point is 1. In Journal of the Inst. of Math. Jussieu (2004) 3 p. 1-16, J.-L. Colliot-Th´ el` ene and D. Madore produce a field of cohomological dimension 1 and a smooth cubic surface over that field which has index 3, thus settling negatively a question of Kato and Kuzumaki (1986). 50\n\nProblem/",
+    "statement_sha256": "7bd38380791213998af3bf992c12ddf53a4108a57b71d8662d28afc89a4555cc",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T04:33:45.876900Z",
+    "source_urls": [
+      "https://aimath.org/WWN/qptsurface2/qptsurface2.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 1 (score 77.25) of the restored deterministic research queue; pinned local synchronization validated before selection; no prior cycle for this ID and preflight passes cooldown/anti-thrashing gates. Imported status and statement-quality labels remain unverified.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T04:33:45.876900Z",
+  "completed_at": "2026-08-27T04:38:21.302690Z",
+  "selection_basis": "Rank 1 (score 77.25) of the restored deterministic research queue; pinned local synchronization validated before selection; no prior cycle for this ID and preflight passes cooldown/anti-thrashing gates. Imported status and statement-quality labels remain unverified.",
+  "theory": {
+    "target": "Test index-one-implies-rational-point in a bounded finite-etale model, isolate effectivity, and audit the selected passage scope without changing parent status.",
+    "definitions": [
+      "Index is gcd of closed-point residue degrees; rational point means residue degree one.",
+      "A zero-cycle has integer coefficients; an effective zero-cycle has nonnegative coefficients.",
+      "Transport model: nonempty finite etale schemes over finite fields; all m >= 1."
+    ],
+    "assumptions": [
+      "Finite fields and finite etale schemes only; not geometrically integral or rationally connected.",
+      "Imported statement, status and classifications remain unverified metadata."
+    ],
+    "approaches_considered": [
+      "Construct coprime-degree field factors with explicit root-free polynomials and a Bezout signed cycle.",
+      "Independently model Frobenius on roots and traverse permutation powers under field extension."
+    ],
+    "falsification_targets": [
+      "Find rational roots, reducible factors, a wrong signed degree, or a transport mismatch.",
+      "Check the primary source for a scope/status conflict."
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "For every nonempty finite etale scheme X over F2, index(X)=1 implies X(F2) is nonempty. The explicit degree-2/degree-3 example falsifies this implication.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Root in F2, reducible input factor, or invalid signed degree calculation defeats the certificate.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C2",
+        "statement": "For nonempty finite etale X over Fq with closed degrees d_i and g=gcd(d_i), the index after extension degree m is g/gcd(g,m); derivation is not kernel checked.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A valid finite-etale Frobenius orbit profile violating the formula, or a gap in the orbit/valuation argument.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The selected imported passage is retrospective commentary at Question 11 remark (iv), so the imported open label needs human scope review.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Primary PDF context places the passage differently or identifies it as a separate question.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T-counterexample",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact finite-etale counterexample separates index one from effectivity; 21,828 finite transport checks support the bounded model. No novelty claimed.",
+        "claim_ids": [
+          "C1",
+          "C2"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "e1b4c37cec54421d666de1d39edeaee17bd0bac28b56fb260cb9fee28fbd0489",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory_check.py",
+            "sha256": "589b470d64923bb37c93dd3e5aab57925e5dd1fc9bcc573346d9d21f59f8b6e1",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "2e07320832ed331d9985fc5b485cc132ffa93b8a87990813ee0eec11af29da9e",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T-source-scope",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "Primary-source placement makes the imported open-versus-historical-context objection concrete.",
+        "claim_ids": [
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "e1b4c37cec54421d666de1d39edeaee17bd0bac28b56fb260cb9fee28fbd0489",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-fresh-orbits",
+        "claim_ids": [
+          "C1",
+          "C2"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Counterexample-first polynomial trial division and F64 root search, then explicit Frobenius orbit traversal for 21,828 profiles/extensions; six sensitivity controls; proof-domain audit.",
+        "independent_context": true,
+        "independence_basis": "New python -I process reads input.json only; no theory imports or outputs. Bitwise field arithmetic and orbit traversal differ from theory gcd/evaluation code. Same assistant authorship remains a limitation; no independent model or human review.",
+        "result": "No F2-rational point, closed degrees 2 and 3, index 1, signed degree 1; zero transport mismatches and all six controls pass.",
+        "reproduction_command": "python -I verify.py",
+        "evidence": [
+          {
+            "path": "verify.py",
+            "sha256": "f017fe3f919104e3c31c1265f7fd03925c299622d92e691186b86d1e19faa45c",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "a482de003ed16a503b391be1666a9e598e4cbb933586ee96e0fe0ef4a64d2cfb",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "f32bb8fd3ab0f23f16c83441c81cf5ebabb3049b0a901d825868ddf9045696db",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "Finite disconnected scheme is outside the original rationally connected class.",
+          "The general derivation has not been kernel-checked or independently human-reviewed."
+        ]
+      },
+      {
+        "check_id": "V-primary-context",
+        "claim_ids": [
+          "C3"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Read primary PDF context around Question 11 and Question 12; compare author-submitted arXiv abstract.",
+        "independent_context": true,
+        "independence_basis": "Fresh primary-source text retrieval independent of imported AI status/research metadata; not a fresh-model referee. Captured audit notes are separate from theory evidence.",
+        "result": "AIM page 50 identifies the passage as remark (iv); arXiv abstract alone does not verify exact index three.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "a651ed5a13414fb5e09c3dc70912ee32c33634e3d9a252c93f4831448d9fedd4",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "f32bb8fd3ab0f23f16c83441c81cf5ebabb3049b0a901d825868ddf9045696db",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "Original Ax proof and CT--Madore exact-index proof were not independently reconstructed."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V-executable",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "A distinct implementation reproduces the counterexample and tests the transport identity against explicit orbits, with adversarial controls and a deterministic transcript digest.",
+        "claim_ids": [
+          "C1",
+          "C2"
+        ],
+        "evidence": [
+          {
+            "path": "verify.py",
+            "sha256": "f017fe3f919104e3c31c1265f7fd03925c299622d92e691186b86d1e19faa45c",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "a482de003ed16a503b391be1666a9e598e4cbb933586ee96e0fe0ef4a64d2cfb",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "f32bb8fd3ab0f23f16c83441c81cf5ebabb3049b0a901d825868ddf9045696db",
+            "media_type": "text/markdown"
+          }
+        ]
+      },
+      {
+        "unit_id": "V-source",
+        "kind": "PROOF_GAP_IDENTIFIED",
+        "summary": "Source supports a historical-context objection; stronger original-construction and index claims remain unaudited.",
+        "claim_ids": [
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "a651ed5a13414fb5e09c3dc70912ee32c33634e3d9a252c93f4831448d9fedd4",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "f32bb8fd3ab0f23f16c83441c81cf5ebabb3049b0a901d825868ddf9045696db",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "This is an elementary known distinction and finite-model certificate, not new progress on rationally connected varieties.",
+      "Human scope review is needed for the selected record; imported open status remains unchanged.",
+      "No independent model/human proof review or kernel acceptance; no full primary PDF byte capture."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Human-review the historical remark and effectivity gap; rotate to the next eligible ranked candidate without changing imported status."
+}

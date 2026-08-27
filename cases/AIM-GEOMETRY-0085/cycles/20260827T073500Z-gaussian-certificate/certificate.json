@@ -1,0 +1,25 @@
+{
+  "P_coefficients_ascending": [
+    "225",
+    "13",
+    "13",
+    "-1"
+  ],
+  "P_shifted_at_T": [
+    "-30",
+    "-272",
+    "-32",
+    "-1"
+  ],
+  "Q_coefficients_ascending": [
+    "225",
+    "195",
+    "-29",
+    "1"
+  ],
+  "T": "15",
+  "b": 15,
+  "c": 1,
+  "density_upper_bound": "21357421875/1322849927168",
+  "dimension": 24
+}

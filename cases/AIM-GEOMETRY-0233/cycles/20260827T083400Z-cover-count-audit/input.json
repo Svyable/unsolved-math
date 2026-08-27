@@ -1,0 +1,43 @@
+{
+  "theory_ranks": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "theory_max_degree": 10,
+  "enumeration_cases": [
+    {
+      "rank": 0,
+      "max_degree": 6
+    },
+    {
+      "rank": 1,
+      "max_degree": 7
+    },
+    {
+      "rank": 2,
+      "max_degree": 6
+    },
+    {
+      "rank": 3,
+      "max_degree": 4
+    }
+  ],
+  "example": {
+    "rank": 2,
+    "max_degree": 6,
+    "N": 533417
+  },
+  "tuple_convention": "ordered permutations of 0..d-1, positive generators; root is 0",
+  "target": "Replace sum (d!)^r by sum a_r(d), where a_r(d) counts index-d subgroups of the free group of rank r; only an upper bound for arbitrary r-generated groups.",
+  "geometric_assumptions": [
+    "connected smooth Riemannian manifold",
+    "fundamental group admits r generators",
+    "N distinct geometric images of primitive closed geodesics",
+    "each has a closed embedded lift to a connected cover of degree at most D",
+    "metric on each cover is pulled back; one cover is selected up to isomorphism over the base"
+  ],
+  "limits": "No assertion that the required uniformly bounded simple lifts exist, or that simplicity descends to the base."
+}

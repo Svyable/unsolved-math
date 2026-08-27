@@ -1,0 +1,219 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T083400Z-cover-count-audit",
+  "problem_id": "AIM-GEOMETRY-0233",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-GEOMETRY-0233",
+    "title": "A transition fragment and bounded-degree simple lifts",
+    "statement": "Question 5.4.1 above asks whether there are other examples. 5.6. Infinitely many simple closed geodesics.",
+    "statement_sha256": "888c006328ae6c50f9b71452e102298b10c7dde2df116884f3280456dc5a9aa0",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T08:34:05.503956Z",
+    "source_urls": [
+      "https://aimath.org/pastworkshops/geodesicsproblems.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 5, score 77.25, highest eligible in the validated queue on open PR #8 at fcf697943553e13d624d294d1eb13bff15baae80. Main lacks a queue; synchronization is restored on the review branch and its manifest passed. Ranks 1 through 4 are on cooldown. No provisional substitution or ranking change.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T08:34:05.503956Z",
+  "completed_at": "2026-08-27T08:40:33.349993Z",
+  "selection_basis": "Rank 5, score 77.25, highest eligible in the validated queue on open PR #8 at fcf697943553e13d624d294d1eb13bff15baae80. Main lacks a queue; synchronization is restored on the review branch and its manifest passed. Ranks 1 through 4 are on cooldown. No provisional substitution or ranking change.",
+  "theory": {
+    "target": "Audit and sharpen the cover-count denominator in the imported conditional bounded-degree simple-lift concentration lemma, without answering or reconstructing the neighboring geodesic question.",
+    "definitions": [
+      "Connected smooth Riemannian manifold with r-generated fundamental group, r>=0.",
+      "D>=1, N>=1; geometrically distinct primitive closed geodesics each have a closed embedded lift to some connected cover of degree at most D.",
+      "Cover equivalence is over the base and all metrics are pulled back.",
+      "t_r(d) counts labelled transitive permutation tuples; a_r(d) counts based covers of the free group; B_r(D)=sum a_r(d)."
+    ],
+    "assumptions": [
+      "The geometric family and a uniform D are assumed, not constructed or inferred from finite action counts.",
+      "Standard covering classification and degree/index correspondence, with manifold local hypotheses.",
+      "Geometric distinctness, not repeated parametrizations, is used to distinguish lifts.",
+      "No assertion that simplicity descends to the base; no parent-problem or novelty claim."
+    ],
+    "approaches_considered": [
+      "Coarse count of all labelled permutation assignments, yielding the imported factorial-power denominator.",
+      "Exact transitive action recurrence and root-fixing quotient, yielding a smaller based-cover upper bound."
+    ],
+    "falsification_targets": [
+      "Check disconnected actions, relabelling stabilizers, based/unbased confusion and group relations.",
+      "Test rank zero, degree one, ceiling arithmetic and the missing uniform-degree hypothesis."
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "Under the explicit manifold and uniformly bounded simple-lift hypotheses, one connected cover of degree at most D contains distinct simple lifts of at least ceil(N/B_r(D)) base geodesics, where B_r(D) is the sum of index-d subgroup counts of F_r. An infinite such family concentrates in one fixed finite cover.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "The number of cover classes exceeds B_r(D), the covering classification or transfer fails under the hypotheses, distinct projections produce identical lift images, or the pigeonhole argument fails.",
+        "dependencies": [
+          "C2"
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "statement": "The root-orbit recurrence gives t_r(d), and a_r(d)=t_r(d)/(d-1)! counts based degree-d free-group covers. For r=2,D=6 the refined denominator is 3996 instead of 533417; the conditional N=533417 example gives at least 134 lifts instead of 1.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A transitive-action enumeration contradicts the recurrence or rooted quotient, the formal-log table disagrees, or the exact sum/ceiling is wrong.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C3",
+        "statement": "Dividing the number of labelled transitive actions by d! always gives the number of unbased cover classes. The rank-two degree-two example falsifies this shortcut.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A transitive action has a nontrivial relabelling stabilizer, giving an orbit count different from the quotient by d!.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C4",
+        "statement": "The exact source record consists of the last sentence of Section 5.5 and the heading of Section 5.6; the following Question 5.6.1 is separate and is not the frozen canonical statement.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "The primary PDF places these fragments differently or supplies a standalone assertion in the frozen text.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T-refined-cover-denominator",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Derived the conditional bound through exact based free-group counts and generated 50 exact table entries; the rank-two degree-six denominator drops from 533417 to 3996.",
+        "claim_ids": [
+          "C1",
+          "C2"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "ef176a828199d7240e0f5e5022213aac87baf23ca65c1f51c018c98a9543d6c0",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory_count.py",
+            "sha256": "73c4f20d8c4192c1c9676b571454dae3f624f73799c7fcde7f22b08290219964",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "fcb92f1e238975f51bcf2dc5215812af38568a9515a8ff609a073ca382f76521",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-action-enumeration",
+        "claim_ids": [
+          "C2",
+          "C3"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Reject invalid/disconnected actions first; enumerate all tuples, classify rooted actions by BFS, check all root-fixing orbit sizes, then use a formal logarithm and ceiling boundary tests.",
+        "independent_context": true,
+        "independence_basis": "Fresh python -I process reads input.json only and imports no theory implementation/output. Direct permutation enumeration and power-series multiplication differ from the theory orbit recurrence. Same assistant authored both, without independent human/model review.",
+        "result": "All 553385 tuples in 23 rank/degree cases checked; all 50 formal-log table values agree. Five input/action controls pass; naive d! division gives 3/2 instead of 3 classes. Relations reduce the degree-three count from 13 to 4. All 1010 ceiling checks pass.",
+        "reproduction_command": "python -I verify.py",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "943a6a65647525de8e0c17f26a64e77b74decde8d7b9ca23429a2975e440f100",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "8d55d6a2f79d23d057a0e5f4d995c3dc52b71e5829f847272182bea84b2bdfca",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "0f630af2d8f999b75449cbfda2aa11a3ea4700a59b991fc08e95808666648d0e",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "Finite enumeration is not a geometric construction or kernel verification of the general argument."
+        ]
+      },
+      {
+        "check_id": "V-geometric-proof-boundary",
+        "claim_ids": [
+          "C1",
+          "C4"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Independently inspect the source boundary and Hatcher classification; audit subgroup preimages, based/unbased distinctions, pullback metric invariance, geometric distinctness, and uniform-degree pigeonhole logic.",
+        "independent_context": true,
+        "independence_basis": "Primary source and author-hosted topology text accessed separately from imported research summaries; distinct verification notes. Same-assistant proof review, not a fresh model referee.",
+        "result": "Source extraction splice confirmed. Cover classification supports the conditional argument under the stated hypotheses; no construction of uniformly bounded simple lifts is supplied and no simplicity descent is inferred.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "24d14b2d70e11ac20b21a01e409a50819b2ba594ba85961307e4757e035d388a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "943a6a65647525de8e0c17f26a64e77b74decde8d7b9ca23429a2975e440f100",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "Human scope review is required for the transition fragment.",
+          "The uniform simple-lift hypothesis and the base-manifold existence question remain open obligations within this packet.",
+          "No independent human/model referee or formal kernel acceptance."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V-independent-cover-count",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Explicit finite actions and a second formal-series algorithm independently reproduce the count tables and expose the full-factorial quotient error, while distinguishing free from abelian groups.",
+        "claim_ids": [
+          "C2",
+          "C3"
+        ],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "943a6a65647525de8e0c17f26a64e77b74decde8d7b9ca23429a2975e440f100",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "8d55d6a2f79d23d057a0e5f4d995c3dc52b71e5829f847272182bea84b2bdfca",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "0f630af2d8f999b75449cbfda2aa11a3ea4700a59b991fc08e95808666648d0e",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "The canonical text is a transition fragment requiring human scope review; no reconstructed statement or status change.",
+      "Uniformly bounded simple lifts are assumed, not constructed; simple lifts do not imply simple projections.",
+      "The denominator is a safe based-cover bound, not an optimal unbased-cover count for a particular manifold.",
+      "Counting/topological arguments are not kernel accepted or independently human/model reviewed; no novelty claim."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the cover-count and stabilizer tests; human-review the source fragment and identify an actual uniform simple-lift hypothesis before geometric continuation, then rotate to the next eligible candidate."
+}

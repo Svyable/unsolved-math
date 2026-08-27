@@ -1,0 +1,18 @@
+{
+  "snapshot_schema_version": 1,
+  "problem_id": "AIM-GEOMETRY-0237",
+  "title": "Flat strips, counting conventions, and a width bound",
+  "statement": "Question 6.1.1. If we assume that the curvature is only C0, then a metric with such a geodesic can be constructed. Each end of the geodesic is asymptotic to a closed geodesic. But a geodesic along which the curvature is zero cannot spiral into a closed geodesic if the curvature is C2; see [Ruggiero1998]. Wu [Wu2013] has recently given a negative answer to the question under the assumption that the subset of the surface where the curvature is negative has finitely many components; he also shows under this hypothesis that only finitely many free homotopy classes can contain zero curvature closed geodesics. 14 KEITH BURNS AND VLADIMIR S. MATVEEV\n\nA flat strip is a totally geodesic isometric immersion of the Riemannian product of R with an interval. Zero curvature geodesics can be viewed as flat strips with infinitesimal width. It is known that all flat strips (with positive width) must close up in the R-direction; in other words they are really immersions of the product of S1 with an interval. Furthermore for each δ > 0 there are only finitely many flat strips with width ≥ δ. Proofs can be found in a preprint of Cao and Xavier [Cao-Xav]. The main idea is that if two flat strips of width δ cross each other at a very shallow angle, then their intersection contains a long rectangle with width close to 2 δ.It is possible that there are only finitely many flat strips. This is true when the set where the curvature is negative has finitely many components [Wu2013], but the only effort to prove it in general [Rodriguez Hertz2003] was unsuccessful.",
+  "statement_sha256": "a854e54d8ae5b36fc9535d6b85c78b3ab027768d9caea6c1f710c0167bf4ef38",
+  "upstream_dataset": "ulamai/UnsolvedMath",
+  "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+  "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+  "frozen_at": "2026-08-27T09:32:47.403608Z",
+  "source_urls": [
+    "https://aimath.org/pastworkshops/geodesicsproblems.pdf",
+    "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+  ],
+  "imported_status": "open",
+  "selection_basis": "Rank 6, score 77.25, highest eligible in the validated ranked queue on open draft PR #8 at 55e0e31c19d11773fba0cc20e2bea7652d8e32d8. Main has no queue; synchronization is already restored on the review branch with a passing dataset manifest. Ranks 1 through 5 are in cooldown. No ranking or imported status changed.",
+  "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+}

@@ -1,0 +1,29 @@
+{
+  "accessed_date_utc": "2026-08-27",
+  "capture_policy": "Primary URLs, locators, short quotations and derived notes only; full PDF bytes not captured, hashed or redistributed.",
+  "sources": [
+    {
+      "url": "https://aimath.org/WWN/perfectgraph/perfectgraph.pdf",
+      "locator": "Section G.4, PDF page index 13 (printed page 15), immediately after Conjectures 2, 3 and 4",
+      "supports": "The imported fragment joins the end of an implication sentence to the start of its explanation. The actual Conjecture 2 concerns 3-divisibility, not this fragment.",
+      "limitation": "Preserve the imported statement; do not reconstruct or relabel it as an agent-authorized replacement problem."
+    },
+    {
+      "url": "https://web.math.princeton.edu/~pds/papers/bisimplicial2/paper.pdf",
+      "title": "Even-hole-free graphs still have bisimplicial vertices",
+      "authors": ["Maria Chudnovsky", "Paul Seymour"],
+      "displayed_revision_date": "2024-06-26",
+      "locator": "Theorem 1.1 and following paragraph, PDF page index 2 (printed page 1)",
+      "excerpt": "Every non-null even-hole-free graph has a bisimplicial vertex.",
+      "supports": "The authors state the needed theorem with a replacement proof and identify an invalid transfer of cliques in the older theorem 3.1 argument.",
+      "limitation": "The stated theorem and correction are verified as primary-source claims; the full proof is not independently checked here."
+    },
+    {
+      "url": "https://arxiv.org/abs/1909.10967v2",
+      "submitted": "2019-09-24",
+      "version_2_date": "2020-05-15",
+      "supports": "Author-submitted metadata and abstract corroborate the correction and replacement-paper identity.",
+      "limitation": "Do not identify this older version byte-for-byte with the author-hosted 2024 revision."
+    }
+  ]
+}

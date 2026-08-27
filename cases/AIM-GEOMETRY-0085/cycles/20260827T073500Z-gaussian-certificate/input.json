@@ -1,0 +1,22 @@
+{
+  "dimension": 24,
+  "variable": "u=pi*|x|^2",
+  "fourier_convention": "integral f(x)*exp(2*pi*i*<x,y>) dx; radial real functions",
+  "candidate_family": "Q(u)=(u-b)^2*(u+c); P is its polynomial-Gaussian Fourier transform",
+  "b_integer_range": [
+    1,
+    30
+  ],
+  "c_integer_range": [
+    1,
+    20
+  ],
+  "T_quarters_range": [
+    4,
+    120
+  ],
+  "selection_rule": "smallest exact density bound among globally certified grid triples, ties by b,c,T",
+  "certificate_rule": "Q factorization is nonnegative on u>=0; all coefficients of P(T+v) are nonpositive for v>=0; P(0),Q(0)>0",
+  "baseline": "P1(u)=13-u, Q1(u)=1+u, T1=13",
+  "scope": "Exact finite search and certificate; no claim of optimality outside this grid or novelty."
+}

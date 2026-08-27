@@ -1,0 +1,27 @@
+{
+  "closed_point_degrees": [
+    2,
+    3
+  ],
+  "effective_degree_one_coefficients": [],
+  "index": 1,
+  "input_sha256": "f04a3431c66445ff9e1aa45a842024c1c53755918c58fa963fb661b7670db495",
+  "profile_extension_checks": 21828,
+  "rational_point_extension_degrees_through_12": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    9,
+    10,
+    12
+  ],
+  "roots_in_F2": [
+    [],
+    []
+  ],
+  "scope": "Nonempty finite etale schemes over F2; not geometrically integral or rationally connected.",
+  "signed_degree": 1,
+  "universal_formula_status": "mathematical derivation in theory.md; not kernel-checked"
+}

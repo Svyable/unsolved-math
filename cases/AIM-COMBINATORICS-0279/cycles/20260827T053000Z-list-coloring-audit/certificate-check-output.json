@@ -1,0 +1,8 @@
+{
+  "bad_star_order_detected": true,
+  "certificate_sha256": "84c1db6345b1dfaf75deb70d0f30fd7753774d01f3ca54488da5a6ecfba993c9",
+  "coverage_digest_matches_fresh_enumeration": true,
+  "duplicate_order_detected": true,
+  "orders_validated": 3716,
+  "scope": "This post-search phase reads theory certificates only after independent enumeration."
+}
