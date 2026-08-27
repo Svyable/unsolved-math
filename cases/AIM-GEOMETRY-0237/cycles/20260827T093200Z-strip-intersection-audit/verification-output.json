@@ -1,0 +1,36 @@
+{
+  "boundary_equal_width_passed": true,
+  "certificates_accepted": 96,
+  "complement_regions_checked": 384,
+  "example": {
+    "a": "9000009/40000",
+    "area": "19000038000019/399999600000",
+    "b": "1000001/4000",
+    "c": "999999/1000001",
+    "delta": "1",
+    "epsilon": "1/10",
+    "h": "19000019/19999980",
+    "height": "19000019/9999990",
+    "length": "1000001/40000",
+    "outside_intersection_margin": "9/10",
+    "s": "2000/1000001",
+    "shorter_side": "19000019/9999990",
+    "u": "1/1000"
+  },
+  "independence": "Fresh isolated process; counterexamples first, then untrusted certificate coordinates. Generic clipping instead of vertical-section identities. Same-assistant authorship; no independent model/human referee or kernel.",
+  "long_wide_certificates": 63,
+  "method": "Exact generic polygon clipping and shoelace area; certificate-input only, no theory import",
+  "mutations_rejected": [
+    "width_normalization",
+    "right_endpoint_gap",
+    "widened_rectangle",
+    "false_area",
+    "reversed_interval",
+    "zero_width",
+    "false_witness_margin"
+  ],
+  "oversized_rectangles_rejected": 216,
+  "polygon_controls_passed": 5,
+  "projection_test_sha256": "6f2cfe61b8bf214f509f8ee1ff8d65125f54ea0e3f3f2158ccbe126f6dc6a2b6",
+  "right_extension_gap_margin": "2000/1000001"
+}

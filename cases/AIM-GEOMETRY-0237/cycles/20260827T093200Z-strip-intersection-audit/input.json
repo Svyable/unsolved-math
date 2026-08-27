@@ -1,0 +1,51 @@
+{
+  "half_angle_parameters": [
+    "1/2",
+    "1/5",
+    "1/10",
+    "1/20",
+    "1/50",
+    "1/100",
+    "1/200",
+    "1/1000"
+  ],
+  "widths": [
+    "1/3",
+    "1",
+    "7/2"
+  ],
+  "epsilons": [
+    "1/10",
+    "1/4",
+    "1/2",
+    "3/4"
+  ],
+  "orientation_parameters": [
+    "0",
+    "1/10",
+    "1/3",
+    "1/2",
+    "1",
+    "2",
+    "3",
+    "10"
+  ],
+  "excess_widths": [
+    "101/100",
+    "3/2",
+    "19/10"
+  ],
+  "aspect_ratios": [
+    "1",
+    "2",
+    "10"
+  ],
+  "example": {
+    "u": "1/1000",
+    "delta": "1",
+    "epsilon": "1/10"
+  },
+  "geometry": "c=(1-u^2)/(1+u^2), s=2u/(1+u^2); S+={|c*y+s*x|<=delta/2}, S-={|c*y-s*x|<=delta/2}; 0<u<1, delta>0, 0<epsilon<1.",
+  "target": "Can the intersection of two width-delta planar strips contain a rectangle whose shorter side exceeds delta? Separately certify a near-double-width rectangle in their union.",
+  "conventions": "Closed planar strips, full perpendicular width delta, rectangle width means shorter side; no topology or geodesic existence inferred."
+}

@@ -1,0 +1,51 @@
+{
+  "selected_at": "2026-08-27T09:32:47.403608+00:00",
+  "preflight": {
+    "ready": true,
+    "selection_mode": "ranked_queue",
+    "selected_problem_id": "AIM-GEOMETRY-0237",
+    "checks": [
+      "durable instructions and safety boundaries are present",
+      "ranked queue has an eligible candidate outside loop gates"
+    ],
+    "warnings": [],
+    "blockers": []
+  },
+  "upstream_record_id": 20001899,
+  "queue_rank": 6,
+  "candidate": {
+    "category": "geometry",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA",
+    "components": {
+      "computational_affordance": 1.0,
+      "literature_freshness": 0.15,
+      "provenance": 0.7,
+      "research_traction": 0.55,
+      "statement_quality": 1.0,
+      "tractability": 0.9
+    },
+    "difficulty_level": 2,
+    "imported_status": "open",
+    "problem_id": "AIM-GEOMETRY-0237",
+    "reasons": [
+      "difficulty L2",
+      "statement status exact",
+      "one provenance field is present",
+      "literature check date is missing",
+      "research classification OPEN-TRIAGE",
+      "computational keywords: bound, finite"
+    ],
+    "score": 77.25,
+    "title": "Flat strips, counting conventions, and a width bound"
+  },
+  "main_commit": "56dcf64b3a39fd9ff1c698d00ce07bb10ab34bd6",
+  "review_branch_commit": "55e0e31c19d11773fba0cc20e2bea7652d8e32d8",
+  "queue_sha256": "1d91b004797095b515272587c1121d362ad64081ba5d373200320ffbbe06e0bf",
+  "history_before_sha256": "d54f6674c181d002b37b09f18784bd3d605786cd1f04d68042097487737079e7",
+  "dataset_manifest_sha256": "8d19f167df382e076ed018c2702e25e7bea511cb6294f47f465c4fc880fae14a",
+  "attribution": "ulamai/UnsolvedMath, CC BY 4.0; original statement preserved verbatim.",
+  "scope": "Audit only the literal local Euclidean intersection-widening sentence; exhibit a checked union construction without inferring a surface theorem or replacing the canonical statement.",
+  "imported_summary_claim": "The source PDF shows that this record is commentary following Question 6.2.1, not an independent question; the extracted 'Question 6.1.1' prefix and page header are artifacts. The developed contribution proves that literal counting of all substrips is infinite whenever an embedded positive-width flat cylinder exists, gives a canonical maximal-strip convention through the CAT(0) minset of a primitive deck transformation, and proves N <= floor(Area(M)/(sys(M) delta)) for pairwise interior-disjoint embedded flat cylinders of width at least delta.\n\nCandidate contribution (lemma; novelty confidence low): A three-part quantifier-repair proposition: an embedded flat cylinder of width W > delta contains uncountably many distinct delta-wide subcylinders; primitive unoriented free homotopy classes admit canonical finite maximal widths via deck-transformation minsets; and every pairwise interior-disjoint collection of embedded cylinders of width at least delta satisfies N sys(M) delta <= Area(M).",
+  "imported_summary_trust": "UNVERIFIED_EXTERNAL_METADATA",
+  "prior_cycle_dependencies": []
+}

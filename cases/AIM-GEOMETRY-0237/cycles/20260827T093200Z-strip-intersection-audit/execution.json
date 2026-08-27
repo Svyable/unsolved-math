@@ -1,0 +1,25 @@
+{
+  "replayed_at": "2026-08-27T09:39:41.674490+00:00",
+  "python_version": "3.12.13",
+  "byte_identical_outputs": true,
+  "certificates_accepted": 96,
+  "counterexample_projection_cases": 216,
+  "complement_regions_checked": 384,
+  "polygon_controls": 5,
+  "mutations_rejected": 7,
+  "network_in_experiments": false,
+  "randomness": "none",
+  "external_paid_model_calls": 0,
+  "commands": [
+    "python -I theory.py",
+    "python -I verify.py"
+  ],
+  "timeout_seconds_per_executable": 30,
+  "independence": "Verifier is a fresh isolated process. Its counterexample tests precede reading untrusted theory certificates; exact generic half-plane clipping checks coverage without importing the construction routine. Same-assistant authorship; no independent model/human or kernel.",
+  "uv_lock_sha256": "2a000ab9f53936eb4b73c46f2754363f167aa13e5cd36878d6ae3df7cd5844da",
+  "quality_checks_before_sealing": [
+    "ruff check .: passed",
+    "mypy src: 22 source files passed",
+    "pytest: 17 passed"
+  ]
+}

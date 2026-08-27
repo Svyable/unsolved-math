@@ -1,0 +1,208 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T093200Z-strip-intersection-audit",
+  "problem_id": "AIM-GEOMETRY-0237",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-GEOMETRY-0237",
+    "title": "Flat strips, counting conventions, and a width bound",
+    "statement": "Question 6.1.1. If we assume that the curvature is only C0, then a metric with such a geodesic can be constructed. Each end of the geodesic is asymptotic to a closed geodesic. But a geodesic along which the curvature is zero cannot spiral into a closed geodesic if the curvature is C2; see [Ruggiero1998]. Wu [Wu2013] has recently given a negative answer to the question under the assumption that the subset of the surface where the curvature is negative has finitely many components; he also shows under this hypothesis that only finitely many free homotopy classes can contain zero curvature closed geodesics. 14 KEITH BURNS AND VLADIMIR S. MATVEEV\n\nA flat strip is a totally geodesic isometric immersion of the Riemannian product of R with an interval. Zero curvature geodesics can be viewed as flat strips with infinitesimal width. It is known that all flat strips (with positive width) must close up in the R-direction; in other words they are really immersions of the product of S1 with an interval. Furthermore for each δ > 0 there are only finitely many flat strips with width ≥ δ. Proofs can be found in a preprint of Cao and Xavier [Cao-Xav]. The main idea is that if two flat strips of width δ cross each other at a very shallow angle, then their intersection contains a long rectangle with width close to 2 δ.It is possible that there are only finitely many flat strips. This is true when the set where the curvature is negative has finitely many components [Wu2013], but the only effort to prove it in general [Rodriguez Hertz2003] was unsuccessful.",
+    "statement_sha256": "a854e54d8ae5b36fc9535d6b85c78b3ab027768d9caea6c1f710c0167bf4ef38",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T09:32:47.403608Z",
+    "source_urls": [
+      "https://aimath.org/pastworkshops/geodesicsproblems.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 6, score 77.25, highest eligible in the validated ranked queue on open draft PR #8 at 55e0e31c19d11773fba0cc20e2bea7652d8e32d8. Main has no queue; synchronization is already restored on the review branch with a passing dataset manifest. Ranks 1 through 5 are in cooldown. No ranking or imported status changed.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T09:32:47.403608Z",
+  "completed_at": "2026-08-27T09:39:41.674490Z",
+  "selection_basis": "Rank 6, score 77.25, highest eligible in the validated ranked queue on open draft PR #8 at 55e0e31c19d11773fba0cc20e2bea7652d8e32d8. Main has no queue; synchronization is already restored on the review branch with a passing dataset manifest. Ranks 1 through 5 are in cooldown. No ranking or imported status changed.",
+  "theory": {
+    "target": "Audit the literal local planar intersection-widening step in the selected flat-strip commentary; distinguish a falsified intersection interpretation from an exactly certified union construction.",
+    "definitions": [
+      "A closed planar strip of full perpendicular width delta>0 has equation |n dot z-q|<=delta/2 with unit normal n.",
+      "Rectangle width is its shorter side, with arbitrary translation and rotation.",
+      "For rational 0<u<1, c=(1-u^2)/(1+u^2), s=2u/(1+u^2); crossing strips satisfy |cy+sx|<=delta/2 and |cy-sx|<=delta/2.",
+      "For 0<epsilon<1, b=delta/(2s), a=(1-epsilon)b, H=delta(2-epsilon)/(2c)."
+    ],
+    "assumptions": [
+      "Only the explicit local Euclidean full-width interpretation is tested.",
+      "No global development, immersion, embedding or surface identification is inferred from the planar union.",
+      "The frozen statement and imported status remain unchanged; no novelty or parent-problem assertion."
+    ],
+    "approaches_considered": [
+      "Literal intersection widening: retire using the normal-projection obstruction.",
+      "Overlapping vertical sections in the union: produce exact rational rectangles and independent coverage checks."
+    ],
+    "falsification_targets": [
+      "Rectangles wider than a single strip at arbitrary orientations; equal-width boundary.",
+      "Gaps when the rectangle extends beyond the strip-overlap endpoint; non-unit normals and corrupt area/witness fields.",
+      "Conflating designated height with shorter side, or planar union with a global surface strip."
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "Literal local interpretation of the source widening sentence: the intersection of two full-width-delta planar strips at sufficiently small angle contains a long rectangle with shorter side approaching 2 delta. This interpretation is impossible because every rectangle contained in a width-delta strip has shorter side at most delta.",
+        "status": "FALSIFIED",
+        "origin": "IMPORTED_UNVERIFIED",
+        "falsification_condition": "A unit-normal projection or inscribed-disk obstruction bounds every contained rectangle shorter side by delta, independently of angle and translation.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C2",
+        "statement": "For the explicit symmetric crossing strips, the rectangle [a,b] x [-H,H] constructed in theory.md lies in their union and has an exact point outside their intersection. Ninety-six rational certificates pass; 63 have both sides greater than delta. For delta=1,u=1/1000,epsilon=1/10, length is 1000001/40000 and width is 19000019/9999990, with intersection violation margin 9/10. Arbitrarily long near-double-width union rectangles follow in the stated small-angle limit.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A point in a proposed rectangle is outside both strips, normals are not unit, the witness is in both strips, exact dimensions disagree, or the length/width limit fails.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The primary survey contains the intersection wording in commentary after Question 6.2.1, not a standalone problem matching the extracted prefix. Wu v4 is dated March 31, 2015 and separately records a proof-gap correction; no connection between that correction and this local wording is established.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "The primary PDF has different wording or placement, or the arXiv version history and comments do not support the dated provenance statement.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T-local-intersection-gap",
+        "kind": "PROOF_GAP_IDENTIFIED",
+        "summary": "Retired the literal planar intersection-widening step via a universal obstruction and supplied exact union certificates that discriminate the two set operations.",
+        "claim_ids": [
+          "C1",
+          "C2"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "1ae7844288a2b525809c90507cc0e53b972bc25462e10419ed6a4c74d43f9ebb",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "theory.py",
+            "sha256": "3f097ba2312e93f567f9a31dca33a7a2cbc0cf41947a6c11c055360ac601ede2",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "theory-output.json",
+            "sha256": "a60979ca4fcb8282b5d1a1ab2a2426626b62fbd8644e1a5d4c9889754a6fb051",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V-exact-geometry",
+        "claim_ids": [
+          "C1",
+          "C2"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Counterexample and boundary controls first; direct vertex projections for oversized rectangles, then generic half-plane clipping and exact shoelace areas for proposed union certificates.",
+        "independent_context": true,
+        "independence_basis": "Fresh python -I process with no theory import. Reads input.json for adversarial controls before reading theory-output.json only as untrusted certificate coordinates. Generic clipping is distinct from vertical-section construction. Same-assistant authorship, not independent human/model review.",
+        "result": "216 oversized rectangles rejected; equality boundary and five polygon controls pass. All 96 certificates accepted via 384 complement-region checks; 63 have shorter side greater than delta. Seven mutations rejected, and the right-extension gap has exact margin 2000/1000001.",
+        "reproduction_command": "python -I verify.py",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "c1113ef51a28987b48859f7b42fa82230b4f7d9641779967f5aa6f79836fe87d",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "f9272c819b567f4061b14fa10780705c9000e65915fd21b66a623fe0603de51f",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "91c2d9f0a76a6cb53ec741599a8ee5b0445a23dbb8e98978f39a50712d8914c8",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": [
+          "The checker is not kernel verified; exact finite coverage does not establish a global surface theorem."
+        ]
+      },
+      {
+        "check_id": "V-source-and-proof",
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Check primary wording and context; use an inscribed-disk obstruction distinct from projection; audit closed-complement area logic, small-angle quantifiers and global-development limitations.",
+        "independent_context": true,
+        "independence_basis": "Primary sources inspected separately from imported summaries. Verification uses an incircle proof and generic complement argument in separate notes; same assistant authored both lanes, with no independent human/model referee.",
+        "result": "The local full-width interpretation is impossible. A union construction works in the planar model, but author intent, immersion transfer and finiteness do not follow. The historical source and Wu revision metadata require separate treatment.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources.json",
+            "sha256": "33fd3508c6d7ee827b5d6f5b017cdb2a2f5f576c7a0e2292cbbbdc40bba24a24",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "c1113ef51a28987b48859f7b42fa82230b4f7d9641779967f5aa6f79836fe87d",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": [
+          "Human review must determine the intended source construction.",
+          "No global surface-development, periodicity or finiteness proof is audited."
+        ]
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V-generic-union-certificate",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "An exact generic checker confirms the union/intersection distinction over 96 certificates and independently rejects boundary and corrupted-certificate shortcuts.",
+        "claim_ids": [
+          "C1",
+          "C2"
+        ],
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "c1113ef51a28987b48859f7b42fa82230b4f7d9641779967f5aa6f79836fe87d",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verify.py",
+            "sha256": "f9272c819b567f4061b14fa10780705c9000e65915fd21b66a623fe0603de51f",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "verification-output.json",
+            "sha256": "91c2d9f0a76a6cb53ec741599a8ee5b0445a23dbb8e98978f39a50712d8914c8",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "The source wording and extracted question prefix require human scope review; no external record changed.",
+      "Local planar union containment does not establish global development or flat-strip finiteness on a surface.",
+      "Maximal-strip counting and the imported area bound were not audited in this cycle.",
+      "Same-assistant authorship in both lanes; no independent model/human review, kernel acceptance, or novelty claim."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "FALSIFIED_SUBCLAIM",
+  "next_step": "Retain the exact intersection/union regression certificates; human-review the intended local construction and global development before any surface theorem inference, then rotate to the next eligible candidate."
+}

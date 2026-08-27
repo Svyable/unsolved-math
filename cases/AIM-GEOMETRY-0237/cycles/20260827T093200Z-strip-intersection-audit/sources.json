@@ -1,0 +1,27 @@
+{
+  "audited_at": "2026-08-27T09:36:59Z",
+  "capture_policy": "Derived notes and locators only; no third-party PDF redistribution. Frozen dataset statement attributed separately to CC BY 4.0 UnsolvedMath.",
+  "sources": [
+    {
+      "url": "https://aimath.org/pastworkshops/geodesicsproblems.pdf",
+      "authors": "Keith Burns and Vladimir S. Matveev",
+      "title": "Open Problems and Questions About Geodesics",
+      "locator": "Section 6.2, printed pp.13-14, PDF indices 12-13; especially the final paragraph on flat-strip crossing on printed p.14",
+      "access": "Primary PDF text and page render endpoints inspected on 2026-08-27",
+      "claim_ids": ["C1", "C3"],
+      "finding": "The record is commentary following Question 6.2.1. The local widening sentence uses intersection, not union. The packet audits only its literal planar full-width interpretation.",
+      "limits": "No author-intent conclusion or refutation of a global surface theorem; Cao-Xavier's proof and the survey's broader theorem dependencies are not audited. No current status inferred from the historical survey."
+    },
+    {
+      "url": "https://arxiv.org/abs/1309.6539v4",
+      "authors": "Weisheng Wu",
+      "title": "On the ergodicity of geodesic flows on surfaces of nonpositive curvature",
+      "version_date": "2015-03-31",
+      "locator": "Abstract, comments and submission history; v4 dated March 31, 2015 versus the survey's v3 citation",
+      "access": "Primary arXiv abstract and revision record inspected on 2026-08-27",
+      "claim_ids": ["C3"],
+      "finding": "The abstract retains a finite-negative-curvature-components hypothesis and the revision comments report a proof-gap correction involving Lemma 3.8 and Proposition 3.4.",
+      "limits": "Full proof not reviewed. No evidence connects that correction with the local intersection wording; they must not be conflated."
+    }
+  ]
+}
