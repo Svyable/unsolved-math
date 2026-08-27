@@ -1,0 +1,18 @@
+{
+  "snapshot_schema_version": 1,
+  "problem_id": "AIM-ALGEBRAIC_NUMBER_THEORY-0096",
+  "title": "Rational points, index transport, and the C_1^0 boundary",
+  "statement": "Problem 11, as phrased, had been settled by J. Ax in Bull. Am. Math. Soc. 71 (1965) p. 717. Ax produced a smooth hypersurface in 9-dimensional projective space, of degree 5, over a field k of cohomological dimension 1, with no rational point (that such hypersurfaces are rationally connected was proven much later). Ax'example has index 1, i.e. the g.c.d. of the degree of the finite field extensions over which the hypersurface acquires a rational point is 1. In Journal of the Inst. of Math. Jussieu (2004) 3 p. 1-16, J.-L. Colliot-Th´ el` ene and D. Madore produce a field of cohomological dimension 1 and a smooth cubic surface over that field which has index 3, thus settling negatively a question of Kato and Kuzumaki (1986). 50\n\nProblem/",
+  "statement_sha256": "7bd38380791213998af3bf992c12ddf53a4108a57b71d8662d28afc89a4555cc",
+  "upstream_dataset": "ulamai/UnsolvedMath",
+  "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+  "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+  "frozen_at": "2026-08-27T04:33:45.876900Z",
+  "source_urls": [
+    "https://aimath.org/WWN/qptsurface2/qptsurface2.pdf",
+    "https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+  ],
+  "imported_status": "open",
+  "selection_basis": "Rank 1 (score 77.25) of the restored deterministic research queue; pinned local synchronization validated before selection; no prior cycle for this ID and preflight passes cooldown/anti-thrashing gates. Imported status and statement-quality labels remain unverified.",
+  "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+}

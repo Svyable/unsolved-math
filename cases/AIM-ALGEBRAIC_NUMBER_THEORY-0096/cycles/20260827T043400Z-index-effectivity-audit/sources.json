@@ -1,0 +1,24 @@
+{
+  "accessed_date_utc": "2026-08-27",
+  "capture_policy": "URLs, short excerpt and derived audit notes only; no full copyrighted PDF is redistributed.",
+  "sources": [
+    {
+      "url": "https://aimath.org/WWN/qptsurface2/qptsurface2.pdf",
+      "locator": "PDF page index 48 (printed page 50), Question 11, Remarks (iv); Question 12 follows at index 49",
+      "short_excerpt": "Problem 11, as phrased, had been settled",
+      "supports": "The imported text is retrospective commentary, not a separate open question.",
+      "does_not_establish": "We have not rechecked the original Ax construction or all cited historical proofs.",
+      "method": "Fresh primary PDF text retrieval with surrounding questions inspected; full PDF bytes not captured or hashed."
+    },
+    {
+      "url": "https://arxiv.org/abs/math/0303168v2",
+      "authors": ["Jean-Louis Colliot-Thelene", "David A. Madore"],
+      "title": "Surfaces de del Pezzo sans point rationnel sur un corps de dimension cohomologique un",
+      "submitted": "2003-03-13",
+      "version_2": "2003-05-28",
+      "supports": "The abstract asserts point-free del Pezzo surfaces of degrees 2, 3, 4 over fields of cohomological dimension one.",
+      "does_not_establish": "The abstract alone does not verify exact index three, and no proof has been independently rederived here.",
+      "method": "Primary author-submitted arXiv abstract and version metadata inspected."
+    }
+  ]
+}
