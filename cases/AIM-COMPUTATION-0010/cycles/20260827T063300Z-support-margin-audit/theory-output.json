@@ -1,0 +1,908 @@
+{
+  "base": {
+    "T": "1",
+    "attaining_terminal_state": [
+      "13/2700",
+      "1/200",
+      "1/300"
+    ],
+    "box_support": "19/600",
+    "counterexample_gap": "1/27000",
+    "direction": [
+      "1",
+      "-1",
+      "2/3"
+    ],
+    "epsilon": "1/100",
+    "exact_support": "11/5400",
+    "input_signs_on_forward_thirds": [
+      1,
+      -1,
+      1
+    ],
+    "radii": [
+      "1/100",
+      "3/200",
+      "1/100"
+    ],
+    "signed_radius_margin": "1/600",
+    "tight_safe_gap": "1/2160"
+  },
+  "case_count": 30,
+  "cases": [
+    {
+      "T": "0",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "0",
+        "0"
+      ],
+      "epsilon": "0",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "-1/3",
+        "2/27"
+      ],
+      "epsilon": "0",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "1/2",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "-1/2",
+        "1/6"
+      ],
+      "epsilon": "0",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "2/3",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "-2/3",
+        "8/27"
+      ],
+      "epsilon": "0",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "1",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "-1",
+        "2/3"
+      ],
+      "epsilon": "0",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "2",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "-2",
+        "8/3"
+      ],
+      "epsilon": "0",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "0",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "0",
+        "0"
+      ],
+      "epsilon": "1/1000",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_terminal_state": [
+        "13/729000",
+        "1/18000",
+        "1/9000"
+      ],
+      "box_support": "19/162000",
+      "counterexample_gap": "1/7290000",
+      "direction": [
+        "1",
+        "-1/3",
+        "2/27"
+      ],
+      "epsilon": "1/1000",
+      "exact_support": "11/1458000",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/27000",
+        "1/6000",
+        "1/3000"
+      ],
+      "signed_radius_margin": "1/162000",
+      "tight_safe_gap": "1/583200"
+    },
+    {
+      "T": "1/2",
+      "attaining_terminal_state": [
+        "13/216000",
+        "1/8000",
+        "1/6000"
+      ],
+      "box_support": "19/48000",
+      "counterexample_gap": "1/2160000",
+      "direction": [
+        "1",
+        "-1/2",
+        "1/6"
+      ],
+      "epsilon": "1/1000",
+      "exact_support": "11/432000",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/8000",
+        "3/8000",
+        "1/2000"
+      ],
+      "signed_radius_margin": "1/48000",
+      "tight_safe_gap": "1/172800"
+    },
+    {
+      "T": "2/3",
+      "attaining_terminal_state": [
+        "13/91125",
+        "1/4500",
+        "1/4500"
+      ],
+      "box_support": "19/20250",
+      "counterexample_gap": "1/911250",
+      "direction": [
+        "1",
+        "-2/3",
+        "8/27"
+      ],
+      "epsilon": "1/1000",
+      "exact_support": "11/182250",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/3375",
+        "1/1500",
+        "1/1500"
+      ],
+      "signed_radius_margin": "1/20250",
+      "tight_safe_gap": "1/72900"
+    },
+    {
+      "T": "1",
+      "attaining_terminal_state": [
+        "13/27000",
+        "1/2000",
+        "1/3000"
+      ],
+      "box_support": "19/6000",
+      "counterexample_gap": "1/270000",
+      "direction": [
+        "1",
+        "-1",
+        "2/3"
+      ],
+      "epsilon": "1/1000",
+      "exact_support": "11/54000",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/1000",
+        "3/2000",
+        "1/1000"
+      ],
+      "signed_radius_margin": "1/6000",
+      "tight_safe_gap": "1/21600"
+    },
+    {
+      "T": "2",
+      "attaining_terminal_state": [
+        "13/3375",
+        "1/500",
+        "1/1500"
+      ],
+      "box_support": "19/750",
+      "counterexample_gap": "1/33750",
+      "direction": [
+        "1",
+        "-2",
+        "8/3"
+      ],
+      "epsilon": "1/1000",
+      "exact_support": "11/6750",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/125",
+        "3/500",
+        "1/500"
+      ],
+      "signed_radius_margin": "1/750",
+      "tight_safe_gap": "1/2700"
+    },
+    {
+      "T": "0",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "0",
+        "0"
+      ],
+      "epsilon": "1/100",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_terminal_state": [
+        "13/72900",
+        "1/1800",
+        "1/900"
+      ],
+      "box_support": "19/16200",
+      "counterexample_gap": "1/729000",
+      "direction": [
+        "1",
+        "-1/3",
+        "2/27"
+      ],
+      "epsilon": "1/100",
+      "exact_support": "11/145800",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/2700",
+        "1/600",
+        "1/300"
+      ],
+      "signed_radius_margin": "1/16200",
+      "tight_safe_gap": "1/58320"
+    },
+    {
+      "T": "1/2",
+      "attaining_terminal_state": [
+        "13/21600",
+        "1/800",
+        "1/600"
+      ],
+      "box_support": "19/4800",
+      "counterexample_gap": "1/216000",
+      "direction": [
+        "1",
+        "-1/2",
+        "1/6"
+      ],
+      "epsilon": "1/100",
+      "exact_support": "11/43200",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/800",
+        "3/800",
+        "1/200"
+      ],
+      "signed_radius_margin": "1/4800",
+      "tight_safe_gap": "1/17280"
+    },
+    {
+      "T": "2/3",
+      "attaining_terminal_state": [
+        "26/18225",
+        "1/450",
+        "1/450"
+      ],
+      "box_support": "19/2025",
+      "counterexample_gap": "1/91125",
+      "direction": [
+        "1",
+        "-2/3",
+        "8/27"
+      ],
+      "epsilon": "1/100",
+      "exact_support": "11/18225",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "2/675",
+        "1/150",
+        "1/150"
+      ],
+      "signed_radius_margin": "1/2025",
+      "tight_safe_gap": "1/7290"
+    },
+    {
+      "T": "1",
+      "attaining_terminal_state": [
+        "13/2700",
+        "1/200",
+        "1/300"
+      ],
+      "box_support": "19/600",
+      "counterexample_gap": "1/27000",
+      "direction": [
+        "1",
+        "-1",
+        "2/3"
+      ],
+      "epsilon": "1/100",
+      "exact_support": "11/5400",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/100",
+        "3/200",
+        "1/100"
+      ],
+      "signed_radius_margin": "1/600",
+      "tight_safe_gap": "1/2160"
+    },
+    {
+      "T": "2",
+      "attaining_terminal_state": [
+        "26/675",
+        "1/50",
+        "1/150"
+      ],
+      "box_support": "19/75",
+      "counterexample_gap": "1/3375",
+      "direction": [
+        "1",
+        "-2",
+        "8/3"
+      ],
+      "epsilon": "1/100",
+      "exact_support": "11/675",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "2/25",
+        "3/50",
+        "1/50"
+      ],
+      "signed_radius_margin": "1/75",
+      "tight_safe_gap": "1/270"
+    },
+    {
+      "T": "0",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "0",
+        "0"
+      ],
+      "epsilon": "1/10",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_terminal_state": [
+        "13/7290",
+        "1/180",
+        "1/90"
+      ],
+      "box_support": "19/1620",
+      "counterexample_gap": "1/72900",
+      "direction": [
+        "1",
+        "-1/3",
+        "2/27"
+      ],
+      "epsilon": "1/10",
+      "exact_support": "11/14580",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/270",
+        "1/60",
+        "1/30"
+      ],
+      "signed_radius_margin": "1/1620",
+      "tight_safe_gap": "1/5832"
+    },
+    {
+      "T": "1/2",
+      "attaining_terminal_state": [
+        "13/2160",
+        "1/80",
+        "1/60"
+      ],
+      "box_support": "19/480",
+      "counterexample_gap": "1/21600",
+      "direction": [
+        "1",
+        "-1/2",
+        "1/6"
+      ],
+      "epsilon": "1/10",
+      "exact_support": "11/4320",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/80",
+        "3/80",
+        "1/20"
+      ],
+      "signed_radius_margin": "1/480",
+      "tight_safe_gap": "1/1728"
+    },
+    {
+      "T": "2/3",
+      "attaining_terminal_state": [
+        "52/3645",
+        "1/45",
+        "1/45"
+      ],
+      "box_support": "38/405",
+      "counterexample_gap": "2/18225",
+      "direction": [
+        "1",
+        "-2/3",
+        "8/27"
+      ],
+      "epsilon": "1/10",
+      "exact_support": "22/3645",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "4/135",
+        "1/15",
+        "1/15"
+      ],
+      "signed_radius_margin": "2/405",
+      "tight_safe_gap": "1/729"
+    },
+    {
+      "T": "1",
+      "attaining_terminal_state": [
+        "13/270",
+        "1/20",
+        "1/30"
+      ],
+      "box_support": "19/60",
+      "counterexample_gap": "1/2700",
+      "direction": [
+        "1",
+        "-1",
+        "2/3"
+      ],
+      "epsilon": "1/10",
+      "exact_support": "11/540",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/10",
+        "3/20",
+        "1/10"
+      ],
+      "signed_radius_margin": "1/60",
+      "tight_safe_gap": "1/216"
+    },
+    {
+      "T": "2",
+      "attaining_terminal_state": [
+        "52/135",
+        "1/5",
+        "1/15"
+      ],
+      "box_support": "38/15",
+      "counterexample_gap": "2/675",
+      "direction": [
+        "1",
+        "-2",
+        "8/3"
+      ],
+      "epsilon": "1/10",
+      "exact_support": "22/135",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "4/5",
+        "3/5",
+        "1/5"
+      ],
+      "signed_radius_margin": "2/15",
+      "tight_safe_gap": "1/27"
+    },
+    {
+      "T": "0",
+      "attaining_terminal_state": [
+        "0",
+        "0",
+        "0"
+      ],
+      "box_support": "0",
+      "counterexample_gap": "0",
+      "direction": [
+        "1",
+        "0",
+        "0"
+      ],
+      "epsilon": "1",
+      "exact_support": "0",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "0",
+        "0",
+        "0"
+      ],
+      "signed_radius_margin": "0",
+      "tight_safe_gap": "0"
+    },
+    {
+      "T": "1/3",
+      "attaining_terminal_state": [
+        "13/729",
+        "1/18",
+        "1/9"
+      ],
+      "box_support": "19/162",
+      "counterexample_gap": "1/7290",
+      "direction": [
+        "1",
+        "-1/3",
+        "2/27"
+      ],
+      "epsilon": "1",
+      "exact_support": "11/1458",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/27",
+        "1/6",
+        "1/3"
+      ],
+      "signed_radius_margin": "1/162",
+      "tight_safe_gap": "5/2916"
+    },
+    {
+      "T": "1/2",
+      "attaining_terminal_state": [
+        "13/216",
+        "1/8",
+        "1/6"
+      ],
+      "box_support": "19/48",
+      "counterexample_gap": "1/2160",
+      "direction": [
+        "1",
+        "-1/2",
+        "1/6"
+      ],
+      "epsilon": "1",
+      "exact_support": "11/432",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1/8",
+        "3/8",
+        "1/2"
+      ],
+      "signed_radius_margin": "1/48",
+      "tight_safe_gap": "5/864"
+    },
+    {
+      "T": "2/3",
+      "attaining_terminal_state": [
+        "104/729",
+        "2/9",
+        "2/9"
+      ],
+      "box_support": "76/81",
+      "counterexample_gap": "4/3645",
+      "direction": [
+        "1",
+        "-2/3",
+        "8/27"
+      ],
+      "epsilon": "1",
+      "exact_support": "44/729",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "8/27",
+        "2/3",
+        "2/3"
+      ],
+      "signed_radius_margin": "4/81",
+      "tight_safe_gap": "10/729"
+    },
+    {
+      "T": "1",
+      "attaining_terminal_state": [
+        "13/27",
+        "1/2",
+        "1/3"
+      ],
+      "box_support": "19/6",
+      "counterexample_gap": "1/270",
+      "direction": [
+        "1",
+        "-1",
+        "2/3"
+      ],
+      "epsilon": "1",
+      "exact_support": "11/54",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "1",
+        "3/2",
+        "1"
+      ],
+      "signed_radius_margin": "1/6",
+      "tight_safe_gap": "5/108"
+    },
+    {
+      "T": "2",
+      "attaining_terminal_state": [
+        "104/27",
+        "2",
+        "2/3"
+      ],
+      "box_support": "76/3",
+      "counterexample_gap": "4/135",
+      "direction": [
+        "1",
+        "-2",
+        "8/3"
+      ],
+      "epsilon": "1",
+      "exact_support": "44/27",
+      "input_signs_on_forward_thirds": [
+        1,
+        -1,
+        1
+      ],
+      "radii": [
+        "8",
+        "6",
+        "2"
+      ],
+      "signed_radius_margin": "4/3",
+      "tight_safe_gap": "10/27"
+    }
+  ],
+  "input_sha256": "a00001f146aef1773ce2ac02b6850e915a8e227e8ec54c8ccaeace817d32d0a4",
+  "kernel_factorization": "3*(tau-T/3)*(tau-2*T/3)",
+  "positive_scale_cases": 20,
+  "theory_boundary": "Exact finite model; global measurable-input upper bound uses the sign-factorization proof in theory.md."
+}

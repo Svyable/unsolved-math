@@ -1,0 +1,14 @@
+{
+  "accessed_date_utc": "2026-08-27",
+  "primary_source": {
+    "url": "https://aimath.org/WWN/optimalcontrol/optimalcontrol.pdf",
+    "title": "Numerical Methods for Optimal Control in High Dimensions",
+    "source_version_date": "2005-08-19",
+    "locator": "A.7 Mitchell, Ian; PDF page index 7, after A.6 and before A.8",
+    "supports": "A research agenda seeking one-sided approximations and exploiting weak or linear coupling for reachability verification.",
+    "does_not_support": "The source does not contain the constructed three-state example or endorse the signed-radius shortcut.",
+    "capture_policy": "URL, locator and derived notes only; full copyrighted PDF bytes not captured, hashed or redistributed."
+  },
+  "imported_summary_boundary": "The dataset summary's general comparison-ODE and safety claims remain unverified external metadata; this packet derives and tests one explicit linear-model margin instead.",
+  "literature_limit": "A support-function literature search did not provide an inspected theorem source in this run. No such search result is used as a verified dependency or novelty assessment."
+}

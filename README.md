@@ -22,7 +22,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-27T05:37:05.354164Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-27T06:38:32.217608Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -35,7 +35,8 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 |---:|---:|---|---:|---|---|---|
 | 1 | 1 | `AIM-ALGEBRAIC_NUMBER_THEORY-0096 — Rational points, index transport, and the C_1^0 bounda…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T04:38:21.302690Z | `Human-review the historical remark and effectivity gap; rotate to the next eligible ranked candidate without changing i…` |
 | 2 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T05:37:05.354164Z | `Human-review the extraction fragment and corrected theorem dependency; rotate to the next eligible ranked candidate.` |
-| 3 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
+| 3 | 3 | `AIM-COMPUTATION-0010 — Certified weak-coupling tubes for structured reachability` | 1 | `FALSIFIED_SUBCLAIM` | 2026-08-27T06:38:32.217608Z | `Retain the reachable counterexample as a regression test; audit a second sparse model with nonzero initial uncertainty…` |
+| 4 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
 
 ### Next up
 
@@ -43,11 +44,11 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 3 | `AIM-COMPUTATION-0010 — Certified weak-coupling tubes for structured reachability` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 3 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 4 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 5 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 3 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 4 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 5 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
 
 The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
 <!-- OPLAB:RESEARCH-STACK:END -->
