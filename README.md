@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-28T16:39:33.404786Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-28T17:39:25.416368Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -63,7 +63,7 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 5 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T12:38:09.776607Z | `Retire total-degree-as-local-period shortcuts. Preserve the counterexample, require human scope and independent surface…` |
 | 6 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T13:44:57.510306Z | `Retire corner-plus-center containment tests; retain the exact criterion and sharp axis-aligned frontier for independent…` |
 | 7 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T16:39:33.404786Z | `Retain the finite-self-map assumption reduction and explicit surjectivity-gap certificate. Obtain independently authore…` |
-| 8 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T11:39:26.302342Z | `Retain the exact tail and dependence certificates; obtain independent review of the integral remainder and human scope…` |
+| 8 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T17:39:25.416368Z | `Retain the low-denominator exception counterexample and fixed-cutoff primitive-tail bound. Obtain independent proof and…` |
 | 9 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-tri…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T15:33:28.069684Z | `Retain the cone obstruction and minimal abstract-refinement certificates; seek independent proof and human scope review…` |
 | 10 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual reso…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T16:40:21.239955Z | `Seek an independently authored arbitrary-field audit of the Koszul chart; choose a degree window and equivalence relati…` |
 | 11 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T18:36:23.102964Z | `Seek independently authored verification of the arbitrary-degree Ext argument and a precise hypothesis ledger before au…` |
@@ -83,8 +83,8 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-triangle` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-triangle` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual resolutions` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 3 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 4 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 5 | 22 | `AIM-ALGEBRAIC_GEOMETRY-0282 — Upper semicontinuity, uniform Frobenius bounds, and a reduced non-equ…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
