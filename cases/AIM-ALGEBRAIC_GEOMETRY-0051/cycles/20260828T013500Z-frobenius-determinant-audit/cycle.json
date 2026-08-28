@@ -1,0 +1,311 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T013500Z-frobenius-determinant-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0051",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0051",
+    "title": "An explicit Frobenius bound for triple products of elliptic curves",
+    "statement": "Is there a smooth projective $3$-fold $X$ over a finite field for which $H^3_{nr}(k(X)/k, \\mathbb Q/\\mathbb Z(2))$ is not zero?",
+    "statement_sha256": "ae44beee9f737213a86e4d86a1082d928a8ab4bb3061e9f171e3a448b7f3d541",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T01:35:18.486090Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/rationalityag/1/",
+      "https://arxiv.org/pdf/1104.3350v3"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 16, score 73.5; highest-ranked eligible outside cooldown and anti-thrashing gates, including the rank-15 packet in open draft PR19. Ranked, not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-28T01:35:18.486090Z",
+  "completed_at": "2026-08-28T01:40:01.839514Z",
+  "selection_basis": "Rank 16, score 73.5; highest-ranked eligible outside cooldown and anti-thrashing gates, including the rank-15 packet in open draft PR19. Ranked, not provisional.",
+  "theory": {
+    "target": "Audit whether the imported B_X is the prime-to-characteristic determinant of all twenty H3 Frobenius eigenvalues, and isolate the unverified transfer from that determinant to unramified cohomology.",
+    "definitions": [
+      "P_i(z)=z^2-t_i*z+q, roots counted with multiplicity; N_i=q+1-t_i.",
+      "R is the product of q^2 minus all eight triple roots; B=R*product_i N_i^2.",
+      "F20 is the rank-eight tensor plus two q*M_i blocks for each i; D20=det(q^2 I20-F20).",
+      "v_ell is the prime-adic valuation of a nonzero integer; ell must not divide q for the determinant comparison."
+    ],
+    "assumptions": [
+      "Exact integer arithmetic; enumerate every nonsingular short Weierstrass model y^2=x^3+a*x+b over each listed prime field.",
+      "Trace t=q+1-#E(F_q); Frobenius polynomial z^2-t*z+q.",
+      "R=product over eight triple Frobenius roots of (q^2-root product); B=R*product_i(q+1-t_i)^2.",
+      "The twenty-dimensional model is (M1 tensor M2 tensor M3) direct sum two copies of q*Mi for each i.",
+      "Geometric identification uses standard elliptic-curve cohomology and Kunneth; no cycle-class computation or unramified group is computed.",
+      "All conclusions about l-adic determinants exclude l=p. No current parent-problem status is asserted."
+    ],
+    "approaches_considered": [
+      "Quadratic-character point counts and exact Newton power sums.",
+      "Direct point enumeration and fraction-free determinant certificates.",
+      "Block determinant factorization and separate audit of the lattice-to-geometric transfer."
+    ],
+    "falsification_targets": [
+      "Omit six rank-two Kunneth summands.",
+      "Wrong q-power normalization or repeated-root multiplicity.",
+      "Infer integral saturation from rational invertibility.",
+      "Promote a lattice determinant to an unramified-cohomology bound without a comparison."
+    ],
+    "claims": [
+      {
+        "claim_id": "FINITE",
+        "statement": "Two algorithms agree on 172 nonsingular curve models and 906 unordered trace triples over F5,F7,F11, including all R, B, D20 values.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A point-count, tuple-completeness, characteristic-polynomial or determinant mismatch.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "OMIT",
+        "statement": "For y^2=x^3+1 over F5 and its triple product, omitting six (2,1,0) summands gives v2(R)=4 instead of v2(D20)=10. The imported B already includes these summands.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An incorrect point count, decomposition, determinant or valuation.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "IDENTITY",
+        "statement": "The ordinary block calculation gives det(q^2 I20-F20)=q^18 B for all integer parameters. Its geometric interpretation and general lattice argument are not independently authored or kernel verified here.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed block factor q^3(q+1-t), multiplicity count, invertibility or lattice hypothesis.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "TRACEZERO",
+        "statement": "The three tested zero-trace rows give B=q^12(q+1)^10, including B=14762250000000000 at q=5. This confirms arithmetic, not the imported vanishing assertion.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A mismatch in any tested exact determinant or closed-form row.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "TRANSFER",
+        "statement": "The imported claim that #H3_nr divides ell^v_ell(B) is unverified here. The available summary does not supply the integral cycle-class/divisible-part control or a justified subquotient comparison.",
+        "status": "UNVERIFIED",
+        "origin": "IMPORTED_UNVERIFIED",
+        "falsification_condition": "An actual geometric group exceeding the claimed bound would falsify it; a missing proof alone does not.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Colliot-Thelene and Kahn arXiv:1104.3350v3 Theorem 2.2 locates the relevant cycle-class obstruction; its object and hypotheses differ from a bare H3 determinant calculation.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "A wrong theorem locator, object, hypothesis or reading.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact F5 trace-zero witness rejects the omitted-summand shortcut: v2 changes from 4 to 10.",
+        "claim_ids": [
+          "OMIT"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "8f32410b90fc2715a00ee5f12c9d0260fa6719448bccf12cd1a6033bf22440c5",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "02ba246def725060bb5e67ce2ab102ee1458cd7134b44884fe82dcb515e9d74a",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Frobenius arithmetic reconstructed on 906 trace triples and three zero-trace closed forms.",
+        "claim_ids": [
+          "FINITE",
+          "TRACEZERO"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory.py",
+            "sha256": "8889efb30e29c54f87cce6c2c45d7a236f7d083151dbd517a19ae03380ffdb8e",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "02ba246def725060bb5e67ce2ab102ee1458cd7134b44884fe82dcb515e9d74a",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T3",
+        "kind": "PROOF_GAP_IDENTIFIED",
+        "summary": "Separate the checked determinant from the missing comparison to the geometric group in the available evidence.",
+        "claim_ids": [
+          "TRANSFER",
+          "SOURCE"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "8f32410b90fc2715a00ee5f12c9d0260fa6719448bccf12cd1a6033bf22440c5",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "sources/theory-source.md",
+            "sha256": "222794d959a7aaed4004ce8b915cdd7cc16c474460b3dc063aba72d4da58d4b9",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "OMIT"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Run omitted-summand, nonsaturation, repeated-root, singular and pivot-swap controls before census or theory read.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and run before theory.py. Exhaustive affine point counts and Kronecker/Bareiss matrices versus quadratic characters and Newton power sums. Fresh Python -I processes with empty environment, no shared mathematical imports, reconstruction before certificate read, distinct evidence. Same-assistant authorship and shared specification; no independent human/model/kernel review.",
+        "result": "v2=4 versus 10 reproduced; modulo-49 multiplication-by-7 control has cokernel order 7.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "9ed058b9e59c2faf0b749caf669307564522a7a56f01be07a43775a675a15b4b",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "31a1b84c965baeccf7ef301b85d3e7f1069abe5d3227722719b68b0e1913b04b",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "46284aec4ced2b49d442713e48198a4f2cd8fc9b83ab7697abf54d4de8f6e6cb",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE",
+          "TRACEZERO"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Point enumeration and Kronecker/Bareiss reconstruction; compare full records and replay hashes.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and run before theory.py. Exhaustive affine point counts and Kronecker/Bareiss matrices versus quadratic characters and Newton power sums. Fresh Python -I processes with empty environment, no shared mathematical imports, reconstruction before certificate read, distinct evidence. Same-assistant authorship and shared specification; no independent human/model/kernel review.",
+        "result": "172 models and 906 trace triples agree; 33 full 20x20 self-product determinants checked; seven corrupted outputs rejected.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "6951ba2b60acbd5a8ea6d80f04be3526f6e787d69a857d6ba66d12bf39fd6f9a",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "dbed4010089ba72d019752ae75db11b90272df36def2b833d75363ec5676c8b5",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "ebb8985dd84e1ca504ee6ad050ec65f23188f7541b753b653a019dcef08fb8c0",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "IDENTITY",
+          "TRANSFER"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Check block multiplicities, normalization, prime exclusion and missing comparison separately.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and run before theory.py. Exhaustive affine point counts and Kronecker/Bareiss matrices versus quadratic characters and Newton power sums. Fresh Python -I processes with empty environment, no shared mathematical imports, reconstruction before certificate read, distinct evidence. Same-assistant authorship and shared specification; no independent human/model/kernel review.",
+        "result": "Draft q^12 normalization was rejected and corrected to q^18; general lattice argument needs independent review and geometric transfer remains unverified.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "46284aec4ced2b49d442713e48198a4f2cd8fc9b83ab7697abf54d4de8f6e6cb",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "SOURCE",
+          "TRANSFER"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Read the version-pinned theorem and distinguish its object from the computed determinant.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and run before theory.py. Exhaustive affine point counts and Kronecker/Bareiss matrices versus quadratic characters and Newton power sums. Fresh Python -I processes with empty environment, no shared mathematical imports, reconstruction before certificate read, distinct evidence. Same-assistant authorship and shared specification; no independent human/model/kernel review.",
+        "result": "Relevant source located; no transfer proof in checked material; AIM unavailable.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "c738b9a2832088a92e628aa2754f2ebb4f20f16c1e85a8272227336b1104cb05",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROGRESS",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent-method finite reconstruction and direct rank-twenty checks discriminate omitted summands and wrong normalization.",
+        "claim_ids": [
+          "FINITE",
+          "OMIT",
+          "TRACEZERO"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "dbed4010089ba72d019752ae75db11b90272df36def2b833d75363ec5676c8b5",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "46284aec4ced2b49d442713e48198a4f2cd8fc9b83ab7697abf54d4de8f6e6cb",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship; no independent human/model/kernel review.",
+      "AIM unavailable and detailed upstream proof absent from the selected record.",
+      "No unramified group, integral cycle class, Fermat-model identification or characteristic-primary component computed.",
+      "General identities and lattice argument are ordinary proofs requiring independent review; finite tests do not establish the geometric transfer.",
+      "No current parent status or novel solution claimed; imported statuses unchanged."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Obtain a primary proof of the claimed transfer to unramified cohomology, with explicit integral saturation and divisible-part hypotheses; seek independently authored review before any geometric use."
+}
