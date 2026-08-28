@@ -1,0 +1,364 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T183000Z-ray-scaling-obstruction",
+  "problem_id": "AIM-PROBABILITY-0144",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-PROBABILITY-0144",
+    "title": "A split source fragment and the dihedral noncrystallographic H-triangle",
+    "statement": "Problem 1.1). But there is currently no idea how to generalize these objects to the noncrystallographic types. To what extent can the nonnesting partitions and root order be generalized to noncrystallographic types? Presumably, there are objects which can not be general-ized in their current form, such as Lie algebras and affine hyperplane arrangements. Generalize where possible, and explain where there are essential barriers to this gen-eralization. Cathy Kriloff and Arun Ram have dealt with some of these issues in studying the representation theory of noncrystallographic types [33]. Fr´ ed´ eric Chapoton's conjecture gives a way to define the H-triangle for all finite Coxeter groups [18]. What object is it counting in the noncrystallographic types?",
+    "statement_sha256": "9261911c57e66020e63bf491515aa249f182790f152c91f70a153ec4a4630bc1",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T18:29:30.891421Z",
+    "source_urls": [
+      "https://aimath.org/WWN/braidgroups/braidgroups.pdf",
+      "https://arxiv.org/pdf/1212.2876v1",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 9, score 77.25, highest eligible outside cooldown; ranks 1-8 cooling down. Follow the same five I2(5) rays, not broader types: determine the sharp scale budget for realizing the prior abstract refinement and test whether reflection closure or coordinate-swap symmetry survives.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T152756Z-dihedral-cone-obstruction",
+  "started_at": "2026-08-28T18:29:30.891421Z",
+  "completed_at": "2026-08-28T18:37:27.565105Z",
+  "selection_basis": "Rank 9, score 77.25, highest eligible outside cooldown; ranks 1-8 cooling down. Follow the same five I2(5) rays, not broader types: determine the sharp scale budget for realizing the prior abstract refinement and test whether reflection closure or coordinate-swap symmetry survives.",
+  "theory": {
+    "target": "For the fixed five I2(5) rays with simple roots fixed, determine the least D allowing scales in [1,D] to realize a cone-order extension with target H, and audit the claim that such a rescaling is still a reflection-closed root system.",
+    "definitions": [
+      "phi=(1+sqrt(5))/2; five original positive roots and Gram form fixed as in input.json.",
+      "v0=r0,v1=r1,v2=a*r2,v3=b*r3,v4=c*r4 with positive scales.",
+      "Cone order uses coordinatewise nonnegative differences; H marks indices 0 and 1.",
+      "A repair retains all eight original relations and has H=1+2st+3t+s^2*t^2.",
+      "Optimization domain is 1<=a,b,c<=D, with fixed simple roots normalizing the norm scale.",
+      "Reflection closure concerns the signed ten-vector set and the ORIGINAL two simple reflections; swap invariance concerns fixed permutation [1,0,3,2,4]."
+    ],
+    "assumptions": [
+      "The five positive rays, simple-root basis and Gram form are fixed as in the prior packet; only positive scalar multiples of nonsimple roots 2,3,4 may change.",
+      "Simple roots 0 and 1 remain (1,0),(0,1). Cone order uses nonnegative coordinate differences, with equality allowed in one coordinate.",
+      "A successful repair retains every original strict relation and has H(s,t)=1+2*s*t+3*t+s^2*t^2, with marked roots 0,1.",
+      "The optimization budget is 1<=a,b,c<=D. The census also includes positive scales below 1 as boundary controls, not feasible optimization inputs.",
+      "Reflection closure means the signed ten-vector set is invariant under the ORIGINAL two simple reflections in the original Gram form; changing the form, rays or simple roots is excluded.",
+      "Coordinate swap induces the fixed permutation [1,0,3,2,4]. Symmetry of the resulting order is tested separately from reflection closure.",
+      "This is a bounded ray-scaling calibration, not a root-system realization in other conventions or a parent solution."
+    ],
+    "approaches_considered": [
+      "Preserve original reflection closure or swap symmetry; this obstructs the target refinement.",
+      "Independently rescale the fixed rays and solve the two orientation inequalities.",
+      "Use exact nonnegative linear-combination certificates to prove the necessary budget instead of inferring a minimum from a finite grid."
+    ],
+    "falsification_targets": [
+      "Target H implies reflection closure.",
+      "Arbitrarily small rescaling achieves the target.",
+      "The two refinements admit a swap-invariant choice."
+    ],
+    "claims": [
+      {
+        "claim_id": "ROOT_SHORTCUT",
+        "statement": "A positive ray rescaling that retains the original cone relations and has the target H polynomial is still closed under the original simple reflections.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "At (a,b,c)=(1,phi,phi), either the target H fails or s2(v0)=(1,phi) belongs to the signed scaled set.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "REGION",
+        "statement": "For all positive scales, a successful retained refinement occurs iff a,b>=1, c>=a,b, and b>=phi*a or a>=phi*b. This ordinary universal reduction remains pending independent proof review.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A positive triple with a contrary exact coordinate order or H polynomial.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "OPTIMUM",
+        "statement": "Under fixed simple roots and 1<=a,b,c<=D, the sharp feasible budget is D=phi, attained only by (1,phi,phi) and (phi,1,phi). Two checked nonnegative linear-combination identities certify D>=phi once the two-orientation reduction holds.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed algebraic certificate, missing orientation, feasible smaller D or extra equality-case triple.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CLOSURE",
+        "statement": "For all positive a,b,c, the signed set is closed under the original fixed simple reflections iff a=b=c=1, hence no successful repair is reflection closed in this setting.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A different scale on a required reflected ray or a nontrivial closed triple.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SWAP",
+        "statement": "Neither successful retained order is invariant under the fixed coordinate-swap permutation (0 1)(2 3). The two orders are nevertheless isomorphic.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A target refinement whose relation set is invariant under that fixed permutation.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FINITE",
+        "statement": "Separate algorithms agree on all 1331 frozen triples, with 285 retained orders, 38 successful repairs, zero symmetric or reflection-closed successful repairs, 24 boundary controls and two coordinate certificates.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A mismatched case-stream hash, field, boundary outcome, vector or witness.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "DUAL",
+        "statement": "Both submitted constraint certificates have nonnegative weights and exact combination D-phi; their constraint rows match frozen coordinate comparisons and budget inequalities. Four corruptions are rejected.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A nonzero unwanted coefficient, wrong coordinate row, negative weight or accepted corruption.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "The paper supplies the H variable convention and abstract dihedral model, not this fixed-ray rescaling theorem. The imported AIM fragment is a continued Problem 1.2 bullet.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "A contrary source locator, convention or attribution.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "At (1,phi,phi), the scaled rays realize the target H but s2(v0)=(1,phi) is missing from the signed set; target enumeration does not make a root system.",
+        "claim_ids": [
+          "ROOT_SHORTCUT",
+          "CLOSURE"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "fe039646d8e2bb5815895a571d681993a0a49ad4cdab9fd1fd23509dc1dddb56",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "ab16e23a442b2a364d6dec927fc55aeba868d957e756d6b45d50e399fa24413e",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "EQUIVALENT_REFORMULATION",
+        "summary": "Replace abstract refinement choice by an exact positive-scaling feasibility region and a sharp D=phi certificate with two labelled attainers.",
+        "claim_ids": [
+          "REGION",
+          "OPTIMUM"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "fe039646d8e2bb5815895a571d681993a0a49ad4cdab9fd1fd23509dc1dddb56",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/lower-bound-certificate.json",
+            "sha256": "475ce45cb6089c6aef6a620003e53bc52de492f6e338be38086ef50fd1538dd2",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "ROOT_SHORTCUT",
+          "FINITE"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Check the missing reflected simple root before confirmation, then exact signs, unscaled closure and near-boundary triples.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py; fresh Python -I processes reconstruct radical coordinate comparisons, ideal maxima and literal reflected-vector membership before reading theory certificates. Theory uses phi isolation, symbolic comparison inequalities, direct antichains and a closure criterion. A separate fresh checker validates nonnegative linear-combination certificates from frozen root coordinates. Same assistant, shared input/runtime/serialization; no independent human/model or kernel proof review.",
+        "result": "Counterexample passes; five arithmetic probes and 24 boundary triples have expected outcomes.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "077586fe313d78e0f50d60a320df476d3218b9f8082a58d7e254c20134b15d5a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "5c9eb2d91ba840abf6551f6413f356dc3a00b1b57789e7994a537ef59cf6e96f",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "9b368dbefe6352bdd7e2a921594671e2fe053bf60e6b0d03a53a0ca7de88975c",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE",
+          "REGION",
+          "CLOSURE",
+          "SWAP"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Radical coordinate order, ideal maxima and literal signed-set reflection tests versus symbolic inequalities, antichains and closure criterion; full case-stream digest and certificate comparison.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py; fresh Python -I processes reconstruct radical coordinate comparisons, ideal maxima and literal reflected-vector membership before reading theory certificates. Theory uses phi isolation, symbolic comparison inequalities, direct antichains and a closure criterion. A separate fresh checker validates nonnegative linear-combination certificates from frozen root coordinates. Same assistant, shared input/runtime/serialization; no independent human/model or kernel proof review.",
+        "result": "1331 triples agree: 285 retained, 38 target, zero successful symmetric/closed; two attainers and seven rejected corruptions; byte-stable replay.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "79284a18866119d31d21138bd43062a2641944bf5e9cecc4a229d03c1b05495d",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "2d97b47f1787128ec873ab086cb9633e964f4e4754510970ee51af634f0b4cdd",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-table.json",
+            "sha256": "48998f1149e502fe4bbed51379455c09823fcab8d1a2a36ed9d94164d913e813",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-certificates.json",
+            "sha256": "0f0ef47352fade47d58cf4f162e40d7cfc91ed43248dac357faf5b5d974a6067",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "ecb153f9ec558fad3e408489c7cc650dd4fa09f7c9a7141a17ce236c60e827f1",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "DUAL",
+          "OPTIMUM"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Derive constraint rows from frozen coordinates and verify exact nonnegative combinations in Q(phi), then adversarially alter weights, row signs and orientation coverage.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py; fresh Python -I processes reconstruct radical coordinate comparisons, ideal maxima and literal reflected-vector membership before reading theory certificates. Theory uses phi isolation, symbolic comparison inequalities, direct antichains and a closure criterion. A separate fresh checker validates nonnegative linear-combination certificates from frozen root coordinates. Same assistant, shared input/runtime/serialization; no independent human/model or kernel proof review.",
+        "result": "Two exact D-phi certificates pass and four corruptions fail; dual replay is byte-stable.",
+        "reproduction_command": "python experiments/run.py dualreplay",
+        "evidence": [
+          {
+            "path": "experiments/verify-lower-bound.py",
+            "sha256": "9c31bc518bf8ff762c5c0dc18e78c0b27a54c34e76d11cad86097e92406ef19c",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/dual-output.json",
+            "sha256": "99790bf6b2abc9c2ab7c550405ff1fbf661df1aaacb10b1aeef8da77416b9d02",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/dual-execution.json",
+            "sha256": "62e470821bc2f12a16d3260d74313ad5ce22c642f3ed8105b4c1c65005c1217f",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/dualreplay-execution.json",
+            "sha256": "ac879ce2e9c78bea375d89a0b3949b6cbd54e124bbc8378c43e57f605b839038",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "REGION",
+          "OPTIMUM",
+          "CLOSURE",
+          "SWAP"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit pair completeness, equality-case forcing, fixed-ray reflection closure and fixed-permutation symmetry; distinguish point configuration from root system.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py; fresh Python -I processes reconstruct radical coordinate comparisons, ideal maxima and literal reflected-vector membership before reading theory certificates. Theory uses phi isolation, symbolic comparison inequalities, direct antichains and a closure criterion. A separate fresh checker validates nonnegative linear-combination certificates from frozen root coordinates. Same assistant, shared input/runtime/serialization; no independent human/model or kernel proof review.",
+        "result": "No contradiction in the displayed steps; universal claims still await independently authored proof review.",
+        "reproduction_command": "Read verification.md proof-step audit",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "9b368dbefe6352bdd7e2a921594671e2fe053bf60e6b0d03a53a0ca7de88975c",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V5",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Fresh primary H-convention, abstract-model and AIM fragment locator checks.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py; fresh Python -I processes reconstruct radical coordinate comparisons, ideal maxima and literal reflected-vector membership before reading theory certificates. Theory uses phi isolation, symbolic comparison inequalities, direct antichains and a closure criterion. A separate fresh checker validates nonnegative linear-combination certificates from frozen root coordinates. Same assistant, shared input/runtime/serialization; no independent human/model or kernel proof review.",
+        "result": "Scope mapping confirmed; no current-status or all-properties theorem verified.",
+        "reproduction_command": "Open the cited PDF locators",
+        "evidence": [
+          {
+            "path": "sources/verification-source-audit.md",
+            "sha256": "0e87216393de89f8ce9611b751a7af351fb0314580596345d535c427119a2db3",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent geometric reconstruction separates a valid target order from reflection closure, and a fresh algebraic checker certifies the sharp budget through two nonnegative identities rather than sampling.",
+        "claim_ids": [
+          "ROOT_SHORTCUT",
+          "FINITE",
+          "DUAL"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "2d97b47f1787128ec873ab086cb9633e964f4e4754510970ee51af634f0b4cdd",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/dual-output.json",
+            "sha256": "99790bf6b2abc9c2ab7c550405ff1fbf661df1aaacb10b1aeef8da77416b9d02",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "9b368dbefe6352bdd7e2a921594671e2fe053bf60e6b0d03a53a0ca7de88975c",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared input/runtime/serialization; no independent human/model or kernel proof verification.",
+      "The exact dual identities do not independently prove the target-to-two-orientations reduction or the equality classification.",
+      "The finite grid verifies only its specified triples; universal claims remain ordinary derivations.",
+      "Fixed rays, Gram form and simple roots are essential; no alternative root-system convention or broader type is excluded.",
+      "Human source-scope review remains necessary; no novelty, upstream mathematical-status change or parent solution claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the sharp fixed-ray scaling and missing-reflection certificates. Seek independent review of the two-orientation reduction, equality classification and source scope. Do not call the scaled point configuration a root system; more grid triples alone are not material progress. Rotate."
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research28/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/experiments/verify-lower-bound.py",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/experiments/dual-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/experiments/lower-bound-certificate.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T18:34:06.276046+00:00",
+    "input_sha256": "3f4b4e79432718614d7a3623435188e4b193579d6e4494af8d705508decac45b",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "dual",
+    "output_sha256": "99790bf6b2abc9c2ab7c550405ff1fbf661df1aaacb10b1aeef8da77416b9d02",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "9c31bc518bf8ff762c5c0dc18e78c0b27a54c34e76d11cad86097e92406ef19c",
+    "started_at": "2026-08-28T18:34:06.246505+00:00",
+    "stderr": "",
+    "stdout": "{\"certificates_checked\": [{\"bottom\": 2, \"top\": 3, \"identity\": \"D-phi\", \"nonnegative_weights\": true, \"coordinate_rows_verified\": true}, {\"bottom\": 3, \"top\": 2, \"identity\": \"D-phi\", \"nonnegative_weights\": true, \"coordinate_rows_verified\": true}], \"corruptions_rejected\": [0, 1, 2, 3], \"scope\": \"Exact algebraic identities and nonnegative weights; the target-to-two-orientations reduction and original metric assumptions require the stated ordinary proof audit.\"}\n",
+    "wall_timeout_seconds": 200
+  }
+]

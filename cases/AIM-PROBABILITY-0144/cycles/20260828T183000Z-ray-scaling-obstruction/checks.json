@@ -1,0 +1,51 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 ranked entries",
+  "diagnostics": [
+    "Previous environment interpreter was unavailable; fresh uv sync restored execution before preflight/research.",
+    "Style findings were corrected before corresponding mathematical execution; no output-changing rerun needed.",
+    "A draft prose count incorrectly assumed non-short-circuit reflection testing; corrected before packet assembly."
+  ],
+  "dual_input_sha256": "475ce45cb6089c6aef6a620003e53bc52de492f6e338be38086ef50fd1538dd2",
+  "execution_records": [
+    {
+      "log": "baseline-execution.json",
+      "mode": "baseline"
+    },
+    {
+      "log": "theory-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "verify-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "dual-execution.json",
+      "mode": "dual"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "dualreplay-execution.json",
+      "mode": "dual"
+    }
+  ],
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 7,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "preflight": "READY; ranked AIM-PROBABILITY-0144",
+  "prior_manifests_verified": 29,
+  "publication_checks": "After sealing; see PR and CI.",
+  "quality": {
+    "mypy": "passed on 22 source files",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  }
+}
