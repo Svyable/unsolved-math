@@ -1,0 +1,17 @@
+{
+  "chronology": "Verifier baseline before theory.py; same assistant authorship",
+  "dataset_validation": "7 hashes; 15458 records; 200 ranked entries",
+  "execution_records_verified": 5,
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 5,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "preflight": "READY; ranked AIM-GEOMETRY-0237",
+  "prior_manifests_verified": 26,
+  "publication_checks": "Performed after sealing; inspect PR and CI for results",
+  "quality": {
+    "mypy": "passed",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  }
+}
