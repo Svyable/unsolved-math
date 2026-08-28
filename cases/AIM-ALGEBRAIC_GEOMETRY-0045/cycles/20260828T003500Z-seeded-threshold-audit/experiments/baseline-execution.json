@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research15/.venv/bin/python3",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research15/cases/AIM-ALGEBRAIC_GEOMETRY-0045/cycles/20260828T003500Z-seeded-threshold-audit/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research15/cases/AIM-ALGEBRAIC_GEOMETRY-0045/cycles/20260828T003500Z-seeded-threshold-audit/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research15/cases/AIM-ALGEBRAIC_GEOMETRY-0045/cycles/20260828T003500Z-seeded-threshold-audit/experiments/baseline.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T00:34:02.730203+00:00",
+    "input_sha256": "a0292957119d6f8c80113c923910e21a637432028b672d905bf597cb40af6a86",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "baseline",
+    "output_sha256": "fe3c37f8becd91c6a90d662cfe86c43e4da216ee26b470ae88d33baef814cafa",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": null,
+    "source_sha256": "f54ca94fede7eded3713deb5e1375b9197698086783696a47b5d5f26da01a9ae",
+    "started_at": "2026-08-28T00:34:00.812733+00:00",
+    "stderr": "",
+    "stdout": "{\"rows\": 7, \"boundary\": 1111, \"floor_failures\": 351, \"rejected\": 0}\n",
+    "wall_timeout_seconds": 200
+  }
+]
