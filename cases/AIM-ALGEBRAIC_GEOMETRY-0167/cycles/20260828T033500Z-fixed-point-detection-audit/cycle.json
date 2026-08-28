@@ -1,0 +1,237 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T033500Z-fixed-point-detection-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0167",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0167",
+    "title": "Finite-index Wirthmuller duality and the compact profinite Adams boundary",
+    "statement": "For a profinite group $G$ (having subgroups of arbitrary index), are there Wirthm\\\"uller/Adams isomomorphisms in $Sp^G$?",
+    "statement_sha256": "842a8f65631af3b829700ece5d9cb58da37f97988dae85e722c2aa8f056c1af9",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T03:33:52.120876Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/equideralggeom/4/",
+      "https://arxiv.org/pdf/2401.01878v1",
+      "https://www.math.uni-bonn.de/~schwede/equivariant.pdf"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 18, score 73.5; highest-ranked eligible outside cooldown and anti-thrashing gates. PR20 was already human-merged; current main contains all nineteen prior packets. Ranked, not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-28T03:33:52.120876Z",
+  "completed_at": "2026-08-28T03:40:39.819758Z",
+  "selection_basis": "Rank 18, score 73.5; highest-ranked eligible outside cooldown and anti-thrashing gates. PR20 was already human-merged; current main contains all nineteen prior packets. Ranked, not provisional.",
+  "theory": {
+    "target": "Audit the all-subgroup detection step in the compact N-free obstruction: replace an insufficient underlying-spectrum test by H=L(N intersect U) for every closed L, retaining explicit finite-quotient and compactness hypotheses.",
+    "definitions": [
+      "G profinite; N closed normal; U open normal; K=N intersect U; q:G -> G/U.",
+      "X is compact and inflated from a compact G/U-spectrum; Phi denotes absolute geometric fixed points.",
+      "The N-free premise used is Phi^H(X)=0 for every closed H with H intersect N nontrivial.",
+      "A finite G-set determines a Burnside sphere endomorphism whose H-degree is its H-fixed-point count."
+    ],
+    "assumptions": [
+      "G is profinite, N is closed normal, U is open normal, and K=N intersect U is nontrivial.",
+      "X is compact in the continuous genuine category and X is inflated from a compact G/U-spectrum.",
+      "N-free is used only via the condition Phi^H(X)=0 for every closed H with H intersect N nontrivial.",
+      "Finite computations test group transport and Burnside degrees, not stable homotopy groups or infinite profinite groups.",
+      "The ordinary all-subgroup proof uses primary-source inflation compatibility and compact joint detection; no kernel or independently authored proof check is claimed.",
+      "No Wirthmuller equivalence or Adams isomorphism construction is attempted."
+    ],
+    "approaches_considered": [
+      "Underlying-only detection after applying Phi at K: retired by the C2 mark/cofiber counterexample.",
+      "All-subgroup thickening H=LK plus inflation compatibility and compact joint detection.",
+      "Independent finite-action and coset enumeration to test every specified transport and degree certificate."
+    ],
+    "falsification_targets": [
+      "Infer genuine vanishing from underlying vanishing.",
+      "Omit thickening L to LK.",
+      "Omit normality from the product-subgroup step.",
+      "Omit nontriviality of K or extend compact detection to arbitrary integral objects."
+    ],
+    "claims": [
+      {
+        "claim_id": "MARK",
+        "statement": "The C2 Burnside vector (-1,3) has marks (1,3); among 1425 specified vectors, 57 have unit underlying degree but a nonunit degree elsewhere. The ordinary source-dependent cofiber interpretation refutes underlying-only detection.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An incorrect mark, omitted coefficient vector, or invalid sphere-map/cofiber interpretation.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "TRANSPORT",
+        "statement": "Independent algorithms agree on 2273 transport rows over 25 groups, including 1322 with nontrivial N intersect U and 381 where L must be thickened to force nontrivial intersection with N.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any omitted subgroup, nonnormal N or U, wrong quotient image, intersection, product or count.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "REPAIR",
+        "statement": "For compact X inflated from G/U, vanishing of Phi^H(X) whenever H meets N nontrivially forces X=0 if N intersect U is nontrivial: use H=L(N intersect U) for every closed L. This ordinary argument remains unverified by an independent author or kernel.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Failure of closedness, normality, the inflation identity, the specified vanishing premise, or compact joint detection.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Balchin-Barnes-Barthel v1 supplies compact finite-quotient setup, inflation compatibility and compact joint detection; Schwede Theorem 6.16 and its following degree discussion supply the Burnside sphere-map interpretation.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "A wrong locator, category, hypothesis, or extension beyond compact objects.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact marks (1,3) expose the insufficient underlying-only test; the full finite census finds 57 degree false positives.",
+        "claim_ids": [
+          "MARK"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "d2664020689a17abcc166304021daa8db390a0d6a9564f3d5cf16e251a48f05f",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "2a71886a09cf40f67c6baa803de995348c73f7478e27d6805670ba5529bd2787",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Subgroup transport certificates discriminate thickening from an omitted-intersection shortcut in 381 cases.",
+        "claim_ids": [
+          "TRANSPORT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory.py",
+            "sha256": "0659d8dfcfbd031b505c62cf88adf825afd767c97d7fb6d4e4617a8cc96416ae",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "2a71886a09cf40f67c6baa803de995348c73f7478e27d6805670ba5529bd2787",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "MARK",
+          "TRANSPORT"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Original baseline starts with direct C2 orbit counts and nonnormal S3 product closure before the general census.",
+        "independent_context": true,
+        "independence_basis": "Original verifier and baseline preceded theory.py. Fresh Python -I with empty environment and resource limits reconstructs action/coset data before reading theory output; explicit fixed-point enumeration and subgroup closure versus cyclic mark/divisor formulas and subgroup products. Initial source/log bytes and post-lint reruns are retained. Same-assistant authorship and shared specification; no independent human/model/kernel proof review.",
+        "result": "Marks (1,3), product size 4 versus generated size 6, and trivial-kernel boundaries distinguish the shortcuts.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "2a71886a09cf40f67c6baa803de995348c73f7478e27d6805670ba5529bd2787",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/initial-baseline-execution.json",
+            "sha256": "a16df015b681359bbb907190b78c268b9f7e380e703fb070bec68cceb22607b4",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/initial-verify.py.txt",
+            "sha256": "398c44f1ba066242c617b2e87dc5bbcb6fc11d90a49a815a020040b33394a76b",
+            "media_type": "text/plain"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "e6c28a4dbee7bd2a7071ffaca644a362e4ea1f6e85144e9530eb845847955de5",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "MARK",
+          "TRANSPORT"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Reconstruct subgroup inventories, coset images and fixed-point counts before certificate read; compare all fields and mutate seven distinct fields.",
+        "independent_context": true,
+        "independence_basis": "Original verifier and baseline preceded theory.py. Fresh Python -I with empty environment and resource limits reconstructs action/coset data before reading theory output; explicit fixed-point enumeration and subgroup closure versus cyclic mark/divisor formulas and subgroup products. Initial source/log bytes and post-lint reruns are retained. Same-assistant authorship and shared specification; no independent human/model/kernel proof review.",
+        "result": "2273 transport rows and 1425 mark cases agree; seven altered packets rejected; initial and post-lint replays preserve output bytes.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "30cece63bb6625fbaf970ed85988c2fc1806dbd9cb187af1bccd9b34ce7c1cf1",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "ed7155166625df59e7df01cb5d622268fba3d7370e301999b940a22b529a8bd1",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "46b21fcc5f74668b12a59bfbf99287c80fa30d26791e8eddcf38a433121b7048",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROGRESS",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent action enumeration confirms the exact detection counterexample and all specified finite transport data.",
+        "claim_ids": [
+          "MARK",
+          "TRANSPORT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "ed7155166625df59e7df01cb5d622268fba3d7370e301999b940a22b529a8bd1",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "e6c28a4dbee7bd2a7071ffaca644a362e4ea1f6e85144e9530eb845847955de5",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared specification; no independent human/model/kernel proof review.",
+      "The source-dependent all-subgroup argument and cofiber interpretation are not stable-homotopy computations.",
+      "AIM unavailable; imported summary is not attributed the false shortcut considered here.",
+      "Exact N-free model translation, non-open Wirthmuller classification and Adams equivalence maps remain outside the verified scope.",
+      "No extension to arbitrary noncompact integral spectra, new priority claim, parent solution or imported status change."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Obtain independently authored review of the all-closed-subgroup transport and the exact N-free model translation; audit actual Adams/Wirthmuller maps separately without treating underlying vanishing as genuine detection."
+}

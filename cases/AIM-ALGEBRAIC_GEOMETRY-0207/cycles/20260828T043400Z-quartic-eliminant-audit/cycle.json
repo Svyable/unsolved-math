@@ -1,0 +1,236 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T043400Z-quartic-eliminant-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0207",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0207",
+    "title": "Extended-Kruppa constraints, realized conic ambiguity, and invariant eliminants for algebraic silhouettes",
+    "statement": "Can we find the fundamental matrix from silhouettes? If the silhouettes are bounded by algebraic curves are there algebraic constraints on the fundamental matrix?",
+    "statement_sha256": "2a3f6e6b3eb2efec36b6f3be0253bfefe193df78850cf151f1cc051cc0ada0a3",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T04:33:51.050154Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/algvision/4/",
+      "https://www.dpmms.cam.ac.uk/~taf1000/papers/quarticequiv-old.pdf"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 19, score 73.5; highest-ranked eligible at freeze outside cooldown and anti-thrashing gates, including the rank-18 packet on open draft PR21. Ranked, not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-28T04:33:51.050154Z",
+  "completed_at": "2026-08-28T04:39:24.322889Z",
+  "selection_basis": "Rank 19, score 73.5; highest-ranked eligible at freeze outside cooldown and anti-thrashing gates, including the rank-18 packet on open draft PR21. Ranked, not provisional.",
+  "theory": {
+    "target": "Audit the quartic invariant eliminant for projective equivalence of squarefree complex binary quartic root divisors, including real-field and repeated-root boundary counterexamples. No silhouette gluing or fundamental-matrix recovery is attempted.",
+    "definitions": [
+      "q=aX^4+bX^3Y+cX^2Y^2+dXY^3+eY^4, with unscaled coefficients.",
+      "I=12ae-3bd+c^2; J=72ace+9bcd-27ad^2-27b^2e-2c^3; D0=(4I^3-J^2)/27.",
+      "E(q1,q2)=J(q1)^2 I(q2)^3-J(q2)^2 I(q1)^3.",
+      "Root-divisor equivalence allows arbitrary nonzero scalar and PGL2(K) transport, preserving multiplicities.",
+      "q_t=XY(X-Y)(X-tY), t in C minus {0,1}; the universal target quantifies over all squarefree complex quartic pairs."
+    ],
+    "assumptions": [
+      "Binary quartics use coefficients a,b,c,d,e without binomial scaling.",
+      "The completeness claim is over C, for squarefree projective divisors only.",
+      "Rational parameters exclude 0 and 1; infinity is retained as a projective root.",
+      "Finite census and polynomial identity checks are distinct from independent proof verification.",
+      "No geometric realization or surface gluing theorem is established."
+    ],
+    "approaches_considered": [
+      "Three-point normalization, exact six-factor identity and the anharmonic cross-ratio orbit.",
+      "Field-blind or multiplicity-blind eliminant use, retired by exact counterexamples.",
+      "Direct enumeration of projectivities and Sturm chains to discriminate the proposed tests."
+    ],
+    "falsification_targets": [
+      "Eliminant zero implies real projective equivalence.",
+      "Eliminant zero suffices for nonreduced divisors.",
+      "Dividing by I or J is harmless at exceptional quartics.",
+      "Quartic divisor matching alone constructs a surface or recovers a fundamental matrix."
+    ],
+    "claims": [
+      {
+        "claim_id": "BOUNDARY",
+        "statement": "Exact eliminant-zero quartics have real-root counts 0 versus 4, and repeated-root controls have multiplicity partitions (4) versus (3,1). These refute weakened tests, not the imported squarefree-complex wording.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Wrong invariants, real-root count, infinity handling, or multiplicity partition.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "IDENTITY",
+        "statement": "The six-factor polynomial identity matches exact sparse expansion; independent algorithms agree on all 2025 rational-parameter pairs, with 213 equivalent pairs and 888 projectivities.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any nonzero coefficient residual, omitted parameter or direct-map mismatch.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "COMPLETENESS",
+        "statement": "The ordinary five-step argument gives equivalence of eliminant vanishing and PGL2(C)-equivalence for squarefree quartic root divisors; it remains unverified by an independent author or kernel.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A squarefree complex counterexample or a gap in normalization, weights, or root-permutation transport.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Fisher v1 Section 2 supplies the unscaled I,J convention and transformation weights; its discriminant is 16 times this packet's D0. It is not evidence of silhouette realization.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Convention, normalization, field or locator mismatch.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Two exact certificates establish the real-field and multiplicity obstructions to weakened eliminant tests.",
+        "claim_ids": [
+          "BOUNDARY"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "33ee8c184c1f59dad7411f0be450b2a7fe79fa26d53b05a083c20fc1e5db2955",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "da538016fb69bec6b4328974d563cb83092033784d04062bcb56ecb5209342de",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Exact polynomial expansion and a 2025-pair census provide a reproducible test of the restricted equivalence criterion.",
+        "claim_ids": [
+          "IDENTITY"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory.py",
+            "sha256": "7f17582a22764d7a1e34ea5daf1de69f5695f0709a6128672235eed8aee37089",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/theory-details.json",
+            "sha256": "a3387a13a827b7003aa882e650dd1146d5c780c0af60092aff91ed1b9c11ee67",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "BOUNDARY",
+          "IDENTITY"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Initial baseline begins with exact Sturm and zero/infinity multiplicity calculations, then reconstructs the census without theory data.",
+        "independent_context": true,
+        "independence_basis": "Initial verifier and baseline preceded theory.py. Fresh Python -I with empty environment reconstructs expected results before certificate read. Sturm remainders and 24 ordered projective target triples differ from positivity/sign intervals, sparse polynomial expansion and six-value orbit formulas. Same-assistant authorship and shared specification; no independent human/model/kernel proof review.",
+        "result": "Real-root counts 0 and 4, partitions (4) and (3,1), and the nonsingular I=0 control all distinguish the boundary cases.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "da538016fb69bec6b4328974d563cb83092033784d04062bcb56ecb5209342de",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/initial-baseline-execution.json",
+            "sha256": "c53a60be16801412ec4764b3e602bf751bf824a7970e6089d382daba55e90c95",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/initial-verify.py.txt",
+            "sha256": "ecc981c113f18472cc2ba19591e4b85a05f7117e309d3bd15e1fc8c47efe0621",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "c54bfb174f003daec6d330bd5dfdc4b65223496336025f04860bfdd572848923",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "BOUNDARY",
+          "IDENTITY"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Enumerate 24 ordered target triples per pair and evaluate the identity on a degree-sufficient 7x7 grid; compare all output fields and seven mutations.",
+        "independent_context": true,
+        "independence_basis": "Initial verifier and baseline preceded theory.py. Fresh Python -I with empty environment reconstructs expected results before certificate read. Sturm remainders and 24 ordered projective target triples differ from positivity/sign intervals, sparse polynomial expansion and six-value orbit formulas. Same-assistant authorship and shared specification; no independent human/model/kernel proof review.",
+        "result": "48600 candidate maps give 213 equivalent pairs and 888 maps; 49 identity grid values agree; seven corrupted outputs rejected; replay unchanged.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "fedc32a09caed493868d6fa9ed9c35c3e64d5b956bb9043aa23be3465bdd8f02",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "726c8f1d1a3ee3c5dae746649b4851df68043242f7900863c4a6d0131d73cabe",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "50f67358f9d202d3ec044213a95ee48295641a0349d7f5616c7eeecf834debb5",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROGRESS",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Direct projective-map enumeration and Sturm computations independently reproduce the boundary certificates and all finite census data.",
+        "claim_ids": [
+          "BOUNDARY",
+          "IDENTITY"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "726c8f1d1a3ee3c5dae746649b4851df68043242f7900863c4a6d0131d73cabe",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "c54bfb174f003daec6d330bd5dfdc4b65223496336025f04860bfdd572848923",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared specification; no independent human/model/kernel proof verification.",
+      "The universal complex completeness argument and real-root/multiplicity preservation require independent mathematical review.",
+      "Rational census excludes the equianharmonic complex orbit; no inference of exhaustive complex testing.",
+      "AIM unavailable; imported status and broader silhouette/gluing claims remain unverified.",
+      "No real descent algorithm, surface realization, fundamental-matrix uniqueness, novelty or parent solution claim."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Obtain independently authored review of the squarefree-complex completeness proof and real descent requirements; separately audit surface-silhouette realization without treating a matching quartic invariant as geometric sufficiency."
+}

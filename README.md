@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-28T02:39:21.646960Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-28T10:38:45.763264Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -56,9 +56,9 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 
 | Work order | Queue rank | Problem | Accepted cycles | Latest conclusion | Last progress | Next evidence target |
 |---:|---:|---|---:|---|---|---|
-| 1 | 1 | `AIM-ALGEBRAIC_NUMBER_THEORY-0096 — Rational points, index transport, and the C_1^0 bounda…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T04:38:21.302690Z | `Human-review the historical remark and effectivity gap; rotate to the next eligible ranked candidate without changing i…` |
-| 2 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T05:37:05.354164Z | `Human-review the extraction fragment and corrected theorem dependency; rotate to the next eligible ranked candidate.` |
-| 3 | 3 | `AIM-COMPUTATION-0010 — Certified weak-coupling tubes for structured reachability` | 1 | `FALSIFIED_SUBCLAIM` | 2026-08-27T06:38:32.217608Z | `Retain the reachable counterexample as a regression test; audit a second sparse model with nonzero initial uncertainty…` |
+| 1 | 1 | `AIM-ALGEBRAIC_NUMBER_THEORY-0096 — Rational points, index transport, and the C_1^0 bounda…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T05:40:06.512484Z | `Obtain independently authored or kernel review of the geometric-integrality and closed-point argument. Any further foll…` |
+| 2 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring…` | 2 | `FALSIFIED_SUBCLAIM` | 2026-08-28T09:37:54.403455Z | `Retire width-two/no-fill tree-decomposition shortcuts. Seek human scope review and independently authored verification…` |
+| 3 | 3 | `AIM-COMPUTATION-0010 — Certified weak-coupling tubes for structured reachability` | 2 | `FALSIFIED_SUBCLAIM` | 2026-08-28T10:38:45.763264Z | `Retire deterministic three-sample certification without inter-sample bounds. Seek independently authored proof review b…` |
 | 4 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T07:40:11.966317Z | `Retain this exact Fourier/sign/objective certificate as a regression baseline; human-review the source heading before h…` |
 | 5 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T08:40:33.349993Z | `Retain the cover-count and stabilizer tests; human-review the source fragment and identify an actual uniform simple-lif…` |
 | 6 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 1 | `FALSIFIED_SUBCLAIM` | 2026-08-27T09:39:41.674490Z | `Retain the exact intersection/union regression certificates; human-review the intended local construction and global de…` |
@@ -73,7 +73,9 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 15 | 15 | `AIM-ALGEBRAIC_GEOMETRY-0045 — Seed-preserving explicit bounds for unirational hypersurfac…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T00:36:38.179784Z | `Obtain independently authored review of the arbitrary-degree seed propagation and ceiling argument; keep exact recursiv…` |
 | 16 | 16 | `AIM-ALGEBRAIC_GEOMETRY-0051 — An explicit Frobenius bound for triple products of elliptic…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T01:40:01.839514Z | `Obtain a primary proof of the claimed transfer to unramified cohomology, with explicit integral saturation and divisibl…` |
 | 17 | 17 | `AIM-ALGEBRAIC_GEOMETRY-0095 — Inseparability-robust irrationality bounds over small fields` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T02:39:21.646960Z | `Seek independently authored review of the identity-evaluation field diagram and its proper-model translation; separatel…` |
-| 18 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
+| 18 | 18 | `AIM-ALGEBRAIC_GEOMETRY-0167 — Finite-index Wirthmuller duality and the compact profinite…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T03:40:39.819758Z | `Obtain independently authored review of the all-closed-subgroup transport and the exact N-free model translation; audit…` |
+| 19 | 19 | `AIM-ALGEBRAIC_GEOMETRY-0207 — Extended-Kruppa constraints, realized conic ambiguity, and…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T04:39:24.322889Z | `Obtain independently authored review of the squarefree-complex completeness proof and real descent requirements; separa…` |
+| 20 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
 
 ### Next up
 
@@ -81,11 +83,11 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 18 | `AIM-ALGEBRAIC_GEOMETRY-0167 — Finite-index Wirthmuller duality and the compact profinite Adams boun…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 19 | `AIM-ALGEBRAIC_GEOMETRY-0207 — Extended-Kruppa constraints, realized conic ambiguity, and invariant…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 3 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 4 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 5 | 22 | `AIM-ALGEBRAIC_GEOMETRY-0282 — Upper semicontinuity, uniform Frobenius bounds, and a reduced non-equ…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 3 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 4 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 5 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 
 The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
 <!-- OPLAB:RESEARCH-STACK:END -->

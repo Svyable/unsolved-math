@@ -1,0 +1,13 @@
+{
+  "url": "https://aimath.org/WWN/optimalcontrol/optimalcontrol.pdf",
+  "title": "Numerical Methods for Optimal Control in High Dimensions",
+  "publisher": "American Institute of Mathematics",
+  "version_date": "2005-08-19",
+  "accessed_date": "2026-08-28",
+  "locator": "A.7 Mitchell, Ian; PDF page index 7, printed page 8",
+  "retrieval": "Fresh web PDF text read, successful. Full copyrighted PDF not copied into packet.",
+  "supported_scope": "The contribution asks about reliable reachability approximations exploiting weak or linear coupling and discusses sampling with quantifiable guarantees.",
+  "not_supported": "No claim here that three deterministic time samples alone certify an interval, no proposed initial parallelogram, no new-solution or current-status assertion.",
+  "source_evidence_role": "Primary agenda and attribution check only; mathematical certificate is derived locally. Exact imported statement and upstream hashes are frozen separately in snapshot.json.",
+  "license_handling": "Only this short original audit is captured. Dataset attribution and CC BY 4.0 import provenance are recorded in selection.json."
+}

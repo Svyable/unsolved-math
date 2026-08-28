@@ -1,0 +1,249 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T103400Z-pathwise-initial-set-audit",
+  "problem_id": "AIM-COMPUTATION-0010",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-COMPUTATION-0010",
+    "title": "Certified weak-coupling tubes for structured reachability",
+    "statement": "A.7 Mitchell, Ian\n\nThe solution to the Hamilton-Jacobi(-Bellman)(-Isaacs) partial differential equation (HJ PDE) provides the optimal value function (eg cost to go) for bounded input optimal control or zero-sum differential game problems respectively. These equations arise in many disparate fields, and my personal interest lies in how they can be used to approximate the reachable sets of continuous dynamic systems in order to verify and/or synthesize provably safe control policies. For these purposes, it may be possible to relax the goal of a convergent approximation of the solution of the PDE. Instead, we seek guaranteed under or over approximations of the solutions; for example, an underapproximation of the solution might overapproximate the unsafe reachable set, which might thereby generate false negative verifications but no false positives. With or without such relaxations, is it possible to take advantage of structure in the system dynamics to reduce the typically exponential growth in computational cost with system dimension? For example, is it possible to take advantage of weak or linear coupling between certain components to reduce the degrees of freedom needed by an approximation, perhaps through partial parameterization? Or another approach: Can sampling methods be applied to produce quantifiable probabilistic verifications? In addition to these questions related to the application area of verification, I am inter-ested in the class of algorithms designed to approximate solutions of HJ PDEs - often broadly called \"level set methods.\" This interest includes both the time-dependent and stationary (or static) versions of the equation, as well as issues related to the use of such numerical approximations in the control of robotic systems.",
+    "statement_sha256": "f1fcc8af2b056d92b6c169bb742268ff7ddab60d4ff5d78a09b9f027dd071304",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T10:34:36.749017Z",
+    "source_urls": [
+      "https://aimath.org/WWN/optimalcontrol/optimalcontrol.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 3, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 and 2 remain cooling down. Follow prior requested second sparse model with nonzero initial uncertainty. New target is continuous-time certification with correlated initial conditions, not another terminal signed-radius census.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T063300Z-support-margin-audit",
+  "started_at": "2026-08-28T10:34:36.749017Z",
+  "completed_at": "2026-08-28T10:38:45.763264Z",
+  "selection_basis": "Rank 3, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 and 2 remain cooling down. Follow prior requested second sparse model with nonzero initial uncertainty. New target is continuous-time certification with correlated initial conditions, not another terminal signed-radius census.",
+  "theory": {
+    "target": "Falsify three-point time sampling as a pathwise certificate and certify an exact correlated-initial-set refinement over coordinate-box propagation for one sparse affine two-state model.",
+    "definitions": [
+      "State x,v solves x prime=v, v prime=-a+w with initial x=delta*(z1+z2), v=vbar+eta*(z1-z2), z in [-1,1]^2.",
+      "Inputs are all Lebesgue-measurable w on [0,T] with absolute value at most epsilon almost everywhere.",
+      "Pathwise scalar safety means for every admissible z,w and every t in [0,T], x(t)<=b; this is not a deployed-controller claim.",
+      "Support h(t) is the supremum of x(t) over the initial set and input functions; the pathwise maximum is max h(t) over the time interval.",
+      "The initial coordinate box independently ranges x0 in [-2delta,2delta] and v0 in [vbar-2eta,vbar+2eta], discarding correlation.",
+      "The finite census is all 648 tuples in input.json, including 216 cases of each sign of a-epsilon; row order and serialization are documented."
+    ],
+    "assumptions": [
+      "All parameters rational in the finite census; general argument uses real delta,eta,a,epsilon,T>=0 and real vbar.",
+      "Initial z1,z2 range independently over [-1,1]; x0 and v0 are correlated, not independent coordinate intervals.",
+      "w is any Lebesgue-measurable function on [0,T] with |w|<=epsilon almost everywhere; state is the absolutely continuous solution.",
+      "Safety here means the scalar mathematical inequality x(t)<=b for every admissible initial point, input and t in [0,T]; no deployed control policy is evaluated.",
+      "The three-sample shortcut is assistant-derived and is not attributed to Mitchell or the prior audit.",
+      "No nonlinear, high-dimensional, feedback synthesis, novelty or parent-solution claim."
+    ],
+    "approaches_considered": [
+      "Three-point time sampling as a pathwise certificate: retired by an explicit interior maximum.",
+      "Independent-coordinate initial box and continuous maximization: sound but strictly inconclusive at the chosen threshold.",
+      "Correlation-preserving support-envelope propagation followed by exact piecewise critical-point maximization."
+    ],
+    "falsification_targets": [
+      "Three sampled time upper bounds imply a bound throughout the interval.",
+      "Discarding initial correlation leaves the pathwise maximum unchanged.",
+      "The support-envelope rule misses a kink or stationary point at a parameter boundary."
+    ],
+    "claims": [
+      {
+        "claim_id": "SHORTCUT",
+        "statement": "Three upper bounds at times 0,T/2,T alone certify x(t)<=b throughout [0,T] in the specified affine system.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "The supplied admissible trajectory passes all samples at b=3/8 but reaches 2/5 at t=2/3.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CERTIFICATE",
+        "statement": "The base instance has exact pathwise maximum 2/5 and coordinate-box maximum 1/2, so correlation-preserving propagation certifies b=9/20 where the box is inconclusive.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An inadmissible initial corner/input, differing direct maximum, or an error in the two quadratic upper-bound identities.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "EXPERIMENT",
+        "statement": "Both algorithms agree on all 648 parameter rows, with 35 strict sample misses and 160 strict box gaps; all 20736 enumerated input/corner trajectories respect the computed maximum.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing parameter/control/corner, mismatched table entry, or a larger trajectory maximum.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "GENERAL",
+        "statement": "For arbitrary allowed real parameters and all bounded measurable inputs the exact support is vbar*t-(a-epsilon)*t^2/2+2*max(delta,eta*t), and its pathwise maximum follows the stated piecewise critical-point rule. Ordinary proof given; no independent author/kernel review.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A gap in the integral sign argument, support attainment, supremum interchange or critical-point rule.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Mitchell A.7 of the August 19, 2005 AIM contribution poses a structured reachability approximation agenda; it does not assert the tested three-sample shortcut.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Incorrect source locator or attribution.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "An admissible exact trajectory passes all three sample bounds yet violates the interval threshold by 1/40.",
+        "claim_ids": [
+          "SHORTCUT",
+          "CERTIFICATE"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "08e7827b8368f84876ebff8e6bb63236292f0be13810047dee23ed3d4e85e262",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "cda233e38d4a0c147a06838c87f131807c0845006e9d96bb7a96877432734e0b",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Nonzero correlated initial uncertainty admits a 2/5 pathwise bound versus a 1/2 coordinate-box bound; the 648-case census discriminates both sample misses and correlation gaps.",
+        "claim_ids": [
+          "CERTIFICATE",
+          "EXPERIMENT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory-table.json",
+            "sha256": "112562dfb58708f8487e802a84b8598403bdbefe8b42d516f8f39407a8e81d14",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/theory.py",
+            "sha256": "8c15048dccf570902b2d02418eddfc2badbd337cab2bdf9b8db063c9a74bf25a",
+            "media_type": "text/x-python"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "SHORTCUT",
+          "CERTIFICATE",
+          "EXPERIMENT"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Start with the interior-time witness and zero-time/zero-data boundaries, then directly integrate four initial corners and all eight three-segment extremal inputs per case.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py; fresh Python -I process with empty environment reconstructs expectations before reading theory certificate. Direct corner/segment integration and velocity-zero maxima differ from absolute-value support-envelope splitting. Shared input and same-assistant authorship; no independent human/model or kernel review.",
+        "result": "The witness attains 2/5 at 2/3; all 20736 trajectories respect and collectively attain the independent per-case maxima.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "c1034d2963dcafc73a2fd9b9542c2429b799398f40b763c471835c98f466ae48",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "73011abc6fdf03eea8885f749609c2a3c3c1b78a1dcbb9d73bffa317b5607c4c",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "691705b4dc1b6d2e770ce1971c19028d93bad5885590dd755dbe6c0bc54636c7",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "SHORTCUT",
+          "CERTIFICATE",
+          "EXPERIMENT"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Compute all 648 rows without the support-envelope formula; then check witness admissibility, seven targeted corruptions, citation scope, analytic proof steps and exact replay.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py; fresh Python -I process with empty environment reconstructs expectations before reading theory certificate. Direct corner/segment integration and velocity-zero maxima differ from absolute-value support-envelope splitting. Shared input and same-assistant authorship; no independent human/model or kernel review.",
+        "result": "Full tables agree; seven corruptions rejected; analytic all-measurable-input argument remains outside independent-author/kernel validation.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "5fdcb4bf219124469f1844c61af1bb54b92218225e742b33fcda466d4e1ec4fc",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "ac0268da530b7027c5d8a13fdb3f56307c893320efbc13c9acecbff3022a2b9d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-table.json",
+            "sha256": "112562dfb58708f8487e802a84b8598403bdbefe8b42d516f8f39407a8e81d14",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "2dcfd78e06f99b817af2c2fe975525655f839238d91067096c5dc2c980f31d1c",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROGRESS",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent direct-dynamics maxima and 20736 exact trajectories confirm the sample-only obstruction and correlation-preserving bound; targeted corruptions fail.",
+        "claim_ids": [
+          "SHORTCUT",
+          "CERTIFICATE",
+          "EXPERIMENT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "ac0268da530b7027c5d8a13fdb3f56307c893320efbc13c9acecbff3022a2b9d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "691705b4dc1b6d2e770ce1971c19028d93bad5885590dd755dbe6c0bc54636c7",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship/shared specification; no independent human/model or kernel proof review.",
+      "Finite piecewise inputs do not prove the all-measurable-input statement; the analytic integral, attainment and supremum arguments need independent review.",
+      "Only this sparse affine two-state family and scalar position constraint are covered; no nonlinear, high-dimensional or feedback-policy result.",
+      "The canonical source is a broad research agenda; the retired shortcut and model are derived here, not attributed to the source.",
+      "Elementary known-method calibration only; no novelty, parent solution or imported mathematical-status change."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "FALSIFIED_SUBCLAIM",
+  "next_step": "Retire deterministic three-sample certification without inter-sample bounds. Seek independently authored proof review before a structurally different model with sign-changing kernels and coupled input constraints; do not count a larger census of this affine family as new progress."
+}

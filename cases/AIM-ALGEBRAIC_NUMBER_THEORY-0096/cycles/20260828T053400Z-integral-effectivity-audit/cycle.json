@@ -1,0 +1,218 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T053400Z-integral-effectivity-audit",
+  "problem_id": "AIM-ALGEBRAIC_NUMBER_THEORY-0096",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_NUMBER_THEORY-0096",
+    "title": "Rational points, index transport, and the C_1^0 boundary",
+    "statement": "Problem 11, as phrased, had been settled by J. Ax in Bull. Am. Math. Soc. 71 (1965) p. 717. Ax produced a smooth hypersurface in 9-dimensional projective space, of degree 5, over a field k of cohomological dimension 1, with no rational point (that such hypersurfaces are rationally connected was proven much later). Ax'example has index 1, i.e. the g.c.d. of the degree of the finite field extensions over which the hypersurface acquires a rational point is 1. In Journal of the Inst. of Math. Jussieu (2004) 3 p. 1-16, J.-L. Colliot-Th´ el` ene and D. Madore produce a field of cohomological dimension 1 and a smooth cubic surface over that field which has index 3, thus settling negatively a question of Kato and Kuzumaki (1986). 50\n\nProblem/",
+    "statement_sha256": "7bd38380791213998af3bf992c12ddf53a4108a57b71d8662d28afc89a4555cc",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T05:32:42.034943Z",
+    "source_urls": [
+      "https://aimath.org/WWN/qptsurface2/qptsurface2.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 1, score 77.25, highest eligible after its 24-hour cooldown; prior completed cycle read, no consecutive-repeat gate. Follow-up changes the domain from disconnected finite-etale schemes to a smooth geometrically integral projective curve, not a repeated finite-profile search.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T043400Z-index-effectivity-audit",
+  "started_at": "2026-08-28T05:32:42.034943Z",
+  "completed_at": "2026-08-28T05:40:06.512484Z",
+  "selection_basis": "Rank 1, score 77.25, highest eligible after its 24-hour cooldown; prior completed cycle read, no consecutive-repeat gate. Follow-up changes the domain from disconnected finite-etale schemes to a smooth geometrically integral projective curve, not a repeated finite-profile search.",
+  "theory": {
+    "target": "Remove disconnectedness and failure of geometric integrality from the earlier index-one/no-point certificate: audit a fixed smooth projective plane quartic over F2 using chart Jacobian unit identities and closed-point orbits of coprime degrees. No rationally connected or Ax-construction claim.",
+    "definitions": [
+      "C is the projective zero scheme over F2 of X^4+Y^4+Z^4+X^2Y^2+X^2Z^2+Y^2Z^2+XYZ(X+Y+Z).",
+      "A zero-cycle is a finite integral sum of closed points; effective means nonnegative coefficients. Degree is the weighted sum of residue-field degrees.",
+      "Index is the positive gcd of degrees of all closed points; an effective degree-one cycle is a rational point.",
+      "The weakened implication quantifies over every smooth projective geometrically integral curve over a finite field; the example does not satisfy rational connectedness.",
+      "On every chart, P=u^2+u and Q=v^2+v; Jacobian ideal unit identities hold over every algebraic extension, not just the finite search domain."
+    ],
+    "assumptions": [
+      "Characteristic two; specified nonzero homogeneous quartic.",
+      "Projective points use first nonzero coordinate equal to one.",
+      "Field irreducibility is checked, not assumed from labels.",
+      "Index is the gcd of degrees of all closed points; two coprime degree witnesses suffice.",
+      "Smoothness uses polynomial unit identities on all three charts, not absence of singular points over small fields.",
+      "Geometric integrality follows by the ordinary projective plane intersection argument; no independent human/model/kernel proof review.",
+      "This genus-three curve is not rationally connected and is not the Ax hypersurface."
+    ],
+    "approaches_considered": [
+      "Continue finite-etale degree profiles: retired for this target because the earlier disconnected example cannot become geometrically integral by more enumeration.",
+      "Use a projective plane quartic with exact chart Jacobian unit certificates and coprime closed-point orbit witnesses.",
+      "Reconstruct using tuple fields, first Frobenius fixation and polynomial division, independently of theory multipliers."
+    ],
+    "falsification_targets": [
+      "Index one forces a rational point even for smooth projective geometrically integral curves.",
+      "Absence of singular points over small extensions suffices to establish geometric smoothness.",
+      "The disconnectedness objection is essential to the prior effectivity example.",
+      "A genus-three example establishes a rationally connected counterexample."
+    ],
+    "claims": [
+      {
+        "claim_id": "POINTS",
+        "statement": "The fixed F2 quartic has no rational point and has explicit closed-point orbits of lengths 2 and 3; the degree-1..6 census is 0,14,24,14,0,38.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any omitted normalized point, wrong field reduction, orbit length or count.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "JACOBIAN",
+        "statement": "On each of three charts, f=1+P^2+Q^2+PQ with P=u^2+u,Q=v^2+v satisfies 1=f+Q*f_u+(P+Q)*f_v.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Wrong derivative, nonzero coefficient residual or omitted chart.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "GEOMETRY",
+        "statement": "Ordinary Jacobian and plane-intersection arguments make the example smooth projective geometrically integral of genus 3; coprime closed-point degrees give index one but no effective degree-one cycle. Independent author/kernel review remains absent.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed geometric hypothesis or implication, including the closed-point correspondence or genus formula.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "The fixed model is the known C2 of Castryck--Voight v1, main theorem page 2; it is not Ax's rationally connected hypersurface.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Model, characteristic, attribution or source locator mismatch.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "ASSUMPTION_REDUCTION",
+        "summary": "Replace the earlier disconnected finite-etale example by a fixed projective curve, with exact orbit and Jacobian certificates supporting removal of the geometric-integrality objection, subject to ordinary geometric proof review.",
+        "claim_ids": [
+          "POINTS",
+          "JACOBIAN"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "9ef2b900dae2e4c7a3c6fd4c6398343a2a36805a680ed872deb4db445116767f",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "2fed91ce407cd9e89ad5774ec7024ee7abf8bd3bca8d99e9ed3187a637d8bb9f",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/theory-details.json",
+            "sha256": "c79c4d0f21927ff9c489b05f49384a9e79844bfd917c7bfe9bb735f527d645b6",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "POINTS",
+          "JACOBIAN"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Start with all seven base points, omitted-term and bad-field controls, and characteristic-two derivative failure; then independently reconstruct chart ideals and extension data.",
+        "independent_context": true,
+        "independence_basis": "Verifier and baseline preceded theory.py. Fresh Python -I with empty environment reconstructs before reading theory output. Tuple-convolution field arithmetic, Frobenius fixed-iterate degrees and chart polynomial division differ from bit-polynomial arithmetic, orbit traversal and explicit unit multipliers. Same-assistant authorship and shared specification; no independent human/model/kernel proof review.",
+        "result": "Seven nonzero base values; omitted X^4 creates a point; reducible modulus rejected; Fermat derivatives vanish. Three chart remainders equal one.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "2fed91ce407cd9e89ad5774ec7024ee7abf8bd3bca8d99e9ed3187a637d8bb9f",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "7cc9514a1cce28b29bec3bee19fce4f0a8972dc2623ea08a6536d8da466a887f",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "d4f84dea862396e7c46b72030a8c8d2baf6c54379c70d2d1140a9c60834cd036",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "POINTS",
+          "JACOBIAN"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Tuple-convolution fields and first Frobenius fixation independently enumerate points; chart polynomial division reconstructs certificates. Full-output equality and mutation controls precede reproducibility replay.",
+        "independent_context": true,
+        "independence_basis": "Verifier and baseline preceded theory.py. Fresh Python -I with empty environment reconstructs before reading theory output. Tuple-convolution field arithmetic, Frobenius fixed-iterate degrees and chart polynomial division differ from bit-polynomial arithmetic, orbit traversal and explicit unit multipliers. Same-assistant authorship and shared specification; no independent human/model/kernel proof review.",
+        "result": "5592 ambient projective points, all six point lists and two coprime-degree witnesses agree; three chart identities pass; seven altered outputs rejected; replay unchanged.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "de0efc1072508c338a1578ebdb408e156937a1dd4358d0c7d9d3aa470460fc11",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "2cf5faa324ff2b7d871e4d0a4bc5bcb949212878415a497a3f8a36dc80c08488",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "fe4a64141a349eb7a15301ed0cf25bd7e42360cf2659ad9611ca24aa416db962",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROGRESS",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent-process reconstruction accepts the new quartic orbit data and three Jacobian certificates, removing reliance on the previous disconnected scheme calculation.",
+        "claim_ids": [
+          "POINTS",
+          "JACOBIAN"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "2cf5faa324ff2b7d871e4d0a4bc5bcb949212878415a497a3f8a36dc80c08488",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "d4f84dea862396e7c46b72030a8c8d2baf6c54379c70d2d1140a9c60834cd036",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared specification; no independently authored or kernel proof verification.",
+      "Geometric smoothness/integrality and genus use ordinary Jacobian, plane-intersection and genus results; the finite census alone proves none of these universal geometric claims.",
+      "The curve has genus three and is not rationally connected; no Ax or Colliot-Thelene--Madore construction was audited.",
+      "Known model and known effectivity distinction; no novelty, parent-problem solution or imported-status change.",
+      "The frozen AIM passage is historical commentary requiring human scope review."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Obtain independently authored or kernel review of the geometric-integrality and closed-point argument. Any further follow-up must address an actual rationally connected construction or a new source-backed gap; more finite-field census rows are not material progress."
+}
