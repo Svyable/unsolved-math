@@ -16,3 +16,4 @@
 {"completed_at":"2026-08-27T23:37:46.983414Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260827T233500Z-regular-module-audit","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0035"}
 {"completed_at":"2026-08-28T00:36:38.179784Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T003500Z-seeded-threshold-audit","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0045"}
 {"completed_at":"2026-08-28T01:40:01.839514Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T013500Z-frobenius-determinant-audit","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0051"}
+{"completed_at":"2026-08-28T02:39:21.646960Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T023500Z-inseparable-degree-audit","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0095"}
