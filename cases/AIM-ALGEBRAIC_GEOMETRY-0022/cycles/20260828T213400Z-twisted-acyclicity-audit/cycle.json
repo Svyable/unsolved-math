@@ -1,0 +1,351 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T213400Z-twisted-acyclicity-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0022",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0022",
+    "title": "Immaculate line bundles as unit-orthogonal toric branes",
+    "statement": "[Wang, Borisov-Wang]: Found a condition on underlying fan for a toric stack to admit infinitely many acyclic line bundles (meaning $\\mathcal{L}$ with $H^*(\\mathcal{L})=0$ for all $*$, e.g. $\\mathcal{O}(-1)$ on $\\mathbb{P}^n$) (e.g. in $2D$ if fan has collinear rays).\n\n\\begin{enumerate}\n\\item Understand symplectic mirror of these criteria.\n\\item Understand consequences of generalizations of these critera (e.g. if there exists a toric subvariety whose fans is contained in a linear subspace) or if generalized.\n\\end{enumerate}",
+    "statement_sha256": "b51076d3bc3486be7617eae385292b37bfa5a3fba51ecd92341c32a51723540e",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T21:29:38.900519Z",
+    "source_urls": [
+      "https://aimpl.org/syzygyms/9/",
+      "https://stacks.math.columbia.edu/tag/01XS",
+      "https://arxiv.org/pdf/2006.16553v4",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 12, score 73.5, highest eligible outside cooldown; ranks 1-11 cooling down. Extend the prior product-space calibration only to Hirzebruch surfaces; test whether Euler zero or a base-coordinate window suffices for total acyclicity. AIM HTTP normalized to HTTPS; scope unverified.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T193500Z-orthogonality-direction",
+  "started_at": "2026-08-28T21:29:38.900519Z",
+  "completed_at": "2026-08-28T21:36:40.327460Z",
+  "selection_basis": "Rank 12, score 73.5, highest eligible outside cooldown; ranks 1-11 cooling down. Extend the prior product-space calibration only to Hirzebruch surfaces; test whether Euler zero or a base-coordinate window suffices for total acyclicity. AIM HTTP normalized to HTTPS; scope unverified.",
+  "theory": {
+    "target": "On Hirzebruch surfaces, test Euler-zero and base-window acyclicity shortcuts and derive the corrected total-cohomology criterion.",
+    "definitions": [
+      "Fn=P(O plus O(n)), n>=0, over a characteristic-zero field, in quotient convention.",
+      "Negative section S and fibre F satisfy S^2=-n,S.F=1,F^2=0; H=S+nF and K=-2S-(n+2)F.",
+      "L=O(aS+bF) for integers a,b; immaculate means all Hq including H0 vanish.",
+      "Euler characteristic is h0-h1+h2 and is not a cohomology dimension.",
+      "The fan has rays (0,1),(1,0),(0,-1),(-1,n), consecutive cones, divisor coefficients(a,b,0,0)."
+    ],
+    "assumptions": [
+      "Characteristic-zero field; exact rational Cech ranks model the smooth complete toric surface Fn.",
+      "Negative section S has S^2=-n, fibre F has F^2=0 and S.F=1; D=aS+bF.",
+      "Fn=P(O plus O(n)) in quotient convention; S=H-nF. Immaculate means all cohomology including H0 vanishes.",
+      "Fan rays are (0,1),(1,0),(0,-1),(-1,n), with consecutive maximal cones and divisor coefficients (a,b,0,0).",
+      "All-degree classification and geometric Cech/projection bridges are ordinary derivations pending independent review.",
+      "No mirror equivalence, Floer computation, general toric-stack criterion, novelty or parent solution is claimed."
+    ],
+    "approaches_considered": [
+      "Projection to P1, symmetric-power splitting and Serre duality derive complete cohomology and the locus.",
+      "Independent affine-cover Cech matrices plus complete integer character regions verify cohomology.",
+      "Euler-zero or base-window-only shortcuts are retired by explicit twisted examples."
+    ],
+    "falsification_targets": [
+      "Euler characteristic zero suffices for total acyclicity.",
+      "The product-space b=-1 window survives every twist.",
+      "The displayed canonical entry in the source immaculate list has vanishing cohomology."
+    ],
+    "claims": [
+      {
+        "claim_id": "EULER",
+        "statement": "Euler characteristic zero implies immaculate on every Hirzebruch surface. The F2 negative-section line bundle refutes this with cohomology dimensions (1,1,0).",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong fan/divisor identification, class weight, cocycle equation or quotient rank.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "BASE-WINDOW",
+        "statement": "The product-space base-coordinate window b=-1 suffices after twisting. On F2 the bundle O(S-F) has cohomology (0,2,0), unlike the same coordinates on F0.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "An incorrect twist convention, projection summand or Cech calculation.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "LOCUS",
+        "statement": "Over characteristic zero, on Fn the complete immaculate locus is a=-1 or b=-1 for n=0, and a=-1 or (a,b)=(0,-1),(-2,-n-1) for n>0. The index-zero dimensions in theory.md hold for arbitrary integer degrees.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing direct-image summand, wrong Serre-dual shift, parity exception or failed Cech-to-geometry bridge.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FINITE",
+        "statement": "Two algorithms agree on 1827 bundles and the complete row digest, with 36841 nonzero character classes,223 immaculate cases,27 Euler false acceptances and42 b=-1 false acceptances.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An omitted tuple, unbounded nonacyclic character region, mismatched row or rank.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CERTIFICATES",
+        "statement": "Eight bundle certificates with26 character-class vectors and7 canonical non-boundary certificates pass;7 bundle and4 canonical corruptions are rejected.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An accepted invalid weight, noncocycle, boundary, incomplete basis or specified corruption.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Hochenegger arXiv:2006.16553v4 Examples2.7 and4.6 display the same divisor (n-2)F-2C_+ as canonical and in the immaculate list. PDF text and HTML agree. This is a source-level discrepancy, not a main-theorem or author-status adjudication. Stacks01XS provides the projective-bundle normalization and cohomology dependencies.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "A wrong transcription, version, locator or convention.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE-OBSTRUCTION",
+        "statement": "In the frozen fan model, the displayed canonical divisor has a nonzero degree-two class. For n=2 it has Betti(0,0,1), whereas K+F has(0,0,0). The proposed adjacent coefficient repair requires human review.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed canonical-character inequality, cocycle or separating functional, or different source divisor convention.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "On F2,O(S) has(1,1,0) despite Euler zero, and O(S-F) has(0,2,0) despite b=-1; explicit weight cocycles certify the failures.",
+        "claim_ids": [
+          "EULER",
+          "BASE-WINDOW",
+          "CERTIFICATES"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "315c2cecc9df5ff806ba36971d96cf2e81630f749f82034b1f2c2c8295facabc",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "a846c2813a473f13ddca627479fb29ae1564f2ec23e5585ec940cb8409083654",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "EQUIVALENT_REFORMULATION",
+        "summary": "Replace the product-coordinate shortcut by the stated complete Hirzebruch immaculate locus; identify the source boundary K versus K+F.",
+        "claim_ids": [
+          "LOCUS",
+          "SOURCE-OBSTRUCTION"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "315c2cecc9df5ff806ba36971d96cf2e81630f749f82034b1f2c2c8295facabc",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "a846c2813a473f13ddca627479fb29ae1564f2ec23e5585ec940cb8409083654",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "EULER",
+          "BASE-WINDOW",
+          "SOURCE-OBSTRUCTION"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Before census or proposal reading, reconstruct fan Cech cohomology for six Euler, twist, product, relative-negative-degree and canonical controls.",
+        "independent_context": true,
+        "independence_basis": "The fan-Cech verifier was authored and baseline-executed before theory.py. Fresh Python -I processes start with Euler/base-window failures, product and negative-degree boundaries, K and K+F. It reconstructs all16 exact rational support complexes and exhaustive integer weight regions before reading certificates. Theory uses projection splitting, index and Serre duality. A third literal non-boundary checker imports neither. Distinct evidence; same assistant/input/fan/runtime/iteration/serialization, no independent human/model or kernel review.",
+        "result": "The controls return(1,1,0),(0,2,0),(0,0,0),(0,0,0),(0,0,1),(0,0,0).",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "ccac4a41b80069e0e75c3b92d300d7abc0d24aae95854b78c5d67b3125264719",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "394621feb38dc7fc3589156f189731734a85bad5811dfb510e0e8738585d7b1a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "718e03c32dca6fc85bfcb24d02b6eefa5e64e3dc873cf94164ec492656660925",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE",
+          "LOCUS",
+          "CERTIFICATES"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Sixteen rational Cech pattern complexes and exact untruncated weight inequalities versus projection formulas; check each submitted class modulo boundaries.",
+        "independent_context": true,
+        "independence_basis": "The fan-Cech verifier was authored and baseline-executed before theory.py. Fresh Python -I processes start with Euler/base-window failures, product and negative-degree boundaries, K and K+F. It reconstructs all16 exact rational support complexes and exhaustive integer weight regions before reading certificates. Theory uses projection splitting, index and Serre duality. A third literal non-boundary checker imports neither. Distinct evidence; same assistant/input/fan/runtime/iteration/serialization, no independent human/model or kernel review.",
+        "result": "1827 rows and36841 weight classes agree;8 bundle certificates/26 class vectors pass,7 corruptions fail; byte-identical replay.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "3731c9f02989fe44109ab897c4cb23e4d9f5893f2c40981db4e871628f45124a",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "b7e0d69123dbba334ff2c79b61b0895a967d72dfcc9200292f2c89f073bac26f",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verify-execution.json",
+            "sha256": "7ef3f52e827a6470ff9f9764f536bacace471f9c4288ac9fd3ca1426c3d8997d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "c9a190de09d4e67ca77d598e011a3aca07d8afdda4a7822e5de951ec97942e7b",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "SOURCE-OBSTRUCTION",
+          "CERTIFICATES"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Literal canonical character, outgoing differential and separating functional, with no Cech-rank or projection imports.",
+        "independent_context": true,
+        "independence_basis": "The fan-Cech verifier was authored and baseline-executed before theory.py. Fresh Python -I processes start with Euler/base-window failures, product and negative-degree boundaries, K and K+F. It reconstructs all16 exact rational support complexes and exhaustive integer weight regions before reading certificates. Theory uses projection splitting, index and Serre duality. A third literal non-boundary checker imports neither. Distinct evidence; same assistant/input/fan/runtime/iteration/serialization, no independent human/model or kernel review.",
+        "result": "7 non-boundary certificates pass and4 corruptions fail; byte-identical replay.",
+        "reproduction_command": "python experiments/run.py sourcereplay",
+        "evidence": [
+          {
+            "path": "experiments/source.py",
+            "sha256": "f5f98ccc9adf1abc99ef2e613549d62bb09d9371934aa2ecfec95239bed89914",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/source-output.json",
+            "sha256": "6e4bd1a8844254dec6cbf9011251cb97058083dc8069848e2ceeb479c2c83fba",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/source-execution.json",
+            "sha256": "626f33f148267d52fa8c5ae59efc56a1427f874265838a0540a7e77c0e172f8e",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/sourcereplay-execution.json",
+            "sha256": "611cf623caed49ec2802076f8b6a4ba9f13ec002d19ccb3081c77b21eb65f776",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "LOCUS"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit H=S+nF, direct-image summands, a=-1, Serre shifts, integer parity and complete nonacyclic character bounds.",
+        "independent_context": true,
+        "independence_basis": "The fan-Cech verifier was authored and baseline-executed before theory.py. Fresh Python -I processes start with Euler/base-window failures, product and negative-degree boundaries, K and K+F. It reconstructs all16 exact rational support complexes and exhaustive integer weight regions before reading certificates. Theory uses projection splitting, index and Serre duality. A third literal non-boundary checker imports neither. Distinct evidence; same assistant/input/fan/runtime/iteration/serialization, no independent human/model or kernel review.",
+        "result": "No contradiction in displayed ordinary argument; universal geometry/classification remains UNVERIFIED pending independent proof review.",
+        "reproduction_command": "Read verification.md proof audit",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "718e03c32dca6fc85bfcb24d02b6eefa5e64e3dc873cf94164ec492656660925",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V5",
+        "claim_ids": [
+          "SOURCE",
+          "SOURCE-OBSTRUCTION"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Compare versioned PDF text printed pages4,7 with HTML Examples2.7,4.6; independently read Stacks normalization; retry AIM.",
+        "independent_context": true,
+        "independence_basis": "The fan-Cech verifier was authored and baseline-executed before theory.py. Fresh Python -I processes start with Euler/base-window failures, product and negative-degree boundaries, K and K+F. It reconstructs all16 exact rational support complexes and exhaustive integer weight regions before reading certificates. Theory uses projection splitting, index and Serre duality. A third literal non-boundary checker imports neither. Distinct evidence; same assistant/input/fan/runtime/iteration/serialization, no independent human/model or kernel review.",
+        "result": "Both text renderings show the same coefficient discrepancy. Screenshot unavailable and AIM failed twice; no main-theorem, author-intent or community-status adjudication.",
+        "reproduction_command": "Open the cited versioned PDF/HTML and Stacks locators",
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "b6733da291ccd8cc21fdc477c043c231a2d86c626dd76c819885579ceee3ca3b",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent fan cohomology rejects Euler/base-window shortcuts, validates26 explicit classes and7 canonical non-boundaries, and isolates the source coefficient discrepancy with11 rejected corruptions.",
+        "claim_ids": [
+          "EULER",
+          "BASE-WINDOW",
+          "FINITE",
+          "CERTIFICATES",
+          "SOURCE-OBSTRUCTION"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "b7e0d69123dbba334ff2c79b61b0895a967d72dfcc9200292f2c89f073bac26f",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/source-output.json",
+            "sha256": "6e4bd1a8844254dec6cbf9011251cb97058083dc8069848e2ceeb479c2c83fba",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "718e03c32dca6fc85bfcb24d02b6eefa5e64e3dc873cf94164ec492656660925",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship, shared input/fan/runtime/iteration/serialization; no independent human/model or kernel proof review.",
+      "Universal projection, Serre duality and Cech-to-geometry classification remain ordinary proof dependencies.",
+      "AIM source unavailable; exact source scope and imported current status unverified.",
+      "Versioned Example4.6 discrepancy and proposed correction need human review; screenshot unavailable, no author-issued erratum claimed.",
+      "No actual mirror, Floer computation, general toric-stack criterion, main-theorem refutation, novelty or parent solution is claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the twisted-surface Euler/base-window counterexamples and canonical non-boundary certificates. Obtain human review of the Example4.6 coefficient discrepancy and independently authored or kernel review of the universal projection/Cech classification before any mirror construction. More grid cases alone are not material progress; rotate."
+}
