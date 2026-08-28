@@ -1,0 +1,148 @@
+"""Finite subgroup-product and cyclic mark-formula certificates."""
+
+import itertools
+import json
+import sys
+from pathlib import Path
+
+
+def bitset(s):
+    return sum(2**i for i in s)
+
+
+def group(name):
+    if name.startswith("C"):
+        n = int(name[1:])
+        t = [[(a + b) % n for b in range(n)] for a in range(n)]
+        subs = [{k for k in range(0, n, n // d)} for d in range(1, n + 1) if n % d == 0]
+    elif name == "D8":
+        pairs = list(itertools.product(range(4), range(2)))
+        t = [
+            [pairs.index(((a + (-1) ** b * c) % 4, (b + d) % 2)) for c, d in pairs]
+            for a, b in pairs
+        ]
+        subs = generated_subgroups(t)
+    else:
+        p = list(itertools.permutations(range(3)))
+        t = [[p.index(tuple(a[i] for i in b)) for b in p] for a in p]
+        subs = generated_subgroups(t)
+    return t, sorted(subs, key=bitset)
+
+
+def generated_subgroups(t):
+    found = {frozenset({0})}
+    todo = list(found)
+    while todo:
+        s = todo.pop()
+        for g in range(len(t)):
+            if g in s:
+                continue
+            h = set(s) | {g}
+            while True:
+                extended = h | {t[a][b] for a in h for b in h}
+                if extended == h:
+                    break
+                h = extended
+            key = frozenset(h)
+            if key not in found:
+                found.add(key)
+                todo.append(key)
+    return [set(s) for s in found]
+
+
+def build(spec):
+    transport, inventories = [], []
+    names = [f"C{n}" for n in spec["cyclic_group_orders"]] + spec["nonabelian_groups"]
+    for name in names:
+        t, subs = group(name)
+        inv = [next(b for b in range(len(t)) if t[a][b] == 0) for a in range(len(t))]
+        normals = [
+            s for s in subs if all(t[t[g][x]][inv[g]] in s for g in range(len(t)) for x in s)
+        ]
+        inventories.append(
+            dict(
+                group=name,
+                subgroups=[bitset(s) for s in subs],
+                normals=[bitset(s) for s in normals],
+            )
+        )
+        for n, u, ell in itertools.product(normals, normals, subs):
+            k = n & u
+            h = {t[a][b] for a in ell for b in k}
+            images_l = sorted({min(t[a][b] for b in u) for a in ell})
+            images_h = sorted({min(t[a][b] for b in u) for a in h})
+            assert images_l == images_h and k <= h & n
+            assert all(t[a][b] in h for a in h for b in h)
+            transport.append(
+                dict(
+                    group=name,
+                    N=bitset(n),
+                    U=bitset(u),
+                    L=bitset(ell),
+                    K=bitset(k),
+                    H=bitset(h),
+                    image=images_l,
+                    H_intersect_N=bitset(h & n),
+                    omitted_thickening_fails=len(k) > 1 and len(ell & n) == 1,
+                )
+            )
+    matrices, marks = [], []
+    for n in spec["mark_group_orders"]:
+        divisors = [d for d in range(1, n + 1) if n % d == 0]
+        matrix = [[n // s if s % h == 0 else 0 for s in divisors] for h in divisors]
+        matrices.append(dict(order=n, subgroup_orders=divisors, matrix=matrix))
+        for coeff in itertools.product(spec["mark_coefficients"], repeat=len(divisors)):
+            values = [
+                sum(coeff[j] * matrix[i][j] for j in range(len(divisors)))
+                for i in range(len(divisors))
+            ]
+            marks.append(
+                dict(
+                    order=n,
+                    coeff=list(coeff),
+                    marks=values,
+                    underlying_unit=abs(values[0]) == 1,
+                    all_units=all(abs(v) == 1 for v in values),
+                )
+            )
+    t, _ = group("S3")
+    k, ell = {0, 1}, {0, 2}
+    product = {t[a][b] for a in ell for b in k}
+    generated = set(product)
+    while True:
+        new = generated | {t[a][b] for a in generated for b in generated}
+        if new == generated:
+            break
+        generated = new
+    controls = dict(
+        counterexample_marks=[2 * (-1) + 3, 3],
+        identity_marks=[1, 1],
+        zero_marks=[0, 0],
+        negative_unit_marks=[-1, -1],
+        top_test_only_marks=[2 * (-1) + 2, 2],
+        finite_free_orbit_marks=[2, 0],
+        nonnormal_product_size=len(product),
+        nonnormal_generated_size=len(generated),
+    )
+    summary = dict(
+        groups=len(names),
+        transport_cases=len(transport),
+        nontrivial_kernel_cases=sum(r["K"] != 1 for r in transport),
+        omitted_thickening_failures=sum(r["omitted_thickening_fails"] for r in transport),
+        mark_cases=len(marks),
+        underlying_false_positives=sum(r["underlying_unit"] and not r["all_units"] for r in marks),
+    )
+    return dict(
+        controls=controls,
+        inventories=inventories,
+        transport=transport,
+        mark_matrices=matrices,
+        mark_cases=marks,
+        summary=summary,
+    )
+
+
+if __name__ == "__main__":
+    result = build(json.loads(Path(sys.argv[1]).read_text()))
+    Path(sys.argv[2]).write_text(json.dumps(result, sort_keys=True, indent=2) + "\n")
+    print(json.dumps(result["summary"], sort_keys=True))

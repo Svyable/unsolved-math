@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research18/.venv/bin/python3",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research18/cases/AIM-ALGEBRAIC_GEOMETRY-0167/cycles/20260828T033500Z-fixed-point-detection-audit/experiments/theory.py",
+      "/workspace/scratch/1faac0a7d2ae/research18/cases/AIM-ALGEBRAIC_GEOMETRY-0167/cycles/20260828T033500Z-fixed-point-detection-audit/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research18/cases/AIM-ALGEBRAIC_GEOMETRY-0167/cycles/20260828T033500Z-fixed-point-detection-audit/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T03:35:50.518400+00:00",
+    "input_sha256": "25c5f1c60e8db040fda00ff1105cb9e1af9c22d7ae16dce52f948a2480813c5b",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "theory",
+    "output_sha256": "2a71886a09cf40f67c6baa803de995348c73f7478e27d6805670ba5529bd2787",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "7cbb93321e4938cda44e08aa1cb57d750ed06059859efd308c5a8b2667a9167b",
+    "started_at": "2026-08-28T03:35:50.425172+00:00",
+    "stderr": "",
+    "stdout": "{\"groups\": 25, \"mark_cases\": 1425, \"nontrivial_kernel_cases\": 1322, \"omitted_thickening_failures\": 381, \"transport_cases\": 2273, \"underlying_false_positives\": 57}\n",
+    "wall_timeout_seconds": 200
+  },
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research18/.venv/bin/python3",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research18/cases/AIM-ALGEBRAIC_GEOMETRY-0167/cycles/20260828T033500Z-fixed-point-detection-audit/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research18/cases/AIM-ALGEBRAIC_GEOMETRY-0167/cycles/20260828T033500Z-fixed-point-detection-audit/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research18/cases/AIM-ALGEBRAIC_GEOMETRY-0167/cycles/20260828T033500Z-fixed-point-detection-audit/experiments/verify-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research18/cases/AIM-ALGEBRAIC_GEOMETRY-0167/cycles/20260828T033500Z-fixed-point-detection-audit/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T03:35:50.750998+00:00",
+    "input_sha256": "25c5f1c60e8db040fda00ff1105cb9e1af9c22d7ae16dce52f948a2480813c5b",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "verify",
+    "output_sha256": "ed7155166625df59e7df01cb5d622268fba3d7370e301999b940a22b529a8bd1",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "398c44f1ba066242c617b2e87dc5bbcb6fc11d90a49a815a020040b33394a76b",
+    "started_at": "2026-08-28T03:35:50.518634+00:00",
+    "stderr": "",
+    "stdout": "{\"groups\": 25, \"mark_cases\": 1425, \"nontrivial_kernel_cases\": 1322, \"omitted_thickening_failures\": 381, \"transport_cases\": 2273, \"underlying_false_positives\": 57}\n",
+    "wall_timeout_seconds": 200
+  }
+]

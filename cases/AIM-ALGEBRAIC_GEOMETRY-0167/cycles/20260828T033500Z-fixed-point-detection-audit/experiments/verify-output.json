@@ -1,0 +1,70 @@
+{
+  "certificate_matches": true,
+  "controls": {
+    "counterexample_marks": [
+      1,
+      3
+    ],
+    "finite_free_orbit_marks": [
+      2,
+      0
+    ],
+    "identity_marks": [
+      1,
+      1
+    ],
+    "negative_unit_marks": [
+      -1,
+      -1
+    ],
+    "nonnormal_generated_size": 6,
+    "nonnormal_product_size": 4,
+    "top_test_only_marks": [
+      0,
+      2
+    ],
+    "zero_marks": [
+      0,
+      0
+    ]
+  },
+  "corruptions": [
+    {
+      "control": 1,
+      "rejected": true
+    },
+    {
+      "control": 2,
+      "rejected": true
+    },
+    {
+      "control": 3,
+      "rejected": true
+    },
+    {
+      "control": 4,
+      "rejected": true
+    },
+    {
+      "control": 5,
+      "rejected": true
+    },
+    {
+      "control": 6,
+      "rejected": true
+    },
+    {
+      "control": 7,
+      "rejected": true
+    }
+  ],
+  "reconstructed_sha256": "2a71886a09cf40f67c6baa803de995348c73f7478e27d6805670ba5529bd2787",
+  "summary": {
+    "groups": 25,
+    "mark_cases": 1425,
+    "nontrivial_kernel_cases": 1322,
+    "omitted_thickening_failures": 381,
+    "transport_cases": 2273,
+    "underlying_false_positives": 57
+  }
+}
