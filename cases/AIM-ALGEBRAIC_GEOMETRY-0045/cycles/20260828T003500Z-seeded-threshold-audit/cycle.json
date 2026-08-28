@@ -1,0 +1,279 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T003500Z-seeded-threshold-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0045",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0045",
+    "title": "Seed-preserving explicit bounds for unirational hypersurfaces",
+    "statement": "Problem 1\n\nFind more integers $d$ and $n$ such that a general hypersurface of degree $d$ in $\\mathbb P^n_{\\mathbb C}$ is unirational.\nSimilarly,\nfind more integers $d$ and $n$ such that every smooth hypersurface of degree $d$ in $\\mathbb P^n_{\\mathbb C}$ is unirational.",
+    "statement_sha256": "46ad63fd8c2df7b9c6cc6190cb97973f3ff7f5fa3b65acf339a3fabfe8557f8b",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T00:32:59.594065Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/rationalityag/1/",
+      "https://arxiv.org/pdf/1903.02481v2"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 15, score 73.5; highest-ranked eligible outside cooldown and anti-thrashing gates. PR18 already human-merged; no open automation PR at selection. Ranked, not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-28T00:32:59.594065Z",
+  "completed_at": "2026-08-28T00:36:38.179784Z",
+  "selection_basis": "Rank 15, score 73.5; highest-ranked eligible outside cooldown and anti-thrashing gates. PR18 already human-merged; no open automation PR at selection. Ranked, not provisional.",
+  "theory": {
+    "target": "Audit exact Beheshti-Riedl recursive thresholds and seed-preserving upper bounds, with integer ceiling certificates; no geometric proof or new unirationality range.",
+    "definitions": [
+      "k_d is the integer sequence with seed k_2=0 and the frozen binomial recurrence.",
+      "B_d=C(k_d+d,d) and n_d is the smallest integer n with (k_d+1)(n-k_d)>=B_d.",
+      "A_d=(d-1)(d-1)!/24 for integer d>=5.",
+      "A sufficient geometric threshold is not a necessary threshold."
+    ],
+    "assumptions": [
+      "All arithmetic is exact integer or rational arithmetic.",
+      "k(2)=0 and k(d)=1+2*C(k(d-1)+d-2,d-2)+C(k(d-1)+d-1,d-1).",
+      "n(d)=k(d)+ceil(C(k(d)+d,d)/(k(d)+1)).",
+      "Only the numerical recurrence is reproduced; geometric implication for smooth complex hypersurfaces depends on the published theorem.",
+      "General-hypersurface Cheng bounds are outside this bounded target."
+    ],
+    "approaches_considered": [
+      "Exact binomial recurrence with quotient/remainder ceiling certificates.",
+      "Direct inequality search with rational-product binomials.",
+      "Seed-preserving induction and rational dyadic compression."
+    ],
+    "falsification_targets": [
+      "Floor substitution at a nonintegral quotient.",
+      "Wrong seed or missing recurrence row.",
+      "Rounding down a sufficient log bound.",
+      "Confusing a numerical inequality failure with a non-unirational hypersurface."
+    ],
+    "claims": [
+      {
+        "claim_id": "FINITE",
+        "statement": "Two algorithms agree on seven exact recurrence rows d=2..8, 1111 boundary cases and sixteen exponent comparisons; 351 grid cases reject floor substitution.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An omitted input, recurrence mismatch, incorrect threshold or missing predecessor failure.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CEILING",
+        "statement": "At d=5, k=1021684 and n=9080109248508232805010. Substituting floor yields n-1 and violates the dimension inequality by 204337. This is not a counterexample to unirationality.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "The predecessor satisfies the exact dimension inequality or the displayed deficit is wrong.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "DYADIC",
+        "statement": "Exact integer gaps certify 2^638 < 1021684^32 < 2^639. At d=7 the resulting coarse rounded exponent is 3595 versus the imported 3600. This does not improve the published exact recursive threshold.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A nonpositive gap or incorrect rounding of 639*180/32.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "UNIVERSAL",
+        "statement": "For d>=5, ordinary induction using the published recurrence estimate gives n_d<=1021684^A_d<=2^ceil(639*A_d/32), A_d=(d-1)(d-1)!/24. Universal proof is not independently authored or kernel verified here.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed base, recurrence estimate, ceiling inequality or integer-exponent conversion.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Beheshti-Riedl arXiv:1903.02481v2 Corollary 4.4 states the ceiling recurrence and smooth-hypersurface implication; Lemma 4.5 and Corollary 4.6 supply the estimate and seed. AIM unavailable.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "A mismatched version, recurrence, seed, ceiling or geometric quantifier.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact d=5 predecessor deficit refutes replacing the published ceiling by floor.",
+        "claim_ids": [
+          "CEILING"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "79f6cb645ab262d0c95de16f391b42fe6c82089071eeb6ef5639596542251670",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "830f66500e153cd94815cc630bf11c035b4ffee2a3f7bcb8ce73f66131bc8326",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Exact recurrence and dyadic seed certificates sharpen the specified coarse exponent while preserving the stronger published recursive baseline.",
+        "claim_ids": [
+          "FINITE",
+          "DYADIC"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory.py",
+            "sha256": "2dddfb93cdfd895c8423d6c308c5060bc3412bf19d66c380f5f26bf73b43993c",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "830f66500e153cd94815cc630bf11c035b4ffee2a3f7bcb8ce73f66131bc8326",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "CEILING",
+          "FINITE"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Start with nonintegral, zero-seed and exact-division controls before building tables.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and run before theory.py. Rational-product binomials and direct inequality binary search versus math.comb and quotient/remainder; repeated multiplication/doubling versus pow/bit_length. Fresh Python -I processes, distinct evidence, no shared math imports; reconstruction precedes certificate read. Same-assistant authorship and shared specification, no independent human/model/kernel review.",
+        "result": "351 floor failures among 1111 boundary cases; d=5 deficit 204337.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "fe3c37f8becd91c6a90d662cfe86c43e4da216ee26b470ae88d33baef814cafa",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "41c311c4d53416d4300aa5bf12e5eccc226acab9e00bb94dc76b8467670c9af3",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "88b128948c7a4407a1c7c5a9f35de6ae0b820a937730b9eb0f6343bfe73da391",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE",
+          "DYADIC"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Reconstruct binomials from rational products and thresholds by monotone search; inspect both integer power gaps.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and run before theory.py. Rational-product binomials and direct inequality binary search versus math.comb and quotient/remainder; repeated multiplication/doubling versus pow/bit_length. Fresh Python -I processes, distinct evidence, no shared math imports; reconstruction precedes certificate read. Same-assistant authorship and shared specification, no independent human/model/kernel review.",
+        "result": "Seven recurrence rows, sixteen exponent comparisons and all boundary cases agree; seven mutated tables rejected; replay identical.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "f54ca94fede7eded3713deb5e1375b9197698086783696a47b5d5f26da01a9ae",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "04fc9f054c101d70bdb407fc056fcff5083163b33b0bf53ba049c1da56568f4d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "55e73d2a66138b85b075a5806926e49cddc418a78444bf5d7edbe8e9d5e7af04",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "UNIVERSAL"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Check seed, induction range, integrality and ceiling direction separately from geometric applicability.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and run before theory.py. Rational-product binomials and direct inequality binary search versus math.comb and quotient/remainder; repeated multiplication/doubling versus pow/bit_length. Fresh Python -I processes, distinct evidence, no shared math imports; reconstruction precedes certificate read. Same-assistant authorship and shared specification, no independent human/model/kernel review.",
+        "result": "Universal proof remains UNVERIFIED by independent author/kernel; no geometry reconstructed.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "88b128948c7a4407a1c7c5a9f35de6ae0b820a937730b9eb0f6343bfe73da391",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Read versioned PDF separately from HTML and map recurrence, estimate, seed and quantifiers.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and run before theory.py. Rational-product binomials and direct inequality binary search versus math.comb and quotient/remainder; repeated multiplication/doubling versus pow/bit_length. Fresh Python -I processes, distinct evidence, no shared math imports; reconstruction precedes certificate read. Same-assistant authorship and shared specification, no independent human/model/kernel review.",
+        "result": "Source dependencies located; AIM unavailable; general-hypersurface branch unaudited.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "3fe1609c8b44ffd6b5bbbcdcab80d7cef6f2a49b41299a152d69737a933447c7",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent-method threshold minimality and dyadic gaps reproduce all finite artifacts without theory ceiling code.",
+        "claim_ids": [
+          "FINITE",
+          "CEILING",
+          "DYADIC"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "04fc9f054c101d70bdb407fc056fcff5083163b33b0bf53ba049c1da56568f4d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "88b128948c7a4407a1c7c5a9f35de6ae0b820a937730b9eb0f6343bfe73da391",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared specification; no independent human/model/kernel review.",
+      "Universal seed propagation is an ordinary argument, not established by finite tests.",
+      "No new parameterization, geometric proof, optimality result or counterexample to unirationality.",
+      "AIM source unavailable and general-hypersurface Cheng branch unaudited; imported statuses unchanged."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Obtain independently authored review of the arbitrary-degree seed propagation and ceiling argument; keep exact recursive thresholds distinct from weaker closed bounds and geometric optimality."
+}
