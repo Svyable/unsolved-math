@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-28T04:39:24.322889Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-28T05:40:06.512484Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -56,7 +56,7 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 
 | Work order | Queue rank | Problem | Accepted cycles | Latest conclusion | Last progress | Next evidence target |
 |---:|---:|---|---:|---|---|---|
-| 1 | 1 | `AIM-ALGEBRAIC_NUMBER_THEORY-0096 — Rational points, index transport, and the C_1^0 bounda…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T04:38:21.302690Z | `Human-review the historical remark and effectivity gap; rotate to the next eligible ranked candidate without changing i…` |
+| 1 | 1 | `AIM-ALGEBRAIC_NUMBER_THEORY-0096 — Rational points, index transport, and the C_1^0 bounda…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T05:40:06.512484Z | `Obtain independently authored or kernel review of the geometric-integrality and closed-point argument. Any further foll…` |
 | 2 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T05:37:05.354164Z | `Human-review the extraction fragment and corrected theorem dependency; rotate to the next eligible ranked candidate.` |
 | 3 | 3 | `AIM-COMPUTATION-0010 — Certified weak-coupling tubes for structured reachability` | 1 | `FALSIFIED_SUBCLAIM` | 2026-08-27T06:38:32.217608Z | `Retain the reachable counterexample as a regression test; audit a second sparse model with nonzero initial uncertainty…` |
 | 4 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T07:40:11.966317Z | `Retain this exact Fourier/sign/objective certificate as a regression baseline; human-review the source heading before h…` |
@@ -83,7 +83,7 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 1 | `AIM-ALGEBRAIC_NUMBER_THEORY-0096 — Rational points, index transport, and the C_1^0 boundary` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring corollary` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
 | 2 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 3 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 4 | 22 | `AIM-ALGEBRAIC_GEOMETRY-0282 — Upper semicontinuity, uniform Frobenius bounds, and a reduced non-equ…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
