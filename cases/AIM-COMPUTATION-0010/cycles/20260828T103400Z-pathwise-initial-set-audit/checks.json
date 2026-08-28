@@ -1,0 +1,15 @@
+{
+  "checked_date": "2026-08-28",
+  "preflight": "Passed before mathematical subprocesses; selected rank 3 AIM-COMPUTATION-0010. Frozen details in selection.json.",
+  "dataset_validation": "uv run oplab validate: valid; seven artifact hashes, 15458 records, imported-unverified and ranking gates passed.",
+  "prior_packets": "All 23 existing packet manifests verified before new research.",
+  "cycle_validation": "uv run oplab loop validate-cycle: valid, eleven artifact references and both progress lanes.",
+  "provenance": "Pinned source-file SHA-256 and raw-record canonical SHA-256 matched the repository import before snapshot creation.",
+  "reproducibility": "Five mathematical subprocess records have verified source, input and output SHA-256 references. Theory and verification replay unchanged. Separate complete table hashes agree.",
+  "ruff": "uv run ruff check .: all checks passed.",
+  "mypy": "uv run mypy src: success, 22 source files.",
+  "pytest": "uv run pytest: 24 passed.",
+  "limits": "Five of eight mathematical subprocesses used; 180-second CPU and 200-second wall limit per subprocess; packet below 1 MiB.",
+  "seal_order": "This file records pre-seal checks. Canonical manifest must subsequently be built and verified before record-cycle. Publication and CI results are recorded in the PR, outside the sealed packet.",
+  "review_limit": "Same-assistant authorship; process/algorithm independence only. Universal analytic proof lacks independent author or kernel review."
+}
