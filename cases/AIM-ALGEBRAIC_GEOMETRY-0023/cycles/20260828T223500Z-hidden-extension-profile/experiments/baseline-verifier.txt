@@ -1,0 +1,187 @@
+"""Verifier-first: literal digit addition; no block-length or valuation formula."""
+
+import argparse
+import copy
+import hashlib
+import itertools
+import json
+from collections import Counter
+from pathlib import Path
+
+
+def encoded(x):
+    return json.dumps(x, sort_keys=True, separators=(",", ":")).encode()
+
+
+def add(x, y, p, edges):
+    out = []
+    carry = 0
+    for i, (a, b) in enumerate(zip(x, y, strict=True)):
+        carry, digit = divmod(a + b + carry, p)
+        out.append(digit)
+        if i < len(edges):
+            carry *= edges[i]
+    return tuple(out)
+
+
+def multiple(x, k, p, edges):
+    out = (0,) * len(x)
+    for _ in range(k):
+        out = add(out, x, p, edges)
+    return out
+
+
+def order(x, p, edges):
+    out = (0,) * len(x)
+    for k in range(1, p ** len(x) + 1):
+        out = add(out, x, p, edges)
+        if not any(out):
+            return k
+    raise AssertionError("no finite order")
+
+
+def row(p, edges):
+    n = len(edges) + 1
+    hist = Counter()
+    orders = []
+    for x in itertools.product(range(p), repeat=n):
+        k = order(x, p, edges)
+        hist[k] += 1
+        orders.append(k)
+    return dict(
+        p=p,
+        edges=list(edges),
+        cardinality=len(orders),
+        exponent=max(hist),
+        order_histogram={str(k): hist[k] for k in sorted(hist)},
+        ordered_orders_sha256=hashlib.sha256(encoded(orders)).hexdigest(),
+    )
+
+
+def inspect_certificate(c):
+    p, edges = c["p"], c["edges"]
+    n = len(edges) + 1
+    moduli, matrix = c["moduli"], c["matrix"]
+    assert len(matrix) == len(moduli)
+    assert all(len(r) == n for r in matrix)
+    vertices = list(itertools.product(range(p), repeat=n))
+
+    def image(x):
+        return tuple(
+            sum(a * b for a, b in zip(r, x, strict=True)) % m
+            for r, m in zip(matrix, moduli, strict=True)
+        )
+
+    images = {image(x) for x in vertices}
+    assert images == set(itertools.product(*(range(m) for m in moduli)))
+    checks = 0
+    for x in vertices:
+        for i in range(n):
+            y = tuple(int(j == i) for j in range(n))
+            assert image(add(x, y, p, edges)) == tuple(
+                (a + b) % m for a, b, m in zip(image(x), image(y), moduli, strict=True)
+            )
+            checks += 1
+    witness = tuple(c["witness"])
+    assert len(witness) == n and witness in vertices
+    assert order(witness, p, edges) == c["exponent"]
+    assert list(multiple(witness, c["exponent"] // p, p, edges)) == c["nonzero_multiple"]
+    assert any(c["nonzero_multiple"])
+    assert not any(multiple(witness, c["exponent"], p, edges))
+    assert all(c["exponent"] % order(x, p, edges) == 0 for x in vertices)
+    return checks
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("input")
+    ap.add_argument("output")
+    ap.add_argument("--certificate")
+    args = ap.parse_args()
+    spec = json.loads(Path(args.input).read_text())
+    # Counterexample / edge-case search before census or proposal reading.
+    boundary = [row(2, e) for e in [[], [0], [1], [1, 1, 0], [1, 0, 1]]]
+    rows = [
+        row(p, e)
+        for p, top in spec["domains"]
+        for n in range(1, top + 1)
+        for e in itertools.product([0, 1], repeat=n - 1)
+    ]
+    summary = dict(
+        groups=len(rows),
+        elements=sum(r["cardinality"] for r in rows),
+        rows_sha256=hashlib.sha256(encoded(rows)).hexdigest(),
+    )
+    # Exhaustive associativity and quotient compatibility in a separate small domain.
+    triples = pairs = 0
+    for n in range(1, 4):
+        for edges in itertools.product([0, 1], repeat=n - 1):
+            vs = list(itertools.product(range(2), repeat=n))
+            for x, y in itertools.product(vs, repeat=2):
+                xy = add(x, y, 2, edges)
+                assert xy == add(y, x, 2, edges)
+                if n > 1:
+                    assert xy[:-1] == add(x[:-1], y[:-1], 2, edges[:-1])
+                pairs += 1
+                for z in vs:
+                    assert add(xy, z, 2, edges) == add(x, add(y, z, 2, edges), 2, edges)
+                    triples += 1
+            for i in range(n + 1):
+                assert sum(not any(x[:i]) for x in vs) == 2 ** (n - i)
+    out = dict(
+        boundary=boundary,
+        rows=rows,
+        summary=summary,
+        associativity_triples=triples,
+        commutativity_transition_pairs=pairs,
+    )
+    if args.certificate:
+        proposal = json.loads(Path(args.certificate).read_text())
+
+        def validate(q):
+            assert q["summary"] == summary and q["rows"] == rows
+            assert [(c["p"], c["edges"]) for c in q["certificates"]] == [
+                (p, e) for p, e in spec["certificates"]
+            ]
+            return sum(inspect_certificate(c) for c in q["certificates"])
+
+        out["generator_homomorphism_checks"] = validate(proposal)
+        out["certificates_checked"] = len(proposal["certificates"])
+        rejected = []
+        for label in [
+            "wrong_exponent",
+            "erased_survivor",
+            "wrong_matrix",
+            "wrong_modulus",
+            "missing_row",
+            "wrong_order_count",
+            "missing_certificate",
+        ]:
+            bad = copy.deepcopy(proposal)
+            if label == "wrong_exponent":
+                bad["certificates"][0]["exponent"] //= 2
+            elif label == "erased_survivor":
+                bad["certificates"][0]["nonzero_multiple"] = [0] * 4
+            elif label == "wrong_matrix":
+                bad["certificates"][0]["matrix"][0][0] = 0
+            elif label == "wrong_modulus":
+                bad["certificates"][0]["moduli"][0] //= 2
+            elif label == "missing_row":
+                bad["rows"].pop()
+            elif label == "wrong_order_count":
+                bad["rows"][0]["order_histogram"]["1"] += 1
+            else:
+                bad["certificates"].pop()
+            try:
+                validate(bad)
+            except AssertionError:
+                rejected.append(label)
+            else:
+                raise AssertionError("accepted corruption: " + label)
+        out["corruptions_rejected"] = rejected
+    Path(args.output).write_text(json.dumps(out, sort_keys=True, indent=2) + "\n")
+    print(json.dumps({k: v for k, v in out.items() if k not in {"rows", "boundary"}}))
+
+
+if __name__ == "__main__":
+    main()

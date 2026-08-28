@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/scratch/1faac0a7d2ae/research30/.venv/bin/python",
+    "-I",
+    "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/verify.py",
+    "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/input.json",
+    "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/verify-output.json",
+    "--certificate",
+    "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/theory-output.json"
+  ],
+  "exit_code": 1,
+  "finished_at": "2026-08-28T22:38:01.735386+00:00",
+  "input_sha256": "2719e11264af9026afe229ed9d6c06ae50e3a3b13f080f80b782ee04de4a17d2",
+  "source_sha256": "32c448066419f86bd72aa9f340f4ef826920f9e8db6b456a8b1af79d63411641",
+  "started_at": "2026-08-28T22:38:00.947488+00:00",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/verify.py\", line 187, in <module>\n    main()\n  File \"/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/verify.py\", line 180, in main\n    raise AssertionError(\"accepted corruption: \" + label)\nAssertionError: accepted corruption: wrong_modulus\n",
+  "stdout": ""
+}

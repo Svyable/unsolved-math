@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-28T21:36:40.327460Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-28T22:42:06.618065Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -68,7 +68,7 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 10 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual reso…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T19:39:56.726841Z | `Retain the sharp finite-degree test and Euler-cancellation basis certificates for this based Koszul family. Seek indepe…` |
 | 11 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T20:39:41.079055Z | `Retain the equal-dimension Ext1 basis certificates and odd-characteristic tensor-sign counterexample. Seek independentl…` |
 | 12 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T21:36:40.327460Z | `Retain the twisted-surface Euler/base-window counterexamples and canonical non-boundary certificates. Obtain human revi…` |
-| 13 | 13 | `AIM-ALGEBRAIC_GEOMETRY-0023 — Tate-completion obstruction and finite torsion windows for…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T22:33:01.348004Z | `Obtain independently authored review of the uniform-annihilator argument and an explicit spectral tower/comparison theo…` |
+| 13 | 13 | `AIM-ALGEBRAIC_GEOMETRY-0023 — Tate-completion obstruction and finite torsion windows for…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T22:42:06.618065Z | `Retain the rearranged-carry counterexample and repaired injective isomorphism certificates. Obtain independently author…` |
 | 14 | 14 | `AIM-ALGEBRAIC_GEOMETRY-0035 — Odd-primary Wood filtrations and a chromatic lower bound` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T23:37:46.983414Z | `Obtain independently authored review of the residual regularity criterion and an actual Morava K-action with a justifie…` |
 | 15 | 15 | `AIM-ALGEBRAIC_GEOMETRY-0045 — Seed-preserving explicit bounds for unirational hypersurfac…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T00:36:38.179784Z | `Obtain independently authored review of the arbitrary-degree seed propagation and ceiling argument; keep exact recursiv…` |
 | 16 | 16 | `AIM-ALGEBRAIC_GEOMETRY-0051 — An explicit Frobenius bound for triple products of elliptic…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T01:40:01.839514Z | `Obtain a primary proof of the claimed transfer to unramified cohomology, with explicit integral saturation and divisibl…` |
