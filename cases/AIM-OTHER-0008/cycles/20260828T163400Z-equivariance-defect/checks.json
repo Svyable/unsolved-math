@@ -1,0 +1,21 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 ranked entries",
+  "diagnostics": [
+    "Initial snapshot construction rejected raw HTTP source URL; corrected to freshly accessed HTTPS path and recorded original URL.",
+    "One local read used an incorrect relative scratch-script path; corrected without research changes.",
+    "Two patch-construction calls failed before file creation; verifier source was linted before any mathematical execution."
+  ],
+  "execution_records_verified": 5,
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 5,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "preflight": "READY; ranked AIM-OTHER-0008",
+  "prior_manifests_verified": 27,
+  "publication_checks": "After sealing; see PR and CI.",
+  "quality": {
+    "mypy": "passed",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  }
+}

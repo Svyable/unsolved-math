@@ -25,3 +25,4 @@
 {"completed_at":"2026-08-28T11:35:15.782245Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T112900Z-algebraic-cutoff-audit","material_progress":true,"problem_id":"AIM-GEOMETRY-0085"}
 {"completed_at":"2026-08-28T12:38:09.776607Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T123300Z-monodromy-period-audit","material_progress":true,"problem_id":"AIM-GEOMETRY-0233"}
 {"completed_at":"2026-08-28T13:44:57.510306Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T134000Z-nonconvex-containment","material_progress":true,"problem_id":"AIM-GEOMETRY-0237"}
+{"completed_at":"2026-08-28T16:39:33.404786Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T163400Z-equivariance-defect","material_progress":true,"problem_id":"AIM-OTHER-0008"}

@@ -1,0 +1,1 @@
+{"diagnostic":"Initial snapshot validation rejected the raw HTTP URL before any packet snapshot was written.","https_url":"https://aimath.org/pastworkshops/dac_preworkshop.pdf","raw_source_url":"http://aimath.org/pastworkshops/dac_preworkshop.pdf","reason":"Schema requires HTTPS; the same primary path was freshly opened successfully via HTTPS. Statement bytes unchanged."}
