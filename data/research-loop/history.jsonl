@@ -22,3 +22,4 @@
 {"completed_at":"2026-08-28T05:40:06.512484Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T053400Z-integral-effectivity-audit","material_progress":true,"problem_id":"AIM-ALGEBRAIC_NUMBER_THEORY-0096"}
 {"completed_at":"2026-08-28T09:37:54.403455Z","conclusion":"FALSIFIED_SUBCLAIM","cycle_id":"20260828T093500Z-fill-edge-obstruction","material_progress":true,"problem_id":"AIM-COMBINATORICS-0279"}
 {"completed_at":"2026-08-28T10:38:45.763264Z","conclusion":"FALSIFIED_SUBCLAIM","cycle_id":"20260828T103400Z-pathwise-initial-set-audit","material_progress":true,"problem_id":"AIM-COMPUTATION-0010"}
+{"completed_at":"2026-08-28T11:35:15.782245Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T112900Z-algebraic-cutoff-audit","material_progress":true,"problem_id":"AIM-GEOMETRY-0085"}

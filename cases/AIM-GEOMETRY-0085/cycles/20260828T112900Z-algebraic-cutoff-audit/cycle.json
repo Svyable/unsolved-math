@@ -1,0 +1,252 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T112900Z-algebraic-cutoff-audit",
+  "problem_id": "AIM-GEOMETRY-0085",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-GEOMETRY-0085",
+    "title": "Finite exact certification of numerical Cohn--Elkies bounds",
+    "statement": "Numerical LP bounds in high dimensions.",
+    "statement_sha256": "e453c11c78f8c738aab8f61e932b693ed00e838e81ec89a0d50c5520e15a5a77",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T11:29:27.427260Z",
+    "source_urls": [
+      "https://aimpl.org/discreteaf/1/",
+      "https://arxiv.org/pdf/math/0110009v3",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 4, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 3 remain cooling down. Keep the prior cubic and dimension fixed, replacing the sufficient quarter-grid cutoff with an exact algebraic admissibility characterization and directed rounding certificate. No higher-degree or broader-dimensional work pending human scope review.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T073500Z-gaussian-certificate",
+  "started_at": "2026-08-28T11:29:27.427260Z",
+  "completed_at": "2026-08-28T11:35:15.782245Z",
+  "selection_basis": "Rank 4, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 3 remain cooling down. Keep the prior cubic and dimension fixed, replacing the sufficient quarter-grid cutoff with an exact algebraic admissibility characterization and directed rounding certificate. No higher-degree or broader-dimensional work pending human scope review.",
+  "theory": {
+    "target": "For the frozen dimension-24 cubic auxiliary function, characterize the exact admissible cutoff set and certify outward dyadic cutoff/objective rounding; distinguish invalid downward/nearest rounding from a valid improvement of the prior cutoff 15.",
+    "definitions": [
+      "P(u)=225+13u+13u^2-u^3 and Q(u)=(u-15)^2(u+1), u=pi*|x|^2, n=24; both origins equal 225.",
+      "A positive real cutoff T is admissible exactly when every real u>=T has P(u)<=0.",
+      "Alpha denotes the unique positive root of P; equality at the tail endpoint is allowed.",
+      "B(T)=T^12/(4^12*12!) is the covered-volume bound from this fixed function, conditional on the published packing theorem.",
+      "Dyadic precision b ranges from 1 through 32; the upward endpoint is the least k/2^b strictly above alpha, the downward endpoint is one step below.",
+      "The objective interval encloses the optimum for this fixed function only, and its lower endpoint is not a lower bound on packing density."
+    ],
+    "assumptions": [
+      "Only the prior fixed cubic P and Q and dimension 24; no optimization over polynomial coefficients.",
+      "u=pi*|x|^2; f=P(u)exp(-u); Fourier convention exp(2*pi*i*<x,y>).",
+      "Cutoff T is a positive real number in u units, not Euclidean radius; f<=0 for all u>=T is required.",
+      "The density objective is B(T)=T^12/(4^12*12!), because P(0)=Q(0)=225; lower bounds on B for this fixed function are not packing-density lower bounds.",
+      "Exact rational arithmetic, no floating-point proof or assumed tolerance.",
+      "The source heading is unchanged and needs human scope review; no parent-solution, novelty, higher-degree or broader-dimensional claim."
+    ],
+    "approaches_considered": [
+      "Retain the sufficient cutoff 15 and substitute a nearest-rounded numerical last root: the substitution is falsified by a positive endpoint.",
+      "Replace the sufficient grid restriction by an algebraic admissibility characterization, exact sign bisection and upward cutoff/objective propagation.",
+      "Independently reconstruct root isolation with generic Sturm variations and Fourier transforms with radial differentiation."
+    ],
+    "falsification_targets": [
+      "Nearest rounding of a root preserves a global tail inequality.",
+      "Opposite endpoint signs alone establish uniqueness of a positive root.",
+      "A lower endpoint for the fixed-function objective is a packing-density lower bound."
+    ],
+    "claims": [
+      {
+        "claim_id": "CUTOFF",
+        "statement": "For the fixed cubic P, the admissible real cutoffs are exactly [alpha,infinity), where alpha is its unique positive root in (14,15). B(alpha) is optimal only for this fixed auxiliary function. Ordinary proof given; not independently authored/kernel accepted.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "An extra positive root, failure of positivity below alpha, or a gap in monotonicity/endpoint reasoning.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "ROUNDING",
+        "statement": "Rounding the final positive root to the nearest dyadic cutoff always preserves the required tail sign.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "At three bits nearest T=119/8 has P(T)=1793/512>0.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CERTIFICATE",
+        "statement": "The 32-bit interval (63944510808/4294967296,63944510809/4294967296) contains the unique positive root. Its upper endpoint U gives exact B(U)=U^12/(4^12*12!), with ratio to the previous B(15) below 183/200.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A different root count, nonnegative P(U), incorrect Fourier pair or objective, or failed exact ratio comparison.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "EXPERIMENT",
+        "statement": "Both algorithms agree on all 32 directed-rounding rows; all lower cutoffs and 15 nearest cutoffs fail. Seven altered certificates are rejected.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A table mismatch, omitted bit depth or accepted invalid control.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Cohn--Elkies v3 Theorem 3.2 uses equal positive origins and non-strict sign conditions; its center-density bound needs the unit-ball factor for covered volume.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Incorrect version, locator, normalization or theorem assumptions.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "EQUIVALENT_REFORMULATION",
+        "summary": "Replace the sufficient quarter-grid cutoff with the exact fixed-cubic admissible set [alpha,infinity), supported by an exact root enclosure and tighter certified bound.",
+        "claim_ids": [
+          "CUTOFF",
+          "CERTIFICATE"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "93d657a9de11d9017a4293ef47a3c3bcab06f28b3b4fbba6fe7ab87b8a65c699",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "31c0db6dc1a2278a15920c0c366980e699d619255217fb15697fbf6db3464e5f",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Nearest dyadic cutoff 119/8 violates the required tail sign by the exact positive value 1793/512.",
+        "claim_ids": [
+          "ROUNDING",
+          "EXPERIMENT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory-table.json",
+            "sha256": "d2e88262528bf9652227aa0e0fd907c233553dab5968b161ec7612e5ac50a897",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/theory.py",
+            "sha256": "4c869bc29f57931c83119a067c59249a40fc8bf89b2a63df8e2568eb8dd21e7c",
+            "media_type": "text/x-python"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "CUTOFF",
+          "ROUNDING",
+          "CERTIFICATE",
+          "EXPERIMENT"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Check endpoint signs, an extra-root control, a double-root control and dyadic rounding before accepting the proposed certificate.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline run before theory.py. Fresh Python -I process with empty environment reconstructs before certificate read; Euclidean Sturm root counts and radial-Laplacian transforms differ from monotone Horner bisection and Laguerre coefficients. Same assistant/shared frozen specification; not independent human/model or kernel review.",
+        "result": "The actual cubic has one positive root; three-bit nearest rounding fails, as do 15 of 32 nearest choices.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "22fb190f4969be1f1a7cefcbceb40e9482217ca25f829fcd7aca4292eb090a9c",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "529bd4a512fab4746d9c64fa5a9bfb732ad17384443a88f899f89da5678b59e6",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "8073b690763652d3af855b7eb72b852447d41248c187713921aeda955002b123",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "CUTOFF",
+          "ROUNDING",
+          "CERTIFICATE",
+          "EXPERIMENT"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Generic Euclidean Sturm chains isolate the root at all 32 precisions; radial differentiation checks the fixed Fourier pair; semantic validation checks the bracket/objective and seven corruptions.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline run before theory.py. Fresh Python -I process with empty environment reconstructs before certificate read; Euclidean Sturm root counts and radial-Laplacian transforms differ from monotone Horner bisection and Laguerre coefficients. Same assistant/shared frozen specification; not independent human/model or kernel review.",
+        "result": "All table entries and exact objective bounds agree; authentic certificate accepted, seven targeted corruptions rejected, deterministic replay.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "254594d4f2fa602c5b699d656ac0d193a94b076d0bf74afce4577f1c67a31e36",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "3091dafda2dec75b5a4b3dae144db75879a8e8c785bb8f14f094b1091f9f7c35",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-table.json",
+            "sha256": "d2e88262528bf9652227aa0e0fd907c233553dab5968b161ec7612e5ac50a897",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "e22b16276d14788311a52d881f3ca5a6d3579fb4240e8df84ee7974c0cadee85",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROGRESS",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Distinct root-count and transform methods confirm the algebraic interval and directed rounding certificate, including concrete rejection of invalid near-root cutoffs.",
+        "claim_ids": [
+          "ROUNDING",
+          "CERTIFICATE",
+          "EXPERIMENT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "3091dafda2dec75b5a4b3dae144db75879a8e8c785bb8f14f094b1091f9f7c35",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "8073b690763652d3af855b7eb72b852447d41248c187713921aeda955002b123",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship/shared specification; no independent human/model or kernel proof review.",
+      "The all-real analytic characterization and Sturm/Fourier/packing dependencies remain ordinary mathematics requiring independent review.",
+      "AIM source unavailable; canonical heading needs human scope review and is not silently expanded.",
+      "Only one previously fixed cubic in dimension 24; no higher-degree or broader-dimensional optimization, new best bound or parent solution.",
+      "The objective lower endpoint is not a packing-density lower bound; imported mathematical status remains unchanged."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the exact algebraic cutoff and directed-rounding regression certificate. Obtain independent proof and human source-scope review before changing polynomial degree or dimension; more precision for this same root is not material progress. Rotate to the next eligible problem."
+}
