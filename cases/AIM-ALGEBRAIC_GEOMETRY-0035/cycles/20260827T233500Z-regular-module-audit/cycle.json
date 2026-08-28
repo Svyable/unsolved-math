@@ -1,0 +1,277 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260827T233500Z-regular-module-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0035",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0035",
+    "title": "Odd-primary Wood filtrations and a chromatic lower bound",
+    "statement": "Odd primary analog of Wood cofibre sequences\n\nThe Wood cofibre sequence is the cofibre sequence $\\Sigma \\mathrm{KO} \\xrightarrow{\\eta} \\mathrm{KO} \\to \\mathrm{KU}$ (and similarly for the connective versions). There is also a version relating $\\mathrm{BP}_{\\mathbb{R}}\\langle n \\rangle^{C_2}$ to $\\mathrm{BP}_{\\mathbb{R}}\\langle n \\rangle$.\n\nWhat are odd primary analogs of the Wood cofibre sequence? For example, one might expect a $p$-stage filtration on $E_{p-1}$ with associated graded $E_{p-1}^{hC_p}$. Is there an analog for $E_{(p-1)p^{n-1}m}$?",
+    "statement_sha256": "80d839bd1f5b5c2f42768e1a20814e82c9cc4d6bacf98aceab6b09f879bf1ed7",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-27T23:32:44.685831Z",
+    "source_urls": [
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json",
+      "https://aimpl.org/equivstable/3/",
+      "https://arxiv.org/html/2402.17519v1"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 14, score 73.5; highest-ranked eligible after pending PR17 history, cooldown and anti-thrashing gates. Ranked queue, not provisional.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-27T23:32:44.685831Z",
+  "completed_at": "2026-08-27T23:37:46.983414Z",
+  "selection_basis": "Rank 14, score 73.5; highest-ranked eligible after pending PR17 history, cooldown and anti-thrashing gates. Ranked queue, not provisional.",
+  "theory": {
+    "target": "Certify the dimension-qualified regular-module criterion for residual cyclic p-group actions and expose failures when dimension or exponent checks are weakened; no topological realization.",
+    "definitions": [
+      "k has characteristic p; q=p^n with n positive.",
+      "g^q=I and N=g-I, hence N^q=0.",
+      "Rank-one regular means isomorphic to k[C_q], of dimension exactly q.",
+      "An orbit certificate is a basis v,g v,...,g^(q-1) v cyclically permuted by g."
+    ],
+    "assumptions": [
+      "The field has characteristic p and q is a power of p.",
+      "g is a linear action with g^q=I; N=g-I.",
+      "Rank-one regular means isomorphic to k[C_q], hence dimension exactly q.",
+      "Residual representation certificates do not imply spectral realization, descent or Wood filtrations."
+    ],
+    "approaches_considered": [
+      "Nilpotent top powers and the cyclic-vector independence argument.",
+      "Direct action orbits and modular elimination.",
+      "Weakened dimension or exponent tests, rejected by explicit block controls."
+    ],
+    "falsification_targets": [
+      "A valid dimension-q action violating the top-power criterion.",
+      "A nonzero top power outside dimension q falsely accepted as rank-one regular.",
+      "A weakened exponent falsely certifying regularity.",
+      "Failure of a stored orbit-basis identity."
+    ],
+    "claims": [
+      {
+        "claim_id": "FINITE",
+        "statement": "The exhaustive F2 dimension-2 and F3 dimension-3 census comprises 19699 matrices, 733 valid cyclic actions and 627 rank-one regular certificates; two methods agree, including nine specified block controls.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing matrix, invalid action, rank mismatch or failed cyclic orbit-basis identity.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "DIMENSION",
+        "statement": "The weakened dimension-free implication N^(q-1) != 0 implies rank-one regularity is false: over F3, N=J3 plus J1 has dimension 4 and nonzero square. This does not refute the dimension-qualified imported claim.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "The displayed action fails g^3=I, has zero N-square, or actually has dimension 3.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "EXPONENT",
+        "statement": "Replacing the top-power test by N^(q-2) != 0 fails: over F3, J2 plus J1 has dimension 3, nonzero N and zero N-square, with no regular orbit basis.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An orbit vector spanning dimension 3, or an incorrect stated power.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CRITERION",
+        "statement": "For a characteristic-p field, q=p^n, g^q=I and dimension exactly q, the ordinary cyclic-vector proof gives rank-one regularity iff (g-I)^(q-1) != 0. Universal proof remains unverified by independent author or kernel.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Failure of the least-index independence argument, binomial basis change or a counterexample satisfying all hypotheses.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Carrick arXiv:2402.17519v1 Corollary 6.9 states the higher Real K-theory chromatic defect formula. Definitions 2.22 and 2.29 distinguish the p-local index and Wood type. No spectral realization follows from our matrix census.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong source version or omitted hypotheses in the recorded limited background claims.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Exact J3 plus J1 and J2 plus J1 controls refute two weakened regularity shortcuts without refuting the qualified parent claim.",
+        "claim_ids": [
+          "DIMENSION",
+          "EXPONENT"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "7d8b4414cb4dbf0ec4d9b41371c9a924880ef0f5c4422cec88d855bddbc74fd2",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "f2545fc007dd078c550d4d594e502cb64c79880eb84f3275cc4f6c5aefc20030",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Complete two-domain matrix census with explicit regular orbit bases and nine block controls.",
+        "claim_ids": [
+          "FINITE"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory.py",
+            "sha256": "fdc824d6d35ecec6012ffb963eb8877975aa809b7cababab4daaa92288713484",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "f2545fc007dd078c550d4d594e502cb64c79880eb84f3275cc4f6c5aefc20030",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "DIMENSION",
+          "EXPONENT"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Before theory implementation, inspect dimension/exponent counterexamples, zero and invalid scalar actions.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and executed before theory.py; fresh Python -I processes and distinct evidence. Direct g-orbit iteration and modular column elimination versus N matrix powers and binomial basis construction. Reconstruction precedes certificate read; no shared mathematical code. Same-assistant authorship and shared input specification; no independent human/model/kernel review.",
+        "result": "All boundary controls distinguish the weakened tests from the qualified criterion.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "13f7801fcedb548ddddb3d18e0ba48e2aec0d6dadd7ae4254b3862639e4c4e1d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "bb55ca004f26a4ffa559c0e9d85307c03534c04bc30f0d32195a302115432dd2",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "f9f4553678b93e91185cae4d817cdae261a19ca5b903220b874749126963f04a",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Iterate action orbits, compute column ranks and finite differences, reconstruct full tables before reading theory output.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and executed before theory.py; fresh Python -I processes and distinct evidence. Direct g-orbit iteration and modular column elimination versus N matrix powers and binomial basis construction. Reconstruction precedes certificate read; no shared mathematical code. Same-assistant authorship and shared input specification; no independent human/model/kernel review.",
+        "result": "19699 matrices, 733 valid actions, 627 regular bases and nine controls agree; seven altered outputs rejected; replay byte-identical.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "496974cb6ee3fec8731d032ea31343be757dc6a73498d58d4d70321184847e67",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "817ac8d7c42e60dff2e976d790b31f0ccd72a57a1c208d5a703ba13e1c86f911",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "d7fc3140f6fa4afd89ae3381e9cdf1923b8b37a608fa84a25cf3347acd8155e8",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "CRITERION"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Check characteristic, group order, dimension and least-index argument separately; audit missing spectral realization bridge.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and executed before theory.py; fresh Python -I processes and distinct evidence. Direct g-orbit iteration and modular column elimination versus N matrix powers and binomial basis construction. Reconstruction precedes certificate read; no shared mathematical code. Same-assistant authorship and shared input specification; no independent human/model/kernel review.",
+        "result": "Ordinary universal proof recorded but not independently authored or kernel verified; finite checks do not imply realization.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "f9f4553678b93e91185cae4d817cdae261a19ca5b903220b874749126963f04a",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Inspect versioned PDF separately from HTML and theory ledger; compare definition numbers and defect versus index.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline authored and executed before theory.py; fresh Python -I processes and distinct evidence. Direct g-orbit iteration and modular column elimination versus N matrix powers and binomial basis construction. Reconstruction precedes certificate read; no shared mathematical code. Same-assistant authorship and shared input specification; no independent human/model/kernel review.",
+        "result": "Limited Carrick source claims located; AIM unavailable; no imported realization or descent theorem verified.",
+        "reproduction_command": null,
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "08f91497607ea9fd7feb7bf5fd35c9fba7e9dffda71f421090cf701275aec0e6",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "V1",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Direct orbit reconstruction verifies every finite certificate and rejects seven corruptions without using theory matrix-power implementation.",
+        "claim_ids": [
+          "FINITE",
+          "DIMENSION",
+          "EXPONENT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "817ac8d7c42e60dff2e976d790b31f0ccd72a57a1c208d5a703ba13e1c86f911",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "f9f4553678b93e91185cae4d817cdae261a19ca5b903220b874749126963f04a",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared specification; no independent human/model/kernel proof review.",
+      "General-field and arbitrary-q proof is ordinary UNVERIFIED reasoning, not established by the finite census.",
+      "No grading, Morava K-cohomology, finite-spectrum realization, descent or filtration attachments checked.",
+      "AIM source unavailable; imported status unchanged; this is linear-algebra calibration, not a new solution."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Obtain independently authored review of the residual regularity criterion and an actual Morava K-action with a justified topological realization before attempting a Wood filtration."
+}
