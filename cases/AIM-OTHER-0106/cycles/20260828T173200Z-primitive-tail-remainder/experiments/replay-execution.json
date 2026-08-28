@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research27/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research27/cases/AIM-OTHER-0106/cycles/20260828T173200Z-primitive-tail-remainder/experiments/theory.py",
+      "/workspace/scratch/1faac0a7d2ae/research27/cases/AIM-OTHER-0106/cycles/20260828T173200Z-primitive-tail-remainder/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research27/cases/AIM-OTHER-0106/cycles/20260828T173200Z-primitive-tail-remainder/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T17:35:25.236605+00:00",
+    "input_sha256": "e4105a3e13951be5a015cd812f93ec13afaff40cae764b4de445715531654b64",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "theory",
+    "output_sha256": "4eef01dc5a670561106926c82edc6df5f9299816c930245adbaf35c2cfdaf87c",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "529328e03f936dc676d90d69cdb23d1031fd077dfa50a5dc06ace6b4aab84fd3",
+    "started_at": "2026-08-28T17:35:25.155449+00:00",
+    "stderr": "",
+    "stdout": "{\"cases\": 21, \"featured\": {\"R\": 4, \"K\": 32, \"area\": \"284968313371778844546722106704309081947931/752789659364709316726334427027022464000000\", \"reduced_area\": \"284968313371778844546722106704309081947931/752789659364709316726334427027022464000000\", \"naive_primitive_area\": \"223978410413989895274912604514619761947931/752789659364709316726334427027022464000000\", \"old_bound\": \"332017667082073176842118008393497985947931/752789659364709316726334427027022464000000\", \"new_remainder\": \"17333/403920\", \"residue_remainder\": \"7210711/175301280\", \"new_bound\": \"317271995204241972361184264120776155547931/752789659364709316726334427027022464000000\"}, \"reduced_centers\": 325, \"merged_intervals\": 297}\n",
+    "wall_timeout_seconds": 200
+  },
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research27/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research27/cases/AIM-OTHER-0106/cycles/20260828T173200Z-primitive-tail-remainder/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research27/cases/AIM-OTHER-0106/cycles/20260828T173200Z-primitive-tail-remainder/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research27/cases/AIM-OTHER-0106/cycles/20260828T173200Z-primitive-tail-remainder/experiments/verify-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research27/cases/AIM-OTHER-0106/cycles/20260828T173200Z-primitive-tail-remainder/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T17:35:29.365843+00:00",
+    "input_sha256": "e4105a3e13951be5a015cd812f93ec13afaff40cae764b4de445715531654b64",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "verify",
+    "output_sha256": "7f6a3f40f986826cca5ab12801e0c847b4b383623e3a89edc34556329d56d355",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "250b6f09e1cc13eff7a1d705c24053f78077d3132e58747bffd864bb6e3b4151",
+    "started_at": "2026-08-28T17:35:25.236774+00:00",
+    "stderr": "",
+    "stdout": "{\"cases\": 21, \"atoms\": 4799, \"featured\": {\"R\": 4, \"K\": 32, \"area\": \"284968313371778844546722106704309081947931/752789659364709316726334427027022464000000\", \"reduced_area\": \"284968313371778844546722106704309081947931/752789659364709316726334427027022464000000\", \"naive_primitive_area\": \"223978410413989895274912604514619761947931/752789659364709316726334427027022464000000\", \"old_bound\": \"332017667082073176842118008393497985947931/752789659364709316726334427027022464000000\", \"new_remainder\": \"17333/403920\", \"residue_remainder\": \"7210711/175301280\", \"new_bound\": \"317271995204241972361184264120776155547931/752789659364709316726334427027022464000000\"}, \"certificate\": true}\n",
+    "wall_timeout_seconds": 200
+  }
+]

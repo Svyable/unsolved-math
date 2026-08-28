@@ -1,0 +1,50 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 ranked entries",
+  "diagnostics": [
+    "Fresh uv sync restored local execution environment before preflight.",
+    "Style findings corrected before corresponding mathematical execution.",
+    "Primary AIM retrieval failed twice; no precise HTTP status supplied."
+  ],
+  "execution_records": [
+    {
+      "log": "baseline-execution.json",
+      "mode": "baseline"
+    },
+    {
+      "log": "theory-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "verify-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "sign-execution.json",
+      "mode": "sign"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "signreplay-execution.json",
+      "mode": "sign"
+    }
+  ],
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 7,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "preflight": "READY; ranked AIM-ALGEBRAIC_GEOMETRY-0019",
+  "prior_manifests_verified": 31,
+  "publication_checks": "After sealing; see PR and CI.",
+  "quality": {
+    "mypy": "passed on 22 source files",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  }
+}

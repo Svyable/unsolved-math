@@ -1,0 +1,42 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 ranked entries",
+  "diagnostics": [
+    "Fresh uv sync restored local execution environment before preflight.",
+    "Snapshot preparation rejected the raw HTTP source URL; explicit HTTPS normalization with failed retrieval disclosed before freezing.",
+    "Style findings corrected before any corresponding mathematical execution."
+  ],
+  "execution_records": [
+    {
+      "log": "baseline-execution.json",
+      "mode": "baseline"
+    },
+    {
+      "log": "theory-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "verify-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "verify"
+    }
+  ],
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 5,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "preflight": "READY; ranked AIM-ALGEBRAIC_GEOMETRY-0013",
+  "prior_manifests_verified": 30,
+  "publication_checks": "After sealing; see PR and CI.",
+  "quality": {
+    "mypy": "passed on 22 source files",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 ranked entries",
+  "diagnostics": [
+    "Initial uv command polling lost network approval; direct environment entrypoints restored execution before research.",
+    "Initial lint findings corrected mechanically; original sources retained and matched to initial logs. Final-source replay outputs unchanged.",
+    "Bare mypy package lookup rejected missing installed py.typed marker; explicit src/oplab check used.",
+    "Several harmless local reads used nonexistent prior source paths or scratch-relative command paths; corrected."
+  ],
+  "execution_records": [
+    {
+      "log": "baseline-execution.json",
+      "matched_source": "experiments/verify-prelint.py.txt",
+      "mode": "baseline"
+    },
+    {
+      "log": "theory-execution.json",
+      "matched_source": "experiments/theory-prelint.py.txt",
+      "mode": "theory"
+    },
+    {
+      "log": "verify-execution.json",
+      "matched_source": "experiments/verify-prelint.py.txt",
+      "mode": "verify"
+    },
+    {
+      "log": "replay-execution.json",
+      "matched_source": "experiments/theory.py",
+      "mode": "theory"
+    },
+    {
+      "log": "replay-execution.json",
+      "matched_source": "experiments/verify.py",
+      "mode": "verify"
+    }
+  ],
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 5,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "preflight": "READY; ranked AIM-OTHER-0106",
+  "prior_manifests_verified": 28,
+  "publication_checks": "After sealing; see PR and CI.",
+  "quality": {
+    "mypy": "passed on src/oplab",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  }
+}

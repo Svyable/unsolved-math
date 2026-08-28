@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research28/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/experiments/theory.py",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T18:34:05.848403+00:00",
+    "input_sha256": "3f4b4e79432718614d7a3623435188e4b193579d6e4494af8d705508decac45b",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "theory",
+    "output_sha256": "ab16e23a442b2a364d6dec927fc55aeba868d957e756d6b45d50e399fa24413e",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "29e89da2fb370f1538fbbebb75cb38c4395fc98dadfd97b2174d149134a6daac",
+    "started_at": "2026-08-28T18:34:05.656574+00:00",
+    "stderr": "",
+    "stdout": "{\"cases\": 1331, \"retaining_cases\": 285, \"target_cases\": 38, \"swap_invariant_cases\": 525, \"reflection_closed_cases\": 1, \"symmetric_targets\": 0, \"reflection_closed_targets\": 0, \"boundaries\": 24, \"arithmetic_controls\": 5, \"table_sha256\": \"48998f1149e502fe4bbed51379455c09823fcab8d1a2a36ed9d94164d913e813\", \"case_stream_sha256\": \"f61150efcdb920a0b17b49967d3d92a7535667d95380b65f9ff810b5083a86bd\", \"sharp_budget\": [\"0\", \"1\"]}\n",
+    "wall_timeout_seconds": 200
+  },
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research28/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/experiments/verify-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research28/cases/AIM-PROBABILITY-0144/cycles/20260828T183000Z-ray-scaling-obstruction/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T18:34:06.213319+00:00",
+    "input_sha256": "3f4b4e79432718614d7a3623435188e4b193579d6e4494af8d705508decac45b",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "verify",
+    "output_sha256": "2d97b47f1787128ec873ab086cb9633e964f4e4754510970ee51af634f0b4cdd",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "79284a18866119d31d21138bd43062a2641944bf5e9cecc4a229d03c1b05495d",
+    "started_at": "2026-08-28T18:34:05.848608+00:00",
+    "stderr": "",
+    "stdout": "{\"cases\": 1331, \"retaining_cases\": 285, \"target_cases\": 38, \"swap_invariant_cases\": 525, \"reflection_closed_cases\": 1, \"symmetric_targets\": 0, \"reflection_closed_targets\": 0, \"boundaries\": 24, \"arithmetic_controls\": 5, \"table_sha256\": \"48998f1149e502fe4bbed51379455c09823fcab8d1a2a36ed9d94164d913e813\", \"case_stream_sha256\": \"f61150efcdb920a0b17b49967d3d92a7535667d95380b65f9ff810b5083a86bd\", \"sharp_budget\": [\"0\", \"1\"]}\n",
+    "wall_timeout_seconds": 200
+  }
+]

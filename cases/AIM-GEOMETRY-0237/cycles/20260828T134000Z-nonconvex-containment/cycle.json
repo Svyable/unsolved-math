@@ -1,0 +1,274 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T134000Z-nonconvex-containment",
+  "problem_id": "AIM-GEOMETRY-0237",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-GEOMETRY-0237",
+    "title": "Flat strips, counting conventions, and a width bound",
+    "statement": "Question 6.1.1. If we assume that the curvature is only C0, then a metric with such a geodesic can be constructed. Each end of the geodesic is asymptotic to a closed geodesic. But a geodesic along which the curvature is zero cannot spiral into a closed geodesic if the curvature is C2; see [Ruggiero1998]. Wu [Wu2013] has recently given a negative answer to the question under the assumption that the subset of the surface where the curvature is negative has finitely many components; he also shows under this hypothesis that only finitely many free homotopy classes can contain zero curvature closed geodesics. 14 KEITH BURNS AND VLADIMIR S. MATVEEV\n\nA flat strip is a totally geodesic isometric immersion of the Riemannian product of R with an interval. Zero curvature geodesics can be viewed as flat strips with infinitesimal width. It is known that all flat strips (with positive width) must close up in the R-direction; in other words they are really immersions of the product of S1 with an interval. Furthermore for each δ > 0 there are only finitely many flat strips with width ≥ δ. Proofs can be found in a preprint of Cao and Xavier [Cao-Xav]. The main idea is that if two flat strips of width δ cross each other at a very shallow angle, then their intersection contains a long rectangle with width close to 2 δ.It is possible that there are only finitely many flat strips. This is true when the set where the curvature is negative has finitely many components [Wu2013], but the only effort to prove it in general [Rodriguez Hertz2003] was unsuccessful.",
+    "statement_sha256": "a854e54d8ae5b36fc9535d6b85c78b3ab027768d9caea6c1f710c0167bf4ef38",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T13:37:10.420408Z",
+    "source_urls": [
+      "https://aimath.org/pastworkshops/geodesicsproblems.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 6, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 5 are cooling down. Remain in the prior local planar strip model. Replace its sufficient rectangle construction by an exact arbitrary-translation axis-aligned containment criterion and a falsifiable height-versus-length frontier; do not infer a surface theorem.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T093200Z-strip-intersection-audit",
+  "started_at": "2026-08-28T13:37:10.420408Z",
+  "completed_at": "2026-08-28T13:44:57.510306Z",
+  "selection_basis": "Rank 6, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 5 are cooling down. Remain in the prior local planar strip model. Replace its sufficient rectangle construction by an exact arbitrary-translation axis-aligned containment criterion and a falsifiable height-versus-length frontier; do not infer a surface theorem.",
+  "theory": {
+    "target": "Falsify corner-plus-center sampling for a nonconvex strip union, and certify an exact all-points containment criterion for arbitrary translated axis-aligned rectangles, including its sharp normalized height-versus-length frontier.",
+    "definitions": [
+      "U is the union of the closed normalized bands |X+Y|<=1 and |Y-X|<=1.",
+      "For all real a<b,c0<d, R=[a,b]x[c0,d]; ell=b-a>0 and H=d-c0>0.",
+      "[p,q] and [r,t] are full absolute-value interval images, including zero when the interval crosses it.",
+      "Physical X=2sx/delta,Y=2cy/delta with delta,c,s>0 and c^2+s^2=1.",
+      "Height is a coordinate dimension; translations are unrestricted, rotations are excluded.",
+      "At ell=4, zero height is a degenerate relaxation and is not an admissible positive rectangle."
+    ],
+    "assumptions": [
+      "Normalized union U={|X+Y|<=1} union {|Y-X|<=1}; rectangles [a,b]x[c,d] have a<b,c<d.",
+      "Physical unit normals are (s,c) and (-s,c), c,s>0 and c^2+s^2=1; X=2*s*x/delta and Y=2*c*y/delta.",
+      "Length ell=b-a and height H=d-c are normalized coordinate dimensions, not necessarily the rectangle shorter-side width.",
+      "All translations but only coordinate-aligned rectangles are allowed; arbitrary rotations are outside this target.",
+      "Boundary equality is allowed because both bands and rectangles are closed. Zero height at ell=4 is degenerate, not a positive rectangle.",
+      "No surface development, immersion, maximal-strip counting, area theorem, novelty or parent-solution claim."
+    ],
+    "approaches_considered": [
+      "Use corners plus center as a convexity-style certificate; rejected by an exact nonconvex-union counterexample.",
+      "Reduce full containment to absolute-coordinate ranges and derive four placement-type upper bounds with attainers.",
+      "Independently maximize common slack over four exterior regions via exact rational LPs and reconstruct frontier case maxima."
+    ],
+    "falsification_targets": [
+      "Membership at four corners and the center suffices.",
+      "The frontier is continuous through ell=2.",
+      "A finite coordinate gauge can be imposed without proof."
+    ],
+    "claims": [
+      {
+        "claim_id": "SAMPLE",
+        "statement": "Corners and center in a union of two strips imply rectangle containment.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "For [-2,2]^2 all five samples pass but (2,0) has violation 1.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CRITERION",
+        "statement": "For every real axis-aligned rectangle, with absolute-coordinate ranges [p,q],[r,t], containment in the normalized strip union is equivalent to q-r<=1 and t-p<=1. Ordinary universal proof, not independently authored or kernel accepted.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed absolute-range identity, missing coordinate combination or disagreement with original strip forms.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FRONTIER",
+        "statement": "The sharp positive-height frontier is 4-2ell for 0<ell<=1, 2 for 1<=ell<=2, and 2-ell/2 for 2<ell<4; no positive rectangle exists for ell>=4. This is normalized axis-aligned height, not arbitrary-rotation width. Ordinary proof awaits independent review.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "An omitted placement type, unjustified centering/gauge restriction, larger feasible rectangle or invalid attainer.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CENSUS",
+        "statement": "Two exact algorithms agree on 1296 rectangles and 19 lengths; 200 rectangles are contained and 266 pass corner-plus-center sampling falsely. Seventeen frontier attainers pass original-form LP checks and seven corruptions are rejected.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An omitted input, differing table entry, false attainer or accepted corruption.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE_SCOPE",
+        "statement": "The canonical statement is commentary following Question 6.2.1; the local normalized union is a model extension, not the source surface theorem.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong primary locator, silently substituted statement or attribution of this frontier to the source.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "The [-2,2]^2 certificate passes all five samples while (2,0) lies outside both bands with violation 1.",
+        "claim_ids": [
+          "SAMPLE",
+          "CENSUS"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "b004534109d8ff1416642465370ee59911c01c99011e4fb31eb7df6f6d0bda4a",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "82c7e7a77819891f6fef04e017765139484f13cac75e2c4298466e765cb0a1ba",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "EQUIVALENT_REFORMULATION",
+        "summary": "Replace the prior sufficient rectangle family by an exact arbitrary-translation axis-aligned containment criterion, with a four-case sharp height frontier and explicit attainers.",
+        "claim_ids": [
+          "CRITERION",
+          "FRONTIER"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "b004534109d8ff1416642465370ee59911c01c99011e4fb31eb7df6f6d0bda4a",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-table.json",
+            "sha256": "72a7910b334cb09992e7097bd5b447074e15351f2b797a1fe04e1b7ea9e35889",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "SAMPLE",
+          "CENSUS"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Before reading certificates, solve the failed-sampling example and four boundary/interior/exterior controls against the original strip forms.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py; isolated fresh Python process with empty environment reconstructs before certificate read. Original-form exterior-region LP vertex enumeration differs from absolute-range formulas. Same assistant, shared input and shared frontier case reduction; no independent human/model or kernel proof review.",
+        "result": "Violation 1 on the failed sampling certificate; closed-boundary, strict-interior and exterior controls all pass.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "b672832b81b856053c932945a1a4417beaac0b764cb1d28665adbedf62a568f5",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "9062bfcf44f65f2663f0b65df82ba0383299e69b74684350153bc722e946cd80",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "08c42e99d3a27c97468c443e656d2e43e9f8ff1bf4fa867842457a5f267ca449",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "CRITERION",
+          "FRONTIER",
+          "CENSUS"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Cramer-rule enumeration of all nonsingular three-constraint LP bases, original-form attainer checks, seven corruptions and deterministic replay.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py; isolated fresh Python process with empty environment reconstructs before certificate read. Original-form exterior-region LP vertex enumeration differs from absolute-range formulas. Same assistant, shared input and shared frontier case reduction; no independent human/model or kernel proof review.",
+        "result": "1296 rectangles and 19 lengths agree, including 5184 exterior and 76 frontier LPs; 17 positive attainers accepted, seven corruptions rejected.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "2f5124a645e6b2f766d57d36de25265d5b384edb5c13237a7cd9d506969c93be",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "6d873939266dcec4e22f8d5bf631ce90dec0f051b6b9773d134d47af80cc7d22",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-table.json",
+            "sha256": "72a7910b334cb09992e7097bd5b447074e15351f2b797a1fe04e1b7ea9e35889",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-frontier.json",
+            "sha256": "35501a7e1e36c3ccf3f7b11f5b1c99ceba11643a3374c80f1d21f5728280d709",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "882e530f57d58b25382131afb7c9316e7167fecaf2e34c4624768b092d624d5f",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "SOURCE_SCOPE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Fresh primary-PDF scope/locator check separate from the theory source note; compare imported extraction with section 6.2 and bibliography.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py; isolated fresh Python process with empty environment reconstructs before certificate read. Original-form exterior-region LP vertex enumeration differs from absolute-range formulas. Same assistant, shared input and shared frontier case reduction; no independent human/model or kernel proof review.",
+        "result": "Scope and attribution checked; source surface proof and geometric realization not verified.",
+        "reproduction_command": "Open primary URL and locators in sources/verification-source-audit.md",
+        "evidence": [
+          {
+            "path": "sources/verification-source-audit.md",
+            "sha256": "293ece158145e63216fff5d3c96da5c8dd608ec38634a1756c5ab155a8edf9d7",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "A separately implemented exact LP checker discriminates sampling from all-points containment and checks the new frontier certificates, including the ell=2 discontinuity and degenerate endpoint.",
+        "claim_ids": [
+          "SAMPLE",
+          "CRITERION",
+          "FRONTIER",
+          "CENSUS"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "6d873939266dcec4e22f8d5bf631ce90dec0f051b6b9773d134d47af80cc7d22",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "08c42e99d3a27c97468c443e656d2e43e9f8ff1bf4fa867842457a5f267ca449",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship, shared specification and shared frontier case reduction; no independent human/model or kernel proof review.",
+      "Universal reduction, case completeness, lossless gauge and LP vertex theorem have ordinary arguments only; finite checks do not prove them.",
+      "Axis-aligned normalized planar model only: no rotated optimum, surface development, maximal-strip counting, area theorem or geometric finiteness verification.",
+      "The imported source is a commentary fragment and requires human scope review before geometric continuation.",
+      "The counterexample refutes only the sampling shortcut; no published surface theorem or parent problem is refuted or solved, and no novelty is claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retire corner-plus-center containment tests; retain the exact criterion and sharp axis-aligned frontier for independent proof review. Human source-scope review and an actual geometric development remain prerequisites for any surface inference. Larger grids alone are not material progress; rotate."
+}

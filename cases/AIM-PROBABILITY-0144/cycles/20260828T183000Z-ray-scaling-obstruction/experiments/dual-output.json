@@ -1,0 +1,25 @@
+{
+  "certificates_checked": [
+    {
+      "bottom": 2,
+      "coordinate_rows_verified": true,
+      "identity": "D-phi",
+      "nonnegative_weights": true,
+      "top": 3
+    },
+    {
+      "bottom": 3,
+      "coordinate_rows_verified": true,
+      "identity": "D-phi",
+      "nonnegative_weights": true,
+      "top": 2
+    }
+  ],
+  "corruptions_rejected": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "scope": "Exact algebraic identities and nonnegative weights; the target-to-two-orientations reduction and original metric assumptions require the stated ordinary proof audit."
+}

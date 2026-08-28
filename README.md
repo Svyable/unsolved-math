@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-28T11:35:15.782245Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-28T20:39:41.079055Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -60,13 +60,13 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 2 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring…` | 2 | `FALSIFIED_SUBCLAIM` | 2026-08-28T09:37:54.403455Z | `Retire width-two/no-fill tree-decomposition shortcuts. Seek human scope review and independently authored verification…` |
 | 3 | 3 | `AIM-COMPUTATION-0010 — Certified weak-coupling tubes for structured reachability` | 2 | `FALSIFIED_SUBCLAIM` | 2026-08-28T10:38:45.763264Z | `Retire deterministic three-sample certification without inter-sample bounds. Seek independently authored proof review b…` |
 | 4 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T11:35:15.782245Z | `Retain the exact algebraic cutoff and directed-rounding regression certificate. Obtain independent proof and human sour…` |
-| 5 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T08:40:33.349993Z | `Retain the cover-count and stabilizer tests; human-review the source fragment and identify an actual uniform simple-lif…` |
-| 6 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 1 | `FALSIFIED_SUBCLAIM` | 2026-08-27T09:39:41.674490Z | `Retain the exact intersection/union regression certificates; human-review the intended local construction and global de…` |
-| 7 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T10:54:16.253032Z | `Retain exact cyclic-factor and weighting regression checks; human-review the source fragment before applying the profil…` |
-| 8 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T11:39:26.302342Z | `Retain the exact tail and dependence certificates; obtain independent review of the integral remainder and human scope…` |
-| 9 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-tri…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T15:33:28.069684Z | `Retain the cone obstruction and minimal abstract-refinement certificates; seek independent proof and human scope review…` |
-| 10 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual reso…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T16:40:21.239955Z | `Seek an independently authored arbitrary-field audit of the Koszul chart; choose a degree window and equivalence relati…` |
-| 11 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T18:36:23.102964Z | `Seek independently authored verification of the arbitrary-degree Ext argument and a precise hypothesis ledger before au…` |
+| 5 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T12:38:09.776607Z | `Retire total-degree-as-local-period shortcuts. Preserve the counterexample, require human scope and independent surface…` |
+| 6 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T13:44:57.510306Z | `Retire corner-plus-center containment tests; retain the exact criterion and sharp axis-aligned frontier for independent…` |
+| 7 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T16:39:33.404786Z | `Retain the finite-self-map assumption reduction and explicit surjectivity-gap certificate. Obtain independently authore…` |
+| 8 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T17:39:25.416368Z | `Retain the low-denominator exception counterexample and fixed-cutoff primitive-tail bound. Obtain independent proof and…` |
+| 9 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-tri…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T18:37:27.565105Z | `Retain the sharp fixed-ray scaling and missing-reflection certificates. Seek independent review of the two-orientation…` |
+| 10 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual reso…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T19:39:56.726841Z | `Retain the sharp finite-degree test and Euler-cancellation basis certificates for this based Koszul family. Seek indepe…` |
+| 11 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T20:39:41.079055Z | `Retain the equal-dimension Ext1 basis certificates and odd-characteristic tensor-sign counterexample. Seek independentl…` |
 | 12 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T19:39:49.495104Z | `Seek independent review of the cohomology-to-mirror variance bridge and precise functor hypotheses before constructing…` |
 | 13 | 13 | `AIM-ALGEBRAIC_GEOMETRY-0023 — Tate-completion obstruction and finite torsion windows for…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T22:33:01.348004Z | `Obtain independently authored review of the uniform-annihilator argument and an explicit spectral tower/comparison theo…` |
 | 14 | 14 | `AIM-ALGEBRAIC_GEOMETRY-0035 — Odd-primary Wood filtrations and a chromatic lower bound` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T23:37:46.983414Z | `Obtain independently authored review of the residual regularity criterion and an actual Morava K-action with a justifie…` |
@@ -83,11 +83,11 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 6 | `AIM-GEOMETRY-0237 — Flat strips, counting conventions, and a width bound` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 3 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 4 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 5 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 3 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 4 | 22 | `AIM-ALGEBRAIC_GEOMETRY-0282 — Upper semicontinuity, uniform Frobenius bounds, and a reduced non-equ…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 5 | 23 | `AIM-ALGEBRAIC_GEOMETRY-0328 — A boundary-frontier sieve for virtually abelian moduli bases` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 
 The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
 <!-- OPLAB:RESEARCH-STACK:END -->

@@ -23,3 +23,10 @@
 {"completed_at":"2026-08-28T09:37:54.403455Z","conclusion":"FALSIFIED_SUBCLAIM","cycle_id":"20260828T093500Z-fill-edge-obstruction","material_progress":true,"problem_id":"AIM-COMBINATORICS-0279"}
 {"completed_at":"2026-08-28T10:38:45.763264Z","conclusion":"FALSIFIED_SUBCLAIM","cycle_id":"20260828T103400Z-pathwise-initial-set-audit","material_progress":true,"problem_id":"AIM-COMPUTATION-0010"}
 {"completed_at":"2026-08-28T11:35:15.782245Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T112900Z-algebraic-cutoff-audit","material_progress":true,"problem_id":"AIM-GEOMETRY-0085"}
+{"completed_at":"2026-08-28T12:38:09.776607Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T123300Z-monodromy-period-audit","material_progress":true,"problem_id":"AIM-GEOMETRY-0233"}
+{"completed_at":"2026-08-28T13:44:57.510306Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T134000Z-nonconvex-containment","material_progress":true,"problem_id":"AIM-GEOMETRY-0237"}
+{"completed_at":"2026-08-28T16:39:33.404786Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T163400Z-equivariance-defect","material_progress":true,"problem_id":"AIM-OTHER-0008"}
+{"completed_at":"2026-08-28T17:39:25.416368Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T173200Z-primitive-tail-remainder","material_progress":true,"problem_id":"AIM-OTHER-0106"}
+{"completed_at":"2026-08-28T18:37:27.565105Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T183000Z-ray-scaling-obstruction","material_progress":true,"problem_id":"AIM-PROBABILITY-0144"}
+{"completed_at":"2026-08-28T19:39:56.726841Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T193500Z-sharp-degree-window","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0013"}
+{"completed_at":"2026-08-28T20:39:41.079055Z","conclusion":"HUMAN_REVIEW_REQUIRED","cycle_id":"20260828T203200Z-diagonal-generator-profile","material_progress":true,"problem_id":"AIM-ALGEBRAIC_GEOMETRY-0019"}

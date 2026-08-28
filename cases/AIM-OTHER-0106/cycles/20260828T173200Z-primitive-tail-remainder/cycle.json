@@ -1,0 +1,306 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T173200Z-primitive-tail-remainder",
+  "problem_id": "AIM-OTHER-0106",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-OTHER-0106",
+    "title": "A quantitative Borel-Cantelli estimate for VWA matrices",
+    "statement": "Conjecture 24 for compact Γ \\G and the measure νT as above with summation taken over regular flats F such that systol( F ) < T. Another equidistribution result was obtained in a recent work of Y. Benoist and H. Oh, where the averages along Hecke orbits of maximal compact flats were considered. 5. Diophantine analysis\n\n5.1. A vector y = ( y1,..., y n) ∈ Rn is called v-approximable (for v > 0) if there are infinitely many q = ( q1,..., q n) ∈ Zn and p ∈ Z such that\n\n|y1q1 + · · · + ynqn − p| < ‖q‖−v.\n\nHere ‖ · ‖ denotes the max-norm on Rn. If a vector y ∈ Rn is ( n + ε)-approximable for some ε > 0, it is called very well approximable (VWA). An easy argument (using Borel-Cantelli lemma) implies that the set of VWA vectors has Lebesgue measure zero in Rn. Therefore, it is natural to expect that a generic point on a \"nondegenerate\" submanifold of Rn is not VWA. This is the Sprindˇ zuk conjecture proved in [109] (see also [17]). Similarly, an m × n real matrix A is called VWA if for some ε > 0 there are infinitely many q ∈ Zn and p ∈ Zm such that\n\n‖Aq − p‖m < ‖q‖−n−ε.\n\nIt is easy to see that the set of VWA matrices has measure zero in Rm×n, and one hopes that an analog of the Sprindˇ zuk conjecture holds in this set-up as well. The definition of nondegenerate submanifold of Rn in [109], which is well-suited for the case of vectors, is a manifold with smooth coordinate charts\n\nf: U (⊂ Rk) → Rn such that the spaces spanned by the partial derivatives f at OPEN PROBLEMS 12\n\npoints of U have dimension n. It is not quite clear what is the right definition of \"nondegenerate\" submanifold for the case of matrices.",
+    "statement_sha256": "edf1ce3ecc9b08b1d18235bf9377e0cf3c57e89ba0647d6469fbe4c64f3e2ba4",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T17:32:30.664020Z",
+    "source_urls": [
+      "https://aimath.org/WWN/measrigid/measrigid.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 8, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 7 are cooling down. Retain the previous scalar ambient model and R=4,K=32 prefix; test primitive-fraction reindexing including low-denominator exceptions and a changed infinite-tail remainder, not a larger cutoff. No matrix-manifold result.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T113347Z-borel-cantelli-tail",
+  "started_at": "2026-08-28T17:32:30.664020Z",
+  "completed_at": "2026-08-28T17:39:25.416368Z",
+  "selection_basis": "Rank 8, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 7 are cooling down. Retain the previous scalar ambient model and R=4,K=32 prefix; test primitive-fraction reindexing including low-denominator exceptions and a changed infinite-tail remainder, not a larger cutoff. No matrix-manifold result.",
+  "theory": {
+    "target": "Reindex the scalar approximation tail by reduced fractions without losing low-denominator exceptions, and sharpen the SAME R=4,K=32 prefix tail certificate using only the primes 2 and 3.",
+    "definitions": [
+      "E_q={x in [0,1]:dist(qx,Z)<q^-2}, q>=2; U(R,K) is its finite union measure.",
+      "a/d is reduced, including both endpoints for d=1; q_d=d*ceil(R/d) is its first allowed representative.",
+      "phi(q) counts reduced interior centers for q>1; w(q)=(1-1_{2|q}/2)(1-1_{3|q}/3).",
+      "B(K) uses signed divisor-tail integral bounds; C(K) uses six convex midpoint integrals.",
+      "The packet preserves strict event inequalities but interval-span certificates are measure-equivalent closures."
+    ],
+    "assumptions": [
+      "Lebesgue measure on [0,1]; R>=2,K>=R are integers. E_q={x:distance(q*x,Z)<q^-2}; q is positive. Negative q duplicate these events.",
+      "All inequalities in event membership are strict. Interval endpoint changes do not affect measure, but pointwise counterexamples retain strict endpoints.",
+      "A reduced fraction a/d has gcd(a,d)=1; d=1 includes the two centers 0 and 1. Its first representative at q>=R is q_d=d*ceil(R/d).",
+      "The new remainder is asserted only for K>=max(6,2*R-2), so every d<R exception is already in the prefix.",
+      "Only scalar ambient measure is considered. No independence of the E_q, manifold restriction, matrix result, or parent solution is assumed or claimed."
+    ],
+    "approaches_considered": [
+      "Discard nonprimitive pairs; falsified by missing low-denominator centers.",
+      "Reduce fractions retaining first multiples, then bound primitive tail counts using primes 2 and 3.",
+      "Use six residue classes and convex midpoint integration as an independent remainder envelope."
+    ],
+    "falsification_targets": [
+      "Reduction preserves the lower denominator cutoff without exceptions.",
+      "The negative divisor terms may use upper integral bounds.",
+      "Scalar ambient nullity establishes a matrix-manifold result."
+    ],
+    "claims": [
+      {
+        "claim_id": "DROP",
+        "statement": "Discarding all nonprimitive fractions and keeping only reduced denominators d>=R preserves the original approximation tail and every finite prefix.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "The supplied x=1/2,R=4 witness fails, or exact U(4,4) differs from 1/8 versus primitive-only 1/16.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "REINDEX",
+        "statement": "For every integer R>=2, group all scalar approximation intervals by reduced a/d and retain radius [d*ceil(R/d)]^-3. This preserves the full union; a finite prefix keeps exactly q_d<=K. Ordinary universal argument pending independent proof review.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A representative not at a multiple of d, nonnested radii, or an omitted first multiple.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "REMAINDER",
+        "statement": "For K>=max(6,2R-2), all low-denominator exceptions lie in the prefix and lambda(union_{q>=R}E_q)<=min(1,U(R,K)+B(K)), with B given explicitly in theory.md. At R=4,K=32, B=17333/403920 instead of 1/16, and U+B<17/40<U+1/16.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missed exception, failed totient domination, wrong signed integral bound, or threshold certificate failure.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "RESIDUES",
+        "statement": "For K>=6 the six-residue convex-midpoint integral gives 2*sum_{q>K}w(q)/q^2<=C(K). At K=32, C=7210711/175301280<=B. Universal integral proof remains same-author ordinary mathematics.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Nonpositive integration cell, failed convexity inequality, incorrect periodic weight or C(32)>B(32).",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FINITE",
+        "statement": "Separate algorithms agree on 21 prefix cases, 4799 endpoint atoms and 128 totient counts; 325 reduced centers and 297 union spans validate; seven corruptions fail.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A mismatched canonical table, wrong reconstructed center/span, missing input case or accepted corruption.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "The imported source fragment crosses the end of equidistribution into section 5.1; nearby Question 25 concerns smooth matrix-valued maps. The present scalar remainder is not a sourced matrix-manifold result.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong section locator, extraction scope or attribution.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Primitive-only truncation loses x=1/2 at R=4 and changes the R=K=4 union measure from 1/8 to 1/16.",
+        "claim_ids": [
+          "DROP"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "a96459cd9223c64177f07d464282922f443e7aec95a56be2e3b6da8e8e52deeb",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "4eef01dc5a670561106926c82edc6df5f9299816c930245adbaf35c2cfdaf87c",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "EQUIVALENT_REFORMULATION",
+        "summary": "Reduced-center reindexing with explicit low-denominator exceptions yields a new fixed-cutoff tail certificate, reducing the prior bound by exactly 989/50490 and crossing 17/40.",
+        "claim_ids": [
+          "REINDEX",
+          "REMAINDER"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "a96459cd9223c64177f07d464282922f443e7aec95a56be2e3b6da8e8e52deeb",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-table.json",
+            "sha256": "8f037c0ba09119728f69c411b83f5ac6159580ba378b566ecfd287c10af7879f",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "DROP",
+          "REINDEX"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Test x=1/2 and strict boundaries before confirmation; compute raw finite measures on endpoint atoms.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py. Fresh Python -I processes with empty environments reconstruct raw modular-event endpoint atoms and gcd counts before reading theory certificates. Theory merges reduced-center intervals and factors totients. Same assistant and shared input/runtime; no independent human/model or kernel proof review. Initial pre-lint source versions are retained with matching execution hashes.",
+        "result": "Counterexample verified, finite measure loss 1/16, seven boundary controls passed.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "82255db15952283e45d93b65acf5b60fb107ec774ba6f2663ed251ff8df36a72",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "64034b398927eaaaa18710c640aaa43f5d812ab2786381e7a61f0682b27ce5fa",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "ee114bbcafa5953f96769c4dd4ad2c8989c62e4d522c7e7ac68c70057af36f5b",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE",
+          "REINDEX",
+          "REMAINDER"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Raw modular membership and gcd enumeration versus reduced-interval merging and factorized totients; compare full tables, certificates and adversarial mutations; replay.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py. Fresh Python -I processes with empty environments reconstruct raw modular-event endpoint atoms and gcd counts before reading theory certificates. Theory merges reduced-center intervals and factors totients. Same assistant and shared input/runtime; no independent human/model or kernel proof review. Initial pre-lint source versions are retained with matching execution hashes.",
+        "result": "21 cases, 4799 atoms, 128 totient counts, 325 center records and 297 spans agree; seven corrupted packets rejected.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "250b6f09e1cc13eff7a1d705c24053f78077d3132e58747bffd864bb6e3b4151",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "7f6a3f40f986826cca5ab12801e0c847b4b383623e3a89edc34556329d56d355",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-table.json",
+            "sha256": "8f037c0ba09119728f69c411b83f5ac6159580ba378b566ecfd287c10af7879f",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-certificates.json",
+            "sha256": "683d9baf234aeecef6f24b6411df60728adec8db51f7a46e8ec3a0dc61e446eb",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "5f28fb674511286801a35975035481061ff5e59e61379caf000197d1ca7bca20",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "REINDEX",
+          "REMAINDER",
+          "RESIDUES"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit first multiples, endpoint exceptions, subadditivity and signed integrals; use a separate six-residue convex-integral envelope for the featured bound.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py. Fresh Python -I processes with empty environments reconstruct raw modular-event endpoint atoms and gcd counts before reading theory certificates. Theory merges reduced-center intervals and factors totients. Same assistant and shared input/runtime; no independent human/model or kernel proof review. Initial pre-lint source versions are retained with matching execution hashes.",
+        "result": "C(32)<=B(32) independently supports the featured arithmetic envelope; universal claims still await independent proof review.",
+        "reproduction_command": "Read verification.md and rerun the exact featured certificate",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "ee114bbcafa5953f96769c4dd4ad2c8989c62e4d522c7e7ac68c70057af36f5b",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "7f6a3f40f986826cca5ab12801e0c847b4b383623e3a89edc34556329d56d355",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Fresh primary section and neighboring Question 25 locator check, distinct from theory source note.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py. Fresh Python -I processes with empty environments reconstruct raw modular-event endpoint atoms and gcd counts before reading theory certificates. Theory merges reduced-center intervals and factors totients. Same assistant and shared input/runtime; no independent human/model or kernel proof review. Initial pre-lint source versions are retained with matching execution hashes.",
+        "result": "Source fragment scope confirmed; no present-day status or matrix-manifold theorem verified.",
+        "reproduction_command": "Open the primary PDF, printed pages 11-12",
+        "evidence": [
+          {
+            "path": "sources/verification-source-audit.md",
+            "sha256": "0b002fa56d57ae59c2d3e80124f89322817171a2d591ad14362ff86b7c545f0d",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Fresh direct-event reconstruction detects the exception loss and validates the unchanged prefix plus a discriminating new tail threshold, with a separate residue-integral envelope.",
+        "claim_ids": [
+          "DROP",
+          "FINITE",
+          "REMAINDER",
+          "RESIDUES"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "7f6a3f40f986826cca5ab12801e0c847b4b383623e3a89edc34556329d56d355",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "ee114bbcafa5953f96769c4dd4ad2c8989c62e4d522c7e7ac68c70057af36f5b",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared specification/runtime; no independent human/model or kernel proof review.",
+      "Finite atom checks and totient counts do not establish the universal reindexing and infinite-tail arguments.",
+      "The pointwise infinite-tail counterexample alone is measure zero; positive measure loss is asserted only for the explicit finite-prefix example.",
+      "Merged spans preserve measure, not literal strict-endpoint membership.",
+      "The imported fragment needs human scope review; no matrix-manifold theorem, current-status change, novelty or parent solution claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the low-denominator exception counterexample and fixed-cutoff primitive-tail bound. Obtain independent proof and source-scope review before any matrix-manifold transfer. Larger K or more primes alone are not a fresh progress unit; rotate."
+}

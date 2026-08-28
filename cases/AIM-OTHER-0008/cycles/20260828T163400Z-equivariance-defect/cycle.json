@@ -1,0 +1,309 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T163400Z-equivariance-defect",
+  "problem_id": "AIM-OTHER-0008",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-OTHER-0008",
+    "title": "Source-boundary repair and a quantitative resonance profile",
+    "statement": "Problem 2.4 may be an analysis of domino shuffling, since the set of Aztec diamonds is naturally divided into \"equivalence classes\" of size 2n by the shuffling algorithm.\n\n2.4 Resonance\n\nSome researchers have recently been studying combinatorial actions that are not strictly speaking of finite order, or at least not uniformly finite as some size parameter n varies, but still exhibit some forms of periodicity. An important example is Wieland's gyration operation on Alternating Sign Matrices (ASMs). When n is small, the 2nth power of the gyration operation on n-by-n ASMs is the identity map, so that all orbits have size dividing 2n, but as n gets larger this ceases to be the case. Instead one finds orbits whose sizes are \"mostly\" multiple of 2n, or submultiples k(2 n)/m where m is a small divisor of 2n. This is a fairly squishy notion, for what do \"mostly\" and \"small\" mean? Without having answers to these questions, we have charged forward and dubbed this \"resonance\"; part of the challenge here is making a good definition of the phenomenon being studied.",
+    "statement_sha256": "d879267321e7d2bcc32e529b2a25e47653e46462bf0f54e8c4d2266c31d70b01",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T16:34:18.185104Z",
+    "source_urls": [
+      "https://aimath.org/pastworkshops/dac_preworkshop.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 7, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 6 are cooling down. Extend the prior abstract exact cyclic-factor model to minimum equation defects for finite self-maps; explicitly test the surjectivity gap. No application to actual combinatorial dynamics.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T104644Z-cyclic-factor-audit",
+  "started_at": "2026-08-28T16:34:18.185104Z",
+  "completed_at": "2026-08-28T16:39:33.404786Z",
+  "selection_basis": "Rank 7, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 6 are cooling down. Extend the prior abstract exact cyclic-factor model to minimum equation defects for finite self-maps; explicitly test the surjectivity gap. No application to actual combinatorial dynamics.",
+  "theory": {
+    "target": "Determine the minimum number and number of minimum-defect cyclic labelings of an arbitrary finite self-map, and falsify the claim that an optimal labeling must be surjective when the domain is large enough.",
+    "definitions": [
+      "X={0,...,n-1}, n>=0; T:X->X is total and may be nonbijective; N>=1.",
+      "A labeling f:X->Z/NZ has unit-edge defect D(f)=#{x:f(T(x))!=f(x)+1 mod N}.",
+      "d and M are the unconstrained minimum defect and number of minimizing labeled functions; E counts exact labelings.",
+      "d_sur and M_sur impose surjectivity separately; absent surjections give null and zero.",
+      "c is the number of directed cycles; b counts cycles whose length is not divisible by N; incoming trees point toward cycles.",
+      "The empty domain has one exact labeling and no surjection; no phase quotient is taken."
+    ],
+    "assumptions": [
+      "X={0,...,n-1} is finite; n=0 allowed. T is any total self-map, not necessarily bijective.",
+      "N>=1 and labels are fixed elements of Z/NZ; distinct functions are counted without quotienting by phase.",
+      "Defect counts vertices x with f(T(x)) != f(x)+1 mod N; all edges have equal unit weight.",
+      "Unconstrained minimization does not impose surjectivity. A factor requires exact equivariance and surjectivity; approximate surjective labelings are distinguished.",
+      "Every nonempty functional-graph component has one directed cycle and incoming trees.",
+      "No ASM, rowmotion, PL or birational dynamics are constructed; no new resonance definition or parent solution claimed."
+    ],
+    "approaches_considered": [
+      "Minimize equation failures and assume n>=N preserves surjectivity; the three-state star falsifies even equality of the two minima.",
+      "Use one obstruction per bad directed cycle, choose a break edge and phase, and extend incoming tree labels uniquely.",
+      "Exhaust all label assignments and test every equation and surjectivity without using a functional-graph formula."
+    ],
+    "falsification_targets": [
+      "Surjectivity costs nothing once the domain has enough states.",
+      "Bijectivity is necessary for the exact cyclic-factor criterion.",
+      "Incoming trees create extra minimum-defect phase choices."
+    ],
+    "claims": [
+      {
+        "claim_id": "SURJECTIVITY_SHORTCUT",
+        "statement": "For n>=N, unconstrained minimum equation defect can always be attained by a surjective cyclic labeling.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "T=[0,0,0],N=3 has unconstrained minimum 1 but surjective minimum 2; a contradictory exhaustive assignment would invalidate this certificate.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "DEFECT",
+        "statement": "For any finite total self-map with c directed cycles, b of lengths not divisible by N, minimum defect is b and the minimizer count is N^c times the product of the bad cycle lengths. Ordinary universal derivation, not independently proved or kernel accepted.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing component, alternative tree extension at the minimum, or an exact labeling/count contradicting the formula.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "EXACT_REDUCTION",
+        "statement": "For every nonempty finite total self-map, exact regular cyclic factors exist iff N divides every directed cycle length; bijectivity is unnecessary. There are N^c exact maps when feasible. The empty map is not surjective.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed cycle-closing congruence, missing tail constraint or nonempty exact map that omits a target color.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "STAR",
+        "statement": "For n>=N>=2, the constant n-state map has surjective minimum N-1 and N*(n-1)!/(n-N+1)! minimizers, versus unconstrained minimum 1 and N minimizers.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A smaller surjective defect or a miscounted assignment in the distinct exceptional leaf-color argument.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CENSUS",
+        "statement": "Separate methods agree on 10531 finite-map/modulus systems, verified by 955958 main-census label assignments; 24 star controls and 28 minimum-defect certificates pass, while seven corruptions fail.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A differing canonical case stream, missing domain, invalid certificate or accepted corruption.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "The imported fragment crosses the closing commentary after Problem 2.4 and section 2.4; the resonance question is Problem 2.5. The present finite-map defect formula is not attributed to that source.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong source locator, extraction boundary or attribution.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "A three-state constant map separates unconstrained minimum defect 1 from surjective minimum 2; exact witnesses and all 27 assignments are supplied.",
+        "claim_ids": [
+          "SURJECTIVITY_SHORTCUT",
+          "STAR"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "993fac243592b3463330eacb7566720288af2a542e2e5a47f6bfa745cfa9aaa3",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "6dde97146f1535dd74a3db0c4d92c8e2da177f524ac38f05a1feb85f201aeb72",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "ASSUMPTION_REDUCTION",
+        "summary": "Remove bijectivity from the prior exact-factor criterion and quantify the minimum number and multiplicity of failed-equation labelings for arbitrary finite self-maps.",
+        "claim_ids": [
+          "DEFECT",
+          "EXACT_REDUCTION"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "993fac243592b3463330eacb7566720288af2a542e2e5a47f6bfa745cfa9aaa3",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-table.json",
+            "sha256": "3cdc91e8e04e2cbd75f0e7053e7e8f661610a57cdd6418fa098a7b7f5e801a59",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "SURJECTIVITY_SHORTCUT",
+          "EXACT_REDUCTION"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Exhaust the star example before confirmation, then empty/singleton/noninjective/invalid-input boundaries.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py. Fresh Python -I processes with empty environments enumerate literal label equations and surjectivity before reading certificates; theory uses indegree peeling, cycle obstruction counts and reverse-tree extension. Same assistant, shared specification/runtime/iterator; no independent human/model or kernel proof review.",
+        "result": "Three unconstrained minimizers at defect 1 and six surjective minimizers at defect 2; seven boundary controls pass.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "b291cc97f597553190d2caf0c07c4926e3f76a2fffc07a9d4995329734688f67",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "e8ac2c7fe883c170e88f15811e91b7e0e6f882077e939118ac251f760f7b0ea0",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "589459f08b1821bda4b1b501140873cebf92d5dbbe119b13672ed055e131892e",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "DEFECT",
+          "EXACT_REDUCTION",
+          "STAR",
+          "CENSUS"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Enumerate all N^n label assignments, compare complete canonical case-stream hashes, validate certificates, reject seven corruptions and replay.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py. Fresh Python -I processes with empty environments enumerate literal label equations and surjectivity before reading certificates; theory uses indegree peeling, cycle obstruction counts and reverse-tree extension. Same assistant, shared specification/runtime/iterator; no independent human/model or kernel proof review.",
+        "result": "10531 systems, 955958 main assignments, 24 star controls and 28 certificates agree with the structural formulas; seven corruptions rejected.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "3cb2ca482a3778e77cf960c17231a3b34fba8b535b7400adddcb51e70c938d2c",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "d87269b7075211924bf333ad94ef41ddf03a6f6dd2e96a252a90723fd42d59e7",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-table.json",
+            "sha256": "3cdc91e8e04e2cbd75f0e7053e7e8f661610a57cdd6418fa098a7b7f5e801a59",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-certificates.json",
+            "sha256": "a73fe0980ecb071cece64d95eb924332c798019e8896e0d22d417b48cfaae47b",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-surjectivity.json",
+            "sha256": "b15459b85ea5564c038132375b9fa3b224438f3b907264d2f3639fb95655dc82",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "537fa76096ee058d235215c876a16a6df1afcf6371982179de46250ea1803f9e",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "DEFECT",
+          "EXACT_REDUCTION",
+          "STAR"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit totality/finiteness, cycle closing, unique tree extension, exact-map surjectivity and falling-factorial count; disclose same-author review.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py. Fresh Python -I processes with empty environments enumerate literal label equations and surjectivity before reading certificates; theory uses indegree peeling, cycle obstruction counts and reverse-tree extension. Same assistant, shared specification/runtime/iterator; no independent human/model or kernel proof review.",
+        "result": "No contradiction found in the displayed steps or finite domain; universal claims remain pending independently authored proof review.",
+        "reproduction_command": "Read verification.md proof-step audit and rerun finite checks",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "589459f08b1821bda4b1b501140873cebf92d5dbbe119b13672ed055e131892e",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Fresh primary PDF title/date and neighboring problem/section locator check separate from theory source note.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py. Fresh Python -I processes with empty environments enumerate literal label equations and surjectivity before reading certificates; theory uses indegree peeling, cycle obstruction counts and reverse-tree extension. Same assistant, shared specification/runtime/iterator; no independent human/model or kernel proof review.",
+        "result": "Extraction boundary confirmed; no current status or actual dynamical theorem verified.",
+        "reproduction_command": "Open primary URL and printed pages 5-6 in source note",
+        "evidence": [
+          {
+            "path": "sources/verification-source-audit.md",
+            "sha256": "6004648546ca743d2e019f9efa40134bc4074dc76b42f9fe6df8cfaee3c897e3",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Fresh exhaustive-label reconstruction independently distinguishes unconstrained and surjective minima and checks the new finite-map formula without a cycle-decomposition algorithm.",
+        "claim_ids": [
+          "SURJECTIVITY_SHORTCUT",
+          "DEFECT",
+          "CENSUS"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "d87269b7075211924bf333ad94ef41ddf03a6f6dd2e96a252a90723fd42d59e7",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "589459f08b1821bda4b1b501140873cebf92d5dbbe119b13672ed055e131892e",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared specification/runtime; no independent human/model or kernel proof verification.",
+      "Universal functional-graph and counting proofs remain ordinary arguments; finite exhaustive checks do not prove arbitrary-size statements.",
+      "No actual ASM, rowmotion, PL or birational action or natural target map is constructed; an arbitrary labeling does not explain resonance.",
+      "The canonical source is a commentary splice requiring human scope review; the HTTP-to-HTTPS source normalization is disclosed.",
+      "Only finite total unit-weight self-maps and regular cyclic labels are covered; no novelty, parent solution or imported-status change claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the finite-self-map assumption reduction and explicit surjectivity-gap certificate. Obtain independently authored proof and source-scope review before applying a defect statistic to a defined combinatorial action and natural target. More maps for this same formula are not material progress; rotate."
+}

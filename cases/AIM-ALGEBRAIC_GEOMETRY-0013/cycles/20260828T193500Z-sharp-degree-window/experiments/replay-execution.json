@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research29/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research29/cases/AIM-ALGEBRAIC_GEOMETRY-0013/cycles/20260828T193500Z-sharp-degree-window/experiments/theory.py",
+      "/workspace/scratch/1faac0a7d2ae/research29/cases/AIM-ALGEBRAIC_GEOMETRY-0013/cycles/20260828T193500Z-sharp-degree-window/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research29/cases/AIM-ALGEBRAIC_GEOMETRY-0013/cycles/20260828T193500Z-sharp-degree-window/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T19:36:29.342843+00:00",
+    "input_sha256": "170b65bde6e55368ccd8e0873a9be7b2e1b15954cb5d683da067fd5aa897da1e",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "theory",
+    "output_sha256": "93e50d54668ace60fdf809bec1148f7d37c3f10ff5c84fb319195f86e847c59a",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "d60747ccb7435857e58c12bcfd7c46740589d356448089b55ce86844a300071b",
+    "started_at": "2026-08-28T19:36:29.032947+00:00",
+    "stderr": "",
+    "stdout": "{\"pairs\": 24981, \"graded_pieces\": 191153, \"stream\": \"69ecb6c1f0cbb2d6726692f66d1e05399ac52c060ac532f3909e4f54cbfd6fae\", \"certificates\": 8}\n",
+    "wall_timeout_seconds": 200
+  },
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research29/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research29/cases/AIM-ALGEBRAIC_GEOMETRY-0013/cycles/20260828T193500Z-sharp-degree-window/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research29/cases/AIM-ALGEBRAIC_GEOMETRY-0013/cycles/20260828T193500Z-sharp-degree-window/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research29/cases/AIM-ALGEBRAIC_GEOMETRY-0013/cycles/20260828T193500Z-sharp-degree-window/experiments/verify-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research29/cases/AIM-ALGEBRAIC_GEOMETRY-0013/cycles/20260828T193500Z-sharp-degree-window/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T19:36:30.747445+00:00",
+    "input_sha256": "170b65bde6e55368ccd8e0873a9be7b2e1b15954cb5d683da067fd5aa897da1e",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "verify",
+    "output_sha256": "979f7e4a17d0f3f9ecfe78bbf1bff9145d06053ad0269672e8ccdec9c7cc2deb",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "8bc6c04817f3a58a6650dc3b7c302cd32d404b49abba10a019772db8133737e0",
+    "started_at": "2026-08-28T19:36:29.343014+00:00",
+    "stderr": "",
+    "stdout": "{\"pairs\": 24981, \"graded_pieces\": 191153, \"stream\": \"69ecb6c1f0cbb2d6726692f66d1e05399ac52c060ac532f3909e4f54cbfd6fae\", \"certificate_mode\": true}\n",
+    "wall_timeout_seconds": 200
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "checked_on": "2026-08-28",
+  "preflight": "ready; ranked queue selected AIM-GEOMETRY-0233",
+  "dataset_validation": "7 hashes, 15458 indexed records and 200 ranked entries verified",
+  "existing_manifests_verified": 25,
+  "mathematical_subprocesses": 7,
+  "quality": ["uv run ruff check . passed", "uv run mypy src passed on 22 source files", "uv run pytest -q: 24 passed"],
+  "diagnostics": [
+    "An initial verify-manifest command supplied cycle.json instead of its directory and failed; corrected directory invocation passed for all 25 prior packets.",
+    "Initial queue inspection assumed a JSON array; corrected to the items field before selection was frozen.",
+    "Full packet lint found three list-concatenation style warnings and three long lines. Style-only fixes were applied, original source bytes retained, and both programs replayed with identical outputs.",
+    "Staged diff checking found one extra EOF blank line in the runner; removed it and rebuilt/reverified the manifest before publication. Child experiment sources and outputs were unchanged."
+  ],
+  "publication_checks": "GitHub round-trip and CI results are recorded in the pull request after publication, not asserted here in advance.",
+  "limits": "No independent human/model or kernel proof review; finite monodromy only."
+}

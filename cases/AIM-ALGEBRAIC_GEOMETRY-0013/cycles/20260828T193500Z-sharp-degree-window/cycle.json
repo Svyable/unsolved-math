@@ -1,0 +1,310 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T193500Z-sharp-degree-window",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0013",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0013",
+    "title": "Bounded moduli charts and ghost directions for virtual resolutions",
+    "statement": "Observation: The current definition of virtual resolution is so broad and it is not meaningful to parameterize, then.\n\nIs there a well-behaved moduli theory of virtual resolutions equipped with extra structure? e.g. condition under which there exists a finite set? or space/ stacks/...?\n(c.f. [Boij-Sölderberg] theory constructs a meaningful cone of Betti tables of all free complexes. Look at subcone of virtual resolutions of a given $M$)",
+    "statement_sha256": "8352c4831e868565c9450f804c11029639f40d6919f48e9f910ecb9c9513d64b",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T19:33:48.146129Z",
+    "source_urls": [
+      "https://aimpl.org/syzygyms/4/",
+      "https://arxiv.org/html/1703.07631v2",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 10, score 73.5, highest eligible outside cooldown; ranks 1-9 cooling down. Follow the same based binary equal-degree Koszul ghost family: replace the unspecified degree window by a sharp homology cutoff and audit Euler-characteristic cancellation. Not a general moduli theorem. Raw AIM URL uses HTTP; snapshot normalizes to HTTPS, whose retrieval timed out.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T163331Z-koszul-ghost-chart",
+  "started_at": "2026-08-28T19:33:48.146129Z",
+  "completed_at": "2026-08-28T19:39:56.726841Z",
+  "selection_basis": "Rank 10, score 73.5, highest eligible outside cooldown; ranks 1-9 cooling down. Follow the same based binary equal-degree Koszul ghost family: replace the unspecified degree window by a sharp homology cutoff and audit Euler-characteristic cancellation. Not a general moduli theorem. Raw AIM URL uses HTTP; snapshot normalizes to HTTPS, whose retrieval timed out.",
+  "theory": {
+    "target": "In the same based equal-degree binary Koszul ghost family, find the sharp single graded-degree homology test for geometric exactness, including a bounded shift/degree window, and falsify Euler-characteristic-only certification.",
+    "definitions": [
+      "S=k[x,y] standard graded, B=(x,y), a>=0,d>=1, degree-d forms f,g including zeros.",
+      "F3=S(-a-2d), F2=S(-a-d)^2, F1=S(-a), F0=M=S, differentials (-g,f),(f,g),0 and identity augmentation.",
+      "H_i(n) is degree-n positive homology; r=n-a and q(r)=max(r+1,0).",
+      "e is the homogeneous gcd degree of a nonzero pair; the zero pair is separate.",
+      "Equivalence is degree-preserving chain isomorphism with fixed augmentation; based coefficients are retained, no quotient is constructed.",
+      "Virtuality means sheaf-exact positive complex on P1. Single-degree homology vanishing is not Euler vanishing."
+    ],
+    "assumptions": [
+      "S=k[x,y], B=(x,y), k a field; no claim for a nonreduced coefficient base.",
+      "a>=0, d>=1; f,g homogeneous degree d, including the zero form.",
+      "F3=S(-a-2d), F2=S(-a-d)^2, F1=S(-a), F0=M=S; d3=(-g,f), d2=(f,g), d1=0 and augmentation identity.",
+      "Equivalence is degree-preserving chain isomorphism with fixed augmentation; based coefficients are retained, no quotient or classification is constructed.",
+      "Virtual means positive homology sheafifies to zero on P1; rational-point-only tests are not used.",
+      "Single-degree test means all positive homology vanish at one n, or equivalently H1 at the proposed valid cutoff, not Euler characteristic.",
+      "Finite census checks only frozen prime fields/degrees. Universal sharpness and geometric interpretation require independent proof review."
+    ],
+    "approaches_considered": [
+      "Derive exact Hilbert functions from homogeneous gcd and the syzygy generator.",
+      "Reconstruct graded multiplication maps and independently enumerate homogeneous divisors.",
+      "Use Betti/Euler tail data only; retire this shortcut via cancellation certificates."
+    ],
+    "falsification_targets": [
+      "Euler-characteristic zero implies virtuality.",
+      "The cutoff can be uniformly lowered one degree or ignore shifts.",
+      "A rational-point-only check detects every common homogeneous factor."
+    ],
+    "claims": [
+      {
+        "claim_id": "EULER-SHORTCUT",
+        "statement": "Zero positive Euler characteristic at the cutoff certifies virtuality in the frozen family. The F3 pair a=1,d=2,f=g=x^2,n=4 refutes this: H1,H2,H3 dimensions are 2,2,0 and the common zero is [0:1].",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong rank, dependent quotient/cycle vectors, nonzero d3 source or absent geometric common zero.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "HILBERT",
+        "statement": "For a nonzero pair with homogeneous gcd degree e, at r=n-a>=2d-1 the homology dimensions are e,e,0. The full Hilbert formulas and separate zero-pair case are in theory.md; ordinary universal derivation pending independent review.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing syzygy, degree shift, zero-form/infinity exception or field-extension failure.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CUTOFF",
+        "statement": "For every field and the fixed family, a+2d-1 is the least nonnegative single degree uniformly testing virtuality by H1 vanishing or all positive homology vanishing. Under 0<=a<=A,1<=d<=D the least uniform degree is A+2D-1.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A bad pair with zero H1 at the cutoff, a good pair with nonzero H1 there, or an earlier uniform degree not excluded by the stated witnesses.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "EULER-TAIL",
+        "statement": "For all pairs and r>=2d-1 the positive Euler characteristic is identically zero, being forced by the chain-space dimensions; it cannot separate any parameter points.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong sign or dimension in the finite-chain Euler identity.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FINITE",
+        "statement": "Independent algorithms agree on 24981 pairs and 191153 graded pieces: 17358 admissible, 7623 Euler false acceptances, 17358 one-degree-early false rejections, eight power controls and twelve bounded windows with 64 smaller-degree witnesses.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An omitted tuple, differing graded piece/stream hash, count or boundary outcome.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CERTIFICATES",
+        "statement": "Eight F3 equal-power certificates have d independent quotient classes and d independent cycles with no boundaries at r=2d-1; all seven specified corruptions are rejected.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed vector equation, rank, field/degree check or accepted specified corruption.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Definition 1.1 of arXiv:1703.07631v2 requires the sheafified complex to resolve the associated sheaf, not Euler-characteristic vanishing. No degree-window or general moduli result is attributed to that definition.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "A contrary primary definition or incorrect attribution.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Explicit F3 quotient/cycle bases certify dimensions 2,2,0 at n=4 for the nonvirtual pair f=g=x^2,a=1. Zero Euler characteristic cannot certify virtuality.",
+        "claim_ids": [
+          "EULER-SHORTCUT",
+          "CERTIFICATES"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "77b81cbb4600acec506823c7373cd84ab18a20fc9ef898a20400b25e5bf310b2",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "93e50d54668ace60fdf809bec1148f7d37c3f10ff5c84fb319195f86e847c59a",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "EQUIVALENT_REFORMULATION",
+        "summary": "Replace the prior unspecified degree window by a+2d-1, or A+2D-1 for bounded shifts/degrees; exhibit two families excluding every smaller degree.",
+        "claim_ids": [
+          "HILBERT",
+          "CUTOFF"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "77b81cbb4600acec506823c7373cd84ab18a20fc9ef898a20400b25e5bf310b2",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "93e50d54668ace60fdf809bec1148f7d37c3f10ff5c84fb319195f86e847c59a",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "EULER-SHORTCUT",
+          "CUTOFF",
+          "FINITE"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Before the census, compute actual maps for cancellation, one-degree-early failure and negative relative-degree blindness.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py. Fresh Python -I processes start with frozen maps, boundary failures and homogeneous-factor product enumeration, then actual graded kernel/image ranks before reading the proposal. Theory uses Euclidean gcd plus infinity degree and Hilbert formulas, with no matrix ranks. Distinct evidence, same assistant/specification/runtime/iteration/serialization; no independent human/model or kernel proof review.",
+        "result": "Eight power controls pass and the shifted nonvirtual pair is invisible below its first degree.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "36616a97d2c66f37fbfde06daebff2e043817741e3a80fe498dce5155dcc1d91",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "fc7a9b142f9c1ebdfbd86c166e29bc4b70b2bce696cc6c1ba0a9d8329cdad65c",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "4a2d76865bf8be13bf557cf0348042342d652fee8abc7761270e4550bb220a4f",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE",
+          "HILBERT",
+          "CUTOFF",
+          "CERTIFICATES"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Homogeneous product-divisor tables and actual graded ranks versus Euclidean gcd and Hilbert formulas; compare full case stream and check submitted bases.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py. Fresh Python -I processes start with frozen maps, boundary failures and homogeneous-factor product enumeration, then actual graded kernel/image ranks before reading the proposal. Theory uses Euclidean gcd plus infinity degree and Hilbert formulas, with no matrix ranks. Distinct evidence, same assistant/specification/runtime/iteration/serialization; no independent human/model or kernel proof review.",
+        "result": "24981 pairs,191153 pieces,12 windows and64 smaller-degree witnesses agree;8 certificates pass and7 corruptions fail; replay byte-stable.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "8bc6c04817f3a58a6650dc3b7c302cd32d404b49abba10a019772db8133737e0",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "979f7e4a17d0f3f9ecfe78bbf1bff9145d06053ad0269672e8ccdec9c7cc2deb",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verify-execution.json",
+            "sha256": "87579210964669ccb56e4883fba8259896142b074f44794762031b24c1343ad6",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "703cb170d21e915e6cbb13bdd9125209948d6d07f500b491dde9e25148ec7918",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "HILBERT",
+          "CUTOFF",
+          "EULER-TAIL"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Check gcd cancellation, generator shift, zero cases, local sheaf criterion, lower-degree witness coverage and Euler identity.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py. Fresh Python -I processes start with frozen maps, boundary failures and homogeneous-factor product enumeration, then actual graded kernel/image ranks before reading the proposal. Theory uses Euclidean gcd plus infinity degree and Hilbert formulas, with no matrix ranks. Distinct evidence, same assistant/specification/runtime/iteration/serialization; no independent human/model or kernel proof review.",
+        "result": "No contradiction found in displayed steps; universal claims remain UNVERIFIED pending independent proof review.",
+        "reproduction_command": "Read verification.md proof-step audit",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "4a2d76865bf8be13bf557cf0348042342d652fee8abc7761270e4550bb220a4f",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Read Definition1.1 in a separate primary PDF rendering and attempt AIM section/root retrieval.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline preceded theory.py. Fresh Python -I processes start with frozen maps, boundary failures and homogeneous-factor product enumeration, then actual graded kernel/image ranks before reading the proposal. Theory uses Euclidean gcd plus infinity degree and Hilbert formulas, with no matrix ranks. Distinct evidence, same assistant/specification/runtime/iteration/serialization; no independent human/model or kernel proof review.",
+        "result": "Primary definition confirmed; AIM section timed out and root returned502, so exact source scope and current status remain unchecked.",
+        "reproduction_command": "Open the cited primary PDF and AIM locators",
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "e2c560b52bfa82d605bb9e09f2a63722162dbf147298ccfcafa74a258e3c2484",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent graded maps distinguish actual homology from Euler cancellation, verify sharp-window boundary witnesses, and check eight explicit quotient/cycle bases with seven rejected corruptions.",
+        "claim_ids": [
+          "EULER-SHORTCUT",
+          "FINITE",
+          "CERTIFICATES"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "979f7e4a17d0f3f9ecfe78bbf1bff9145d06053ad0269672e8ccdec9c7cc2deb",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "4a2d76865bf8be13bf557cf0348042342d652fee8abc7761270e4550bb220a4f",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship, shared specification/runtime/iteration/serialization; no independent human/model or kernel proof review.",
+      "Universal UFD, sheaf and sharpness arguments remain ordinary derivations, not established by the finite census.",
+      "AIM source remains unavailable; imported status and exact scope require human review.",
+      "Only this based equal-degree binary Koszul family and graded chain-isomorphism invariant are covered; no quotient stack, general fixed-Betti complex or nonreduced coefficient base is checked.",
+      "No novelty, imported mathematical-status change or parent solution is claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the sharp finite-degree test and Euler-cancellation basis certificates for this based Koszul family. Seek independently authored or kernel review of the universal gcd/sheaf and sharpness proofs, then human scope review before any general fixed-Betti or nonreduced-base extension. More fields/degrees alone are not material progress; rotate."
+}
