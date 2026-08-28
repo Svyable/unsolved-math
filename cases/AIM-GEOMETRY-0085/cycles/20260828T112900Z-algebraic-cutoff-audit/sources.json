@@ -1,0 +1,19 @@
+{
+  "accessed_date": "2026-08-28",
+  "primary": {
+    "url": "https://arxiv.org/pdf/math/0110009v3",
+    "authors": "Henry Cohn and Noam Elkies",
+    "title": "New upper bounds on sphere packings I",
+    "version_date": "2003-09-03",
+    "locator": "Theorem 3.2, printed page 695; density conventions printed page 691",
+    "supported_claim": "Equal positive origins and non-strict sign conditions imply the center-density bound; the covered-volume objective includes the unit-ball factor.",
+    "boundary": "The packing theorem is cited, not reproved. The new cutoff is locally derived; no current best-bound claim."
+  },
+  "canonical_source": {
+    "original_url": "http://aimpl.org/discreteaf/1/",
+    "normalized_url": "https://aimpl.org/discreteaf/1/",
+    "retrieval": "Both failed in this run; HTTPS reported timeout. No primary heading verification claimed.",
+    "scope": "Frozen heading from the CC BY 4.0 dataset; human scope review remains outstanding."
+  },
+  "rights": "Only original short audit text captured; no full third-party PDF stored. Dataset provenance and attribution in selection.json."
+}

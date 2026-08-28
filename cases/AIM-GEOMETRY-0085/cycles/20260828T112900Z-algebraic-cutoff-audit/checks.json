@@ -1,0 +1,16 @@
+{
+  "checked_date": "2026-08-28",
+  "preflight": "Passed before mathematical work; rank 4 AIM-GEOMETRY-0085 selected. Details frozen in selection.json.",
+  "dataset": "oplab validate passed seven artifact hashes, 15458 records, imported-status and ranking gates.",
+  "prior_packets": "All 24 existing manifests verified before new research.",
+  "provenance": "Pinned source-file SHA-256 and canonical raw-record SHA-256 matched. Original HTTP source URL retained; schema uses HTTPS normalization.",
+  "cycle": "validate-cycle passed eleven artifact references and both progress lanes.",
+  "replay": "Five mathematical subprocess records verified against source/input/output SHA-256; both lane outputs reproduced unchanged; distinct full table files agree.",
+  "ruff": "uv run ruff check . passed.",
+  "mypy": "uv run mypy src passed for 22 source files.",
+  "pytest": "uv run pytest: 24 passed.",
+  "corrected_failures": "Initial HTTP snapshot URL was rejected by schema and normalized with original preserved; initial style diagnostics fixed before baseline execution; initial cycle assembly omitted the CUTOFF claim-to-verification link and was corrected to include its existing independent Sturm check. No failed mathematical subprocess.",
+  "limits": "Five of eight mathematical subprocesses used. Each bounded to CPU 180s, wall 200s, memory 512MiB. Packet below 1MiB.",
+  "sealing": "Manifest construction and verification follow these checks; record-cycle follows manifest verification. Publication and CI results belong in the PR, outside the sealed packet.",
+  "limits_of_evidence": "Same assistant, distinct algorithms/fresh processes; no independent human/model/kernel verification. Source heading unavailable; no novelty or parent solution."
+}
