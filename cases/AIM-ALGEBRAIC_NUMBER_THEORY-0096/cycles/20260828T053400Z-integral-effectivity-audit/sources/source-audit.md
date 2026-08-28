@@ -20,4 +20,4 @@ Moving all terms to the left and homogenizing gives exactly this packet's F. Sec
 
 ## Citation boundary
 
-The model identification and historical scope were checked against fetched primary text, not search snippets. The ordinary geometric inference is set out explicitly in theory.md with its mathematical dependencies. Neither paper is a substitute for independent proof review of this packet. 
+The model identification and historical scope were checked against fetched primary text, not search snippets. The ordinary geometric inference is set out explicitly in theory.md with its mathematical dependencies. Neither paper is a substitute for independent proof review of this packet.
