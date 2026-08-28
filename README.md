@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-28T18:37:27.565105Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-28T19:39:56.726841Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -65,7 +65,7 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 7 | 7 | `AIM-OTHER-0008 — Source-boundary repair and a quantitative resonance profile` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T16:39:33.404786Z | `Retain the finite-self-map assumption reduction and explicit surjectivity-gap certificate. Obtain independently authore…` |
 | 8 | 8 | `AIM-OTHER-0106 — A quantitative Borel-Cantelli estimate for VWA matrices` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T17:39:25.416368Z | `Retain the low-denominator exception counterexample and fixed-cutoff primitive-tail bound. Obtain independent proof and…` |
 | 9 | 9 | `AIM-PROBABILITY-0144 — A split source fragment and the dihedral noncrystallographic H-tri…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T18:37:27.565105Z | `Retain the sharp fixed-ray scaling and missing-reflection certificates. Seek independent review of the two-orientation…` |
-| 10 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual reso…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T16:40:21.239955Z | `Seek an independently authored arbitrary-field audit of the Koszul chart; choose a degree window and equivalence relati…` |
+| 10 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual reso…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T19:39:56.726841Z | `Retain the sharp finite-degree test and Euler-cancellation basis certificates for this based Koszul family. Seek indepe…` |
 | 11 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T18:36:23.102964Z | `Seek independently authored verification of the arbitrary-degree Ext argument and a precise hypothesis ledger before au…` |
 | 12 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T19:39:49.495104Z | `Seek independent review of the cohomology-to-mirror variance bridge and precise functor hypotheses before constructing…` |
 | 13 | 13 | `AIM-ALGEBRAIC_GEOMETRY-0023 — Tate-completion obstruction and finite torsion windows for…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T22:33:01.348004Z | `Obtain independently authored review of the uniform-annihilator argument and an explicit spectral tower/comparison theo…` |
@@ -83,8 +83,8 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 10 | `AIM-ALGEBRAIC_GEOMETRY-0013 — Bounded moduli charts and ghost directions for virtual resolutions` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 11 | `AIM-ALGEBRAIC_GEOMETRY-0019 — Diagonal resolutions versus homotopy-colimit depth` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 12 | `AIM-ALGEBRAIC_GEOMETRY-0022 — Immaculate line bundles as unit-orthogonal toric branes` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 3 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 4 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 5 | 22 | `AIM-ALGEBRAIC_GEOMETRY-0282 — Upper semicontinuity, uniform Frobenius bounds, and a reduced non-equ…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
