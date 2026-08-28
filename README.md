@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-28T22:57:27.948682Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-28T23:37:13.465449Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -76,7 +76,8 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | 18 | 18 | `AIM-ALGEBRAIC_GEOMETRY-0167 — Finite-index Wirthmuller duality and the compact profinite…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T03:40:39.819758Z | `Obtain independently authored review of the all-closed-subgroup transport and the exact N-free model translation; audit…` |
 | 19 | 19 | `AIM-ALGEBRAIC_GEOMETRY-0207 — Extended-Kruppa constraints, realized conic ambiguity, and…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T04:39:24.322889Z | `Obtain independently authored review of the squarefree-complex completeness proof and real descent requirements; separa…` |
 | 20 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T22:57:27.948682Z | `Retain the ordinary fixed-point and coarse-quotient counterexamples. Obtain independently authored proof review of the…` |
-| 21 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
+| 21 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T23:37:13.465449Z | `Retain the exact finite correction and residue-field counterexample. Obtain independently authored proof review of idea…` |
+| 22 | — | `COMB-001 — The Hadwiger-Nelson Problem` | 2 | `CONTINUE` | 2026-08-27T01:49:00Z | `Pin a maintained DRAT checker, verify proof/517-4-sbp.drat against the already-audited CNF, and only then extract a che…` |
 
 ### Next up
 
@@ -84,11 +85,10 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 22 | `AIM-ALGEBRAIC_GEOMETRY-0282 — Upper semicontinuity, uniform Frobenius bounds, and a reduced non-equ…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 3 | 23 | `AIM-ALGEBRAIC_GEOMETRY-0328 — A boundary-frontier sieve for virtually abelian moduli bases` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 4 | 24 | `AIM-ALGEBRAIC_GEOMETRY-0348 — A Cox-restriction bridge for the perfect-cone compactification` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 5 | 25 | `AIM-ALGEBRAIC_NUMBER_THEORY-0003 — Exact-degree points from automorphism orbits` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 22 | `AIM-ALGEBRAIC_GEOMETRY-0282 — Upper semicontinuity, uniform Frobenius bounds, and a reduced non-equ…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 23 | `AIM-ALGEBRAIC_GEOMETRY-0328 — A boundary-frontier sieve for virtually abelian moduli bases` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 3 | 24 | `AIM-ALGEBRAIC_GEOMETRY-0348 — A Cox-restriction bridge for the perfect-cone compactification` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 4 | 25 | `AIM-ALGEBRAIC_NUMBER_THEORY-0003 — Exact-degree points from automorphism orbits` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 
 The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
 <!-- OPLAB:RESEARCH-STACK:END -->

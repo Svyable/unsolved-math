@@ -1,0 +1,821 @@
+{
+  "boundary": [
+    {
+      "ambient": 9,
+      "columns": 36,
+      "columns_sha256": "8b73c52ea3213daf743ff73ae6a3de7fac8f31331f94c9e7b3a5fd40589c4f7a",
+      "d": 1,
+      "ideal_rank": 4,
+      "length": 5,
+      "q": 2,
+      "r": 2
+    },
+    {
+      "ambient": 5,
+      "columns": 20,
+      "columns_sha256": "7c824776ae954716f74ded16978b94894a7062f9ccb0e66e9d75a348adf706fe",
+      "d": 1,
+      "ideal_rank": 4,
+      "length": 1,
+      "q": 1,
+      "r": 2
+    },
+    {
+      "ambient": 5,
+      "columns": 10,
+      "columns_sha256": "8f09af363724ab122415eb6207616071971786cd1954a7dd88f9b44bf74d1862",
+      "d": 1,
+      "ideal_rank": 2,
+      "length": 3,
+      "q": 2,
+      "r": 1
+    },
+    {
+      "ambient": 29,
+      "columns": 174,
+      "columns_sha256": "dde9abc01006c45fafd301a91f07f238f7640bde8c1a2fa04d9c5c2b9c581eeb",
+      "d": 2,
+      "ideal_rank": 18,
+      "length": 11,
+      "q": 2,
+      "r": 2
+    }
+  ],
+  "profiles": [
+    {
+      "d": 1,
+      "length": 1,
+      "q": 1,
+      "r": 1
+    },
+    {
+      "d": 1,
+      "length": 3,
+      "q": 2,
+      "r": 1
+    },
+    {
+      "d": 1,
+      "length": 7,
+      "q": 4,
+      "r": 1
+    },
+    {
+      "d": 1,
+      "length": 15,
+      "q": 8,
+      "r": 1
+    },
+    {
+      "d": 2,
+      "length": 1,
+      "q": 1,
+      "r": 1
+    },
+    {
+      "d": 2,
+      "length": 6,
+      "q": 2,
+      "r": 1
+    },
+    {
+      "d": 2,
+      "length": 28,
+      "q": 4,
+      "r": 1
+    },
+    {
+      "d": 2,
+      "length": 120,
+      "q": 8,
+      "r": 1
+    },
+    {
+      "d": 3,
+      "length": 1,
+      "q": 1,
+      "r": 1
+    },
+    {
+      "d": 3,
+      "length": 12,
+      "q": 2,
+      "r": 1
+    },
+    {
+      "d": 3,
+      "length": 112,
+      "q": 4,
+      "r": 1
+    },
+    {
+      "d": 3,
+      "length": 960,
+      "q": 8,
+      "r": 1
+    },
+    {
+      "d": 1,
+      "length": 1,
+      "q": 1,
+      "r": 2
+    },
+    {
+      "d": 1,
+      "length": 5,
+      "q": 2,
+      "r": 2
+    },
+    {
+      "d": 1,
+      "length": 13,
+      "q": 4,
+      "r": 2
+    },
+    {
+      "d": 1,
+      "length": 29,
+      "q": 8,
+      "r": 2
+    },
+    {
+      "d": 2,
+      "length": 1,
+      "q": 1,
+      "r": 2
+    },
+    {
+      "d": 2,
+      "length": 11,
+      "q": 2,
+      "r": 2
+    },
+    {
+      "d": 2,
+      "length": 55,
+      "q": 4,
+      "r": 2
+    },
+    {
+      "d": 2,
+      "length": 239,
+      "q": 8,
+      "r": 2
+    },
+    {
+      "d": 3,
+      "length": 1,
+      "q": 1,
+      "r": 2
+    },
+    {
+      "d": 3,
+      "length": 23,
+      "q": 2,
+      "r": 2
+    },
+    {
+      "d": 3,
+      "length": 223,
+      "q": 4,
+      "r": 2
+    },
+    {
+      "d": 3,
+      "length": 1919,
+      "q": 8,
+      "r": 2
+    },
+    {
+      "d": 1,
+      "length": 1,
+      "q": 1,
+      "r": 3
+    },
+    {
+      "d": 1,
+      "length": 7,
+      "q": 2,
+      "r": 3
+    },
+    {
+      "d": 1,
+      "length": 19,
+      "q": 4,
+      "r": 3
+    },
+    {
+      "d": 1,
+      "length": 43,
+      "q": 8,
+      "r": 3
+    },
+    {
+      "d": 2,
+      "length": 1,
+      "q": 1,
+      "r": 3
+    },
+    {
+      "d": 2,
+      "length": 16,
+      "q": 2,
+      "r": 3
+    },
+    {
+      "d": 2,
+      "length": 82,
+      "q": 4,
+      "r": 3
+    },
+    {
+      "d": 2,
+      "length": 358,
+      "q": 8,
+      "r": 3
+    },
+    {
+      "d": 3,
+      "length": 1,
+      "q": 1,
+      "r": 3
+    },
+    {
+      "d": 3,
+      "length": 34,
+      "q": 2,
+      "r": 3
+    },
+    {
+      "d": 3,
+      "length": 334,
+      "q": 4,
+      "r": 3
+    },
+    {
+      "d": 3,
+      "length": 2878,
+      "q": 8,
+      "r": 3
+    },
+    {
+      "d": 1,
+      "length": 1,
+      "q": 1,
+      "r": 4
+    },
+    {
+      "d": 1,
+      "length": 9,
+      "q": 2,
+      "r": 4
+    },
+    {
+      "d": 1,
+      "length": 25,
+      "q": 4,
+      "r": 4
+    },
+    {
+      "d": 1,
+      "length": 57,
+      "q": 8,
+      "r": 4
+    },
+    {
+      "d": 2,
+      "length": 1,
+      "q": 1,
+      "r": 4
+    },
+    {
+      "d": 2,
+      "length": 21,
+      "q": 2,
+      "r": 4
+    },
+    {
+      "d": 2,
+      "length": 109,
+      "q": 4,
+      "r": 4
+    },
+    {
+      "d": 2,
+      "length": 477,
+      "q": 8,
+      "r": 4
+    },
+    {
+      "d": 3,
+      "length": 1,
+      "q": 1,
+      "r": 4
+    },
+    {
+      "d": 3,
+      "length": 45,
+      "q": 2,
+      "r": 4
+    },
+    {
+      "d": 3,
+      "length": 445,
+      "q": 4,
+      "r": 4
+    },
+    {
+      "d": 3,
+      "length": 3837,
+      "q": 8,
+      "r": 4
+    }
+  ],
+  "rows": [
+    {
+      "ambient": 3,
+      "columns": 6,
+      "columns_sha256": "5c40478761ec4b5a1c87c5c599b2fd5717cdfdf0a4a7d44309f0a9e95be8bd2f",
+      "d": 1,
+      "ideal_rank": 2,
+      "length": 1,
+      "q": 1,
+      "r": 1
+    },
+    {
+      "ambient": 5,
+      "columns": 10,
+      "columns_sha256": "8f09af363724ab122415eb6207616071971786cd1954a7dd88f9b44bf74d1862",
+      "d": 1,
+      "ideal_rank": 2,
+      "length": 3,
+      "q": 2,
+      "r": 1
+    },
+    {
+      "ambient": 9,
+      "columns": 18,
+      "columns_sha256": "7dbf70ee898e8f840de05e90491111c8e0d34d2ae18dabb8416b0c94358d2f42",
+      "d": 1,
+      "ideal_rank": 2,
+      "length": 7,
+      "q": 4,
+      "r": 1
+    },
+    {
+      "ambient": 17,
+      "columns": 34,
+      "columns_sha256": "6a56dc4e885522e7b81a517e09a68e7e73f1b1658f78de2ca0fa9a473308e8ac",
+      "d": 1,
+      "ideal_rank": 2,
+      "length": 15,
+      "q": 8,
+      "r": 1
+    },
+    {
+      "ambient": 6,
+      "columns": 18,
+      "columns_sha256": "400ec56ab2e7b81ff9a023b6a663eb0c5948d90310e1add15626defbb5ed25d6",
+      "d": 2,
+      "ideal_rank": 5,
+      "length": 1,
+      "q": 1,
+      "r": 1
+    },
+    {
+      "ambient": 15,
+      "columns": 45,
+      "columns_sha256": "a4a870b9ff820f271348db84c9b79ce4ce47428824281a0b95a609e26ea35a32",
+      "d": 2,
+      "ideal_rank": 9,
+      "length": 6,
+      "q": 2,
+      "r": 1
+    },
+    {
+      "ambient": 45,
+      "columns": 135,
+      "columns_sha256": "544ff09abd80f07df16586d32059708f6794c41adf321b1d953ae0ddad1deaf0",
+      "d": 2,
+      "ideal_rank": 17,
+      "length": 28,
+      "q": 4,
+      "r": 1
+    },
+    {
+      "ambient": 153,
+      "columns": 459,
+      "columns_sha256": "acfe34a62974dc22e9554c9babb99a0a5d88bd428ab867b852766f384eccf9dc",
+      "d": 2,
+      "ideal_rank": 33,
+      "length": 120,
+      "q": 8,
+      "r": 1
+    },
+    {
+      "ambient": 12,
+      "columns": 48,
+      "columns_sha256": "787aa0b0ce32e5128e141f90bc7f06d313fe4b89579b93fcedea43d7862bca81",
+      "d": 3,
+      "ideal_rank": 11,
+      "length": 1,
+      "q": 1,
+      "r": 1
+    },
+    {
+      "ambient": 45,
+      "columns": 180,
+      "columns_sha256": "4db686247f40ae882b88a1f5c9cf505776d62a00994d98522ba337be183463d4",
+      "d": 3,
+      "ideal_rank": 33,
+      "length": 12,
+      "q": 2,
+      "r": 1
+    },
+    {
+      "ambient": 225,
+      "columns": 900,
+      "columns_sha256": "7c25d5bf60e49b5d02eb36feb151a471c018f361636d3ce1e26fd3e578687e69",
+      "d": 3,
+      "ideal_rank": 113,
+      "length": 112,
+      "q": 4,
+      "r": 1
+    },
+    {
+      "ambient": 1377,
+      "columns": 5508,
+      "columns_sha256": "8b8511b5ad4d039e62171af4a923634a945a66bc52b079df9e3ec946e5945c4a",
+      "d": 3,
+      "ideal_rank": 417,
+      "length": 960,
+      "q": 8,
+      "r": 1
+    },
+    {
+      "ambient": 5,
+      "columns": 20,
+      "columns_sha256": "7c824776ae954716f74ded16978b94894a7062f9ccb0e66e9d75a348adf706fe",
+      "d": 1,
+      "ideal_rank": 4,
+      "length": 1,
+      "q": 1,
+      "r": 2
+    },
+    {
+      "ambient": 9,
+      "columns": 36,
+      "columns_sha256": "8b73c52ea3213daf743ff73ae6a3de7fac8f31331f94c9e7b3a5fd40589c4f7a",
+      "d": 1,
+      "ideal_rank": 4,
+      "length": 5,
+      "q": 2,
+      "r": 2
+    },
+    {
+      "ambient": 17,
+      "columns": 68,
+      "columns_sha256": "7ae38d50ad7d81117e05deac66f5daa52fdd7673bcdfb7a84ff1bd66fe11f5bf",
+      "d": 1,
+      "ideal_rank": 4,
+      "length": 13,
+      "q": 4,
+      "r": 2
+    },
+    {
+      "ambient": 33,
+      "columns": 132,
+      "columns_sha256": "0da18bf240b61699f3cf0b6e30335f9888f773b34635660c7790830d66765754",
+      "d": 1,
+      "ideal_rank": 4,
+      "length": 29,
+      "q": 8,
+      "r": 2
+    },
+    {
+      "ambient": 11,
+      "columns": 66,
+      "columns_sha256": "e46ccd951d87dfefe09236df76838bb12d0f9f530d1a1f8d86be7802eb2dbebb",
+      "d": 2,
+      "ideal_rank": 10,
+      "length": 1,
+      "q": 1,
+      "r": 2
+    },
+    {
+      "ambient": 29,
+      "columns": 174,
+      "columns_sha256": "dde9abc01006c45fafd301a91f07f238f7640bde8c1a2fa04d9c5c2b9c581eeb",
+      "d": 2,
+      "ideal_rank": 18,
+      "length": 11,
+      "q": 2,
+      "r": 2
+    },
+    {
+      "ambient": 89,
+      "columns": 534,
+      "columns_sha256": "9110e7d10b7fc005d920955c684e6ac445e1f216a95e5eb78ff170682cb759e3",
+      "d": 2,
+      "ideal_rank": 34,
+      "length": 55,
+      "q": 4,
+      "r": 2
+    },
+    {
+      "ambient": 305,
+      "columns": 1830,
+      "columns_sha256": "14ba1cfcb7e2a16a78a922b72ae5888628e2ee11a6eb365981fd5c6f339337b5",
+      "d": 2,
+      "ideal_rank": 66,
+      "length": 239,
+      "q": 8,
+      "r": 2
+    },
+    {
+      "ambient": 23,
+      "columns": 184,
+      "columns_sha256": "9836e53e6dd989d93652e8b2e7eef157207ab353f241c14b7e445be43e2ce3ed",
+      "d": 3,
+      "ideal_rank": 22,
+      "length": 1,
+      "q": 1,
+      "r": 2
+    },
+    {
+      "ambient": 89,
+      "columns": 712,
+      "columns_sha256": "d4afb306f11475cca2b4605e4e2d92ed53faf59544f74ff31cac7ceef4f148ac",
+      "d": 3,
+      "ideal_rank": 66,
+      "length": 23,
+      "q": 2,
+      "r": 2
+    },
+    {
+      "ambient": 449,
+      "columns": 3592,
+      "columns_sha256": "dab0b5abd3b147630a4358bf7471989a5638ee8df11f8855a9196278c0de3e1f",
+      "d": 3,
+      "ideal_rank": 226,
+      "length": 223,
+      "q": 4,
+      "r": 2
+    },
+    {
+      "ambient": 2753,
+      "columns": 22024,
+      "columns_sha256": "215551fd8fb628fe0a528b7bb3fa54bbbce920bee7be7bd0a2b5dfb83a60bf2b",
+      "d": 3,
+      "ideal_rank": 834,
+      "length": 1919,
+      "q": 8,
+      "r": 2
+    },
+    {
+      "ambient": 7,
+      "columns": 42,
+      "columns_sha256": "119b7bf18fd4002079f4aafca621b106e8fdb208dd969f64816e622eb4c925c7",
+      "d": 1,
+      "ideal_rank": 6,
+      "length": 1,
+      "q": 1,
+      "r": 3
+    },
+    {
+      "ambient": 13,
+      "columns": 78,
+      "columns_sha256": "a0251c761e9e9db684873bba3ab16103a81d3fc5c84a418fc1904b01b4c8a160",
+      "d": 1,
+      "ideal_rank": 6,
+      "length": 7,
+      "q": 2,
+      "r": 3
+    },
+    {
+      "ambient": 25,
+      "columns": 150,
+      "columns_sha256": "58a4206d17b805776da56c1956d6b6f5b19d7ecdf0e8e1a3821bfcf61fc5ce26",
+      "d": 1,
+      "ideal_rank": 6,
+      "length": 19,
+      "q": 4,
+      "r": 3
+    },
+    {
+      "ambient": 49,
+      "columns": 294,
+      "columns_sha256": "22c31a13916bf708a6f8180bd3b6004493dc6115c12c63843da0432a9e903a97",
+      "d": 1,
+      "ideal_rank": 6,
+      "length": 43,
+      "q": 8,
+      "r": 3
+    },
+    {
+      "ambient": 16,
+      "columns": 144,
+      "columns_sha256": "9e855bf1313ebb9821a6314fbdf19a1c8ebb8742f65e351097cc7e251c9b43ed",
+      "d": 2,
+      "ideal_rank": 15,
+      "length": 1,
+      "q": 1,
+      "r": 3
+    },
+    {
+      "ambient": 43,
+      "columns": 387,
+      "columns_sha256": "e5e3186870b2df2f8100d7a5dee867221788d4ee105557f91d8745cce9f4215d",
+      "d": 2,
+      "ideal_rank": 27,
+      "length": 16,
+      "q": 2,
+      "r": 3
+    },
+    {
+      "ambient": 133,
+      "columns": 1197,
+      "columns_sha256": "07da4bee091dc2d16765f1ee38f0260842a7ecc702c03fc8e74b066ec217169b",
+      "d": 2,
+      "ideal_rank": 51,
+      "length": 82,
+      "q": 4,
+      "r": 3
+    },
+    {
+      "ambient": 457,
+      "columns": 4113,
+      "columns_sha256": "1f209afdd4692a836b6964b753afc852d19cc4bf5e43ead789071cb1d6990473",
+      "d": 2,
+      "ideal_rank": 99,
+      "length": 358,
+      "q": 8,
+      "r": 3
+    },
+    {
+      "ambient": 34,
+      "columns": 408,
+      "columns_sha256": "31966819fc6d503d9c5c65837ea4a5b9b98e677a9ee44529064a43c9b07f0309",
+      "d": 3,
+      "ideal_rank": 33,
+      "length": 1,
+      "q": 1,
+      "r": 3
+    },
+    {
+      "ambient": 133,
+      "columns": 1596,
+      "columns_sha256": "665d7159c85f1421d196d1d8c8ab08c9f3ab45bfac27011d11dc9dd8e14e3295",
+      "d": 3,
+      "ideal_rank": 99,
+      "length": 34,
+      "q": 2,
+      "r": 3
+    },
+    {
+      "ambient": 673,
+      "columns": 8076,
+      "columns_sha256": "fcb8749dd3019823678d4a6f8ae930803a12c1de361f4e48835bd5565feffb80",
+      "d": 3,
+      "ideal_rank": 339,
+      "length": 334,
+      "q": 4,
+      "r": 3
+    },
+    {
+      "ambient": 4129,
+      "columns": 49548,
+      "columns_sha256": "d0aa4413007907b664f4eeee798338c830ca51d16b3a802905eaae5fec14d80e",
+      "d": 3,
+      "ideal_rank": 1251,
+      "length": 2878,
+      "q": 8,
+      "r": 3
+    },
+    {
+      "ambient": 9,
+      "columns": 72,
+      "columns_sha256": "6f452162b9f3f97e206b5a2ff88bc4a90189fe4b69903dd390cbdab29d89f2c1",
+      "d": 1,
+      "ideal_rank": 8,
+      "length": 1,
+      "q": 1,
+      "r": 4
+    },
+    {
+      "ambient": 17,
+      "columns": 136,
+      "columns_sha256": "13c12c7afe8c939e06ecc0445a4f16eccabe03d9eb68ec0d079491d6a8a4ff6b",
+      "d": 1,
+      "ideal_rank": 8,
+      "length": 9,
+      "q": 2,
+      "r": 4
+    },
+    {
+      "ambient": 33,
+      "columns": 264,
+      "columns_sha256": "11b9458eaa91a2572cf0758c91048ffc93ae412180e226cb1741c6f4da779f83",
+      "d": 1,
+      "ideal_rank": 8,
+      "length": 25,
+      "q": 4,
+      "r": 4
+    },
+    {
+      "ambient": 65,
+      "columns": 520,
+      "columns_sha256": "9e77bf867b94c5c519b3b8aee18fdd491f8bab419ffb2cf5932966afdeb9a8c3",
+      "d": 1,
+      "ideal_rank": 8,
+      "length": 57,
+      "q": 8,
+      "r": 4
+    },
+    {
+      "ambient": 21,
+      "columns": 252,
+      "columns_sha256": "a1f1c699e8bb7cca02eaa6d5fdd435c94a6c51ac4848d9f1feb2fdd11f104760",
+      "d": 2,
+      "ideal_rank": 20,
+      "length": 1,
+      "q": 1,
+      "r": 4
+    },
+    {
+      "ambient": 57,
+      "columns": 684,
+      "columns_sha256": "113934e3d9d6a61bf984825a5447173bba1e34137afc2cebf41e7176f594dc1c",
+      "d": 2,
+      "ideal_rank": 36,
+      "length": 21,
+      "q": 2,
+      "r": 4
+    },
+    {
+      "ambient": 177,
+      "columns": 2124,
+      "columns_sha256": "92ba36ff3e6b74b2893557640767f45cfe9b36965b5d0b080661025e4e5d8c3e",
+      "d": 2,
+      "ideal_rank": 68,
+      "length": 109,
+      "q": 4,
+      "r": 4
+    },
+    {
+      "ambient": 609,
+      "columns": 7308,
+      "columns_sha256": "bf9152d91379184e6617f415fd490a25c6fcc3bb480134e8ab0e8f846d05af61",
+      "d": 2,
+      "ideal_rank": 132,
+      "length": 477,
+      "q": 8,
+      "r": 4
+    },
+    {
+      "ambient": 45,
+      "columns": 720,
+      "columns_sha256": "fba71da5d8e6dd551ba3648a3ac529c2adda473fe7af566f173defec4352a24f",
+      "d": 3,
+      "ideal_rank": 44,
+      "length": 1,
+      "q": 1,
+      "r": 4
+    },
+    {
+      "ambient": 177,
+      "columns": 2832,
+      "columns_sha256": "c227a91bc4a1749a8364ec29030d9c16a76743292cebe03d8c5c604e59feefff",
+      "d": 3,
+      "ideal_rank": 132,
+      "length": 45,
+      "q": 2,
+      "r": 4
+    },
+    {
+      "ambient": 897,
+      "columns": 14352,
+      "columns_sha256": "62397759aff462424a26f734d51a040cf8404ae7dad5d0f2b9bd9409d5652ffa",
+      "d": 3,
+      "ideal_rank": 452,
+      "length": 445,
+      "q": 4,
+      "r": 4
+    },
+    {
+      "ambient": 5505,
+      "columns": 88080,
+      "columns_sha256": "b2a1a0d505d8391a9ac92005449fdd324bd51d1d8189303c492af3c4cebac894",
+      "d": 3,
+      "ideal_rank": 1668,
+      "length": 3837,
+      "q": 8,
+      "r": 4
+    }
+  ],
+  "summary": {
+    "cases": 48,
+    "columns": 220110,
+    "profiles_sha256": "42623489c1d8156f280a6b4428fd46505e0fc35619ced3e4b73a1989ec6f7faf"
+  }
+}
