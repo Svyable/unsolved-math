@@ -45,7 +45,7 @@ cycle refreshes it automatically; successful dataset synchronization refreshes
 the ranked backlog. Do not edit content between the markers by hand.
 
 <!-- OPLAB:RESEARCH-STACK:START -->
-_Generated from tracked queue and cycle evidence as of 2026-08-28T05:40:06.512484Z._
+_Generated from tracked queue and cycle evidence as of 2026-08-28T09:37:54.403455Z._
 
 > Rankings prioritize research fit; they are not mathematical importance, truth, or
 > evidence that a problem is open or solved.
@@ -57,7 +57,7 @@ Active problems are ordered by deterministic queue rank; active problems absent 
 | Work order | Queue rank | Problem | Accepted cycles | Latest conclusion | Last progress | Next evidence target |
 |---:|---:|---|---:|---|---|---|
 | 1 | 1 | `AIM-ALGEBRAIC_NUMBER_THEORY-0096 — Rational points, index transport, and the C_1^0 bounda…` | 2 | `HUMAN_REVIEW_REQUIRED` | 2026-08-28T05:40:06.512484Z | `Obtain independently authored or kernel review of the geometric-integrality and closed-point argument. Any further foll…` |
-| 2 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring…` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T05:37:05.354164Z | `Human-review the extraction fragment and corrected theorem dependency; rotate to the next eligible ranked candidate.` |
+| 2 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring…` | 2 | `FALSIFIED_SUBCLAIM` | 2026-08-28T09:37:54.403455Z | `Retire width-two/no-fill tree-decomposition shortcuts. Seek human scope review and independently authored verification…` |
 | 3 | 3 | `AIM-COMPUTATION-0010 — Certified weak-coupling tubes for structured reachability` | 1 | `FALSIFIED_SUBCLAIM` | 2026-08-27T06:38:32.217608Z | `Retain the reachable counterexample as a regression test; audit a second sparse model with nonzero initial uncertainty…` |
 | 4 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T07:40:11.966317Z | `Retain this exact Fourier/sign/objective certificate as a regression baseline; human-review the source heading before h…` |
 | 5 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 1 | `HUMAN_REVIEW_REQUIRED` | 2026-08-27T08:40:33.349993Z | `Retain the cover-count and stabilizer tests; human-review the source fragment and identify an actual uniform simple-lif…` |
@@ -83,11 +83,11 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 
 | Run order | Queue rank | Problem | Score | Gate |
 |---:|---:|---|---:|---|
-| 1 | 2 | `AIM-COMBINATORICS-0279 — An extraction fragment and an exact triangle-free list-coloring corollary` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
-| 2 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 3 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 4 | 22 | `AIM-ALGEBRAIC_GEOMETRY-0282 — Upper semicontinuity, uniform Frobenius bounds, and a reduced non-equ…` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
-| 5 | 23 | `AIM-ALGEBRAIC_GEOMETRY-0328 — A boundary-frontier sieve for virtually abelian moduli bases` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 1 | 3 | `AIM-COMPUTATION-0010 — Certified weak-coupling tubes for structured reachability` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 2 | 4 | `AIM-GEOMETRY-0085 — Finite exact certification of numerical Cohn--Elkies bounds` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 3 | 5 | `AIM-GEOMETRY-0233 — A transition fragment and bounded-degree simple lifts` | 77.25 | `eligible outside cooldown and anti-thrashing gates` |
+| 4 | 20 | `AIM-ALGEBRAIC_GEOMETRY-0246 — A finite-group Cartan-Leray spectral sequence for Morel's A1-homology` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
+| 5 | 21 | `AIM-ALGEBRAIC_GEOMETRY-0279 — A fixed-base descending sequence from Monsky quartics` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 
 The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
 <!-- OPLAB:RESEARCH-STACK:END -->

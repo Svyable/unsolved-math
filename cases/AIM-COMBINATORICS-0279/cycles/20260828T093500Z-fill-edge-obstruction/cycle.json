@@ -1,0 +1,249 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T093500Z-fill-edge-obstruction",
+  "problem_id": "AIM-COMBINATORICS-0279",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-COMBINATORICS-0279",
+    "title": "An extraction fragment and an exact triangle-free list-coloring corollary",
+    "statement": "Conjecture 2. Let G be an even-hole-free graph.",
+    "statement_sha256": "13daf72a11aaf808aa3a5275c5a060d1d50d8cf442ca4d5a63415cb8acdf08e1",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T09:32:50.259651Z",
+    "source_urls": [
+      "https://aimath.org/WWN/perfectgraph/perfectgraph.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 2, score 77.25, highest eligible after its 24-hour cooldown; rank 1 remains on cooldown. Read prior list-coloring audit and preserved fragment. New target tests a proposed width-two structural shortcut using fill edges, minor and decomposition certificates, not a larger coloring census.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T053000Z-list-coloring-audit",
+  "started_at": "2026-08-28T09:32:50.259651Z",
+  "completed_at": "2026-08-28T09:37:54.403455Z",
+  "selection_basis": "Rank 2, score 77.25, highest eligible after its 24-hour cooldown; rank 1 remains on cooldown. Read prior list-coloring audit and preserved fragment. New target tests a proposed width-two structural shortcut using fill edges, minor and decomposition certificates, not a larger coloring census.",
+  "theory": {
+    "target": "Test and retire the proposed shortcut from degree-two peeling to width-two tree decompositions within triangle-free even-hole-free graphs, using rim-subdivided wheels and independent fill-edge/minor/decomposition certificates. This is not a replacement for the incomplete parent fragment.",
+    "definitions": [
+      "A hole is an induced cycle of length at least four; triangle-free and even-hole-free include exclusion of C3 and C4 respectively.",
+      "Degeneracy is minimum maximum remaining degree under vertex deletion without fill; treewidth elimination first cliques the remaining neighborhood.",
+      "A tree decomposition covers vertices and edges and makes each vertex occurrence set a connected subtree; width is maximum bag size minus one.",
+      "A K4 minor certificate has four nonempty disjoint connected pairwise-adjacent branch sets.",
+      "W(l_0,...,l_(k-1)) has a chordless rim of sum(l_i) vertices and a hub adjacent at cumulative sector endpoints, with k>=3 and l_i>=2.",
+      "Finite quantifier: all 1344 ordered instances with k in {3,4,5} and every l_i in {2,3,4,5}; these are not isomorphism classes."
+    ],
+    "assumptions": [
+      "Finite simple undirected graphs; a hole is induced of length at least four, including C4.",
+      "A wheel is a chordless rim cycle plus one hub adjacent to specified rim vertices; only rim edges are subdivided.",
+      "Every sector has at least two edges, so the hub has no adjacent rim neighbors and the graph is triangle-free.",
+      "Peeling deletes vertices without fill; treewidth elimination adds a clique on remaining neighbors.",
+      "The tested implication is a proposed derived shortcut, not a claim attributed to the prior cycle or primary paper.",
+      "The general bisimplicial-vertex theorem is not proved here; no parent solution or novelty claim."
+    ],
+    "approaches_considered": [
+      "Reuse degree-two deletion orders as width-two filled orders: retired by a 10-vertex counterexample and the first fill-degree overflow.",
+      "Separate degeneracy and treewidth using explicit peeling, K4-minor and width-three path-decomposition certificates.",
+      "Independently optimize filled elimination with a dynamic program over all eliminated subsets of the witness."
+    ],
+    "falsification_targets": [
+      "Degree-two peeling implies width-two filled elimination.",
+      "Odd spoke count alone ensures even-hole-freeness.",
+      "Odd sectors alone ensure even-hole-freeness regardless of rim parity.",
+      "The family-specific width-three construction applies to every triangle-free even-hole-free graph."
+    ],
+    "claims": [
+      {
+        "claim_id": "CERTIFICATES",
+        "statement": "The 10-vertex wheel W(3,3,3) is triangle-free and even-hole-free, with degeneracy 2 and treewidth 3; explicit K4 branch sets and width-three bags certify the distinction.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An induced even cycle or triangle, invalid order/minor/decomposition, or exact filled-elimination optimum different from 3.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SHORTCUT",
+        "statement": "A degree-two peeling order in a triangle-free even-hole-free graph implies treewidth at most two.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A graph in that class with degeneracy 2 and treewidth greater than 2; W(3,3,3) is the supplied witness.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "EXPERIMENT",
+        "statement": "All 1344 ordered wheel parameter instances agree across sector formulas and generic cycle enumeration; 40 eligible instances have checked minor, peeling and decomposition certificates.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing parameter, mismatched table hash, or failed certificate.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FAMILY",
+        "statement": "For arbitrary k>=3 and sector lengths at least 2, these rim-subdivided wheels have treewidth 3 and degeneracy 2; they are even-hole-free exactly when k and every sector length are odd. The ordinary argument lacks independent author/kernel review.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "An additional induced cycle, failure of the generic bag/minor construction, or a gap in the all-size argument.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Cameron et al. v1 Section 5 distinguishes triangulation width from deletion degree; its Figure 1 discussion already reports a stronger triangle-free even-hole-free K5-minor example. The packet is not a new structural bound.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong graph class, locator, version or attribution.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "An explicit triangle-free even-hole-free graph has degeneracy 2 but treewidth 3, retiring a proposed width-two substitute for the structural dependency.",
+        "claim_ids": [
+          "CERTIFICATES",
+          "SHORTCUT"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "93906ae635a6d4ca256d80b87322e6ead244b947e32e3abc5b917d93df5def56",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "be045f915e74fe98e5432126fd5dd390ae6498773618bfe35a17b879182788e5",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/fill-trace.json",
+            "sha256": "57d03c64648bb05833513d4ab077a20ad98a98a9faec2676cea45d2789e76882",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "A complete wheel parameter table discriminates the two parity requirements and supplies 40 proof certificates.",
+        "claim_ids": [
+          "EXPERIMENT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/theory-table.json",
+            "sha256": "8f7e3b59d523fa6091be7ed3d48abd6e2097fce07fe6d75c21c53ef2cbf134c7",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/theory.py",
+            "sha256": "d619c9cfe6c60ba50aacdc364d7697a2180ca70619f472324c86ead159674948",
+            "media_type": "text/x-python"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "CERTIFICATES",
+          "SHORTCUT",
+          "EXPERIMENT"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Generic induced-cycle search and exact torso dynamic programming precede family confirmation; triangle, even-sector, even-rim, C4 and K4 controls test boundaries.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline run before theory.py. Fresh Python -I and empty environment reconstruct all expectations before certificate read. Generic simple-cycle/chord search, batched core peeling and eliminated-set torso dynamic programming differ from sector formulas, single-vertex peeling, minor lower bounds and explicit bag upper bounds. Same-assistant authorship and shared specification; no independent human/model/kernel review.",
+        "result": "Witness has only cycle lengths 5,5,5,9, degeneracy 2 and exact treewidth 3; all boundary controls distinguish the specified conditions.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "0a1c39d0691eab54a63419566487e9ca217d9be37ffc34462adbe107dbfb8b79",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "5e6ca5f19cda236720273d8dfaf3984c123230d158bbba74279d5f8e78e4f0aa",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "2ddc1c9d2fa2fb7c3f9bc0b7c7084b6b5ed47fe88b158d66076d76e3b0b4ce5c",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "CERTIFICATES",
+          "SHORTCUT",
+          "EXPERIMENT"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Reconstruct the 1344-row table, optimize all witness elimination orders via 1024 states and 5120 transitions, then semantically check every minor/order/bag certificate and seven mutations.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline run before theory.py. Fresh Python -I and empty environment reconstruct all expectations before certificate read. Generic simple-cycle/chord search, batched core peeling and eliminated-set torso dynamic programming differ from sector formulas, single-vertex peeling, minor lower bounds and explicit bag upper bounds. Same-assistant authorship and shared specification; no independent human/model/kernel review.",
+        "result": "All table entries agree; all 40 certificates pass; seven corrupted certificates rejected; deterministic replay.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "f57ebe91a251189594e82e7e07dc7dce0534f2ce6e81bb7c8cba708d4a348ba6",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "e269b3e0fe50354907575d0381650afcdf920c8788d5b9157333d4aaa7b0945a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "2bddce039a3d05bdb4af68a03eb581cfcd98280d45af766f9734b14c2d4a4a8d",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VPROGRESS",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Exact filled-elimination optimization independently confirms the obstruction and semantic validators check the 40 new graph-theoretic certificates.",
+        "claim_ids": [
+          "CERTIFICATES",
+          "SHORTCUT",
+          "EXPERIMENT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "e269b3e0fe50354907575d0381650afcdf920c8788d5b9157333d4aaa7b0945a",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "2ddc1c9d2fa2fb7c3f9bc0b7c7084b6b5ed47fe88b158d66076d76e3b0b4ce5c",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship/shared specification; no independent human/model or kernel proof review.",
+      "The all-size family argument, treewidth/minor facts and elimination equivalence remain ordinary mathematical dependencies; finite enumeration alone does not prove them.",
+      "The canonical AIM fragment needs human scope review; the general bisimplicial-vertex proof was not independently audited.",
+      "This retires a proposed shortcut, not the prior list-coloring corollary; a family-specific width-three certificate is not a global width bound.",
+      "A stronger minor obstruction already appears in primary literature; no novelty, parent solution or imported-status change."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "FALSIFIED_SUBCLAIM",
+  "next_step": "Retire width-two/no-fill tree-decomposition shortcuts. Seek human scope review and independently authored verification of the actual bisimplicial dependency; do not treat further wheel enumeration or this family-specific width-three certificate as a global structural advance."
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research21/.venv/bin/python3",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research21/cases/AIM-COMBINATORICS-0279/cycles/20260828T093500Z-fill-edge-obstruction/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research21/cases/AIM-COMBINATORICS-0279/cycles/20260828T093500Z-fill-edge-obstruction/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research21/cases/AIM-COMBINATORICS-0279/cycles/20260828T093500Z-fill-edge-obstruction/experiments/baseline.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T09:34:12.926301+00:00",
+    "input_sha256": "716409db9cae54b9c60e6f0cb4d3b3dff913ece536cfb25a3274885b6c3699e4",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "baseline",
+    "output_sha256": "0a1c39d0691eab54a63419566487e9ca217d9be37ffc34462adbe107dbfb8b79",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": null,
+    "source_sha256": "f57ebe91a251189594e82e7e07dc7dce0534f2ce6e81bb7c8cba708d4a348ba6",
+    "started_at": "2026-08-28T09:34:12.468200+00:00",
+    "stderr": "",
+    "stdout": "{\"cases\": 1344, \"eligible\": 40, \"witness\": {\"n\": 10, \"edges\": [[0, 1], [0, 8], [0, 9], [1, 2], [2, 3], [3, 4], [3, 9], [4, 5], [5, 6], [6, 7], [6, 9], [7, 8]], \"holes\": [[0, 1, 2, 3, 4, 5, 6, 7, 8], [0, 1, 2, 3, 9], [0, 6, 7, 8, 9], [3, 4, 5, 6, 9]], \"degeneracy\": 2, \"treewidth\": 3}, \"details\": {\"optimal_order\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], \"dp_states\": 1024, \"dp_transitions\": 5120}}\n",
+    "wall_timeout_seconds": 200
+  }
+]
