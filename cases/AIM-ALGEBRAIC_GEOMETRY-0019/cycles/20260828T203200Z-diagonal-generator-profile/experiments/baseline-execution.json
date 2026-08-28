@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research30/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0019/cycles/20260828T203200Z-diagonal-generator-profile/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0019/cycles/20260828T203200Z-diagonal-generator-profile/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0019/cycles/20260828T203200Z-diagonal-generator-profile/experiments/baseline.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T20:32:12.005462+00:00",
+    "input_sha256": "3b530e0efdcdeca7d38732b80166edaa4ad056a0f8f25a5a78c0a1bd52858358",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "baseline",
+    "output_sha256": "845836742f7c84209f07257dbde8cf6d5ffb9aba94b7fec5d526ba937abfb20d",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": null,
+    "source_sha256": "ae92ca87209ac75b49deff4b13a0690b063f9754dda812ad5087b4af403636eb",
+    "started_at": "2026-08-28T20:32:11.944135+00:00",
+    "stderr": "",
+    "stdout": "{\"algebras\": 12, \"ext_entries\": 60, \"bar_square_checks\": 2379, \"contractions\": 1119, \"certificate_mode\": false}\n",
+    "wall_timeout_seconds": 200
+  }
+]

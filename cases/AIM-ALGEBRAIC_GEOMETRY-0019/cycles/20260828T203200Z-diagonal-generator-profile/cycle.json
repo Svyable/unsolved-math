@@ -1,0 +1,339 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T203200Z-diagonal-generator-profile",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0019",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0019",
+    "title": "Diagonal resolutions versus homotopy-colimit depth",
+    "statement": "There are two known ways to bound Rouquier dimension of a category\n\\begin{enumerate}\n\\item bound length of a resolution of a diagonal\n\\item the minimal depth of a presentation of $\\mathcal{C}$ as hocolim (cats with Rouquier dimension $Q$). Meaning if $F:I^{\\leq}\\to Cat$ diagram with $Rdim F(i)=0$, then $Rdim(hocolim F i)\\leq depth(I)$\n\\end{enumerate}\n\nCan (1) be used to bound (2) or vice-versa?",
+    "statement_sha256": "dba3bf05e85c3d659d514333ea3efc0ad1992ba5da1308beb1ca899bc90570db",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T20:30:33.697548Z",
+    "source_urls": [
+      "https://aimpl.org/syzygyms/7/",
+      "https://stacks.math.columbia.edu/tag/09HD",
+      "https://arxiv.org/html/2110.10663v3",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank 11, score 73.5, highest eligible outside cooldown; ranks 1-10 cooling down. Extend only the prior inseparable diagonal obstruction from one to two independent generators, and test whether equal degree determines the Ext profile. Raw AIM HTTP URL is normalized to HTTPS; source scope remains unverified.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T183200Z-inseparable-diagonal-audit",
+  "started_at": "2026-08-28T20:30:33.697548Z",
+  "completed_at": "2026-08-28T20:39:41.079055Z",
+  "selection_basis": "Rank 11, score 73.5, highest eligible outside cooldown; ranks 1-10 cooling down. Extend only the prior inseparable diagonal obstruction from one to two independent generators, and test whether equal degree determines the Ext profile. Raw AIM HTTP URL is normalized to HTTPS; source scope remains unverified.",
+  "theory": {
+    "target": "For the prior truncated-polynomial diagonal model, distinguish equal-dimensional one- and two-generator augmented algebras by Ext, and audit tensor-resolution signs with an independent bar complex.",
+    "definitions": [
+      "K is a field; R=K[x1,...,xr]/(x1^m1,...,xr^mr), r>=1,mi>=2, with augmentation xi->0 and I its kernel.",
+      "beta_n=dim_K Ext_R^n(K,K); ordinary ungraded modules with separate homological degree.",
+      "R1=K[x]/x^4 and R2=K[x,y]/(x^2,y^2) have equal dimension four.",
+      "Tensor-periodic total degree is the sum of factor degrees; mixed differential signs use preceding homological degrees.",
+      "For field realizations, k=F2(s,t) with algebraically independent s,t, and diagonal means Li tensor_k Li, not tensor over Li."
+    ],
+    "assumptions": [
+      "R=Fp[x1,...,xr]/(x1^m1,...,xr^mr), each mi>=2, augmentation xi->0; bases are lexicographically ordered exponent tuples.",
+      "Finite coefficient algebras model diagonal algebras after scalar extension; no nontrivial inseparable extension of a finite field is asserted.",
+      "Ext_R^n(Fp,Fp) is measured over Fp; only n=0,...,4 is independently computed via bar chains.",
+      "The all-degree tensor-resolution argument and rational-function field realizations are ordinary proofs pending independent review.",
+      "Odd-characteristic square-zero examples are algebra controls, not claimed diagonals of inseparable degree-four field extensions.",
+      "No assertion about general homotopy-colimit depth, positive gluing formulas, arbitrary diagonal pieces or parent solution."
+    ],
+    "approaches_considered": [
+      "Tensor rank-one periodic free resolutions over the coefficient field and audit totalization signs.",
+      "Compute dual augmentation quotients and normalized bar ranks with an explicit free-bar contraction.",
+      "Attempt dimension-only determination of the Ext profile; retire via equal-dimensional algebra certificates."
+    ],
+    "falsification_targets": [
+      "Equal algebra dimension determines the residue-module Ext profile.",
+      "Unsigned tensorization remains a complex outside characteristic two.",
+      "The finite census establishes universal exactness or rational-function field realizations."
+    ],
+    "claims": [
+      {
+        "claim_id": "DIMENSION-SHORTCUT",
+        "statement": "Equal dimension determines the residue-module Ext profile for the frozen augmented algebras. The dimension-four pair K[x]/x^4 and K[x,y]/(x^2,y^2) refutes this with Ext1 dimensions 1 and 2. This does not refute a degree-dependent upper bound.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong multiplication table, noncocycle, dependent quotient basis or incorrect residue module.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "PROFILE",
+        "statement": "For every field K, r>=1 and mi>=2, the explicitly tensor-truncated algebra has beta_n=binomial(n+r-1,r-1) for every n>=0. Ordinary universal tensor-resolution argument pending independent review.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed annihilator, Koszul sign, tensor exactness, totalization or Hom differential step.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FIELD",
+        "statement": "Over k=F2(s,t), the extensions L1=k(u),u^4=s and L2=k(v,w),v^2=s,w^2=t both have degree four, with diagonals respectively L1[e]/e^4 and L2[e1,e2]/(e1^2,e2^2).",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A square at a proposed irreducible tower step, wrong tensor base or dimension/presentation mismatch.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SIGN",
+        "statement": "Unsigned tensorization always forms a complex in the frozen two-generator model. The mixed degree-(1,1) cell has d^2=2xy in characteristics 3 and 5, refuting this; characteristic 2 conceals the error.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong literal path, multiplier or nonzero coefficient claimed in characteristic two.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FINITE",
+        "statement": "Tensor-periodic and normalized-bar implementations agree on 12 algebras and 60 Ext entries; bar d^2 passes 2379 checks and the free-bar contraction passes 1119 basis identities. Twelve Ext1 certificates and three sign probes pass, with seven and four specified corruptions rejected respectively.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An omitted frozen tuple, differing rank/profile, failed identity, invalid certificate or accepted specified corruption.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "Bai-Cote Lemmas 2.13 and 2.15 give separate diagonal and homotopy-colimit Rouquier-dimension bounds with stated hypotheses; Stacks tag09HD supplies the nonsquare irreducibility and purely inseparable tower dependencies, not the new profile computation.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Incorrect locator, hypotheses or attribution.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "Dimension-four augmented algebras have Ext1 dimensions 1 versus 2, witnessed by independent product-annihilating functional bases. Equal dimension does not determine the profile.",
+        "claim_ids": [
+          "DIMENSION-SHORTCUT",
+          "FINITE"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "982e616096f1474c6ec5e41e9ae7c34778481998f624dac9160adec5fa390453",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "f6138bd16f3661aa31a933c4331394a6ad704a83ffa3d0db4dd15ef71e462ee7",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "The unsigned mixed tensor cell has square 2xy in characteristics 3 and 5, while characteristic two hides the missing sign.",
+        "claim_ids": [
+          "SIGN",
+          "FINITE"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "982e616096f1474c6ec5e41e9ae7c34778481998f624dac9160adec5fa390453",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "f6138bd16f3661aa31a933c4331394a6ad704a83ffa3d0db4dd15ef71e462ee7",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "DIMENSION-SHORTCUT",
+          "FINITE"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Before reading a proposal, reconstruct I^2 for both dimension-four algebras and check empty-word and square-zero boundaries.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline was authored and executed before theory.py. Fresh Python -I processes start with equal-dimensional I/I^2 and bar boundary cases, then normalized bar ranks and free-bar contractions before reading certificates. Theory uses dense tensor-periodic matrices; verifier uses sparse bar matrices; sign audit uses literal multiplication paths. Distinct evidence, same assistant/specification/runtime/monomial and serialization conventions; no independent human/model or kernel review.",
+        "result": "The two quotient dimensions are 1 and 2; boundary checks pass.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "845836742f7c84209f07257dbde8cf6d5ffb9aba94b7fec5d526ba937abfb20d",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "357ee487e5300620d43425653cc2f3f6689972013308360ed51ef07e8cfc71c2",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "bb4d4e446c2f7a098856efa66c72c9080315167e4ad9d17afac96060c8c5c0c5",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE",
+          "PROFILE",
+          "DIMENSION-SHORTCUT"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Sparse normalized bar differential ranks and explicit free-bar contraction versus dense tensor-periodic matrices; check all submitted Ext1 bases.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline was authored and executed before theory.py. Fresh Python -I processes start with equal-dimensional I/I^2 and bar boundary cases, then normalized bar ranks and free-bar contractions before reading certificates. Theory uses dense tensor-periodic matrices; verifier uses sparse bar matrices; sign audit uses literal multiplication paths. Distinct evidence, same assistant/specification/runtime/monomial and serialization conventions; no independent human/model or kernel review.",
+        "result": "12 algebras and60 Ext entries agree,2379 d^2 and1119 contraction identities pass;12 certificates pass and7 corruptions fail; byte-identical replay.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "ae92ca87209ac75b49deff4b13a0690b063f9754dda812ad5087b4af403636eb",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "fea779d093fb82b2ab27a46729830b62ae697b30c08a0b47390e3bbd57911bc7",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verify-execution.json",
+            "sha256": "408dd72282cbdf76cb796615e4a889ef364fa47c8a7c371075f935b25eb9b3f6",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "5df005275d024d2c66ad358b32fa73c0f1015fac80aad9cd6792f49100cf3fae",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "SIGN",
+          "FINITE"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Literal signed multiplication-path sums with no bar or tensor matrix imports, starting from odd-characteristic failure.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline was authored and executed before theory.py. Fresh Python -I processes start with equal-dimensional I/I^2 and bar boundary cases, then normalized bar ranks and free-bar contractions before reading certificates. Theory uses dense tensor-periodic matrices; verifier uses sparse bar matrices; sign audit uses literal multiplication paths. Distinct evidence, same assistant/specification/runtime/monomial and serialization conventions; no independent human/model or kernel review.",
+        "result": "3 probes agree and4 corruptions are rejected; byte-identical replay.",
+        "reproduction_command": "python experiments/run.py signreplay",
+        "evidence": [
+          {
+            "path": "experiments/sign.py",
+            "sha256": "cfae5600dc52d1af1370a8bab8e91aea190f61d25bbc2971c09e8238de77e1bb",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/sign-output.json",
+            "sha256": "10d8ddcaaf0ecdf9d513c61be8af8d0a98e932fc8ddab79487ba2e63d13baac5",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/sign-execution.json",
+            "sha256": "ee19467ac2caf81c4769017d63e2ae5061c6131542b23120bea16cc8f2281343",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/signreplay-execution.json",
+            "sha256": "4955f3f68339a530160c0c9d4a3ce6de19ea8a22a587caaca5c448da64599afc",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "PROFILE",
+          "FIELD"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit annihilators, tensor signs, finite total-degree sums, Hom/chain duality, bar contraction, nonsquare tower steps and tensor base.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline was authored and executed before theory.py. Fresh Python -I processes start with equal-dimensional I/I^2 and bar boundary cases, then normalized bar ranks and free-bar contractions before reading certificates. Theory uses dense tensor-periodic matrices; verifier uses sparse bar matrices; sign audit uses literal multiplication paths. Distinct evidence, same assistant/specification/runtime/monomial and serialization conventions; no independent human/model or kernel review.",
+        "result": "No contradiction in displayed ordinary derivations; universal assertions remain UNVERIFIED, and finite prime-field matrices do not compute rational-function-field extensions.",
+        "reproduction_command": "Read verification.md claim and proof audit",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "bb4d4e446c2f7a098856efa66c72c9080315167e4ad9d17afac96060c8c5c0c5",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V5",
+        "claim_ids": [
+          "SOURCE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Read the primary PDF printed pages13-14 and Stacks tag09HD separately from the theory note; retry AIM.",
+        "independent_context": true,
+        "independence_basis": "Verifier baseline was authored and executed before theory.py. Fresh Python -I processes start with equal-dimensional I/I^2 and bar boundary cases, then normalized bar ranks and free-bar contractions before reading certificates. Theory uses dense tensor-periodic matrices; verifier uses sparse bar matrices; sign audit uses literal multiplication paths. Distinct evidence, same assistant/specification/runtime/monomial and serialization conventions; no independent human/model or kernel review.",
+        "result": "Locators and scope checked; AIM retrieval failed twice with no precise HTTP status supplied.",
+        "reproduction_command": "Open cited primary PDF, Stacks and AIM locators",
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "913806ebc2db4fc18d9746bf0531c9b68d838f950a095c08a726317e3cc8eb9b",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent bar ranks and contraction identities distinguish equal-dimensional Ext profiles; check12 functional certificates and3 literal sign probes while rejecting11 specified corruptions.",
+        "claim_ids": [
+          "DIMENSION-SHORTCUT",
+          "SIGN",
+          "FINITE"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "fea779d093fb82b2ab27a46729830b62ae697b30c08a0b47390e3bbd57911bc7",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/sign-output.json",
+            "sha256": "10d8ddcaaf0ecdf9d513c61be8af8d0a98e932fc8ddab79487ba2e63d13baac5",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "bb4d4e446c2f7a098856efa66c72c9080315167e4ad9d17afac96060c8c5c0c5",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship, shared specification/runtime/monomial and serialization conventions; no independently authored human/model or kernel review.",
+      "All-degree bar/tensor exactness and rational-function field presentations remain ordinary derivations pending independent proof review.",
+      "AIM retrieval failed twice; imported status and exact source scope remain unchecked.",
+      "Only the stated tensor-truncated family is covered; equal dimension fails to determine the profile, not necessarily to bound it.",
+      "No general homotopy-colimit or geometric realization, published-theorem refutation, novelty or parent solution is claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the equal-dimension Ext1 basis certificates and odd-characteristic tensor-sign counterexample. Seek independently authored or kernel review of all-degree tensor/bar exactness and rational-function field realizations before extending the categorical obstruction ledger. More primes/degrees alone are not progress; rotate."
+}
