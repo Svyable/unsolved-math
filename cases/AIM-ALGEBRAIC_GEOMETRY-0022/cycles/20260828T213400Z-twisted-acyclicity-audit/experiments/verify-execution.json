@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research30/.venv/bin/python3",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0022/cycles/20260828T213400Z-twisted-acyclicity-audit/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0022/cycles/20260828T213400Z-twisted-acyclicity-audit/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0022/cycles/20260828T213400Z-twisted-acyclicity-audit/experiments/verify-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0022/cycles/20260828T213400Z-twisted-acyclicity-audit/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T21:32:02.591104+00:00",
+    "input_sha256": "e0d7591acea509eaeaf5ae360fff6600684a98f4084ecb5698957cb60199aa00",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "verify",
+    "output_sha256": "b7e0d69123dbba334ff2c79b61b0895a967d72dfcc9200292f2c89f073bac26f",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": null,
+    "source_sha256": "3731c9f02989fe44109ab897c4cb23e4d9f5893f2c40981db4e871628f45124a",
+    "started_at": "2026-08-28T21:32:02.501084+00:00",
+    "stderr": "",
+    "stdout": "{\"nonzero_weight_classes\": 36841, \"certificates_checked\": 8, \"class_vectors_checked\": 26, \"corruptions_rejected\": [\"missing\", \"weight\", \"zero\", \"noncocycle\", \"dimension\", \"twist\", \"duplicate\"], \"cases\": 1827, \"rows_sha256\": \"f1f20acf4b3a81ab16c1f04905adbea0a089de80e9f9fb253397ce123d1785b6\", \"immaculate\": 223, \"euler_false_acceptances\": 27, \"base_window_false_acceptances\": 42, \"controls\": [{\"n\": 2, \"a\": 1, \"b\": 0, \"betti\": [1, 1, 0], \"chi\": 0}, {\"n\": 2, \"a\": 1, \"b\": -1, \"betti\": [0, 2, 0], \"chi\": -2}, {\"n\": 0, \"a\": 1, \"b\": -1, \"betti\": [0, 0, 0], \"chi\": 0}, {\"n\": 2, \"a\": -1, \"b\": 100, \"betti\": [0, 0, 0], \"chi\": 0}, {\"n\": 2, \"a\": -2, \"b\": -4, \"betti\": [0, 0, 1], \"chi\": 1}, {\"n\": 2, \"a\": -2, \"b\": -3, \"betti\": [0, 0, 0], \"chi\": 0}]}\n",
+    "wall_timeout_seconds": 200
+  }
+]

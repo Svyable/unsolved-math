@@ -1,0 +1,51 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 ranked entries",
+  "diagnostics": [
+    "Stale local interpreter restored by uv before successful preflight; all extras synced.",
+    "Read-only command syntax errors corrected before research.",
+    "Style finding and unexecuted source-check authoring typos corrected before mathematical runs.",
+    "AIM failed twice; primary PDF text retrieved through www host, HTML independently checked; screenshot unavailable."
+  ],
+  "execution_records": [
+    {
+      "log": "baseline-execution.json",
+      "mode": "baseline"
+    },
+    {
+      "log": "theory-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "verify-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "source-execution.json",
+      "mode": "source"
+    },
+    {
+      "log": "sourcereplay-execution.json",
+      "mode": "source"
+    }
+  ],
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 7,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "preflight": "READY; ranked AIM-ALGEBRAIC_GEOMETRY-0022",
+  "prior_manifests_verified": 32,
+  "publication_checks": "After sealing; see PR and CI.",
+  "quality": {
+    "mypy": "passed on22 source files",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  }
+}

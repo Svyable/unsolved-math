@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research30/.venv/bin/python3",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0022/cycles/20260828T213400Z-twisted-acyclicity-audit/experiments/source.py",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0022/cycles/20260828T213400Z-twisted-acyclicity-audit/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0022/cycles/20260828T213400Z-twisted-acyclicity-audit/experiments/source-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0022/cycles/20260828T213400Z-twisted-acyclicity-audit/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T21:33:09.991583+00:00",
+    "input_sha256": "e0d7591acea509eaeaf5ae360fff6600684a98f4084ecb5698957cb60199aa00",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "source",
+    "output_sha256": "6e4bd1a8844254dec6cbf9011251cb97058083dc8069848e2ceeb479c2c83fba",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": null,
+    "source_sha256": "f5f98ccc9adf1abc99ef2e613549d62bb09d9371934aa2ecfec95239bed89914",
+    "started_at": "2026-08-28T21:33:09.963276+00:00",
+    "stderr": "",
+    "stdout": "{\"certificates\": 7, \"corruptions_rejected\": 4}\n",
+    "wall_timeout_seconds": 200
+  }
+]
