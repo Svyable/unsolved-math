@@ -1,0 +1,283 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T123300Z-monodromy-period-audit",
+  "problem_id": "AIM-GEOMETRY-0233",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-GEOMETRY-0233",
+    "title": "A transition fragment and bounded-degree simple lifts",
+    "statement": "Question 5.4.1 above asks whether there are other examples. 5.6. Infinitely many simple closed geodesics.",
+    "statement_sha256": "888c006328ae6c50f9b71452e102298b10c7dde2df116884f3280456dc5a9aa0",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T12:31:21.216195Z",
+    "source_urls": [
+      "https://aimath.org/pastworkshops/geodesicsproblems.pdf",
+      "https://arxiv.org/pdf/1501.00295v1",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "open",
+    "selection_basis": "Rank 5, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 4 are cooling down. Audit only the finite-monodromy period shortcut and the quantifier dependency of the prior conditional concentration lemma. Do not expand the ambiguous source fragment into its neighboring geometric question or claim a new geometric construction.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": "20260827T083400Z-cover-count-audit",
+  "started_at": "2026-08-28T12:31:21.216195Z",
+  "completed_at": "2026-08-28T12:38:09.776607Z",
+  "selection_basis": "Rank 5, score 77.25, highest eligible outside 24-hour cooldown; ranks 1 through 4 are cooling down. Audit only the finite-monodromy period shortcut and the quantifier dependency of the prior conditional concentration lemma. Do not expand the ambiguous source fragment into its neighboring geometric question or claim a new geometric construction.",
+  "theory": {
+    "target": "For transitive permutations A,B of d sheets and a closed walk B^n followed by A from x, test whether d can replace the local B-orbit length m in endpoint and winding calculations; identify the exact period and preserve the uniform-degree quantifier in the prior concentration lemma.",
+    "definitions": [
+      "d>=1 sheets, permutations A and B, joint transitivity for connected actions; x is a base sheet and n>=0.",
+      "Read B n times then A; closure means A(B^n(x))=x. This is a cyclic rotation of ab^n.",
+      "m is the least positive B-return time of x, not the order of B or the total sheet count.",
+      "Winding counts complete traversals of the directed local B-cycle; time zero and the closing A-step are excluded.",
+      "A graph-simple certificate has n+1 distinct preclosure vertices; this is not a necessary test for surface simplicity.",
+      "delta(gamma) denotes minimum simple-lift degree; a uniform bound is one D for the whole selected family."
+    ],
+    "assumptions": [
+      "A and B are bijections of {0,...,d-1}; together they act transitively.",
+      "Read a cyclic rotation of a*b^n starting immediately after the a-edge: apply B n times, then A; closure is A(B^n(x))=x.",
+      "n is a nonnegative integer; m is the least positive return time of x under B, not the order of B and not d.",
+      "A graph-simple witness visits n+1 distinct vertices before the closing A edge; this is sufficient for an embedded graph circle, not a necessary criterion for surface simplicity.",
+      "No ribbon-graph simplicity algorithm, surface lower-bound proof, hyperbolic three-manifold construction or parent-solution claim.",
+      "The topology of the cited curve family remains a primary-source dependency; the packet independently checks finite monodromy only."
+    ],
+    "approaches_considered": [
+      "Substitute total degree for the local period based only on connectedness and closure; falsified by a three-sheet action.",
+      "Use local cycle coordinates and exact quotient/remainder, removing transitivity from the algebraic period lemma.",
+      "Independently rebuild literal paths and union-find connectivity; retain source topology as a separate proof dependency."
+    ],
+    "falsification_targets": [
+      "Connected actions force a single B-cycle.",
+      "Pointwise finite degrees suffice for uniform finite pigeonhole.",
+      "Repeated graph vertices by themselves prove a curve is nonsimple on its surface."
+    ],
+    "claims": [
+      {
+        "claim_id": "PERIOD_SHORTCUT",
+        "statement": "Joint transitivity and closure of B^n A suffice to use total degree d as the local B period.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "The exact A=[2,0,1],B=[1,0,2],x=0,n=5 certificate has d=3,m=2; endpoint and winding substitutions both fail.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "LOCAL_PERIOD",
+        "statement": "For any two permutations, the local first-return period m gives endpoint B^(n mod m)(x) and floor(n/m) complete B-cycle traversals. Joint transitivity is unnecessary for this algebraic statement. Ordinary universal proof, not independently authored or kernel accepted.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missed invertibility assumption, time-count convention or contradictory permutation case.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "GRAPH_CERTIFICATE",
+        "statement": "For n=0,...,16, cyclic successor permutations on n+1 sheets give connected graph-simple B^n A walks. Surface simplicity is not computed.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "An invalid permutation, missing degree, failed closure or repeated preclosure vertex.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CENSUS",
+        "statement": "Two algorithms agree over 742417 rooted exponent cases from 15017 permutation pairs; 41244 closed walks fail degree-reduced endpoints and 44604 fail degree-based winding counts. All 65 aggregate rows match; seven corruptions are rejected.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "Any omitted domain element, table mismatch or accepted corruption.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "The primary source supplies a growing simple-lift lower bound for its specified family; its surface-topological proof remains an external dependency, not a computationally verified theorem here.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong version, locator, family convention or attribution.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "QUANTIFIERS",
+        "statement": "Pointwise finite simple-lift degrees do not supply the uniform degree hypothesis needed by the prior concentration argument. An unbounded family does not exclude a different infinite bounded-degree subfamily.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A swapped quantifier or an inference from worst-case growth to nonexistence of every bounded subfamily.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "A connected three-sheet closed walk has local period two; total-degree substitution gives both the wrong endpoint and the wrong winding.",
+        "claim_ids": [
+          "PERIOD_SHORTCUT",
+          "CENSUS"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "11172905157a3ef26a5f88ad92cfc99258aaa2a7eca47fcf3368f53306b12bf7",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "0833e308aa7c952c0db9c2edd213589c8e24287c1006103eec6921834151bec6",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "APPROACH_RETIRED",
+        "summary": "Retire the monodromy shortcut and specify the local-period replacement without silently importing geometric simplicity or uniform-degree hypotheses.",
+        "claim_ids": [
+          "LOCAL_PERIOD",
+          "QUANTIFIERS"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "11172905157a3ef26a5f88ad92cfc99258aaa2a7eca47fcf3368f53306b12bf7",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "sources/theory-source-audit.md",
+            "sha256": "42202efd71bbabeb46e12473066523821871b73b288028e1fbee4c8a73c2534a",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "PERIOD_SHORTCUT",
+          "CENSUS"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "First test the exact connected closed walk and n=0, one-sheet, disconnected and nonbijective controls.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py; fresh isolated Python process with empty environment reconstructs before certificate read. Union-find and direct paths differ from reachability and cycle coordinates/divmod. Same assistant and shared specification; no independent human/model or kernel review.",
+        "result": "The period is 2, endpoint 1 and winding 2, versus degree-substituted endpoint 0 and winding 1.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "27ec605590d559ab4aa0368d4eeeba91c4ae168daf17392f458f8b38c48d6dca",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "3e8f78230601b0c428258b00e8bbdad2e115c3e760f64607771394f8f33c08f1",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "e6992a16959e26b2330f33df0dbd68dc76cd7bf6af4fcbad595f949a8e3bb5b6",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "LOCAL_PERIOD",
+          "GRAPH_CERTIFICATE",
+          "CENSUS"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Literal path traversal and return counting, union-find, full reconstruction before certificate read, seven corruptions and replay.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py; fresh isolated Python process with empty environment reconstructs before certificate read. Union-find and direct paths differ from reachability and cycle coordinates/divmod. Same assistant and shared specification; no independent human/model or kernel review.",
+        "result": "742417 cases and 65 rows agree; 17 graph certificates pass, seven corruptions fail, deterministic replay.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "b8290021edfcd1b0a9c415a764e9b62356cfa87175b569eeb6cdf86b5c6fb210",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "5387f962ad378d2ad5318bcded0ba11e5901cad42c7d6f2c555bc819048b41b7",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verification-table.json",
+            "sha256": "fec3cf7b6584662a41d072f3e65c1e924cb0457d95932f8ed06eebfd34e88816",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "b5a23941fcf7a2d5c4ed611548b46448e76b1ed4016a6eb290da144460da5791",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "SOURCE",
+          "QUANTIFIERS"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Check versioned HTML separately from the PDF text and compare source locators, hypothesis scope and quantifier order.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline executed before theory.py; fresh isolated Python process with empty environment reconstructs before certificate read. Union-find and direct paths differ from reachability and cycle coordinates/divmod. Same assistant and shared specification; no independent human/model or kernel review.",
+        "result": "Citation confirmed; no full surface proof or figure topology independently verified; the example does not refute the source theorem.",
+        "reproduction_command": "Open the versioned URLs and locators in sources/verification-source-audit.md",
+        "evidence": [
+          {
+            "path": "sources/verification-source-audit.md",
+            "sha256": "4646408e8e3cdf172bd27a351421a3db08141a561714e83cb40ad7957900ffb6",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "e6992a16959e26b2330f33df0dbd68dc76cd7bf6af4fcbad595f949a8e3bb5b6",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Fresh direct traversal independently rejects the degree shortcut and validates the corrected finite period calculations, with boundary and adversarial controls.",
+        "claim_ids": [
+          "PERIOD_SHORTCUT",
+          "GRAPH_CERTIFICATE",
+          "CENSUS"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "5387f962ad378d2ad5318bcded0ba11e5901cad42c7d6f2c555bc819048b41b7",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "e6992a16959e26b2330f33df0dbd68dc76cd7bf6af4fcbad595f949a8e3bb5b6",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared specification; no independent human/model or kernel proof review.",
+      "No surface-simplicity algorithm, ribbon-neighborhood proof or geometric minimality check; the counterexample does not satisfy a simple-lift premise and does not refute the published theorem.",
+      "The canonical AIM statement is a transition fragment requiring human scope review; its neighboring question is not substituted.",
+      "No actual uniform geometric degree hypothesis or infinite bounded-degree subfamily has been established.",
+      "Finite monodromy and graph certificates are calibration; no new geometric theorem, optimal global bound or parent solution claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retire total-degree-as-local-period shortcuts. Preserve the counterexample, require human scope and independent surface-topology review before geometric continuation, and identify an actual infinite bounded-degree subfamily if using concentration. More permutation census rows are not material progress; rotate."
+}
