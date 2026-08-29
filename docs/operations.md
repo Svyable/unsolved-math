@@ -39,7 +39,8 @@ identity.
 ## Hourly research loop
 
 The scheduled research loop is separate from dataset synchronization. It uses
-one branch and one review PR, never commits to `main`, and never merges itself.
+one branch and one ready-for-review PR. It never commits directly to `main`; it
+merges through GitHub only after the configured publication gates pass.
 
 For every proposed cycle:
 
@@ -50,6 +51,12 @@ For every proposed cycle:
 4. Validate `cycle.json` and every artifact hash.
 5. Confirm theory and verification both contain a progress unit.
 6. Review blocking objections before deciding whether to continue that line.
+7. Open or refresh the PR as non-draft and record its exact head SHA.
+8. Wait for required CI on that SHA, then recheck the current head,
+   mergeability, and branch protection.
+9. Merge autonomously using the configured method and verify the resulting
+   `main` ref. If any gate fails or GitHub requires an unmet review, leave the
+   PR ready and report the exact blocker; never force or bypass the gate.
 
 The loop should be paused if it repeatedly creates infrastructure-only cycles,
 cannot access primary sources, or begins optimizing the score instead of the

@@ -37,11 +37,19 @@ the research budget.
    the marker-delimited README work stack and deterministic next-up list. Include
    that README delta in the same review branch. Never hand-write rankings or
    create a README-only change when the cycle has no material progress.
-8. Create or refresh only the branch `automation/hourly-research-loop` and its
-   human-review pull request. Never commit directly to `main`, merge, modify an
-   upstream status, publish externally, call paid external models, or claim the
-   parent problem is solved.
-9. Report the exact theory delta, verification delta, remaining blocking
+8. Create or refresh only the branch `automation/hourly-research-loop` and a
+   ready-for-review (non-draft) pull request. If the existing PR is a draft,
+   mark it ready. Never commit directly to `main`, modify an upstream status,
+   publish externally, call paid external models, or claim the parent problem
+   is solved.
+9. Pin the PR's exact head SHA and wait for all required CI checks on that SHA.
+   Recheck that the PR head is current, cleanly mergeable, and allowed by branch
+   protection. When every gate passes, merge the PR autonomously using the
+   configured method and verify that `main` contains the merged change. Never
+   bypass a failed or pending check, stale head, conflict, required review, or
+   other protection rule; leave the non-draft PR open and report the exact
+   blocker when GitHub refuses the merge.
+10. Report the exact theory delta, verification delta, remaining blocking
    objections, commands/checks run, artifact hashes, and PR link. If no honest
    two-lane progress was possible, report that plainly and explain the minimum
    blocker; do not create a cosmetic cycle.

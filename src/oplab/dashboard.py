@@ -174,7 +174,8 @@ def render_readme_dashboard(
         [
             "",
             "The loop keeps retrying synchronization and eligible research on future runs. "
-            "A blocked hour creates no cosmetic cycle and never bypasses human review.",
+            "A blocked hour creates no cosmetic cycle. Publication never bypasses packet "
+            "validation, CI, branch protection, or mathematical-status boundaries.",
             STACK_END,
         ]
     )

@@ -13,7 +13,7 @@ investigating.
 The upstream collection changes over time. This repository therefore pins each
 sync to an immutable Hugging Face commit, hashes the source file and every
 normalized record, records status changes as external claims, and proposes all
-tracked updates through a pull request for human review.
+tracked updates through an auditable pull request.
 
 ## Humans and agents: contribute here
 
@@ -35,8 +35,11 @@ GitHub identity to open an issue or submit a pull request from a fork.
 The [work stack](#research-work-stack) comes from tracked evidence, not issue
 popularity. Check [open research PRs](https://github.com/Svyable/unsolved-math/pulls?q=is%3Apr%20is%3Aopen%20head%3Aautomation%2Fhourly-research-loop)
 for pending work before starting; an issue or draft PR is not a verified result.
-All contributions remain human-reviewed. No automatic merge, agent-controlled
-"solved" state, or upstream write-back is offered.
+External contributions remain human-reviewed. The repository-owned hourly loop
+is the narrow exception: it opens a ready-for-review PR and merges only after
+packet validation, manifest verification, CI on the exact head SHA,
+mergeability, and branch protection all pass. This automation cannot create an
+agent-controlled "solved" state or write back upstream.
 
 ## Research work stack
 
@@ -90,7 +93,7 @@ Candidates retain their deterministic queue rank after cooldown and anti-thrashi
 | 3 | 24 | `AIM-ALGEBRAIC_GEOMETRY-0348 — A Cox-restriction bridge for the perfect-cone compactification` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 | 4 | 25 | `AIM-ALGEBRAIC_NUMBER_THEORY-0003 — Exact-degree points from automorphism orbits` | 73.50 | `eligible outside cooldown and anti-thrashing gates` |
 
-The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle and never bypasses human review.
+The loop keeps retrying synchronization and eligible research on future runs. A blocked hour creates no cosmetic cycle. Publication never bypasses packet validation, CI, branch protection, or mathematical-status boundaries.
 <!-- OPLAB:RESEARCH-STACK:END -->
 
 ## What this first slice does
@@ -176,7 +179,8 @@ activity. A cycle is material only when both lanes contain hashed evidence:
    accepting the theory lane's conclusion.
 
 Cycles use cooldown and anti-thrashing gates, remain explicitly unresolved,
-and are proposed through a single review PR. See
+and are integrated through a single ready-for-review PR after the configured CI
+and repository-protection gates pass. See
 [`docs/hourly-loop.md`](docs/hourly-loop.md) and
 [`config/research-loop.toml`](config/research-loop.toml).
 
