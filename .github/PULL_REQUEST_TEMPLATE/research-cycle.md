@@ -22,4 +22,10 @@
 - [ ] `oplab loop validate-cycle` passes.
 - [ ] `oplab loop verify-manifest` passes over every packet file.
 - [ ] The packet makes no autonomous parent-problem solve claim.
-- [ ] This PR remains human-reviewed and is not configured to auto-merge.
+- [ ] This PR is ready for review (not a draft).
+- [ ] Required CI passed for this exact head SHA, which remains current and
+      cleanly mergeable under repository protection.
+- [ ] Autonomous merge will stop and report instead of bypassing an unmet gate.
+
+Merging records the packet in the repository. It is not independent
+mathematical review and does not change an upstream problem status.

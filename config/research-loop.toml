@@ -21,4 +21,12 @@ independent_verification_checks = 1
 counterexample_search_first = true
 distinct_evidence_paths = true
 verified_packet_manifest = true
-human_review_before_merge = true
+
+[publication]
+branch = "automation/hourly-research-loop"
+pull_request_state = "ready"
+merge_method = "merge"
+autonomous_merge = true
+require_successful_ci = true
+require_mergeable_head = true
+verify_merged_main = true

@@ -42,8 +42,12 @@ must review the exact packet being shared.
 
 ## Hourly research boundary
 
-Frequency is not evidence. The hourly loop may create or refresh a review PR,
-but it may not merge, mark an upstream problem solved, or publish externally.
+Frequency is not evidence. The hourly loop may create or refresh a non-draft PR
+and merge it only after packet validation, manifest verification, successful CI
+on the exact head SHA, clean mergeability, and repository protection all pass.
+It may not bypass a failed or pending gate, mark an upstream problem solved, or
+publish externally. Repository integration is an audit event, not mathematical
+verification.
 Each accepted cycle must contain:
 
 - one evidence-linked theory progress unit;

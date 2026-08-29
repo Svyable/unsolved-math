@@ -39,19 +39,42 @@ class RequirementConfig(BaseModel):
     counterexample_search_first: bool
     distinct_evidence_paths: bool
     verified_packet_manifest: bool
-    human_review_before_merge: bool
 
     @model_validator(mode="after")
-    def review_gate_cannot_be_disabled(self) -> RequirementConfig:
+    def evidence_gates_cannot_be_disabled(self) -> RequirementConfig:
         required = {
             "counterexample_search_first": self.counterexample_search_first,
             "distinct_evidence_paths": self.distinct_evidence_paths,
             "verified_packet_manifest": self.verified_packet_manifest,
-            "human_review_before_merge": self.human_review_before_merge,
         }
         disabled = sorted(name for name, enabled in required.items() if not enabled)
         if disabled:
             raise ValueError(f"non-negotiable research boundaries disabled: {disabled}")
+        return self
+
+
+class PublicationConfig(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    branch: Literal["automation/hourly-research-loop"]
+    pull_request_state: Literal["ready"]
+    merge_method: Literal["merge", "squash", "rebase"]
+    autonomous_merge: bool
+    require_successful_ci: bool
+    require_mergeable_head: bool
+    verify_merged_main: bool
+
+    @model_validator(mode="after")
+    def autonomous_merge_requires_all_gates(self) -> PublicationConfig:
+        required = {
+            "autonomous_merge": self.autonomous_merge,
+            "require_successful_ci": self.require_successful_ci,
+            "require_mergeable_head": self.require_mergeable_head,
+            "verify_merged_main": self.verify_merged_main,
+        }
+        disabled = sorted(name for name, enabled in required.items() if not enabled)
+        if disabled:
+            raise ValueError(f"non-negotiable publication gates disabled: {disabled}")
         return self
 
 
@@ -62,6 +85,7 @@ class ResearchLoopConfig(BaseModel):
     selection: SelectionConfig
     budgets: BudgetConfig
     requirements: RequirementConfig
+    publication: PublicationConfig
 
 
 def load_research_loop_config(path: Path) -> tuple[ResearchLoopConfig, str]:

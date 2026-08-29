@@ -15,7 +15,10 @@ flowchart TD
     D --> E{"Two evidence-backed deltas?"}
     E -- Yes --> F["Hash and validate packet"]
     E -- No --> G["Report no material cycle"]
-    F --> H["Human-review PR"]
+    F --> H["Ready PR"]
+    H --> I{"CI and protection pass?"}
+    I -- Yes --> J["Agent merges"]
+    I -- No --> K["Report merge blocker"]
 ```
 
 ## Selection
@@ -51,7 +54,8 @@ the exact blocker; the loop never invents a backlog.
 
 Blocked hours do not create README-only commits. The recurring loop continues
 to retry synchronization and selection on future runs, but continuity never
-overrides evidence requirements, cooldowns, rotation, or human review.
+overrides evidence requirements, cooldowns, rotation, CI, or repository
+protection.
 
 ## Theory lane
 
@@ -110,8 +114,14 @@ cases/<problem-id>/cycles/<cycle-id>/
 generated only after all referenced artifact hashes match and covers every file
 in the packet, including executable experiments that are not direct claim
 evidence. `oplab loop verify-manifest` must pass before history is updated. The branch
-`automation/hourly-research-loop` and its pull request remain human-review
-surfaces; the loop never merges them.
+`automation/hourly-research-loop` remains the sole publication branch. The loop
+opens or refreshes a ready-for-review PR, pins its exact head SHA, waits for
+required CI, rechecks mergeability and branch protection, and then merges the
+PR autonomously using the configured method. A failed or pending check, stale
+head, conflict, required review, or protection rule is a hard stop: the loop
+leaves the PR open and reports the blocker rather than bypassing it. Merging a
+packet records it in the repository; it does not verify a mathematical claim or
+change an upstream status.
 
 The schema-v2 `cycle.json` embeds a `frozen_problem` object containing the exact
 statement and its hash, upstream revision and file hash, source URLs, imported
