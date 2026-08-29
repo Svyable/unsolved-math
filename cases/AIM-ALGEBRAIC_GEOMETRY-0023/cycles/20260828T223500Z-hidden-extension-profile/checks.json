@@ -1,0 +1,40 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 queue entries",
+  "diagnostics": "See experiments/execution-notes.md for the real injectivity failure, exact retained source, diagnostic repetition and operational corrections.",
+  "failed_children": 2,
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 7,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "preflight": "READY ranked13; highest eligible at recorded as_of",
+  "prior_manifests_verified": 33,
+  "publication_checks": "After sealing, see PR/CI.",
+  "quality": {
+    "mypy": "passed on22 source files",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  },
+  "source_access_date": "2026-08-28",
+  "successful_execution_records": [
+    {
+      "log": "baseline-execution.json",
+      "mode": "baseline"
+    },
+    {
+      "log": "theory-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "verify-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "verify"
+    }
+  ]
+}

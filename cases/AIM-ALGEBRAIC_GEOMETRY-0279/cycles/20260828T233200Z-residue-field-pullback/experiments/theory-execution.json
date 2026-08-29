@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research30/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0279/cycles/20260828T233200Z-residue-field-pullback/experiments/theory.py",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0279/cycles/20260828T233200Z-residue-field-pullback/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0279/cycles/20260828T233200Z-residue-field-pullback/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T23:33:52.639704+00:00",
+    "input_sha256": "a3cd930cca6c283a17139c496ddd79adcb6a01d9a0915206bb1a0442aae99a3e",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "theory",
+    "output_sha256": "bb710b92f3fc232e8f2c85fe0f0e2e95904083948832cc003e01383b1a0a9225",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": null,
+    "source_sha256": "12d3004302d319df2a7fec078dfc7596bf168527251136f48c2ff4e44505865c",
+    "started_at": "2026-08-28T23:33:52.604925+00:00",
+    "stderr": "",
+    "stdout": "{\"profiles_sha256\": \"42623489c1d8156f280a6b4428fd46505e0fc35619ced3e4b73a1989ec6f7faf\", \"preserved_length_failures\": 27, \"omitted_constant_correction_failures\": 36}\n",
+    "wall_timeout_seconds": 200
+  }
+]

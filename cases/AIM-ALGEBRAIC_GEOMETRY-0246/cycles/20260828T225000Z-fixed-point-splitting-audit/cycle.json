@@ -1,0 +1,328 @@
+{
+  "schema_version": 2,
+  "cycle_id": "20260828T225000Z-fixed-point-splitting-audit",
+  "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0246",
+  "frozen_problem": {
+    "snapshot_schema_version": 1,
+    "problem_id": "AIM-ALGEBRAIC_GEOMETRY-0246",
+    "title": "A finite-group Cartan-Leray spectral sequence for Morel's A1-homology",
+    "statement": "Question 9Question (Kirsten Wi kelgren). Is ther e a Serr e sp e tr al se quen e for Mor el's HA1\n\n> (,Z)?",
+    "statement_sha256": "aa7a95b52326b544a3f7079addb19a75b843387261c23f123f9970d22f57e7d8",
+    "upstream_dataset": "ulamai/UnsolvedMath",
+    "upstream_revision": "b9437975f3c873f635a13c48f8b022f5ba80898a",
+    "upstream_file_sha256": "0a11e1b86385b6095f001803e2bb9d176b3498da0932d7af3700e1132ef153ac",
+    "frozen_at": "2026-08-28T22:50:14.374187Z",
+    "source_urls": [
+      "https://aimath.org/pastworkshops/projectiveA1problems.pdf",
+      "https://pi.math.cornell.edu/~hatcher/AT/ATch5.pdf",
+      "https://pi.math.cornell.edu/~hatcher/AT/ATch1.pdf",
+      "https://huggingface.co/datasets/ulamai/UnsolvedMath/resolve/b9437975f3c873f635a13c48f8b022f5ba80898a/problems.json"
+    ],
+    "imported_status": "partially_solved",
+    "selection_basis": "Rank20,score73.5; highest eligible after including merged and pending history. Ranks1-19 cooling. No prior cycle for this problem. Exact imported damaged statement retained; original AIM PDF Question9 inspected visually, separate interpretation recorded. Bounded target is the ordinary cyclic-action H1 splitting prerequisite, not a claim about A1 localization.",
+    "claim_trust": "UNVERIFIED_EXTERNAL_METADATA"
+  },
+  "parent_cycle_id": null,
+  "started_at": "2026-08-28T22:50:14.374187Z",
+  "completed_at": "2026-08-28T22:57:27.948682Z",
+  "selection_basis": "Rank20,score73.5; highest eligible after including merged and pending history. Ranks1-19 cooling. No prior cycle for this problem. Exact imported damaged statement retained; original AIM PDF Question9 inspected visually, separate interpretation recorded. Bounded target is the ordinary cyclic-action H1 splitting prerequisite, not a claim about A1 localization.",
+  "theory": {
+    "target": "Test whether the fixed-basepoint hypothesis can be dropped from the ordinary H1 Borel-quotient splitting for cyclic rotations of a circle; distinguish a homotopy quotient from the coarse quotient.",
+    "definitions": [
+      "C_m rotates the oriented N=mL-edge CW circle by kL cells,0<=k<m.",
+      "X_hC_m is the Borel homotopy quotient, distinct from the coarse orbit space.",
+      "A group-fixed point is fixed by every element; trivial H1 action is weaker.",
+      "Homology is ordinary integral homology; Z/1 denotes zero.",
+      "A primitive free covector kills all relations and has coefficient gcd1."
+    ],
+    "assumptions": [
+      "Ordinary integral homology of a connected oriented cyclic CW graph with N=m*L vertices and edges; N=2 is a two-edge CW circle, not an abstract simplicial complex.",
+      "The generator of C_m sends vertex/edge v to v+k*L modulo N, 0<=k<m; no edge reversals.",
+      "The normalized group-bar complex tensored with cellular chains models ordinary homotopy-orbit chains. The chain computation through degree2 is sufficient only for H1.",
+      "A group-fixed point is stronger than trivial action on H1. No A1-localization or Nisnevich-sheaf comparison is assumed.",
+      "Universal topological and motivic bridges require independent review; no parent solution or novelty claimed."
+    ],
+    "approaches_considered": [
+      "Lift the rotation to the universal cover while retaining its group label, derive a two-generator extension presentation and integral gcd profile.",
+      "Track degree-one graded pieces and the abutment extension; test whether trivial monodromy supplies a section.",
+      "Compute normalized bar/cellular boundaries and integral H1 independently, beginning with free, fixed-point and nonfaithful controls."
+    ],
+    "falsification_targets": [
+      "Trivial H1 action substitutes for a group-fixed basepoint.",
+      "Every homotopy quotient can be replaced by its coarse quotient.",
+      "The proposed gcd profile or primitive fiber covector fails in a bounded case."
+    ],
+    "claims": [
+      {
+        "claim_id": "FIXED",
+        "statement": "Trivial action on ordinary H1 can replace a group-fixed basepoint in the proposed H1 Borel splitting. Refuted by the half-turn circle: H1=Z, not Z direct-sum C2, and the fiber has free coordinate2.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A wrong finite chain complex, invalid integral reduction, nontrivial induced H1 action, or wrong primitive fiber coordinate.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "QUOTIENT",
+        "statement": "Every cyclic rotation has the same H1 for its Borel and coarse quotients. Refuted by the trivial C2 action: Borel H1=Z direct-sum C2 whereas the coarse quotient is a circle.",
+        "status": "FALSIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "Failure of the trivial-action product model, wrong integral H1 calculation, or a non-circle coarse quotient.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "PROFILE",
+        "statement": "For all m>=2,0<=k<m,L>=1, the ordinary Borel H1 of rotation by k/m is Z direct-sum Z/gcd(m,k), from the presentation k*t+m*b=0; the fiber maps to m/gcd(m,k) in its primitive free quotient.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "A failed lifting interpretation, discarded stabilizer, incorrect integral basis change, or a counterexample outside the finite domain.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "FINITE",
+        "statement": "Two methods agree on60 profiles for20 rotation actions under3 subdivisions;11004 d1*d2 column identities pass and45 profiles fail the weakened splitting formula.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A missing input, wrong incidence column, nonintegral elimination or profile mismatch.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "CERT",
+        "statement": "Six primitive free covectors pass460 relation checks and agree with independent H1 profiles; six specified corruptions are rejected and both outputs replay byte-identically.",
+        "status": "EXPERIMENTALLY_SUPPORTED",
+        "origin": "DERIVED",
+        "falsification_condition": "A nonprimitive or nonannihilating covector accepted, wrong fiber value, targeted mutation accepted, or replay hash mismatch.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "SOURCE",
+        "statement": "AIM Question9 asks a broader Morel A1-homology spectral-sequence question than the imported finite-group specialization; Brown Definition5.1 and Example5.2(c) distinguish ordinary Borel homology from coarse quotient homology, the latter requiring free action.",
+        "status": "PRIMARY_SOURCE_SUPPORTED",
+        "origin": "PRIMARY_SOURCE",
+        "falsification_condition": "Wrong primary-source locator, visual transcription error, or omitted freeness hypothesis.",
+        "dependencies": []
+      },
+      {
+        "claim_id": "BRIDGE",
+        "statement": "The ordinary fixed-point audit does not establish the imported A1-local spectral sequence, its strong convergence, or its fixed-basepoint splitting theorem. A comparison with the intended motivic category is still required.",
+        "status": "UNVERIFIED",
+        "origin": "DERIVED",
+        "falsification_condition": "An independently checked comparison theorem with all hypotheses supplied would close this stated gap.",
+        "dependencies": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "T1",
+        "kind": "COUNTEREXAMPLE",
+        "summary": "A free half-turn has trivial H1 action but H1 Borel=Z, with fiber coordinate2; the fixed-point weakening fails. The trivial-action control also rejects a nonfree coarse-quotient substitution.",
+        "claim_ids": [
+          "FIXED",
+          "QUOTIENT",
+          "CERT"
+        ],
+        "evidence": [
+          {
+            "path": "theory.md",
+            "sha256": "e9ff0f11c199bf3843f0d8f2ef148cca1644b6dcb3a4dbdcd4aebb671fdf3fe6",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "experiments/theory-output.json",
+            "sha256": "d110998ad63aad05e6a48aedc0a9b68947b7435a6e4a3edc6a2d4593d8940991",
+            "media_type": "application/json"
+          }
+        ]
+      },
+      {
+        "unit_id": "T2",
+        "kind": "PRIMARY_SOURCE_VERIFICATION",
+        "summary": "Visual reading recovers the damaged AIM notation without altering the frozen bytes; ordinary primary references delimit Borel versus free quotient homology.",
+        "claim_ids": [
+          "SOURCE",
+          "BRIDGE"
+        ],
+        "evidence": [
+          {
+            "path": "sources/theory-source.md",
+            "sha256": "593fa05500aea35d0858f08dcc5412f64c1d11f871e6790a8fd515a32649622c",
+            "media_type": "text/markdown"
+          },
+          {
+            "path": "sources/source-provenance.json",
+            "sha256": "e1269831960efc642f398114f421485956d1da571450835516227656648294d2",
+            "media_type": "application/json"
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "checks": [
+      {
+        "check_id": "V1",
+        "claim_ids": [
+          "FIXED",
+          "QUOTIENT",
+          "FINITE"
+        ],
+        "method_family": "COUNTEREXAMPLE_SEARCH",
+        "method": "Compute the half-turn, trivial action and nonfaithful action before reading any theory proposal.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline-executed before theory.py; fresh Python -I processes, empty environment and distinct outputs. Integral normalized bar/cellular matrices and unit-pivot Smith reduction versus lifted-rotation two-generator/gcd formula. Boundary/census computation precedes proposal read. Same-assistant authorship and shared model/input/runtime/serialization; no independent human/model or kernel review.",
+        "result": "Boundary H1 profiles Z,Z direct-sum C2,Z direct-sum C2 expose both shortcuts.",
+        "reproduction_command": "python experiments/run.py baseline",
+        "evidence": [
+          {
+            "path": "experiments/baseline.json",
+            "sha256": "e327d7e80c8abe4d4677bfb6155e67a070bb128c47b7c30edad99dbb4a08e6b9",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/baseline-execution.json",
+            "sha256": "5680a08774f9532d26a0fe1ae60927e43806fc33969fbd06382440307673d33e",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V2",
+        "claim_ids": [
+          "FINITE",
+          "PROFILE"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Construct integer normalized bar/cellular matrices, check d1*d2, collapse an integral spanning-tree basis and perform unit-pivot/rank-one Smith reductions.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline-executed before theory.py; fresh Python -I processes, empty environment and distinct outputs. Integral normalized bar/cellular matrices and unit-pivot Smith reduction versus lifted-rotation two-generator/gcd formula. Boundary/census computation precedes proposal read. Same-assistant authorship and shared model/input/runtime/serialization; no independent human/model or kernel review.",
+        "result": "60 profiles agree;11004 column identities pass;45 weakened-splitting failures.",
+        "reproduction_command": "python experiments/run.py verify",
+        "evidence": [
+          {
+            "path": "experiments/verify.py",
+            "sha256": "3dd3784d2bf7b77c66d16e6b8ab4b8bd0674b49b57b2d0ccd27b5d6a4fc37e28",
+            "media_type": "text/x-python"
+          },
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "e88c6439b03fd7d383bba2ac942a7bea19736fb7635148426f0df45c284207b4",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/verify-execution.json",
+            "sha256": "3e7ffbc6efe8a55b0c94ce0e76a75414e99cc366b1d1a931a0353f5a86d3e2c2",
+            "media_type": "application/json"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V3",
+        "claim_ids": [
+          "FIXED",
+          "CERT"
+        ],
+        "method_family": "INDEPENDENT_IMPLEMENTATION",
+        "method": "Check primitive covectors against every relevant relation, independently computed H1, fiber values, six adversarial mutations, and fresh-process replay.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline-executed before theory.py; fresh Python -I processes, empty environment and distinct outputs. Integral normalized bar/cellular matrices and unit-pivot Smith reduction versus lifted-rotation two-generator/gcd formula. Boundary/census computation precedes proposal read. Same-assistant authorship and shared model/input/runtime/serialization; no independent human/model or kernel review.",
+        "result": "6 certificates,460 pairings and6 corruption rejections; theory and verification output bytes unchanged.",
+        "reproduction_command": "python experiments/run.py replay",
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "e88c6439b03fd7d383bba2ac942a7bea19736fb7635148426f0df45c284207b4",
+            "media_type": "application/json"
+          },
+          {
+            "path": "experiments/replay-execution.json",
+            "sha256": "c0b1ea1510e169e4ad7d7e8abf13fad70be7c406c55d68708af89c685aae704b",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "9f07f935a0b079a159609955f016adabc92ba34a14bdd2677053917e7af79212",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V4",
+        "claim_ids": [
+          "PROFILE",
+          "BRIDGE"
+        ],
+        "method_family": "PROOF_STEP_AUDIT",
+        "method": "Audit tree unimodularity, degree-two sufficiency for H1, residual-rank tests, primitive free quotient, nonfaithful stabilizers, and absence of an A1 comparison.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline-executed before theory.py; fresh Python -I processes, empty environment and distinct outputs. Integral normalized bar/cellular matrices and unit-pivot Smith reduction versus lifted-rotation two-generator/gcd formula. Boundary/census computation precedes proposal read. Same-assistant authorship and shared model/input/runtime/serialization; no independent human/model or kernel review.",
+        "result": "Finite checks supported; universal presentation and motivic bridge remain unverified.",
+        "reproduction_command": "Read verification.md proof-step audit",
+        "evidence": [
+          {
+            "path": "verification.md",
+            "sha256": "9f07f935a0b079a159609955f016adabc92ba34a14bdd2677053917e7af79212",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      },
+      {
+        "check_id": "V5",
+        "claim_ids": [
+          "SOURCE",
+          "QUOTIENT",
+          "BRIDGE"
+        ],
+        "method_family": "PRIMARY_SOURCE_AUDIT",
+        "method": "Recheck AIM Question9 visually, Brown Definition5.1/Example5.2(c), Hatcher1.40 and Hatcher5.2 with their category and freeness hypotheses.",
+        "independent_context": true,
+        "independence_basis": "Verifier authored and baseline-executed before theory.py; fresh Python -I processes, empty environment and distinct outputs. Integral normalized bar/cellular matrices and unit-pivot Smith reduction versus lifted-rotation two-generator/gcd formula. Boundary/census computation precedes proposal read. Same-assistant authorship and shared model/input/runtime/serialization; no independent human/model or kernel review.",
+        "result": "Ordinary Borel model and free-quotient restriction supported; no finite-group A1 theorem or current-status verification supplied.",
+        "reproduction_command": "Open the primary-source URLs and exact locators in sources/verification-source.md",
+        "evidence": [
+          {
+            "path": "sources/verification-source.md",
+            "sha256": "e5fcb5701e65f8baed89977270133c5ecf545560aeb7d351c05c194355b78f6e",
+            "media_type": "text/markdown"
+          }
+        ],
+        "blocking_objections": []
+      }
+    ],
+    "progress": [
+      {
+        "unit_id": "VP",
+        "kind": "REPRODUCIBLE_EXPERIMENT",
+        "summary": "Independent integral chain matrices verify60 profiles and the half-turn obstruction, with6 primitive fiber certificates,460 relation checks,6 negative tests and byte-identical replay.",
+        "claim_ids": [
+          "FIXED",
+          "FINITE",
+          "CERT"
+        ],
+        "evidence": [
+          {
+            "path": "experiments/verify-output.json",
+            "sha256": "e88c6439b03fd7d383bba2ac942a7bea19736fb7635148426f0df45c284207b4",
+            "media_type": "application/json"
+          },
+          {
+            "path": "verification.md",
+            "sha256": "9f07f935a0b079a159609955f016adabc92ba34a14bdd2677053917e7af79212",
+            "media_type": "text/markdown"
+          }
+        ]
+      }
+    ],
+    "unresolved_objections": [
+      "Same-assistant authorship and shared model/input/runtime/serialization; no independent human/model or kernel verification.",
+      "Universal rotation-presentation and model-identification arguments need independently authored proof review.",
+      "AIM source notation is recovered but imported finite-group specialization and status remain unverified.",
+      "No Nisnevich or A1-local comparison, motivic strong convergence, novelty or parent solution is claimed."
+    ]
+  },
+  "material_progress": true,
+  "conclusion": "HUMAN_REVIEW_REQUIRED",
+  "next_step": "Retain the ordinary fixed-point and coarse-quotient counterexamples. Obtain independently authored proof review of the universal rotation presentation and the comparison with the intended A1-local homology category. Do not infer an A1 theorem or status change from ordinary bar-chain calculations. Additional subdivisions alone are not material progress. Rotate."
+}

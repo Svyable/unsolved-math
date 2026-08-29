@@ -1,0 +1,40 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 queue entries",
+  "failed_setup_children": 1,
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 6,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "operational_failures": "HTTP source normalization and missing-input child/failure-logger error documented in experiments/execution-notes.md; no failed output used.",
+  "preflight": "READY rank21 at frozen selection; includes pending PR25 history",
+  "prior_manifests_verified": 35,
+  "publication_checks": "After sealing, see PR/CI.",
+  "quality": {
+    "mypy": "passed on22 source files",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  },
+  "source_access_date": "2026-08-28",
+  "successful_execution_records": [
+    {
+      "log": "baseline-execution.json",
+      "mode": "baseline"
+    },
+    {
+      "log": "theory-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "verify-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "verify"
+    }
+  ]
+}

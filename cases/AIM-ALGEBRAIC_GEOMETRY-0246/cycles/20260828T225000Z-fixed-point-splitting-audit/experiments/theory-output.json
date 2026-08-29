@@ -1,0 +1,804 @@
+{
+  "certificates": [
+    {
+      "fiber_value": 2,
+      "free_covector": [
+        2,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 2,
+      "relation": [
+        1,
+        2
+      ],
+      "subdivision": 2
+    },
+    {
+      "fiber_value": 1,
+      "free_covector": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 0,
+      "m": 2,
+      "relation": [
+        0,
+        2
+      ],
+      "subdivision": 2
+    },
+    {
+      "fiber_value": 3,
+      "free_covector": [
+        3,
+        -1,
+        -1,
+        -1,
+        -1,
+        2,
+        2,
+        -2,
+        -2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 3,
+      "relation": [
+        1,
+        3
+      ],
+      "subdivision": 2
+    },
+    {
+      "fiber_value": 2,
+      "free_covector": [
+        2,
+        -1,
+        -1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 2,
+      "m": 4,
+      "relation": [
+        2,
+        4
+      ],
+      "subdivision": 1
+    },
+    {
+      "fiber_value": 3,
+      "free_covector": [
+        3,
+        -1,
+        -1,
+        -1,
+        -1,
+        2,
+        2,
+        -2,
+        -2,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        2,
+        2,
+        -2,
+        -2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 2,
+      "m": 6,
+      "relation": [
+        2,
+        6
+      ],
+      "subdivision": 1
+    },
+    {
+      "fiber_value": 2,
+      "free_covector": [
+        2,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          3
+        ]
+      },
+      "k": 3,
+      "m": 6,
+      "relation": [
+        3,
+        6
+      ],
+      "subdivision": 1
+    }
+  ],
+  "profile_count": 60,
+  "profiles": [
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 0,
+      "m": 2,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 0,
+      "m": 2,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 0,
+      "m": 2,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 2,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 2,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 2,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          3
+        ]
+      },
+      "k": 0,
+      "m": 3,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          3
+        ]
+      },
+      "k": 0,
+      "m": 3,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          3
+        ]
+      },
+      "k": 0,
+      "m": 3,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 3,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 3,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 3,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 2,
+      "m": 3,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 2,
+      "m": 3,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 2,
+      "m": 3,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          4
+        ]
+      },
+      "k": 0,
+      "m": 4,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          4
+        ]
+      },
+      "k": 0,
+      "m": 4,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          4
+        ]
+      },
+      "k": 0,
+      "m": 4,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 4,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 4,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 4,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 2,
+      "m": 4,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 2,
+      "m": 4,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 2,
+      "m": 4,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 3,
+      "m": 4,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 3,
+      "m": 4,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 3,
+      "m": 4,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          5
+        ]
+      },
+      "k": 0,
+      "m": 5,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          5
+        ]
+      },
+      "k": 0,
+      "m": 5,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          5
+        ]
+      },
+      "k": 0,
+      "m": 5,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 5,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 5,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 5,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 2,
+      "m": 5,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 2,
+      "m": 5,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 2,
+      "m": 5,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 3,
+      "m": 5,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 3,
+      "m": 5,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 3,
+      "m": 5,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 4,
+      "m": 5,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 4,
+      "m": 5,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 4,
+      "m": 5,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          6
+        ]
+      },
+      "k": 0,
+      "m": 6,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          6
+        ]
+      },
+      "k": 0,
+      "m": 6,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          6
+        ]
+      },
+      "k": 0,
+      "m": 6,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 6,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 6,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 1,
+      "m": 6,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 2,
+      "m": 6,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 2,
+      "m": 6,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 2,
+      "m": 6,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          3
+        ]
+      },
+      "k": 3,
+      "m": 6,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          3
+        ]
+      },
+      "k": 3,
+      "m": 6,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          3
+        ]
+      },
+      "k": 3,
+      "m": 6,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 4,
+      "m": 6,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 4,
+      "m": 6,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": [
+          2
+        ]
+      },
+      "k": 4,
+      "m": 6,
+      "subdivision": 3
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 5,
+      "m": 6,
+      "subdivision": 1
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 5,
+      "m": 6,
+      "subdivision": 2
+    },
+    {
+      "h1": {
+        "free_rank": 1,
+        "torsion": []
+      },
+      "k": 5,
+      "m": 6,
+      "subdivision": 3
+    }
+  ],
+  "profiles_sha256": "f3c99cd73318c0680f558fd9f383f52fe60b9a3bc30beb52404afbcf0b73cecc"
+}

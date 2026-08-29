@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research30/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/theory.py",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T22:38:19.480394+00:00",
+    "input_sha256": "2719e11264af9026afe229ed9d6c06ae50e3a3b13f080f80b782ee04de4a17d2",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "theory",
+    "output_sha256": "c73e66ac27b18017d90e2e64c96aefdde6313d74075065b552c6d3d11e822a96",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "7497b8385f0ab3c85b11221562e1bac947a990f6e5ffc022667d045532ed50e3",
+    "started_at": "2026-08-28T22:38:19.414648+00:00",
+    "stderr": "",
+    "stdout": "{\"groups\": 173, \"elements\": 21142, \"rows_sha256\": \"b58a75cc2f21d31dbeeb9c435f5084881209829dd71d4fdd334509a56823631c\"}\n",
+    "wall_timeout_seconds": 200
+  },
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research30/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/verify-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0023/cycles/20260828T223500Z-hidden-extension-profile/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T22:38:20.241802+00:00",
+    "input_sha256": "2719e11264af9026afe229ed9d6c06ae50e3a3b13f080f80b782ee04de4a17d2",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "verify",
+    "output_sha256": "d90be49f153de35c4615a077a4e386b736ea5eed52d7513a7aca922a1c85930b",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": true,
+    "source_sha256": "3ac87e33e6a2a4cbb051729428ee559d18c7a82b8aa1f0c74160a0131d32003c",
+    "started_at": "2026-08-28T22:38:19.480622+00:00",
+    "stderr": "",
+    "stdout": "{\"summary\": {\"groups\": 173, \"elements\": 21142, \"rows_sha256\": \"b58a75cc2f21d31dbeeb9c435f5084881209829dd71d4fdd334509a56823631c\"}, \"associativity_triples\": 2184, \"commutativity_transition_pairs\": 292, \"generator_homomorphism_checks\": 904, \"certificates_checked\": 6, \"corruptions_rejected\": [\"wrong_exponent\", \"erased_survivor\", \"wrong_matrix\", \"wrong_modulus\", \"missing_row\", \"wrong_order_count\", \"missing_certificate\"]}\n",
+    "wall_timeout_seconds": 200
+  }
+]

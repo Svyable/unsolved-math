@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/1faac0a7d2ae/research30/.venv/bin/python",
+      "-I",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0246/cycles/20260828T225000Z-fixed-point-splitting-audit/experiments/verify.py",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0246/cycles/20260828T225000Z-fixed-point-splitting-audit/input.json",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0246/cycles/20260828T225000Z-fixed-point-splitting-audit/experiments/verify-output.json",
+      "--certificate",
+      "/workspace/scratch/1faac0a7d2ae/research30/cases/AIM-ALGEBRAIC_GEOMETRY-0246/cycles/20260828T225000Z-fixed-point-splitting-audit/experiments/theory-output.json"
+    ],
+    "cpu_seconds": 180,
+    "environment_keys": [],
+    "exit_code": 0,
+    "finished_at": "2026-08-28T22:52:03.615308+00:00",
+    "input_sha256": "1398e78a740c487a44ed46556704e7500d87ee4509f1678d40dada5b9c38aeb4",
+    "isolation": "python -I, empty environment, fresh process, resource limits; no network namespace",
+    "memory_bytes": 536870912,
+    "mode": "verify",
+    "output_sha256": "e88c6439b03fd7d383bba2ac942a7bea19736fb7635148426f0df45c284207b4",
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "replay_unchanged": null,
+    "source_sha256": "3dd3784d2bf7b77c66d16e6b8ab4b8bd0674b49b57b2d0ccd27b5d6a4fc37e28",
+    "started_at": "2026-08-28T22:52:02.346035+00:00",
+    "stderr": "",
+    "stdout": "{\"summary\": {\"cases\": 60, \"profiles_sha256\": \"f3c99cd73318c0680f558fd9f383f52fe60b9a3bc30beb52404afbcf0b73cecc\", \"chain_identity_columns\": 11004, \"split_formula_failures\": 45}, \"covector_relation_checks\": 460, \"certificates_checked\": 6, \"corruptions_rejected\": [\"zero_covector\", \"changed_covector\", \"wrong_torsion\", \"wrong_fiber_degree\", \"missing_profile\", \"missing_certificate\"]}\n",
+    "wall_timeout_seconds": 200
+  }
+]

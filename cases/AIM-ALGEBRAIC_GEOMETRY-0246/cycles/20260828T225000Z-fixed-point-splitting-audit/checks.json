@@ -1,0 +1,40 @@
+{
+  "dataset_validation": "7 hashes;15458 records;200 queue entries",
+  "failed_children": 0,
+  "mathematical_subprocess_budget": 8,
+  "mathematical_subprocesses_used": 5,
+  "no_main_write": true,
+  "no_parent_status_change": true,
+  "operational_note": "Initial unqualified ruff command was absent from PATH; rerun succeeded using repository .venv/bin executables. No mathematical child failed.",
+  "preflight": "READY ranked20; highest eligible at recorded as_of including pending rank13 cycle",
+  "prior_manifests_verified": 34,
+  "publication_checks": "After sealing, see PR/CI.",
+  "quality": {
+    "mypy": "passed on22 source files",
+    "pytest": "24 passed",
+    "ruff": "passed"
+  },
+  "source_access_date": "2026-08-28",
+  "successful_execution_records": [
+    {
+      "log": "baseline-execution.json",
+      "mode": "baseline"
+    },
+    {
+      "log": "theory-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "verify-execution.json",
+      "mode": "verify"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "theory"
+    },
+    {
+      "log": "replay-execution.json",
+      "mode": "verify"
+    }
+  ]
+}
