@@ -1,6 +1,9 @@
 import json
 from datetime import UTC, datetime
 from pathlib import Path
+from types import SimpleNamespace
+
+import pytest
 
 from oplab.dashboard import render_readme_dashboard
 from oplab.loop import LoopHistoryEntry
@@ -34,6 +37,32 @@ def test_dashboard_shows_provisional_stack_without_calling_it_ranked(
     assert "| 2 | `CONTINUE`" in rendered
     assert "provisional activity order, not a ranking" in rendered
     assert "no provisional candidate passed cooldown and anti-thrashing gates" in rendered
+
+
+@pytest.mark.parametrize(
+    ("title", "next_step"),
+    [
+        ("Literal {x}", "Check one bounded case"),
+        ("Literal {", "Check one bounded case"),
+        ("Plain title", "Check {x}"),
+        ("Plain title", "Check unmatched }"),
+    ],
+)
+def test_dashboard_keeps_cycle_braces_literal(
+    bootstrap_root: Path, monkeypatch: pytest.MonkeyPatch, title: str, next_step: str
+) -> None:
+    cycle = SimpleNamespace(
+        frozen_problem=SimpleNamespace(title=title),
+        next_step=next_step,
+    )
+    monkeypatch.setattr("oplab.dashboard.load_cycle", lambda _: cycle)
+
+    rendered = render_readme_dashboard(
+        bootstrap_root, as_of=datetime(2026, 8, 27, 10, 0, tzinfo=UTC)
+    )
+
+    assert f"COMB-001 — {title}" in rendered
+    assert next_step in rendered
 
 
 def test_dashboard_preserves_queue_rank_after_gates(tmp_path: Path, project_root: Path) -> None:
