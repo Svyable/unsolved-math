@@ -2,9 +2,9 @@
 
 > Agent output and imported status metadata are unverified research assistance, not mathematical results.
 
-- Immutable upstream revision: `b9437975f3c873f635a13c48f8b022f5ba80898a`
+- Immutable upstream revision: `37e53eabe540fb458758e198be61634bd02ee008`
 - Normalized records: 15458
-- Added records: 15458
+- Added records: 0
 - Removed records: 0
 - Imported status changes: 0
 - Research queue entries: 200

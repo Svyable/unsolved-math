@@ -2,7 +2,7 @@
 
 > Agent output and imported status metadata are unverified research assistance, not mathematical results.
 
-Upstream revision: `b9437975f3c873f635a13c48f8b022f5ba80898a`
+Upstream revision: `37e53eabe540fb458758e198be61634bd02ee008`
 
 | Rank | Score | Problem | Status | Difficulty | Category |
 |---:|---:|---|---|---:|---|
