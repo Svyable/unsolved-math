@@ -54,14 +54,14 @@ def _active_stack(
         queue_position = queue_rank.get(problem_id, 10**9)
         queue_position_text = str(queue_position) if problem_id in queue_rank else "—"
         row = (
-            f"| {{stack}} | {queue_position_text} | "
+            f"{queue_position_text} | "
             f"{_code(f'{problem_id} — {title}', limit=90)} | "
             f"{len(entries)} | {_code(latest.conclusion.value)} | "
             f"{_utc_text(latest.completed_at)} | {_code(next_step, limit=120)} |"
         )
         rows.append((queue_position, -latest.completed_at.timestamp(), row))
     rows.sort(key=lambda item: (item[0], item[1], item[2]))
-    return [row.format(stack=index) for index, (_, _, row) in enumerate(rows, start=1)]
+    return [f"| {index} | {row}" for index, (_, _, row) in enumerate(rows, start=1)]
 
 
 def render_readme_dashboard(
